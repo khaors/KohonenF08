@@ -706,7 +706,7 @@ contains
     subroutine index2position(index_,nx,ny,nz,cx,cy,cz)
 !========================================================================================
 !! Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index
-        integer,intent(in) :: index_,
+        integer,intent(in) :: index_
 !! Integer variable representing the index
         integer,intent(in) :: nx,ny,nz
 !! Integer variables representing the dimensions of the kohonen map
@@ -1421,7 +1421,7 @@ contains
 !! Real array with the input patterns
         real(c_double),intent(in) :: alpha
 !! Real value with the initial learning rate
-        integer(c_int),intent(in) :: grid_type,
+        integer(c_int),intent(in) :: grid_type
 !! Integer variable to indicate the type of grid  
         integer(c_int),intent(in) :: distance_type
 !! Integer variable to indicate the distance type
