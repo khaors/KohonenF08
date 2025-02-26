@@ -8,39 +8,32 @@ Self-Organizing Maps or Kohonen Maps are powerful computational tools to cluster
 
 Two Level Self-Organizing Maps are important in many applied areas but currently there is not a proper implementation that suited my needs. So I decided to implement this clustering approach in Fortran using the features included in the new standard Fortran2003. This ensures computational efficiency and software extensibility, in addition to having to learn more about Fortran.
 
-## Compilation
 
-Currently there are three programs implemented in the library _som_train_, _som_predict_ and _two_level_som_train_ which can be compiled using
+## Get the code 
 
+Close the repository
 ```
-make som_train
-```
-
-```
-make som_predict
+git clone  https://github.com/khaors/KohonenF08
+cd KohonenF08
 ```
 
-and
+
+## Compilation with fpm
+
+The Fortran Package Manager (fpm) can be used to build `KohonenF08` using the provided `fpm.toml` file:
+
 
 ```
-make two_level_som_train
+fpm build --profile release
 ```
 
-In addition, you can compile these programs using cmake (version 3.14.6) using:
+## Testing
+
+The test can be executed using:
 
 ```
-mkdir build 
-cd build
-cmake ..
+fpm test --profile release
 ```
-
-KohonenF03 can also be compiled as a shared library using:
-
-```
-make libkohonen
-```
-
-or this is automatically generated using cmake.
 
 ## Parameter File Format
 
