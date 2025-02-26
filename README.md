@@ -1,6 +1,6 @@
 # KohonenF08
 
-A fortran 2008 library for Self-Organizing Maps
+A Fortran 2008 library for Self-Organizing Maps using object-oriented programming and modern Fortran features.
 
 ## Motivation
 
