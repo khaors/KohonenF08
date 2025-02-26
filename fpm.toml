@@ -1,0 +1,21 @@
+name = "KohonenF08"
+version = "0.1.0"
+license = "MIT"
+author = "khaors"
+maintainer = "khaors@gmail.com"
+copyright = "Copyright 2024, khaors"
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+module-naming = false
+[dependencies]
+toml-f.git = "https://github.com/toml-f/toml-f"
+error-handling = { git = "https://github.com/SINTEF/fortran-error-handling.git", tag = "v0.2.0" }
+[install]
+library = false
+[fortran]
+implicit-typing = false
+implicit-external = false
+source-form = "free"
+

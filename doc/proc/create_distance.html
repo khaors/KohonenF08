@@ -1,0 +1,442 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>create_distance &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>create_distance
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 1.0% of total for procedures.">16 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/factory_distance_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\factory_distance_utilities.f90.html'>factory_distance_utilities.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\factory_distance_utilities.html'>factory_distance_utilities</a></li>
+            <li class="breadcrumb-item active" aria-current="page">create_distance</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/create_distance.html#src">create_distance</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine create_distance(factory, type_, dist)  
+</h2>
+    
+
+    <p>Class constructor</p>
+
+    <h3>Type Bound</h3>
+    <p><a href='..\type\factory_distance.html'>factory_distance</a></p>
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-factory~2"></span>
+              class(<a href='..\type\factory_distance.html'>factory_distance</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>factory</strong></td>
+            <td>
+                <p>A <code>factory_distance</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-type_~2"></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>type_</strong></td>
+            <td>
+                <p>A character string with the type of distance to be instantiated</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dist~8"></span>
+              class(<a href='..\type\distance_base.html'>distance_base</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>dist</strong></td>
+            <td>
+                <p>An allocatable <code>distance_base</code> object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+ -->
+<!-- Title: proc~~create_distance~~CalledByGraph Pages: 1 -->
+<svg id="proccreate_distanceCalledByGraph" width="641pt" height="31pt"
+ viewBox="0.00 0.00 641.00 31.15" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~create_distance~~CalledByGraph" class="graph" transform="scale(0.988343 0.988343) rotate(0) translate(4 27.52)">
+<title>proc~~create_distance~~CalledByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 644.56,-27.52 644.56,4 -4,4"/>
+<!-- proc~create_distance -->
+<g id="proc~~create_distance~~CalledByGraph_node1" class="node">
+<title>proc~create_distance</title>
+<polygon fill="none" stroke="black" points="640.56,-23.52 466.29,-23.52 466.29,0 640.56,0 640.56,-23.52"/>
+<text text-anchor="middle" x="553.43" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">factory_distance%create_distance</text>
+</g>
+<!-- proc~create_som -->
+<g id="proc~~create_distance~~CalledByGraph_node2" class="node">
+<title>proc~create_som</title>
+<g id="a_proc~~create_distance~~CalledByGraph_node2"><a xlink:href="../proc/create_som.html" xlink:title="self_organized_map%create_som">
+<polygon fill="#d9534f" stroke="#d9534f" points="430.29,-23.52 256.77,-23.52 256.77,0 430.29,0 430.29,-23.52"/>
+<text text-anchor="middle" x="343.53" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organized_map%create_som</text>
+</a>
+</g>
+</g>
+<!-- proc~create_som&#45;&gt;proc~create_distance -->
+<g id="proc~~create_distance~~CalledByGraph_edge1" class="edge">
+<title>proc~create_som&#45;&gt;proc~create_distance</title>
+<path fill="none" stroke="#ff0000" d="M430.59,-11.76C438.56,-11.76 446.68,-11.76 454.74,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="454.58,-15.26 464.58,-11.76 454.58,-8.26 454.58,-15.26"/>
+</g>
+<!-- proc~external_predict_map -->
+<g id="proc~~create_distance~~CalledByGraph_node3" class="node">
+<title>proc~external_predict_map</title>
+<g id="a_proc~~create_distance~~CalledByGraph_node3"><a xlink:href="../proc/external_predict_map.html" xlink:title="self_organized_map%external_predict_map">
+<polygon fill="#d9534f" stroke="#d9534f" points="220.77,-23.52 0,-23.52 0,0 220.77,0 220.77,-23.52"/>
+<text text-anchor="middle" x="110.38" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organized_map%external_predict_map</text>
+</a>
+</g>
+</g>
+<!-- proc~external_predict_map&#45;&gt;proc~create_som -->
+<g id="proc~~create_distance~~CalledByGraph_edge2" class="edge">
+<title>proc~external_predict_map&#45;&gt;proc~create_som</title>
+<path fill="none" stroke="#ff0000" d="M221.2,-11.76C229.19,-11.76 237.21,-11.76 245.11,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="245.07,-15.26 255.07,-11.76 245.07,-8.26 245.07,-15.26"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panproccreate_distanceCalledByGraph = svgPanZoom('#proccreate_distanceCalledByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.923937 0.923937) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 689.77,-27.52 689.77,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="63.27,-23.52 0,-23.52 0,0 63.27,0 63.27,-23.52"/>
+<text text-anchor="middle" x="31.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="135.63,-23.52 81.64,-23.52 81.64,0 135.63,0 135.63,-23.52"/>
+<text text-anchor="middle" x="108.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="207.63,-23.52 153.63,-23.52 153.63,0 207.63,0 207.63,-23.52"/>
+<text text-anchor="middle" x="180.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="347.14,-23.52 226.12,-23.52 226.12,0 347.14,0 347.14,-23.52"/>
+<text text-anchor="middle" x="286.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="499.89,-23.52 365.38,-23.52 365.38,0 499.89,0 499.89,-23.52"/>
+<text text-anchor="middle" x="432.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="571.63,-23.52 517.63,-23.52 517.63,0 571.63,0 571.63,-23.52"/>
+<text text-anchor="middle" x="544.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="685.77,-23.52 589.5,-23.52 589.5,0 685.77,0 685.77,-23.52"/>
+<text text-anchor="middle" x="637.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">create_distance</span><span class="p">(</span><span class="n">factory</span><span class="p">,</span><span class="n">type_</span><span class="p">,</span><span class="n">dist</span><span class="p">)</span>
+<span class="c">!========================================================================================</span>
+<span class="c">!! Class constructor</span>
+<span class="w">        </span><span class="k">class</span><span class="p">(</span><span class="n">factory_distance</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">factory</span>
+<span class="c">!! A `factory_distance` object</span>
+<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">type_</span>
+<span class="c">!! A character string with the type of distance to be instantiated</span>
+<span class="w">        </span><span class="k">class</span><span class="p">(</span><span class="n">distance_base</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dist</span>
+<span class="c">!! An allocatable `distance_base` object</span>
+<span class="w">        </span><span class="k">select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">type_</span><span class="p">))</span>
+<span class="w">          </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="c">!write(*,*) &#39;Euclidean distance&#39;;</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">dist</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">dist</span><span class="p">);</span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">euclidean_distance</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dist</span><span class="p">);</span>
+<span class="w">          </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;manhattan&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!         !write(*,*) &#39;Manhattan distance allocated&#39;;</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">dist</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">dist</span><span class="p">);</span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">manhattan_distance</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dist</span><span class="p">);</span>
+<span class="w">          </span><span class="k">case </span><span class="n">default</span>
+<span class="w">            </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;ERROR: the requested distance is not defined&#39;</span>
+<span class="w">            </span><span class="k">stop</span>
+<span class="k">        end select</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">create_distance</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-12-07 06:16              </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

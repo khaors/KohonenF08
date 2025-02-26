@@ -1,0 +1,1059 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>kohonen_map_base_utilities &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>kohonen_map_base_utilities
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 1.6% of total for modules and submodules.">38 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/kohonen_map_base_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\kohonen_map_base_utilities.f90.html'>kohonen_map_base_utilities.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">kohonen_map_base_utilities</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#absints-0"
+         aria-expanded="false" aria-controls="absints-0">
+         <h4 class="card-header bg-primary text-white">Abstract Interfaces</h4>
+      </a>
+      <div id="absints-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/kohonen_map_base_utilities.html#interface-kohonen_map_constructor">kohonen_map_constructor</a>
+            <a class="list-group-item" href="../module/kohonen_map_base_utilities.html#interface-kohonen_map_destructor">kohonen_map_destructor</a>
+            <a class="list-group-item" href="../module/kohonen_map_base_utilities.html#interface-kohonen_map_function1">kohonen_map_function1</a>
+            <a class="list-group-item" href="../module/kohonen_map_base_utilities.html#interface-kohonen_map_function2">kohonen_map_function2</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/kohonen_map_base_utilities.html#type-kohonen_map_base">kohonen_map_base</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p>**<em>c</em> kohonen_map_base_utilities/kohonen_map_base
+ NAME
+   kohonen_map_base
+ PURPOSE
+   Abstract Class to represent a template for a kohonen map</p>
+<hr>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='kohonen_pattern_utilities.html'>kohonen_pattern_utilities</a></li>
+                  <li class="list-inline-item"><a href='precision_utilities.html'>precision_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_layer_parameters_utilities.html'>kohonen_layer_parameters_utilities</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+ -->
+<!-- Title: module~~kohonen_map_base_utilities~~UsesGraph Pages: 1 -->
+<svg id="modulekohonen_map_base_utilitiesUsesGraph" width="641pt" height="219pt"
+ viewBox="0.00 0.00 641.00 219.19" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~kohonen_map_base_utilities~~UsesGraph" class="graph" transform="scale(0.678939 0.678939) rotate(0) translate(4 318.84)">
+<title>module~~kohonen_map_base_utilities~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-318.84 940.12,-318.84 940.12,4 -4,4"/>
+<!-- module~kohonen_map_base_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node1" class="node">
+<title>module~kohonen_map_base_utilities</title>
+<polygon fill="none" stroke="black" points="936.12,-206.48 788.85,-206.48 788.85,-182.96 936.12,-182.96 936.12,-206.48"/>
+<text text-anchor="middle" x="862.48" y="-190.74" font-family="Helvetica,sans-Serif" font-size="10.50">kohonen_map_base_utilities</text>
+</g>
+<!-- module~kohonen_layer_parameters_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node2" class="node">
+<title>module~kohonen_layer_parameters_utilities</title>
+<g id="a_module~~kohonen_map_base_utilities~~UsesGraph_node2"><a xlink:href="../module/kohonen_layer_parameters_utilities.html" xlink:title="kohonen_layer_parameters_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="586.08,-206.48 405.06,-206.48 405.06,-182.96 586.08,-182.96 586.08,-206.48"/>
+<text text-anchor="middle" x="495.57" y="-190.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_parameters_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~kohonen_layer_parameters_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge1" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~kohonen_layer_parameters_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M686.46,-274.72C622.45,-281.89 554.54,-239.39 519.88,-213.55"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="522.29,-210.98 512.22,-207.68 518.03,-216.54 522.29,-210.98"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M844.91,-206.86C815.31,-227.47 750.62,-267.75 688.46,-274.72"/>
+</g>
+<!-- module~kohonen_pattern_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node3" class="node">
+<title>module~kohonen_pattern_utilities</title>
+<g id="a_module~~kohonen_map_base_utilities~~UsesGraph_node3"><a xlink:href="../module/kohonen_pattern_utilities.html" xlink:title="kohonen_pattern_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="752.85,-145.48 622.08,-145.48 622.08,-121.96 752.85,-121.96 752.85,-145.48"/>
+<text text-anchor="middle" x="687.46" y="-129.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~kohonen_pattern_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge2" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~kohonen_pattern_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M826.89,-182.52C800.13,-173.09 762.86,-159.95 733.73,-149.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="735.02,-146.42 724.43,-146.4 732.7,-153.02 735.02,-146.42"/>
+</g>
+<!-- module~precision_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node4" class="node">
+<title>module~precision_utilities</title>
+<g id="a_module~~kohonen_map_base_utilities~~UsesGraph_node4"><a xlink:href="../module/precision_utilities.html" xlink:title="precision_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="214.29,-104.48 121.77,-104.48 121.77,-80.96 214.29,-80.96 214.29,-104.48"/>
+<text text-anchor="middle" x="168.03" y="-88.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge3" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M686.46,-274.72C493.63,-296.33 413.03,-361.4 250.29,-255.72 201.21,-223.85 180.62,-152.86 172.98,-115.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="176.46,-115.54 171.15,-106.37 169.59,-116.85 176.46,-115.54"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge6" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M404.83,-202.57C356.89,-203.19 298.08,-198.03 250.29,-175.72 221.5,-162.28 197.37,-133.95 183.07,-114.14"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="185.95,-112.16 177.38,-105.93 180.2,-116.14 185.95,-112.16"/>
+</g>
+<!-- error_handling -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node5" class="node">
+<title>error_handling</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="350.31,-166.48 269.04,-166.48 269.04,-142.96 350.31,-142.96 350.31,-166.48"/>
+<text text-anchor="middle" x="309.67" y="-150.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">error_handling</text>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;error_handling -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge4" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M438.4,-182.5C413.96,-177.18 385.53,-171 361.7,-165.82"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="362.76,-162.47 352.24,-163.76 361.27,-169.31 362.76,-162.47"/>
+</g>
+<!-- module~constants_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node7" class="node">
+<title>module~constants_utilities</title>
+<g id="a_module~~kohonen_map_base_utilities~~UsesGraph_node7"><a xlink:href="../module/constants_utilities.html" xlink:title="constants_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="357.43,-124.48 261.91,-124.48 261.91,-100.96 357.43,-100.96 357.43,-124.48"/>
+<text text-anchor="middle" x="309.67" y="-108.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge5" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M439.41,-182.46C427.64,-178.66 415.59,-173.82 405.06,-167.72 386.01,-156.69 387.81,-145.24 369.06,-133.72 366.78,-132.31 364.38,-130.99 361.93,-129.73"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="363.49,-126.6 352.94,-125.61 360.57,-132.96 363.49,-126.6"/>
+</g>
+<!-- tomlf -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node9" class="node">
+<title>tomlf</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="336.67,-246.48 282.67,-246.48 282.67,-222.96 336.67,-222.96 336.67,-246.48"/>
+<text text-anchor="middle" x="309.67" y="-230.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tomlf</text>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;tomlf -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge7" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;tomlf</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M438.4,-206.94C409.09,-213.31 374.03,-220.94 348.06,-226.59"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="347.33,-223.16 338.31,-228.71 348.82,-230 347.33,-223.16"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge11" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M663.85,-121.54C613,-94.94 485,-32.41 369.06,-11.72 317.09,-2.45 299.07,8.44 250.29,-11.72 221.29,-23.7 197.21,-51.61 182.97,-71.31"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="180.13,-69.27 177.32,-79.49 185.88,-73.25 180.13,-69.27"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;error_handling -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge8" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M494.57,-153.72C449.77,-153.64 398.84,-153.95 361.95,-154.24"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="361.98,-150.74 352.01,-154.33 362.03,-157.74 361.98,-150.74"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge9" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M494.57,-153.72C446.1,-153.64 392.14,-139.92 355.27,-128.37"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="356.44,-125.07 345.85,-125.34 354.29,-131.73 356.44,-125.07"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M621.61,-144.01C584.99,-148.94 538.34,-153.79 496.57,-153.72"/>
+</g>
+<!-- module~kohonen_prototype_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node8" class="node">
+<title>module~kohonen_prototype_utilities</title>
+<g id="a_module~~kohonen_map_base_utilities~~UsesGraph_node8"><a xlink:href="../module/kohonen_prototype_utilities.html" xlink:title="kohonen_prototype_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="566.58,-124.48 424.56,-124.48 424.56,-100.96 566.58,-100.96 566.58,-124.48"/>
+<text text-anchor="middle" x="495.57" y="-108.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~kohonen_prototype_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge10" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~kohonen_prototype_utilities</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M621.65,-126.55C607.6,-125 592.58,-123.34 577.99,-121.72"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="578.78,-118.29 568.45,-120.67 578.01,-125.25 578.78,-118.29"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node6" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~kohonen_map_base_utilities~~UsesGraph_node6"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="85.77,-104.48 0,-104.48 0,-80.96 85.77,-80.96 85.77,-104.48"/>
+<text text-anchor="middle" x="42.88" y="-88.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~precision_utilities&#45;&gt;iso_fortran_env -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge12" class="edge">
+<title>module~precision_utilities&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M121.53,-92.72C113.61,-92.72 105.31,-92.72 97.21,-92.72"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="97.45,-89.22 87.45,-92.72 97.45,-96.22 97.45,-89.22"/>
+</g>
+<!-- module~constants_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge13" class="edge">
+<title>module~constants_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M261.79,-106C250.26,-104.35 237.79,-102.57 225.85,-100.86"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="226.5,-97.41 216.11,-99.46 225.51,-104.34 226.5,-97.41"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge17" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M433.86,-100.48C413.37,-96.9 390.31,-93.48 369.06,-91.72 316.45,-87.35 303.08,-91.39 250.29,-91.72 242.43,-91.77 234.14,-91.84 225.98,-91.93"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="226.06,-88.43 216.1,-92.04 226.14,-95.43 226.06,-88.43"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;error_handling -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge14" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M441.38,-124.87C416.27,-130.6 386.43,-137.42 361.61,-143.08"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="361.04,-139.62 352.07,-145.26 362.6,-146.45 361.04,-139.62"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge15" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M424.26,-112.72C406.13,-112.72 386.81,-112.72 369.35,-112.72"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="369.39,-109.22 359.39,-112.72 369.39,-116.22 369.39,-109.22"/>
+</g>
+<!-- module~distance_base_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_node10" class="node">
+<title>module~distance_base_utilities</title>
+<g id="a_module~~kohonen_map_base_utilities~~UsesGraph_node10"><a xlink:href="../module/distance_base_utilities.html" xlink:title="distance_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="369.06,-44.48 250.29,-44.48 250.29,-20.96 369.06,-20.96 369.06,-44.48"/>
+<text text-anchor="middle" x="309.67" y="-28.74" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">distance_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge16" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M466.64,-100.57C435.23,-86.9 384.02,-64.63 348.91,-49.35"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="350.52,-46.24 339.95,-45.46 347.73,-52.65 350.52,-46.24"/>
+</g>
+<!-- module~distance_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsesGraph_edge18" class="edge">
+<title>module~distance_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M280.42,-44.86C259.5,-53.85 230.76,-66.19 207.72,-76.1"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="206.44,-72.83 198.64,-80 209.21,-79.27 206.44,-72.83"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panmodulekohonen_map_base_utilitiesUsesGraph = svgPanZoom('#modulekohonen_map_base_utilitiesUsesGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="485pt" height="32pt"
+ viewBox="0.00 0.00 485.13 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 481.13,-27.52 481.13,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-23.52 0,-23.52 0,0 54,0 54,-23.52"/>
+<text text-anchor="middle" x="27" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="137.76,-23.52 72.24,-23.52 72.24,0 137.76,0 137.76,-23.52"/>
+<text text-anchor="middle" x="105" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="218.63,-23.52 155.37,-23.52 155.37,0 218.63,0 218.63,-23.52"/>
+<text text-anchor="middle" x="187" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="291,-23.52 237,-23.52 237,0 291,0 291,-23.52"/>
+<text text-anchor="middle" x="264" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="363,-23.52 309,-23.52 309,0 363,0 363,-23.52"/>
+<text text-anchor="middle" x="336" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="477.13,-23.52 380.87,-23.52 380.87,0 477.13,0 477.13,-23.52"/>
+<text text-anchor="middle" x="429" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+          <div class="card">
+      <h3 class="card-header card-title bg-light">Used by</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+ -->
+<!-- Title: module~~kohonen_map_base_utilities~~UsedByGraph Pages: 1 -->
+<svg id="modulekohonen_map_base_utilitiesUsedByGraph" width="338pt" height="32pt"
+ viewBox="0.00 0.00 337.79 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~kohonen_map_base_utilities~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>module~~kohonen_map_base_utilities~~UsedByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 333.79,-27.52 333.79,4 -4,4"/>
+<!-- module~kohonen_map_base_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsedByGraph_node1" class="node">
+<title>module~kohonen_map_base_utilities</title>
+<polygon fill="none" stroke="black" points="147.27,-23.52 0,-23.52 0,0 147.27,0 147.27,-23.52"/>
+<text text-anchor="middle" x="73.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">kohonen_map_base_utilities</text>
+</g>
+<!-- module~self_organized_map_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsedByGraph_node2" class="node">
+<title>module~self_organized_map_utilities</title>
+<g id="a_module~~kohonen_map_base_utilities~~UsedByGraph_node2"><a xlink:href="../module/self_organized_map_utilities.html" xlink:title="self_organized_map_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="329.79,-23.52 183.27,-23.52 183.27,0 329.79,0 329.79,-23.52"/>
+<text text-anchor="middle" x="256.53" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organized_map_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~kohonen_map_base_utilities -->
+<g id="module~~kohonen_map_base_utilities~~UsedByGraph_edge1" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~kohonen_map_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M183,-11.76C175.05,-11.76 166.9,-11.76 158.83,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="158.99,-8.26 148.99,-11.76 158.99,-15.26 158.99,-8.26"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="485pt" height="32pt"
+ viewBox="0.00 0.00 485.13 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 481.13,-27.52 481.13,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-23.52 0,-23.52 0,0 54,0 54,-23.52"/>
+<text text-anchor="middle" x="27" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="137.76,-23.52 72.24,-23.52 72.24,0 137.76,0 137.76,-23.52"/>
+<text text-anchor="middle" x="105" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="218.63,-23.52 155.37,-23.52 155.37,0 218.63,0 218.63,-23.52"/>
+<text text-anchor="middle" x="187" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="291,-23.52 237,-23.52 237,0 291,0 291,-23.52"/>
+<text text-anchor="middle" x="264" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="363,-23.52 309,-23.52 309,0 363,0 363,-23.52"/>
+<text text-anchor="middle" x="336" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="477.13,-23.52 380.87,-23.52 380.87,0 477.13,0 477.13,-23.52"/>
+<text text-anchor="middle" x="429" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      <br>
+
+
+
+
+
+        <section>
+          <h2>Abstract Interfaces</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-kohonen_map_constructor"></span><h3>abstract interface
+        
+    </h3></div>
+      <div class="card-body">
+        
+        <p><strong><em>f</em> kohonen_map_base_utilities/kohonen_map_constructor
+ NAME
+   kohonen_map_constructor
+ PURPOSE
+   Template function for the constructor of a kohonen map
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> kohonen_map_base_utilities/kohonen_map_destructor
+ NAME
+   kohonen_map_destructor
+ PURPOSE
+   Template function for the destructor of a kohonen map
+ SYNOPSIS
+========================================================================================
+<strong><em>f</em> kohonen_map_base_utilities/kohonen_map_function1
+ NAME
+   kohonen_map_function1
+ PURPOSE
+   Template function for the training function of a kohonen map
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> kohonen_map_base_utilities/kohonen_map_function2
+ NAME
+   kohonen_map_function2
+ PURPOSE
+   Template function for the prediction function of a kohonen map
+ SYNOPSIS
+========================================================================================</p>
+      </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+            <h3>
+    public  subroutine kohonen_map_constructor(kohonen_map, training_parameters)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~19"></span>
+              class(<a href='..\type\kohonen_map_base.html'>kohonen_map_base</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-training_parameters~2"></span>
+              type(<a href='..\type\kohonen_layer_parameters.html'>kohonen_layer_parameters</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>training_parameters</strong></td>
+            <td>
+                <hr>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+      </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-kohonen_map_destructor"></span><h3>abstract interface
+        
+    </h3></div>
+      <div class="card-body">
+        
+        <p><strong><em>f</em> kohonen_map_base_utilities/kohonen_map_constructor
+ NAME
+   kohonen_map_constructor
+ PURPOSE
+   Template function for the constructor of a kohonen map
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> kohonen_map_base_utilities/kohonen_map_destructor
+ NAME
+   kohonen_map_destructor
+ PURPOSE
+   Template function for the destructor of a kohonen map
+ SYNOPSIS
+========================================================================================
+<strong><em>f</em> kohonen_map_base_utilities/kohonen_map_function1
+ NAME
+   kohonen_map_function1
+ PURPOSE
+   Template function for the training function of a kohonen map
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> kohonen_map_base_utilities/kohonen_map_function2
+ NAME
+   kohonen_map_function2
+ PURPOSE
+   Template function for the prediction function of a kohonen map
+ SYNOPSIS
+========================================================================================</p>
+      </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+            <h3>
+    public  subroutine kohonen_map_destructor(kohonen_map)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~20"></span>
+              class(<a href='..\type\kohonen_map_base.html'>kohonen_map_base</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+                <hr>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+      </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-kohonen_map_function1"></span><h3>abstract interface
+        
+    </h3></div>
+      <div class="card-body">
+        
+        <p><strong><em>f</em> kohonen_map_base_utilities/kohonen_map_constructor
+ NAME
+   kohonen_map_constructor
+ PURPOSE
+   Template function for the constructor of a kohonen map
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> kohonen_map_base_utilities/kohonen_map_destructor
+ NAME
+   kohonen_map_destructor
+ PURPOSE
+   Template function for the destructor of a kohonen map
+ SYNOPSIS
+========================================================================================
+<strong><em>f</em> kohonen_map_base_utilities/kohonen_map_function1
+ NAME
+   kohonen_map_function1
+ PURPOSE
+   Template function for the training function of a kohonen map
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> kohonen_map_base_utilities/kohonen_map_function2
+ NAME
+   kohonen_map_function2
+ PURPOSE
+   Template function for the prediction function of a kohonen map
+ SYNOPSIS
+========================================================================================</p>
+      </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+            <h3>
+    public  subroutine kohonen_map_function1(kohonen_map, input_data)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~21"></span>
+              class(<a href='..\type\kohonen_map_base.html'>kohonen_map_base</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_data~7"></span>
+              type(<a href='..\type\kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+                <hr>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+      </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-kohonen_map_function2"></span><h3>abstract interface
+        
+    </h3></div>
+      <div class="card-body">
+        
+        <p><strong><em>f</em> kohonen_map_base_utilities/kohonen_map_constructor
+ NAME
+   kohonen_map_constructor
+ PURPOSE
+   Template function for the constructor of a kohonen map
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> kohonen_map_base_utilities/kohonen_map_destructor
+ NAME
+   kohonen_map_destructor
+ PURPOSE
+   Template function for the destructor of a kohonen map
+ SYNOPSIS
+========================================================================================
+<strong><em>f</em> kohonen_map_base_utilities/kohonen_map_function1
+ NAME
+   kohonen_map_function1
+ PURPOSE
+   Template function for the training function of a kohonen map
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> kohonen_map_base_utilities/kohonen_map_function2
+ NAME
+   kohonen_map_function2
+ PURPOSE
+   Template function for the prediction function of a kohonen map
+ SYNOPSIS
+========================================================================================</p>
+      </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+            <h3>
+    public  subroutine kohonen_map_function2(kohonen_map, input_data, map_output)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~22"></span>
+              class(<a href='..\type\kohonen_map_base.html'>kohonen_map_base</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_data~8"></span>
+              type(<a href='..\type\kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-map_output~2"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>map_output</strong></td>
+            <td>
+                <hr>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+      </li>
+    </ul>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-kohonen_map_base"></span>
+      <h3>
+        type, public, abstract&nbsp;::&nbsp;
+        <a href='..\type\kohonen_map_base.html'>kohonen_map_base</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>  procedure(<a href='..\interface\kohonen_map_constructor.html'>kohonen_map_constructor</a>), public, deferred ::
+  <strong><a href='..\type\kohonen_map_base.html#boundprocedure-create~6'>create</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure(<a href='..\interface\kohonen_map_destructor.html'>kohonen_map_destructor</a>), public, deferred ::
+  <strong><a href='..\type\kohonen_map_base.html#boundprocedure-destroy~6'>destroy</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure(<a href='..\interface\kohonen_map_function1.html'>kohonen_map_function1</a>), public, deferred ::
+  <strong><a href='..\type\kohonen_map_base.html#boundprocedure-train~2'>train</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure(<a href='..\interface\kohonen_map_function2.html'>kohonen_map_function2</a>), public, deferred ::
+  <strong><a href='..\type\kohonen_map_base.html#boundprocedure-predict~2'>predict</a></strong></td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-12-07 06:16              </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

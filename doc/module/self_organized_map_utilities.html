@@ -1,0 +1,2892 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>self_organized_map_utilities &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>self_organized_map_utilities
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="49.1% of total for modules and submodules.">1139 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/self_organized_map_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\self_organized_map_utilities.f90.html'>self_organized_map_utilities.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">self_organized_map_utilities</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#type-self_organized_map">self_organized_map</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-position2index">position2index</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-calculate_sigma">calculate_sigma</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-create_som">create_som</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-destroy_som">destroy_som</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-train_som_data">train_som_data</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-predict_som">predict_som</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-print_som">print_som</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-get_count_som">get_count_som</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-query_som">query_som</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-read_som">read_som</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-index2position">index2position</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-calculate_distance_matrix">calculate_distance_matrix</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-calculate_coordinates">calculate_coordinates</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-find_best_match_unit">find_best_match_unit</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-update_weights">update_weights</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-calculate_distance_between_prototypes">calculate_distance_between_prototypes</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-find_bmu_grid">find_bmu_grid</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-calculate_u_matrix">calculate_u_matrix</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-calculate_u_matrix_hexagonal">calculate_u_matrix_hexagonal</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-calculate_u_matrix_rectangular">calculate_u_matrix_rectangular</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-get_u_matrix_som">get_u_matrix_som</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-get_prototypes">get_prototypes</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-external_train_map">external_train_map</a>
+            <a class="list-group-item" href="../module/self_organized_map_utilities.html#proc-external_predict_map">external_predict_map</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p>This module defines a class for simple self_organized_map (one kohonen layer) 
+<strong><em>c</em> self_organized_map_utilities/self_organized_map
+ NAME
+   self_organized_map
+ PURPOSE
+</strong><em>f</em> self_organized_map_utilities/train_som_data
+ NAME
+   train_som_data
+ PURPOSE
+   Training function for self_organized_map </p>
+<p><strong><em>f</em> self_organized_map_utilities/calculate_u_matrix
+ NAME
+   calculate_u_matrix
+ PURPOSE
+    Subroutine to calculate  the u_matrix
+ SYNOPSIS
+========================================================================================
+</strong><em>f</em> self_organized_map_utilities/external_train_map
+ NAME
+   external_train_map
+ PURPOSE
+ SYNOPSIS
+========================================================================================</p>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='distance_base_utilities.html'>distance_base_utilities</a></li>
+                  <li class="list-inline-item"><a href='precision_utilities.html'>precision_utilities</a></li>
+                  <li class="list-inline-item"><a href='factory_distance_utilities.html'>factory_distance_utilities</a></li>
+                  <li class="list-inline-item"><a href='rkiss05_generator_utilities.html'>rkiss05_generator_utilities</a></li>
+                  <li class="list-inline-item"><a href='random_generator_base_utilities.html'>random_generator_base_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_prototype_utilities.html'>kohonen_prototype_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_map_base_utilities.html'>kohonen_map_base_utilities</a></li>
+                  <li class="list-inline-item"><a href='quicksort_utilities.html'>quicksort_utilities</a></li>
+                  <li class="list-inline-item">error_handling</li>
+                  <li class="list-inline-item"><a href='constants_utilities.html'>constants_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_layer_parameters_utilities.html'>kohonen_layer_parameters_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_pattern_utilities.html'>kohonen_pattern_utilities</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+ -->
+<!-- Title: module~~self_organized_map_utilities~~UsesGraph Pages: 1 -->
+<svg id="moduleself_organized_map_utilitiesUsesGraph" width="641pt" height="282pt"
+ viewBox="0.00 0.00 641.00 282.45" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~self_organized_map_utilities~~UsesGraph" class="graph" transform="scale(0.550621 0.550621) rotate(0) translate(4 508.97)">
+<title>module~~self_organized_map_utilities~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-508.97 1160.14,-508.97 1160.14,4 -4,4"/>
+<!-- module~self_organized_map_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node1" class="node">
+<title>module~self_organized_map_utilities</title>
+<polygon fill="none" stroke="black" points="1156.14,-418.52 1009.62,-418.52 1009.62,-395 1156.14,-395 1156.14,-418.52"/>
+<text text-anchor="middle" x="1082.88" y="-402.78" font-family="Helvetica,sans-Serif" font-size="10.50">self_organized_map_utilities</text>
+</g>
+<!-- error_handling -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node2" class="node">
+<title>error_handling</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="350.31,-377.52 269.04,-377.52 269.04,-354 350.31,-354 350.31,-377.52"/>
+<text text-anchor="middle" x="309.67" y="-361.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">error_handling</text>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;error_handling -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge1" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-406.76C581.38,-412.33 436.62,-389.8 361.59,-375.93"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="362.56,-372.55 352.09,-374.14 361.27,-379.43 362.56,-372.55"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1009.33,-405.41C933.84,-404.32 812.21,-403.45 707.21,-406.76"/>
+</g>
+<!-- module~constants_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node3" class="node">
+<title>module~constants_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node3"><a xlink:href="../module/constants_utilities.html" xlink:title="constants_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="357.43,-297.52 261.91,-297.52 261.91,-274 357.43,-274 357.43,-297.52"/>
+<text text-anchor="middle" x="309.67" y="-281.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge2" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-251.76C651.45,-251.76 639.52,-266.81 586.08,-272.76 511.46,-281.06 424.9,-284.07 369.04,-285.16"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="369.05,-281.66 359.11,-285.33 369.17,-288.65 369.05,-281.66"/>
+</g>
+<!-- module~distance_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node4" class="node">
+<title>module~distance_base_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node4"><a xlink:href="../module/distance_base_utilities.html" xlink:title="distance_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="369.06,-181.52 250.29,-181.52 250.29,-158 369.06,-158 369.06,-181.52"/>
+<text text-anchor="middle" x="309.67" y="-165.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">distance_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge3" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-51.76C644.97,-22.81 465.64,-42.52 405.06,-70.76 386.27,-79.52 349.22,-122.36 327.55,-148.74"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="324.88,-146.48 321.28,-156.44 330.31,-150.9 324.88,-146.48"/>
+</g>
+<!-- module~factory_distance_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node5" class="node">
+<title>module~factory_distance_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node5"><a xlink:href="../module/factory_distance_utilities.html" xlink:title="factory_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="770.1,-183.52 642.33,-183.52 642.33,-160 770.1,-160 770.1,-183.52"/>
+<text text-anchor="middle" x="706.21" y="-167.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~factory_distance_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge4" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~factory_distance_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-251.76C851.14,-225.52 792.87,-202.35 753.21,-187.79"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="754.56,-184.56 743.97,-184.44 752.17,-191.14 754.56,-184.56"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node6" class="node">
+<title>module~kohonen_layer_parameters_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node6"><a xlink:href="../module/kohonen_layer_parameters_utilities.html" xlink:title="kohonen_layer_parameters_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="586.08,-457.52 405.06,-457.52 405.06,-434 586.08,-434 586.08,-457.52"/>
+<text text-anchor="middle" x="495.57" y="-441.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_parameters_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~kohonen_layer_parameters_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge5" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~kohonen_layer_parameters_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-406.76C652.95,-409.11 594.48,-420.85 552.76,-430.84"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="552.08,-427.41 543.2,-433.18 553.74,-434.21 552.08,-427.41"/>
+</g>
+<!-- module~kohonen_map_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node7" class="node">
+<title>module~kohonen_map_base_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node7"><a xlink:href="../module/kohonen_map_base_utilities.html" xlink:title="kohonen_map_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="973.62,-378.52 826.35,-378.52 826.35,-355 973.62,-355 973.62,-378.52"/>
+<text text-anchor="middle" x="899.98" y="-362.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_map_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~kohonen_map_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge6" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~kohonen_map_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1026.62,-394.54C1007.95,-390.41 986.9,-385.76 967.45,-381.46"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="968.21,-378.04 957.69,-379.3 966.7,-384.88 968.21,-378.04"/>
+</g>
+<!-- module~kohonen_pattern_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node8" class="node">
+<title>module~kohonen_pattern_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node8"><a xlink:href="../module/kohonen_pattern_utilities.html" xlink:title="kohonen_pattern_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="771.6,-303.52 640.83,-303.52 640.83,-280 771.6,-280 771.6,-303.52"/>
+<text text-anchor="middle" x="706.21" y="-287.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~kohonen_pattern_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge7" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~kohonen_pattern_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-251.76C886.98,-245.18 814.19,-262.71 761.84,-276.62"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="761.22,-273.16 752.47,-279.13 763.03,-279.92 761.22,-273.16"/>
+</g>
+<!-- module~kohonen_prototype_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node9" class="node">
+<title>module~kohonen_prototype_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node9"><a xlink:href="../module/kohonen_prototype_utilities.html" xlink:title="kohonen_prototype_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="566.58,-263.52 424.56,-263.52 424.56,-240 566.58,-240 566.58,-263.52"/>
+<text text-anchor="middle" x="495.57" y="-247.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~kohonen_prototype_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge8" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~kohonen_prototype_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-251.76C663.34,-251.76 616.75,-251.76 578.23,-251.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="578.58,-248.26 568.58,-251.76 578.58,-255.26 578.58,-248.26"/>
+</g>
+<!-- module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node10" class="node">
+<title>module~precision_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node10"><a xlink:href="../module/precision_utilities.html" xlink:title="precision_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="214.29,-223.52 121.77,-223.52 121.77,-200 214.29,-200 214.29,-223.52"/>
+<text text-anchor="middle" x="168.03" y="-207.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge9" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-251.76C651.45,-251.19 639.45,-237.29 586.08,-230.76 464.29,-215.87 433.37,-211.76 310.67,-211.76"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-251.76C824.26,-210.77 792.45,-251.97 707.21,-251.76"/>
+</g>
+<!-- module~quicksort_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node11" class="node">
+<title>module~quicksort_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node11"><a xlink:href="../module/quicksort_utilities.html" xlink:title="quicksort_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="541.83,-23.52 449.31,-23.52 449.31,0 541.83,0 541.83,-23.52"/>
+<text text-anchor="middle" x="495.57" y="-7.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">quicksort_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~quicksort_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge10" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~quicksort_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-51.76C657.15,-28.66 596.83,-18.9 553.42,-14.77"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="553.99,-11.31 543.72,-13.93 553.38,-18.28 553.99,-11.31"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-251.76C791.01,-192.54 818.21,-105.1 707.21,-51.76"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1071.3,-394.77C1045.21,-365.94 974.6,-292.13 900.98,-251.76"/>
+</g>
+<!-- module~random_generator_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node12" class="node">
+<title>module~random_generator_base_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node12"><a xlink:href="../module/random_generator_base_utilities.html" xlink:title="random_generator_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="790.35,-498.52 622.08,-498.52 622.08,-475 790.35,-475 790.35,-498.52"/>
+<text text-anchor="middle" x="706.21" y="-482.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_generator_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~random_generator_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge11" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~random_generator_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1065.68,-418.95C1045.38,-433.49 1008.95,-457.13 973.62,-467.76 918.41,-484.37 853.98,-489.32 802.31,-490.03"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="802.3,-486.53 792.33,-490.11 802.36,-493.53 802.3,-486.53"/>
+</g>
+<!-- module~rkiss05_generator_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node13" class="node">
+<title>module~rkiss05_generator_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node13"><a xlink:href="../module/rkiss05_generator_utilities.html" xlink:title="rkiss05_generator_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="967.99,-458.52 831.97,-458.52 831.97,-435 967.99,-435 967.99,-458.52"/>
+<text text-anchor="middle" x="899.98" y="-442.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organized_map_utilities&#45;&gt;module~rkiss05_generator_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge12" class="edge">
+<title>module~self_organized_map_utilities&#45;&gt;module~rkiss05_generator_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1026.62,-418.98C1007.95,-423.11 986.9,-427.76 967.45,-432.06"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="966.7,-428.64 957.69,-434.22 968.21,-435.48 966.7,-428.64"/>
+</g>
+<!-- module~constants_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge13" class="edge">
+<title>module~constants_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff7f00" stroke-dasharray="5,2" d="M285.62,-273.54C262.87,-261.49 227.89,-242.95 202.17,-229.32"/>
+<polygon fill="#ff7f00" stroke="#ff7f00" points="203.94,-226.3 193.46,-224.71 200.66,-232.48 203.94,-226.3"/>
+</g>
+<!-- module~distance_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge14" class="edge">
+<title>module~distance_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M268.28,-181.91C253.23,-186.44 235.94,-191.63 220.06,-196.41"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="219.35,-192.97 210.78,-199.2 221.36,-199.67 219.35,-192.97"/>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge15" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M647.61,-159.52C628.17,-155.94 606.27,-152.53 586.08,-150.76 505.93,-143.75 485.12,-142.78 405.06,-150.76 394.57,-151.81 383.51,-153.49 372.81,-155.43"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="372.48,-151.93 363.32,-157.25 373.8,-158.81 372.48,-151.93"/>
+</g>
+<!-- module~euclidean_distance_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node15" class="node">
+<title>module~euclidean_distance_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node15"><a xlink:href="../module/euclidean_distance_utilities.html" xlink:title="euclidean_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="566.2,-183.52 424.93,-183.52 424.93,-160 566.2,-160 566.2,-183.52"/>
+<text text-anchor="middle" x="495.57" y="-167.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">euclidean_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~euclidean_distance_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge16" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~euclidean_distance_utilities</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M642.05,-171.76C621.82,-171.76 599.12,-171.76 577.79,-171.76"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="577.95,-168.26 567.95,-171.76 577.95,-175.26 577.95,-168.26"/>
+</g>
+<!-- module~manhattan_distance_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node16" class="node">
+<title>module~manhattan_distance_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node16"><a xlink:href="../module/manhattan_distance_utilities.html" xlink:title="manhattan_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="568.83,-103.52 422.31,-103.52 422.31,-80 568.83,-80 568.83,-103.52"/>
+<text text-anchor="middle" x="495.57" y="-87.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">manhattan_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~manhattan_distance_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge17" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~manhattan_distance_utilities</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M681,-159.55C657.23,-147.86 619.73,-130.2 586.08,-117.76 575.94,-114.01 565,-110.45 554.36,-107.23"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="555.47,-103.91 544.89,-104.44 553.49,-110.62 555.47,-103.91"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;error_handling -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge18" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M440.29,-433.57C428.35,-429.91 416.01,-425.35 405.06,-419.76 387.01,-410.55 386.45,-402.18 369.06,-391.76 363.71,-388.55 357.89,-385.5 352.06,-382.68"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="353.6,-379.54 343.06,-378.54 350.67,-385.9 353.6,-379.54"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge19" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M480.75,-433.73C449.2,-406.28 371.64,-338.8 333.12,-305.29"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="335.64,-302.84 325.8,-298.92 331.05,-308.12 335.64,-302.84"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge20" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M419.96,-433.52C377.8,-425.83 329.8,-415.54 310.67,-405.76"/>
+</g>
+<!-- tomlf -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node18" class="node">
+<title>tomlf</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="336.67,-457.52 282.67,-457.52 282.67,-434 336.67,-434 336.67,-457.52"/>
+<text text-anchor="middle" x="309.67" y="-441.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tomlf</text>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;tomlf -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge21" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;tomlf</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M404.78,-445.76C384.82,-445.76 364.73,-445.76 348.27,-445.76"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="348.49,-442.26 338.49,-445.76 348.49,-449.26 348.49,-442.26"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~kohonen_layer_parameters_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge22" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~kohonen_layer_parameters_utilities</title>
+<path fill="none" stroke="#00ff7f" stroke-dasharray="5,2" d="M705.21,-367.76C638.91,-374.02 567.4,-407.15 527.68,-428.17"/>
+<polygon fill="#00ff7f" stroke="#00ff7f" points="526.06,-425.07 518.92,-432.9 529.39,-431.23 526.06,-425.07"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~kohonen_pattern_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge23" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~kohonen_pattern_utilities</title>
+<path fill="none" stroke="#00ff7f" stroke-dasharray="5,2" d="M867.75,-354.54C835.43,-341.9 784.77,-322.09 749.02,-308.11"/>
+<polygon fill="#00ff7f" stroke="#00ff7f" points="750.44,-304.91 739.85,-304.52 747.89,-311.42 750.44,-304.91"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge24" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff7f" stroke-dasharray="5,2" d="M308.67,-405.76C284.38,-393.33 270.71,-404.86 250.29,-386.76 203.9,-345.63 182.11,-272.5 173.6,-235.14"/>
+<polygon fill="#00ff7f" stroke="#00ff7f" points="177.04,-234.47 171.53,-225.42 170.19,-235.93 177.04,-234.47"/>
+<path fill="none" stroke="#00ff7f" stroke-dasharray="5,2" d="M705.21,-367.76C617.52,-376.04 389.1,-445.87 310.67,-405.76"/>
+<path fill="none" stroke="#00ff7f" stroke-dasharray="5,2" d="M826.28,-362.72C790.3,-361.84 746.31,-362.45 707.21,-367.76"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;error_handling -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge25" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M494.57,-329.76C449.01,-333.34 398.08,-343.83 361.39,-352.57"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="360.85,-349.1 351.96,-354.86 362.5,-355.9 360.85,-349.1"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge26" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M654.57,-303.97C612.56,-313.37 551.08,-325.47 496.57,-329.76"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M494.57,-329.76C442.89,-333.82 385,-316.13 348.22,-301.98"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="349.96,-298.91 339.38,-298.47 347.38,-305.41 349.96,-298.91"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~kohonen_prototype_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge27" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~kohonen_prototype_utilities</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M641.48,-279.54C619.34,-275.3 594.31,-270.5 571.35,-266.1"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="572.24,-262.7 561.76,-264.26 570.92,-269.58 572.24,-262.7"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge28" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M494.57,-329.76C385.86,-338.31 347.09,-356.97 250.29,-306.76 218.86,-290.45 194.48,-256.34 180.94,-233.75"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="184.1,-232.23 176.09,-225.31 178.04,-235.72 184.1,-232.23"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;error_handling -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge29" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#007fff" stroke-dasharray="5,2" d="M474.89,-263.96C442.4,-284.1 377.38,-324.41 339.64,-347.81"/>
+<polygon fill="#007fff" stroke="#007fff" points="338.16,-344.61 331.5,-352.85 341.84,-350.56 338.16,-344.61"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge30" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#007fff" stroke-dasharray="5,2" d="M428.44,-263.99C408.99,-267.58 387.87,-271.49 368.95,-274.99"/>
+<polygon fill="#007fff" stroke="#007fff" points="368.48,-271.51 359.28,-276.77 369.75,-278.4 368.48,-271.51"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge31" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#007fff" stroke-dasharray="5,2" d="M467.44,-239.66C435.93,-225.61 383.76,-202.35 348.33,-186.55"/>
+<polygon fill="#007fff" stroke="#007fff" points="349.86,-183.4 339.3,-182.53 347.01,-189.79 349.86,-183.4"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge32" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#007fff" stroke-dasharray="5,2" d="M449.1,-239.54C403.75,-227.78 337.14,-211.76 310.67,-211.76"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node14" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node14"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="85.77,-223.52 0,-223.52 0,-200 85.77,-200 85.77,-223.52"/>
+<text text-anchor="middle" x="42.88" y="-207.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~precision_utilities&#45;&gt;iso_fortran_env -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge33" class="edge">
+<title>module~precision_utilities&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M121.53,-211.76C113.61,-211.76 105.31,-211.76 97.21,-211.76"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="97.45,-208.26 87.45,-211.76 97.45,-215.26 97.45,-208.26"/>
+</g>
+<!-- module~quicksort_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge34" class="edge">
+<title>module~quicksort_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M448.95,-8.09C396.08,-6.24 308.75,-10.86 250.29,-53.76 204.69,-87.22 182.72,-153.82 173.93,-188.91"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="170.57,-187.89 171.7,-198.43 177.39,-189.49 170.57,-187.89"/>
+</g>
+<!-- module~sort_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_node17" class="node">
+<title>module~sort_base_utilities</title>
+<g id="a_module~~self_organized_map_utilities~~UsesGraph_node17"><a xlink:href="../module/sort_base_utilities.html" xlink:title="sort_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="358.18,-86.52 261.16,-86.52 261.16,-63 358.18,-63 358.18,-86.52"/>
+<text text-anchor="middle" x="309.67" y="-70.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~quicksort_utilities&#45;&gt;module~sort_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge35" class="edge">
+<title>module~quicksort_utilities&#45;&gt;module~sort_base_utilities</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M449.7,-23.93C435.35,-28.05 419.46,-32.86 405.06,-37.76 386.88,-43.95 367.06,-51.58 350.29,-58.31"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="349.12,-55 341.16,-62 351.74,-61.49 349.12,-55"/>
+</g>
+<!-- module~random_generator_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge36" class="edge">
+<title>module~random_generator_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M621.67,-484.95C583.5,-484.59 537.73,-484.81 496.57,-486.76"/>
+</g>
+<!-- module~rkiss05_generator_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge37" class="edge">
+<title>module~rkiss05_generator_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff007f" stroke-dasharray="5,2" d="M494.57,-486.76C385.76,-491.91 335.54,-534.58 250.29,-466.76 177.88,-409.16 168.95,-286.89 168.56,-235.4"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="172.06,-235.44 168.6,-225.43 165.06,-235.41 172.06,-235.44"/>
+<path fill="none" stroke="#ff007f" stroke-dasharray="5,2" d="M831.67,-449.55C775.49,-452.31 693.39,-457.37 622.08,-465.76 565.91,-472.37 553.07,-484.24 496.57,-486.76"/>
+</g>
+<!-- module~rkiss05_generator_utilities&#45;&gt;module~random_generator_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge38" class="edge">
+<title>module~rkiss05_generator_utilities&#45;&gt;module~random_generator_base_utilities</title>
+<path fill="none" stroke="#ff007f" stroke-dasharray="5,2" d="M840.41,-458.98C820.33,-463.17 797.67,-467.89 776.81,-472.24"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="776.32,-468.77 767.25,-474.24 777.75,-475.62 776.32,-468.77"/>
+</g>
+<!-- module~euclidean_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge39" class="edge">
+<title>module~euclidean_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M424.52,-171C410.19,-170.84 395.1,-170.68 380.76,-170.52"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="381,-167.02 370.96,-170.42 380.92,-174.02 381,-167.02"/>
+</g>
+<!-- module~euclidean_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge40" class="edge">
+<title>module~euclidean_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M308.67,-211.76C281.45,-211.76 251.24,-211.76 225.9,-211.76"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="226.14,-208.26 216.14,-211.76 226.14,-215.26 226.14,-208.26"/>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M449.1,-183.98C403.75,-195.74 337.14,-211.76 310.67,-211.76"/>
+</g>
+<!-- module~manhattan_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge41" class="edge">
+<title>module~manhattan_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M444.56,-103.94C431.48,-107.76 417.55,-112.4 405.06,-117.76 388.04,-125.07 385.24,-129.75 369.06,-138.76 361.02,-143.24 352.29,-147.95 344.1,-152.31"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="342.63,-149.13 335.43,-156.89 345.9,-155.31 342.63,-149.13"/>
+</g>
+<!-- module~manhattan_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge42" class="edge">
+<title>module~manhattan_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M421.84,-100.37C371.78,-108.27 304.75,-122.83 250.29,-148.76 227.39,-159.67 204.87,-177.88 189.37,-191.92"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="187.14,-189.21 182.21,-198.59 191.91,-194.34 187.14,-189.21"/>
+</g>
+<!-- module~sort_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~self_organized_map_utilities~~UsesGraph_edge43" class="edge">
+<title>module~sort_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M284.97,-86.92C273.83,-93.23 260.74,-101.54 250.29,-110.76 223.05,-134.8 197.85,-168.68 182.95,-190.44"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="180.19,-188.26 177.52,-198.51 186,-192.16 180.19,-188.26"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panmoduleself_organized_map_utilitiesUsesGraph = svgPanZoom('#moduleself_organized_map_utilitiesUsesGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="485pt" height="32pt"
+ viewBox="0.00 0.00 485.13 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 481.13,-27.52 481.13,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-23.52 0,-23.52 0,0 54,0 54,-23.52"/>
+<text text-anchor="middle" x="27" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="137.76,-23.52 72.24,-23.52 72.24,0 137.76,0 137.76,-23.52"/>
+<text text-anchor="middle" x="105" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="218.63,-23.52 155.37,-23.52 155.37,0 218.63,0 218.63,-23.52"/>
+<text text-anchor="middle" x="187" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="291,-23.52 237,-23.52 237,0 291,0 291,-23.52"/>
+<text text-anchor="middle" x="264" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="363,-23.52 309,-23.52 309,0 363,0 363,-23.52"/>
+<text text-anchor="middle" x="336" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="477.13,-23.52 380.87,-23.52 380.87,0 477.13,0 477.13,-23.52"/>
+<text text-anchor="middle" x="429" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+
+
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-self_organized_map"></span>
+      <h3>
+        type, public, extends(<a href='..\type\kohonen_map_base.html'>kohonen_map_base</a>)&nbsp;::&nbsp;
+        <a href='..\type\self_organized_map.html'>self_organized_map</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p>Class to represent a self_organized_map</p>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-create~3'>create</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\create_som.html'>create_som</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-destroy~3'>destroy</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\destroy_som.html'>destroy_som</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-train'>train</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\train_som_data.html'>train_som_data</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-predict'>predict</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\predict_som.html'>predict_som</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-print~2'>print</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\print_som.html'>print_som</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-read'>read</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\read_som.html'>read_som</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-get_count'>get_count</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\get_count_som.html'>get_count_som</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-query'>query</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\query_som.html'>query_som</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-get_prototypes'>get_prototypes</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-get_u_matrix'>get_u_matrix</a></strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\get_u_matrix_som.html'>get_u_matrix_som</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public, nopass ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-external_train_map'>external_train_map</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public, nopass ::
+  <strong><a href='..\type\self_organized_map.html#boundprocedure-external_predict_map'>external_predict_map</a></strong></td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Functions</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-position2index"></span> <h3>public  function <a href='..\proc\position2index.html'>position2index</a>(ix, iy, iz, nx, ny) result(index_)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Function to calculate the index inside a rectangular grid from position ix,iy,iz</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ix~9"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ix</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iy~9"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iy</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iz~8"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iz</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nx~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ny~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer</small>
+    </h4>
+    <p>Integer variable with the required index</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calculate_sigma"></span> <h3>public  function <a href='..\proc\calculate_sigma.html'>calculate_sigma</a>(kohonen_map, input_data, seed) result(sigma)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Function to calculate the scaling factor sigma</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~18"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_data~5"></span>
+              real(kind=wp),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+<p>A real array with the input data</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-seed~3"></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>seed</strong></td>
+            <td>
+<p>An integer with the random seed</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    <p>A real variable with the value of sigma</p>
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-create_som"></span> <h3>public  subroutine <a href='..\proc\create_som.html'>create_som</a>(kohonen_map, training_parameters)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Constructor for self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A  <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-training_parameters"></span>
+              type(<a href='..\type\kohonen_layer_parameters.html'>kohonen_layer_parameters</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>training_parameters</strong></td>
+            <td>
+<p>A <code>kohonen_layer_parameters</code> object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-destroy_som"></span> <h3>public  subroutine <a href='..\proc\destroy_som.html'>destroy_som</a>(kohonen_map)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Destructor for self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~2"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-train_som_data"></span> <h3>public  subroutine <a href='..\proc\train_som_data.html'>train_som_data</a>(kohonen_map, input_data)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Training function for self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~3"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_data~2"></span>
+              type(<a href='..\type\kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+<p>A <code>kohonen_pattern</code> array with the input data</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-predict_som"></span> <h3>public  subroutine <a href='..\proc\predict_som.html'>predict_som</a>(kohonen_map, input_data, map_output)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Function for Prediction of a self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~4"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_data~3"></span>
+              type(<a href='..\type\kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+<p>A <code>kohonen_pattern</code> array with the input data        </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-map_output"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>map_output</strong></td>
+            <td>
+<p>An integer array with the map output</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-print_som"></span> <h3>public  subroutine <a href='..\proc\print_som.html'>print_som</a>(kohonen_map, unit_)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Print function for self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~5"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-unit_~2"></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit_</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_count_som"></span> <h3>public  subroutine <a href='..\proc\get_count_som.html'>get_count_som</a>(kohonen_map, count_)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Function to get count matrix for self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~6"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-count_"></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:,:,:)
+            </td>
+            <td>::</td>
+            <td><strong>count_</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-query_som"></span> <h3>public  subroutine <a href='..\proc\query_som.html'>query_som</a>(kohonen_map, input_pattern, sample_index)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Function to find the input samples associated with specific vector </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~7"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_pattern"></span>
+              real(kind=wp),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>input_pattern</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sample_index"></span>
+              integer,
+            </td>
+<td></td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>sample_index</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-read_som"></span> <h3>public  subroutine <a href='..\proc\read_som.html'>read_som</a>(kohonen_map, som_fl)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to read the prototypes to define a self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~8"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object      </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-som_fl"></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>som_fl</strong></td>
+            <td>
+<p>A character variable with the name of the file</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-index2position"></span> <h3>public  subroutine <a href='..\proc\index2position.html'>index2position</a>(index_, nx, ny, nz, cx, cy, cz)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-index_~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>index_</strong></td>
+            <td>
+<p>Integer variable representing the index</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nx~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx</strong></td>
+            <td>
+<p>Integer variables representing the dimensions of the kohonen map</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ny~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny</strong></td>
+            <td>
+<p>Integer variables representing the dimensions of the kohonen map</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nz~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nz</strong></td>
+            <td>
+<p>Integer variables representing the dimensions of the kohonen map</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cx~2"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cx</strong></td>
+            <td>
+<p>Integer variables representing the position of the node</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cy~2"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cy</strong></td>
+            <td>
+<p>Integer variables representing the position of the node</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cz~2"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cz</strong></td>
+            <td>
+<p>Integer variables representing the position of the node</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calculate_distance_matrix"></span> <h3>public  subroutine <a href='..\proc\calculate_distance_matrix.html'>calculate_distance_matrix</a>(coordinates, distance_matrix, grid_type, toroidal)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate the distance between the units inside a kohonen layer </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coordinates~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>coordinates</strong></td>
+            <td>
+<p>Real array with the coordinates</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distance_matrix"></span>
+              real(kind=wp),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>distance_matrix</strong></td>
+            <td>
+<p>Real array with the distance_matrix</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid_type"></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_type</strong></td>
+            <td>
+<p>Character variable with the grid type</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-toroidal"></span>
+              logical
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>toroidal</strong></td>
+            <td>
+<p>Logical variable for toroidal grid</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calculate_coordinates"></span> <h3>public  subroutine <a href='..\proc\calculate_coordinates.html'>calculate_coordinates</a>(current_index, ix, iy, iz, nx, ny, nz, coordinates, node_type)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate the coordinates of the units inside a kohonen layer </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-current_index~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_index</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ix~10"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ix</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iy~10"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iy</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iz~9"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iz</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nx~6"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ny~6"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nz~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nz</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coordinates~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>coordinates</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-node_type~2"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>node_type</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-find_best_match_unit"></span> <h3>public  subroutine <a href='..\proc\find_best_match_unit.html'>find_best_match_unit</a>(kohonen_map, current_prototype, ihit, jhit, khit, dist_hit)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate the best match unit</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~9"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-current_prototype~3"></span>
+              type(<a href='..\type\kohonen_prototype.html'>kohonen_prototype</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_prototype</strong></td>
+            <td>
+<p>A <code>kohonen_prototype</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihit~4"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ihit</strong></td>
+            <td>
+<p>Integer variables for the coordinates of the BMU</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jhit~4"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>jhit</strong></td>
+            <td>
+<p>Integer variables for the coordinates of the BMU</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-khit~4"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>khit</strong></td>
+            <td>
+<p>Integer variables for the coordinates of the BMU</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dist_hit~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dist_hit</strong></td>
+            <td>
+<p>Real variable with the distance to the BMU</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-update_weights"></span> <h3>public  subroutine <a href='..\proc\update_weights.html'>update_weights</a>(kohonen_map, current_values, ihit, jhit, khit, maximum_radius, iteration)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to update the weights   </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~10"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-current_values~4"></span>
+              real(kind=wp),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>current_values</strong></td>
+            <td>
+<p>A real array with the values of the current unit</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihit~5"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ihit</strong></td>
+            <td>
+<p>Integer variables with the coordinates of the unit (neuron) to be modified</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jhit~5"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>jhit</strong></td>
+            <td>
+<p>Integer variables with the coordinates of the unit (neuron) to be modified</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-khit~5"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>khit</strong></td>
+            <td>
+<p>Integer variables with the coordinates of the unit (neuron) to be modified</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maximum_radius~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>maximum_radius</strong></td>
+            <td>
+<p>Real variable with the maximum radius of the neighborhood </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iteration~2"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iteration</strong></td>
+            <td>
+<p>Integer variables with the coordinates of the unit (neuron) to be modified</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calculate_distance_between_prototypes"></span> <h3>public  subroutine <a href='..\proc\calculate_distance_between_prototypes.html'>calculate_distance_between_prototypes</a>(kohonen_map)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate the distance between the prototypes</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~11"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-find_bmu_grid"></span> <h3>public  subroutine <a href='..\proc\find_bmu_grid.html'>find_bmu_grid</a>(kohonen_map, input_data)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate the best match unit over the grid  </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~12"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object  </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_data~4"></span>
+              type(<a href='..\type\kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+<p>A <code>kohonen_pattern</code> array with the input data</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calculate_u_matrix"></span> <h3>public  subroutine <a href='..\proc\calculate_u_matrix.html'>calculate_u_matrix</a>(kohonen_map)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate  the u_matrix</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~13"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calculate_u_matrix_hexagonal"></span> <h3>public  subroutine <a href='..\proc\calculate_u_matrix_hexagonal.html'>calculate_u_matrix_hexagonal</a>(kohonen_map)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate the u_matrix for an hexagonal grid</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~14"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calculate_u_matrix_rectangular"></span> <h3>public  subroutine <a href='..\proc\calculate_u_matrix_rectangular.html'>calculate_u_matrix_rectangular</a>(kohonen_map)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to calculate the u_matix for a rectangular grid</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~15"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object        </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_u_matrix_som"></span> <h3>public  subroutine <a href='..\proc\get_u_matrix_som.html'>get_u_matrix_som</a>(kohonen_map, u_matrix)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to get the u_matrix from a SOM</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~16"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u_matrix~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(:,:,:)
+            </td>
+            <td>::</td>
+            <td><strong>u_matrix</strong></td>
+            <td>
+<p>A real array to return the u_matrix</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_prototypes"></span> <h3>public  subroutine <a href='..\proc\get_prototypes.html'>get_prototypes</a>(kohonen_map, prototypes)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to get SOM prototypes</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~17"></span>
+              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>self_organized_map</code> object </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prototypes"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>prototypes</strong></td>
+            <td>
+<p>A real array to return the values of the SOM prototypes</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-external_train_map"></span> <h3>public  subroutine <a href='..\proc\external_train_map.html'>external_train_map</a>(x, nvar, npat, nx, ny, nepoch, alpha, grid_type, distance_type, neigh_type, toroidal, prot, distortion, u_matrix, coords, number_patterns, node_index) bind(C, name="train_som_")  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to connect the self_organizing_map module to R o C
+Import section</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(npat,nvar)</td>
+            <td>
+<p>Real array with the input patterns</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nvar~3"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nvar</strong></td>
+            <td>
+<p>Integer variables to indicate the number of variables and patterns</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-npat"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>npat</strong></td>
+            <td>
+<p>Integer variables to indicate the number of variables and patterns</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nx~12"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx</strong></td>
+            <td>
+<p>Integer variables to indicate the number of nodes of the SOM</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ny~12"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny</strong></td>
+            <td>
+<p>Integer variables to indicate the number of nodes of the SOM</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nepoch~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nepoch</strong></td>
+            <td>
+<p>Integer variables to indicate the number of epochs for training</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alpha~3"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alpha</strong></td>
+            <td>
+<p>Real value with the initial learning rate</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid_type~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_type</strong></td>
+            <td>
+<p>Integer variable to indicate the type of grid  </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distance_type"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distance_type</strong></td>
+            <td>
+<p>Integer variable to indicate the distance type</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-neigh_type"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>neigh_type</strong></td>
+            <td>
+<p>Integer variable to indicate the neighborhood type</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-toroidal~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>toroidal</strong></td>
+            <td>
+<p>Integer variable to indicate if a toroidal grid is used</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prot"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prot</strong>(nx*ny,nvar)</td>
+            <td>
+<p>Real array for the prototypes</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distortion~3"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distortion</strong>(nepoch)</td>
+            <td>
+<p>Real array for the distortion measure (error during training)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u_matrix~3"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>u_matrix</strong>(2*nx-1,2*ny-1)</td>
+            <td>
+<p>Real array for the u_matrix </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coords"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>coords</strong>(nx*ny,3)</td>
+            <td>
+<p>Real array for the grid coordinates of the SOM</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-number_patterns~3"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>number_patterns</strong>(nx,ny)</td>
+            <td>
+<p>Integer array with the number of hits for each neuron</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-node_index"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>node_index</strong>(npat,3)</td>
+            <td>
+<p>Integer array with the index node for all the neurons of the SOM       </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-external_predict_map"></span> <h3>public  subroutine <a href='..\proc\external_predict_map.html'>external_predict_map</a>(prot, nx, ny, new_pat, npat, nvar, node_index) bind(C, name="predict_som_")  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to connect this module to R</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prot~2"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prot</strong>(nx*ny,nvar)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nx~13"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ny~13"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-new_pat"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>new_pat</strong>(npat,nvar)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-npat~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>npat</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nvar~4"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nvar</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-node_index~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>node_index</strong>(npat,3)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-12-07 06:16              </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
