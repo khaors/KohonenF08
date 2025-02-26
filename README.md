@@ -151,7 +151,7 @@ The documentation of the library can be accessed in the following links:
 
 
 ## Licensing, Authors, Acknowledgements
-KohonenF08 was written by Oscar Garcia-Cabrejo and is distributed under the [GPL license](https://github.com/khaors/KohonenF08/blob/master/LICENSE). 
+KohonenF08 was written by Oscar Garcia-Cabrejo and is distributed under the [MIT license](https://github.com/khaors/KohonenF08/blob/master/LICENSE). 
 
 You can cite KohonenF08 in research publications and reports as follows:
 * Garcia-Cabrejo, O. (2025). ***KohonenF08: A library for Self-Organizing Maps in Fortran 2008***. https://github.com/khaors/KohonenF08. Accessed: *day month year*.
