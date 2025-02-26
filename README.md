@@ -158,7 +158,7 @@ You can cite KohonenF08 in research publications and reports as follows:
 
 BibTeX entry:
 ```
-@misc{Garcia-Cabrejo23,
+@misc{Garcia-Cabrejo25,
  author = {Garcia-Cabrejo, O},
  title 	= {{KohonenF03: A library for Self-Organizing Maps in Fortran 2008}},
  year 	= 2025,
