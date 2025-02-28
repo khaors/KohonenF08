@@ -3,7 +3,7 @@ version = "0.1.0"
 license = "MIT"
 author = "khaors"
 maintainer = "khaors@gmail.com"
-copyright = "Copyright 2024, khaors"
+copyright = "Copyright 2025, khaors"
 [build]
 auto-executables = true
 auto-tests = true
