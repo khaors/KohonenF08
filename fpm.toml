@@ -12,6 +12,8 @@ module-naming = false
 [dependencies]
 toml-f.git = "https://github.com/toml-f/toml-f"
 error-handling = { git = "https://github.com/SINTEF/fortran-error-handling.git", tag = "v0.2.0" }
+test-drive.git = "https://github.com/fortran-lang/test-drive"
+test-drive.tag = "v0.4.0"
 [install]
 library = false
 [fortran]
