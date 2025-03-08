@@ -1,4 +1,4 @@
-<img src="https://![i.imgur.com/ZWnhY9T.png](https://github.com/khaors/KohonenF08/blob/main/media/logo.png)" width=150% height=150%>
+<img src="https://github.com/khaors/KohonenF08/blob/main/media/logo.png" width=150% height=150%>
 ============
 # KohonenF08
 
