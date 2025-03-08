@@ -1,6 +1,6 @@
 # KohonenF08
 
-[![License](https://img.shields.io/badge/license-MIT)](LICENSE-MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Fortran 2008 library for Self-Organizing Maps using object-oriented programming and modern Fortran features.
 
