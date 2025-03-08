@@ -1,4 +1,4 @@
-![KohonenF08](media/logo.png)
+![KohonenF08](media/logo.png =250x100)
 ============
 # KohonenF08
 
