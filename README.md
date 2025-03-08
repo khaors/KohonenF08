@@ -1,5 +1,7 @@
 <img src="https://github.com/khaors/KohonenF08/blob/main/media/logo.png" width=150% height=150%>
+
 ============
+
 # KohonenF08
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
