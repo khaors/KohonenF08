@@ -1,9 +1,9 @@
 !! author: Oscar Garcia-Cabrejo
 !! date: 12/04/2024
 !! version: 0.1
-!!  This module defines a class for simple self_organized_map (one kohonen layer) 
-module self_organized_map_utilities
-!!  This module defines a class for simple self_organized_map (one kohonen layer) 
+!!  This module defines a class for simple self_organizing_map (one kohonen layer) 
+module self_organizing_map_utilities
+!!  This module defines a class for simple self_organizing_map (one kohonen layer) 
 use error_handling, only: error_t,error_stop;
 use precision_utilities, only: wp;
 use constants_utilities, only: NUMCHAR;
@@ -19,14 +19,14 @@ use factory_distance_utilities, only: factory_distance;
 use quicksort_utilities, only: quicksort;
 !
 implicit none;
-!****c* self_organized_map_utilities/self_organized_map
+!****c* self_organizing_map_utilities/self_organizing_map
 ! NAME
-!   self_organized_map
+!   self_organizing_map
 ! PURPOSE
-type,extends(kohonen_map_base) :: self_organized_map
-!!   Class to represent a self_organized_map
+type,extends(kohonen_map_base) :: self_organizing_map
+!!   Class to represent a self_organizing_map
     private
-        character(len=NUMCHAR) :: class_name='self_organized_map';
+        character(len=NUMCHAR) :: class_name='self_organizing_map';
         type(kohonen_prototype),allocatable :: grid(:,:,:)
         integer,allocatable :: number_patterns(:,:,:),cells_index(:,:)
         real(kind=wp),allocatable :: u_matrix(:,:,:),distance(:,:)
@@ -67,17 +67,17 @@ type,extends(kohonen_map_base) :: self_organized_map
         procedure,nopass,public :: external_train_map
         procedure,nopass,public :: external_predict_map
 !
-end type self_organized_map
+end type self_organizing_map
 !
 contains
 !========================================================================================
     subroutine create_som(kohonen_map,training_parameters)
 !========================================================================================
-!!   Constructor for self_organized_map 
+!!   Constructor for self_organizing_map 
         character(len=NUMCHAR),parameter :: fname = 'create_som'
 !! A character variable with the name of the function
-        class(self_organized_map) :: kohonen_map
-!! A  `self_organized_map` object
+        class(self_organizing_map) :: kohonen_map
+!! A  `self_organizing_map` object
         type(kohonen_layer_parameters),dimension(:) :: training_parameters
 !! A `kohonen_layer_parameters` object
         integer :: ierr,nx,ny,nz,ix,iy,iz,nvar1,nvar2,seed,current_index,nepoch
@@ -180,9 +180,9 @@ contains
 !========================================================================================
     subroutine destroy_som(kohonen_map)
 !========================================================================================
-!!   Destructor for self_organized_map 
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object
+!!   Destructor for self_organizing_map 
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
    
         integer :: ix,iy,iz
 !
@@ -242,18 +242,18 @@ contains
 !        write(*,*) 'SOM: Releasing memory...OK!'
 !
     end subroutine destroy_som
-!****f* self_organized_map_utilities/train_som_data
+!****f* self_organizing_map_utilities/train_som_data
 ! NAME
 !   train_som_data
 ! PURPOSE
-!!   Training function for self_organized_map 
+!!   Training function for self_organizing_map 
 ! SYNOPSIS
 !========================================================================================
    subroutine train_som_data(kohonen_map,input_data)
 !========================================================================================
-!!   Training function for self_organized_map 
-      class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object
+!!   Training function for self_organizing_map 
+      class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
       type(kohonen_pattern),dimension(:),intent(inout) :: input_data
 !! A `kohonen_pattern` array with the input data
       integer :: iteration,iepoch,ipattern,ix,iy,iz,jhit,ihit,khit,ineigh,jneigh
@@ -407,9 +407,9 @@ contains
 !========================================================================================
     subroutine predict_som(kohonen_map,input_data,map_output)
 !========================================================================================
-!! Function for Prediction of a self_organized_map 
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object
+!! Function for Prediction of a self_organizing_map 
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
         type(kohonen_pattern),dimension(:),intent(inout) :: input_data
 !! A `kohonen_pattern` array with the input data        
         integer,dimension(:,:),intent(out) :: map_output
@@ -478,8 +478,8 @@ contains
 !========================================================================================
     subroutine print_som(kohonen_map,unit_)
 !========================================================================================
-!!   Print function for self_organized_map 
-        class(self_organized_map) :: kohonen_map
+!!   Print function for self_organizing_map 
+        class(self_organizing_map) :: kohonen_map
 !!
         integer,intent(inout),optional :: unit_
 !!
@@ -529,8 +529,8 @@ contains
 !========================================================================================
     subroutine get_count_som(kohonen_map,count_)
 !========================================================================================
-!!   Function to get count matrix for self_organized_map 
-        class(self_organized_map) :: kohonen_map
+!!   Function to get count matrix for self_organizing_map 
+        class(self_organizing_map) :: kohonen_map
 !!
         integer,dimension(:,:,:),intent(inout) :: count_
 !!
@@ -541,7 +541,7 @@ contains
     subroutine query_som(kohonen_map,input_pattern,sample_index) !,output_patterns)
 !========================================================================================
 !!   Function to find the input samples associated with specific vector 
-        class(self_organized_map) :: kohonen_map
+        class(self_organizing_map) :: kohonen_map
 !!
         real(kind=wp),dimension(:,:),intent(inout) :: input_pattern
 !!
@@ -615,9 +615,9 @@ contains
 !========================================================================================
     subroutine read_som(kohonen_map,som_fl)
 !========================================================================================
-!! Subroutine to read the prototypes to define a self_organized_map 
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object      
+!! Subroutine to read the prototypes to define a self_organizing_map 
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object      
         character(len=*) :: som_fl
 !! A character variable with the name of the file
         logical :: testfl,toroidal_grid
@@ -706,7 +706,7 @@ contains
     subroutine index2position(index_,nx,ny,nz,cx,cy,cz)
 !========================================================================================
 !! Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index
-        integer,intent(in) :: index_,
+        integer,intent(in) :: index_
 !! Integer variable representing the index
         integer,intent(in) :: nx,ny,nz
 !! Integer variables representing the dimensions of the kohonen map
@@ -792,8 +792,8 @@ contains
     subroutine find_best_match_unit(kohonen_map,current_prototype,ihit,jhit,khit,dist_hit)
 !========================================================================================
 !! Subroutine to calculate the best match unit
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
         type(kohonen_prototype),intent(inout) :: current_prototype
 !! A `kohonen_prototype` object
         integer,intent(out) :: ihit,jhit,khit
@@ -844,8 +844,8 @@ contains
         maximum_radius,iteration) 
 !========================================================================================
 !!    Subroutine to update the weights   
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
         real(kind=wp),dimension(:,:),intent(inout) :: current_values
 !! A real array with the values of the current unit
         integer,intent(inout) :: ihit,jhit,khit,iteration
@@ -940,8 +940,8 @@ contains
     subroutine calculate_distance_between_prototypes(kohonen_map)
 !========================================================================================
 !! Subroutine to calculate the distance between the prototypes
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
         integer :: nx,ny,ix,iy,iz,ix1,iy1,iz1,pos,pos1
 !
         type(kohonen_prototype) :: current_prototype,current_prototype1
@@ -980,8 +980,8 @@ contains
    subroutine find_bmu_grid(kohonen_map,input_data)
 !========================================================================================
 !! Subroutine to calculate the best match unit over the grid  
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object  
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object  
         type(kohonen_pattern),dimension(:),intent(inout) :: input_data
 !! A `kohonen_pattern` array with the input data
         integer :: nx,ny,nz,ix,iy,iz,ihit,jhit,khit,idat,pat_hit
@@ -1014,7 +1014,7 @@ contains
 !
 !
     end subroutine find_bmu_grid
-!****f* self_organized_map_utilities/calculate_u_matrix
+!****f* self_organizing_map_utilities/calculate_u_matrix
 ! NAME
 !   calculate_u_matrix
 ! PURPOSE
@@ -1024,8 +1024,8 @@ contains
     subroutine calculate_u_matrix(kohonen_map)
 !========================================================================================
 !! Subroutine to calculate  the u_matrix
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
         character(len=NUMCHAR) :: type_
         integer :: nx,ny,nz,nt,ierr,ix,iy,iz,cx,cy,cz,nxu,nyu,nzu
         real(kind=wp) :: dist,u_temp
@@ -1256,23 +1256,23 @@ contains
     subroutine calculate_u_matrix_hexagonal(kohonen_map)
 !========================================================================================
 !! Subroutine to calculate the u_matrix for an hexagonal grid
-      class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object
+      class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
     
     end subroutine calculate_u_matrix_hexagonal
 !========================================================================================
     subroutine calculate_u_matrix_rectangular(kohonen_map)
 !========================================================================================
 !! Subroutine to calculate the u_matix for a rectangular grid
-        class(self_organized_map) :: kohonen_map 
-!! A `self_organized_map` object        
+        class(self_organizing_map) :: kohonen_map 
+!! A `self_organizing_map` object        
     end subroutine calculate_u_matrix_rectangular 
 !========================================================================================
     subroutine get_u_matrix_som(kohonen_map,u_matrix)
 !========================================================================================
 !! Subroutine to get the u_matrix from a SOM
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object 
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object 
         real(kind=wp),dimension(:,:,:),intent(out) :: u_matrix
 !! A real array to return the u_matrix
         u_matrix=kohonen_map%u_matrix;
@@ -1282,8 +1282,8 @@ contains
     subroutine get_prototypes(kohonen_map,prototypes)
 !========================================================================================
 !! Subroutine to get SOM prototypes
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object 
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object 
         real(kind=wp),dimension(:,:),intent(out) :: prototypes
 !! A real array to return the values of the SOM prototypes
         integer :: i,j,k,pos,nvar1,nvar2
@@ -1313,8 +1313,8 @@ contains
     function calculate_sigma(kohonen_map,input_data,seed) result(sigma)
 !========================================================================================
 !!    Function to calculate the scaling factor sigma
-        class(self_organized_map) :: kohonen_map
-!! A `self_organized_map` object 
+        class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object 
         real(kind=wp),dimension(:,:),intent(inout) :: input_data
 !! A real array with the input data
         integer,intent(inout),optional :: seed
@@ -1380,7 +1380,7 @@ contains
         deallocate(sample_pos,sample_index,p_vector,sigma_table,current_sigma);   
 !
     end function calculate_sigma 
-!****f* self_organized_map_utilities/external_train_map
+!****f* self_organizing_map_utilities/external_train_map
 ! NAME
 !   external_train_map
 ! PURPOSE
@@ -1421,13 +1421,13 @@ contains
 !! Real array with the input patterns
         real(c_double),intent(in) :: alpha
 !! Real value with the initial learning rate
-        integer(c_int),intent(in) :: grid_type,
+        integer(c_int),intent(in) :: grid_type
 !! Integer variable to indicate the type of grid  
         integer(c_int),intent(in) :: distance_type
 !! Integer variable to indicate the distance type
         integer(c_int),intent(in) :: neigh_type
 !! Integer variable to indicate the neighborhood type
-        type(self_organized_map) :: my_som
+        type(self_organizing_map) :: my_som
         type(kohonen_layer_parameters),dimension(1) :: parameters
         real(kind=wp),dimension(nvar,1) :: var
         integer :: i,j,k,ierr,pos,ihit,jhit,khit,nx1,ny1
@@ -1537,7 +1537,7 @@ contains
         real(c_double),intent(in) :: prot(nx*ny,nvar),new_pat(npat,nvar)
         integer(c_int),intent(out) :: node_index(npat,3) 
 !!
-        type(self_organized_map) :: my_som
+        type(self_organizing_map) :: my_som
         type(kohonen_layer_parameters),dimension(1) :: parameters
         integer :: ipat,inode,i_hit,nx1,ny1,nz1,cx,cy,cz,ix,iy,iz,pos,ierr
         real(kind=wp) :: dist,dist_hit
@@ -1594,4 +1594,4 @@ contains
 !
     end subroutine external_predict_map
 ! 
-end module self_organized_map_utilities
+end module self_organizing_map_utilities

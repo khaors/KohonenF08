@@ -10,7 +10,7 @@
     <meta name="author" content="Oscar Garcia-Cabrejo" >
     <link rel="icon" href="../favicon.png">
 
-    <title>fortran_unit_test &ndash; KohonenF08 </title>
+    <title>logger &ndash; KohonenF08 </title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -65,7 +65,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>fortran_unit_test
+    <h1>logger
       <small>Derived Type</small>
       
     </h1>
@@ -76,21 +76,21 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="<p>15.3% of total for derived types.</p>Including implementation: 307 statements, 15.2% of total for derived types.">27 statements</a>
+                 title="<p>14.5% of total for derived types.</p>Including implementation: 244 statements, 12.4% of total for derived types.">26 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/fortran_unit_test_utilities.f90"> Source File</a>
+              <a href="../src/logger_utilities.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='..\sourcefile\fortran_unit_test_utilities.f90.html'>fortran_unit_test_utilities.f90</a></li>
-                <li class="breadcrumb-item"><a href='..\module\fortran_unit_test_utilities.html'>fortran_unit_test_utilities</a></li>
-            <li class="breadcrumb-item active" aria-current="page">fortran_unit_test</li>
+                <li class="breadcrumb-item"><a href='..\sourcefile\logger_utilities.f90.html'>logger_utilities.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\logger_utilities.html'>logger_utilities</a></li>
+            <li class="breadcrumb-item active" aria-current="page">logger</li>
           </ol>
         </nav>
       </div>
@@ -132,14 +132,19 @@
       </a>
       <div id="boundprocs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/fortran_unit_test.html#boundprocedure-create~4">create</a>
-            <a class="list-group-item" href="../type/fortran_unit_test.html#boundprocedure-destroy~4">destroy</a>
-            <a class="list-group-item" href="../type/fortran_unit_test.html#boundprocedure-assert_equal">assert_equal</a>
-            <a class="list-group-item" href="../type/fortran_unit_test.html#boundprocedure-assert_comparable">assert_comparable</a>
-            <a class="list-group-item" href="../type/fortran_unit_test.html#boundprocedure-assert_true">assert_true</a>
-            <a class="list-group-item" href="../type/fortran_unit_test.html#boundprocedure-assert_false">assert_false</a>
-            <a class="list-group-item" href="../type/fortran_unit_test.html#boundprocedure-test">test</a>
-            <a class="list-group-item" href="../type/fortran_unit_test.html#boundprocedure-file_exists">file_exists</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-create~3">create</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-destroy~3">destroy</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-startup">startup</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-shutdown">shutdown</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-is_initialized">is_initialized</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-message">message</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-write">write</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-configure">configure</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-get_unit">get_unit</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-delimiter">delimiter</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-get_delimiter">get_delimiter</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-reset">reset</a>
+            <a class="list-group-item" href="../type/logger.html#boundprocedure-error">error</a>
         </div>
       </div>
     </div>
@@ -149,7 +154,7 @@
     <div class="card card-primary">
       <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
       <div class="list-group">
-        <a class="list-group-item" href="../type/fortran_unit_test.html#src">fortran_unit_test</a>
+        <a class="list-group-item" href="../type/logger.html#src">logger</a>
       </div>
     </div>
 
@@ -160,8 +165,10 @@
     
     <div class="col-md-9" id='text'>
       <h2 id="type-def-statement">
-        type, public :: fortran_unit_test</h2>
-    <p>Class designed to be used in the testing phase of the development cycle. </p>
+        type, public :: logger</h2>
+    <p>The Logger class is used to store all the variables related to the units of 
+files used to store or print messages during the development (debugging ) or 
+running</p>
     <br>
 
     
@@ -172,22 +179,20 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-create~4"></span>
+      <span class="anchor" id="boundprocedure-create~3"></span>
       <h3>
           procedure, public ::
-  <strong>create</strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\create_fortran_unit_test.html'>create_fortran_unit_test</a>
+  <strong>create</strong> => create_logger
         
       </h3>
     </div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    public  subroutine <a href='..\proc\create_fortran_unit_test.html'>create_fortran_unit_test</a>(my_test, name)  
+    private  subroutine create_logger(current_log)  
 </h3>
-    
 
-  <p>Class constructor. This subroutine requires as input the name of the test. This information 
-will be printed on the screen during the actual tests</p>
+  <p>logger constructor</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -203,16 +208,745 @@ will be printed on the screen during the actual tests</p>
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
+              class(<a href='logger.html'>logger</a>)
             </td>
 <td></td>
               <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>my_test</strong></td>
+            <td><strong>current_log</strong></td>
             <td>
-<p>A fortran_unit_test class</p>
+                <p>a logger object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-destroy~3"></span>
+      <h3>
+          procedure, public ::
+  <strong>destroy</strong> => destroy_logger
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine destroy_logger(current_log)  
+</h3>
+
+  <p>Logger destructor  </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-startup"></span>
+      <h3>
+          procedure, public ::
+  <strong>startup</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine startup(current_log, log_file, append_)  
+</h3>
+
+  <p>Subroutine to initialize a logger object </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>log_file</strong></td>
+            <td>
+                <p>A character variable with the name of the file associated to the logger</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>append_</strong></td>
+            <td>
+                <p>A logical (optional) variable to indicate if appending to an existing file 
+         is desired</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-shutdown"></span>
+      <h3>
+          procedure, public ::
+  <strong>shutdown</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine shutdown(current_log)  
+</h3>
+
+  <p>Subroutine to turn-off the logger</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-is_initialized"></span>
+      <h3>
+          procedure, public ::
+  <strong>is_initialized</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  function is_initialized(current_log) result(initialized)  
+</h3>
+
+  <p>Function to check if a logger is initialized</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>A logical variable </p>
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-message"></span>
+      <h3>
+          procedure, public ::
+  <strong>message</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine message(current_log, msg)  
+</h3>
+
+  <p>Subroutine to send a message to the logger</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>msg</strong></td>
+            <td>
+                <p>A character variable with the message to send to the logger  </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-write"></span>
+      <h3>
+          procedure, public ::
+  <strong>write</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine write(current_log, unit_, msg)  
+</h3>
+
+  <p>Subroutine to write a message in a file associated with the logger</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit_</strong></td>
+            <td>
+                <p>An integer variable with the value of the output unit</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>msg</strong></td>
+            <td>
+                <p>A character variable with the message to be written in the output unit</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-configure"></span>
+      <h3>
+          generic, public ::
+  <strong>configure</strong> => configure_logical, configure_integer, configure_character
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine configure_logical(current_log, option, value)  
+</h3>
+
+  <p>Subroutine to define the logger state</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>option</strong></td>
+            <td>
+                <p>A character variable with the name of the state to be defined </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>A logical variable </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine configure_integer(current_log, option, value)  
+</h3>
+
+  <p>Subroutine to define a logger integer state </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>option</strong></td>
+            <td>
+                <p>A character variable with the name of the state to be defined </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>An integer variable </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine configure_character(current_log, option, value)  
+</h3>
+
+  <p>Subroutine to define a logger character state </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>option</strong></td>
+            <td>
+                <p>A character variable with the name of the state to be defined </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>A character variable</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-get_unit"></span>
+      <h3>
+          procedure, public ::
+  <strong>get_unit</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  function get_unit(current_log) result(logger_unit)  
+</h3>
+
+  <p>Function to get the logger unit</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object        </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer</small>
+    </h4>
+    <p>An integer variable with the logger unit</p>
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-delimiter"></span>
+      <h3>
+          procedure, public ::
+  <strong>delimiter</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine delimiter(current_log, level)  
+</h3>
+
+  <p>Subroutine that defines the delimiter in a logger repport</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object        </p>
             </td>
         </tr>
         <tr>
@@ -225,9 +959,9 @@ will be printed on the screen during the actual tests</p>
               
             </td>
             <td>::</td>
-            <td><strong>name</strong></td>
+            <td><strong>level</strong></td>
             <td>
-<p>A character string with the name of the test  </p><a href="../proc/create_fortran_unit_test.html#variable-name" class="pull-right"><emph>Read more&hellip;</emph></a>
+                <p>A character variable with the definition of the delimiter </p>
             </td>
         </tr>
     </tbody>
@@ -242,21 +976,20 @@ will be printed on the screen during the actual tests</p>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-destroy~4"></span>
+      <span class="anchor" id="boundprocedure-get_delimiter"></span>
       <h3>
           procedure, public ::
-  <strong>destroy</strong> => <a href='C:\GITProjects\KohonenF08\doc\proc\destroy_fortran_unit_test.html'>destroy_fortran_unit_test</a>
+  <strong>get_delimiter</strong>
         
       </h3>
     </div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    public  subroutine <a href='..\proc\destroy_fortran_unit_test.html'>destroy_fortran_unit_test</a>(my_test)  
+    private  subroutine get_delimiter(current_log, level, msg)  
 </h3>
-    
 
-  <p>Class destructor</p>
+  <p>Subroutine to get the delimiter text</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -272,914 +1005,16 @@ will be printed on the screen during the actual tests</p>
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
+              class(<a href='logger.html'>logger</a>)
             </td>
 <td></td>
               <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>my_test</strong></td>
+            <td><strong>current_log</strong></td>
             <td>
-<p>A fortran_unit_test object</p><a href="../proc/destroy_fortran_unit_test.html#variable-my_test~2" class="pull-right"><emph>Read more&hellip;</emph></a>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-assert_equal"></span>
-      <h3>
-          generic, public ::
-  <strong>assert_equal</strong> => assert_equal_int, assert_equal_int1d, assert_equal_char, assert_equal_char1d
-        
-      </h3>
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_equal_int.html'>assert_equal_int</a>(my_test, value1, value2, text)  
-</h3>
-    
-
-  <p>Function to assert equality of int</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              integer,
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>value1</strong></td>
-            <td>
-<p>An integer value</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              integer,
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>value2</strong></td>
-            <td>
-<p>An integer value</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-<p>Character string with the text to be printed when the test fails.</p>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_equal_int1d.html'>assert_equal_int1d</a>(my_test, array1, array2, text)  
-</h3>
-    
-
-  <p>Function to assert equality of 1D array of int</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              integer,
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:)
-            </td>
-            <td>::</td>
-            <td><strong>array1</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              integer,
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:)
-            </td>
-            <td>::</td>
-            <td><strong>array2</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_equal_char.html'>assert_equal_char</a>(my_test, char1, char2, text)  
-</h3>
-    
-
-  <p>subroutine to assert if two char variables are equal</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>char1</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>char2</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_equal_char1d.html'>assert_equal_char1d</a>(my_test, array1, array2, text)  
-</h3>
-    
-
-  <p>Subroutine to assert equality of 1D array of characters</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:)
-            </td>
-            <td>::</td>
-            <td><strong>array1</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:)
-            </td>
-            <td>::</td>
-            <td><strong>array2</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-assert_comparable"></span>
-      <h3>
-          generic, public ::
-  <strong>assert_comparable</strong> => assert_comparable_real, assert_comparable_real1d, assert_comparable_real2d
-        
-      </h3>
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_comparable_real.html'>assert_comparable_real</a>(my_test, value1, value2, margin, text)  
-</h3>
-    
-
-  <p>subroutine to assert if two real values are equal to a given margin</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>value1</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>value2</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>margin</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_comparable_real1d.html'>assert_comparable_real1d</a>(my_test, array1, array2, margin, text)  
-</h3>
-    
-
-  <p>Subroutine to assert if two arrays of real are equal to a given margin</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:)
-            </td>
-            <td>::</td>
-            <td><strong>array1</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:)
-            </td>
-            <td>::</td>
-            <td><strong>array2</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>margin</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_comparable_real2d.html'>assert_comparable_real2d</a>(my_test, array1, array2, margin, text)  
-</h3>
-    
-
-  <p>Subroutine to assert if two arrays of real are equal to a given margin</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:,:)
-            </td>
-            <td>::</td>
-            <td><strong>array1</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:,:)
-            </td>
-            <td>::</td>
-            <td><strong>array2</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              real(kind=wp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>margin</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-assert_true"></span>
-      <h3>
-          procedure, public ::
-  <strong>assert_true</strong>
-        
-      </h3>
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_true.html'>assert_true</a>(my_test, cond, text)  
-</h3>
-    
-
-  <p>Subroutine to check if an assertion is true</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              logical,
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>cond</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-assert_false"></span>
-      <h3>
-          procedure, public ::
-  <strong>assert_false</strong>
-        
-      </h3>
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\assert_false.html'>assert_false</a>(my_test, cond, text)  
-</h3>
-    
-
-  <p>Subroutine to check if an assertion is false</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              logical,
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>cond</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>text</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-test"></span>
-      <h3>
-          procedure, public ::
-  <strong>test</strong>
-        
-      </h3>
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    public  subroutine <a href='..\proc\test.html'>test</a>(my_test, proc, text)  
-</h3>
-    
-
-  <p>Subroutine to run a test specified in proc external call </p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>my_test</strong></td>
-            <td>
-<p>A fortran_unit_test object</p>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="7">
-              <small>    <h5>
-    public  subroutine proc()  
-
-    </h5>
-  
-
-  <h6>Arguments</h6>
-    <em>None</em>
-</small>
+                <p>A logger object   </p>
             </td>
         </tr>
         <tr>
@@ -1192,9 +1027,24 @@ will be printed on the screen during the actual tests</p>
               
             </td>
             <td>::</td>
-            <td><strong>text</strong></td>
+            <td><strong>level</strong></td>
             <td>
-
+                <p>A character variable</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=100)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>msg</strong></td>
+            <td>
+                <p>A character variable</p>
             </td>
         </tr>
     </tbody>
@@ -1209,21 +1059,20 @@ will be printed on the screen during the actual tests</p>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-file_exists"></span>
+      <span class="anchor" id="boundprocedure-reset"></span>
       <h3>
           procedure, public ::
-  <strong>file_exists</strong>
+  <strong>reset</strong>
         
       </h3>
     </div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    public  function <a href='..\proc\file_exists.html'>file_exists</a>(my_test, fname) result(fe)  
+    private  subroutine reset(current_log)  
 </h3>
-    
 
-  <p>Function to check if a file exists</p>
+  <p>Subroutine to reset the logger</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1239,41 +1088,89 @@ will be printed on the screen during the actual tests</p>
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='fortran_unit_test.html'>fortran_unit_test</a>)
+              class(<a href='logger.html'>logger</a>)
             </td>
 <td></td>
               <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>my_test</strong></td>
+            <td><strong>current_log</strong></td>
             <td>
-<p>A fortran_unit_test object </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*)
-            </td>
-<td></td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>fname</strong></td>
-            <td>
-<p>The name of the file </p><a href="../proc/file_exists.html#variable-fname~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+                <p>A logger object</p>
             </td>
         </tr>
     </tbody>
   </table>
 
-    <h4>
-    Return Value
-    <small>logical</small>
-    </h4>
-    <p>A logical variable</p>
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-error"></span>
+      <h3>
+          procedure, public ::
+  <strong>error</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine error(current_log, message)  
+</h3>
+
+  <p>Subroutine to print an error message</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='logger.html'>logger</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_log</strong></td>
+            <td>
+                <p>A logger object     </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>message</strong></td>
+            <td>
+                <p>A character varaible with the error message        </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
 
         </li>
     </ul>
@@ -1284,36 +1181,36 @@ will be printed on the screen during the actual tests</p>
 
     <section>
     <h3><span class="anchor" id="src"></span>Source Code</h3>
-    <div class="hl codehilite"><pre><span></span><span class="k">type </span><span class="n">fortran_unit_test</span>
-<span class="w">    </span><span class="k">private</span>
-<span class="c">!! Class designed to be used in the testing phase of the development cycle. </span>
-<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">entity_name</span><span class="c">!function / subroutine /module</span>
-<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">last_test</span><span class="c">!Last test that was started</span>
-<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testno</span><span class="w"> </span><span class="c">!Current test number</span>
-<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nofails</span><span class="c">!Number of assertions that failed</span>
-<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">noruns</span><span class="c">!Number of runs so far              </span>
-<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">previous_unit</span>
-<span class="w">        </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">call_final</span>
+    <div class="hl codehilite"><pre><span></span><span class="k">type </span><span class="n">logger</span><span class="w"> </span>
+<span class="w">    </span><span class="k">private</span><span class="w"></span>
+<span class="c">!! The Logger class is used to store all the variables related to the units of </span>
+<span class="c">!! files used to store or print messages during the development (debugging ) or </span>
+<span class="c">!! running</span>
+<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fileunit</span><span class="p">,</span><span class="n">stdout</span><span class="w"></span>
+<span class="w">        </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">activate_screen</span><span class="p">,</span><span class="n">activate_file</span><span class="p">,</span><span class="n">timestamp</span><span class="w"></span>
+<span class="w">        </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">initialized</span><span class="p">,</span><span class="n">stoponerror</span><span class="w"></span>
+<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">NUMCHAR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">level_string_volume</span><span class="p">,</span><span class="n">level_string_chapter</span><span class="p">,</span><span class="n">level_string_section</span><span class="w"></span>
+<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">NUMCHAR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">level_string_subsection</span><span class="w"> </span>
 <span class="w">    </span><span class="k">contains</span>
-<span class="k">        procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">create_fortran_unit_test</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">destroy</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">destroy_fortran_unit_test</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_equal_int</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_equal_int1d</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_equal_char</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_equal_char1d</span>
-<span class="w">        </span><span class="k">generic</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_equal</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">assert_equal_int</span><span class="p">,</span><span class="w"> </span><span class="n">assert_equal_int1d</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">                          </span><span class="n">assert_equal_char</span><span class="p">,</span><span class="w"> </span><span class="n">assert_equal_char1d</span><span class="c">!, assert_comparable_int2d</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_comparable_real</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_comparable_real1d</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_comparable_real2d</span>
-<span class="w">        </span><span class="k">generic</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_comparable</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">assert_comparable_real</span><span class="p">,&amp;</span>
-<span class="w">                          </span><span class="n">assert_comparable_real1d</span><span class="p">,</span><span class="n">assert_comparable_real2d</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_true</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assert_false</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">test</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_available_unit</span>
-<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">file_exists</span><span class="w">   </span>
-<span class="k">end type </span><span class="n">fortran_unit_test</span>
+<span class="k">        procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">create_logger</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">destroy</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">destroy_logger</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">startup</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">shutdown</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">is_initialized</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">message</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">write</span>
+<span class="k">        procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_available_unit</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configure_logical</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configure_integer</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configure_character</span><span class="w"></span>
+<span class="w">        </span><span class="k">generic</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configure</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">configure_logical</span><span class="p">,</span><span class="n">configure_integer</span><span class="p">,</span><span class="n">configure_character</span><span class="w"></span>
+<span class="c">!        generic,public :: get </span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_unit</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">delimiter</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_delimiter</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">reset</span><span class="w"></span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
+<span class="k">end type </span><span class="n">logger</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -1329,14 +1226,14 @@ will be printed on the screen during the actual tests</p>
           <div class="col">
             <p>
               KohonenF08
- was developed by Oscar Garcia-Cabrejo<br>              &copy; 2024 
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-12-07 06:16              </p>
+ on 2025-03-08 14:15 -0500             </p>
           </div>
         </div>
         <br>

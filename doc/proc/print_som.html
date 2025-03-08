@@ -76,20 +76,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 2.6% of total for procedures.">40 statements</a>
+                 title=" 3.2% of total for procedures.">40 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/self_organized_map_utilities.f90"> Source File</a>
+              <a href="../src/self_organizing_map_utilities.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='..\sourcefile\self_organized_map_utilities.f90.html'>self_organized_map_utilities.f90</a></li>
-                <li class="breadcrumb-item"><a href='..\module\self_organized_map_utilities.html'>self_organized_map_utilities</a></li>
+                <li class="breadcrumb-item"><a href='..\sourcefile\self_organizing_map_utilities.f90.html'>self_organizing_map_utilities.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\self_organizing_map_utilities.html'>self_organizing_map_utilities</a></li>
             <li class="breadcrumb-item active" aria-current="page">print_som</li>
           </ol>
         </nav>
@@ -119,7 +119,7 @@
             <a class="list-group-item" href="../proc/print_som.html#variable-ix~6">ix</a>
             <a class="list-group-item" href="../proc/print_som.html#variable-iy~6">iy</a>
             <a class="list-group-item" href="../proc/print_som.html#variable-iz~5">iz</a>
-            <a class="list-group-item" href="../proc/print_som.html#variable-unit1">unit1</a>
+            <a class="list-group-item" href="../proc/print_som.html#variable-unit1~4">unit1</a>
         </div>
       </div>
     </div>
@@ -159,10 +159,10 @@
 </h2>
     
 
-    <p>Print function for self_organized_map </p>
+    <p>Print function for self_organizing_map </p>
 
     <h3>Type Bound</h3>
-    <p><a href='..\type\self_organized_map.html'>self_organized_map</a></p>
+    <p><a href='..\type\self_organizing_map.html'>self_organizing_map</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -178,7 +178,7 @@
         <tr>
             <td>
               <span class="anchor" id="variable-kohonen_map~5"></span>
-              class(<a href='..\type\self_organized_map.html'>self_organized_map</a>)
+              class(<a href='..\type\self_organizing_map.html'>self_organizing_map</a>)
             </td>
 <td></td>
               <td></td>            <td>
@@ -192,7 +192,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit_~2"></span>
+              <span class="anchor" id="variable-unit_~7"></span>
               integer,
             </td>
 <td>intent(inout),</td>
@@ -276,7 +276,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit1"></span>
+              <span class="anchor" id="variable-unit1~4"></span>
               integer,
             </td>
               <td>public</td>
@@ -307,56 +307,56 @@
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">print_som</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">,</span><span class="n">unit_</span><span class="p">)</span>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">print_som</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">,</span><span class="n">unit_</span><span class="p">)</span><span class="w"></span>
 <span class="c">!========================================================================================</span>
-<span class="c">!!   Print function for self_organized_map </span>
-<span class="w">        </span><span class="k">class</span><span class="p">(</span><span class="n">self_organized_map</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">kohonen_map</span>
+<span class="c">!!   Print function for self_organizing_map </span>
+<span class="w">        </span><span class="k">class</span><span class="p">(</span><span class="n">self_organizing_map</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">kohonen_map</span><span class="w"></span>
 <span class="c">!!</span>
-<span class="w">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">unit_</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">unit_</span><span class="w"></span>
 <span class="c">!!</span>
-<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">,</span><span class="n">unit1</span>
+<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">,</span><span class="n">unit1</span><span class="w"></span>
 <span class="c">!</span>
 <span class="w">        </span><span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">unit_</span><span class="p">))</span><span class="w"> </span><span class="k">then </span>
-<span class="k">            </span><span class="n">unit1</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span>
+<span class="k">            </span><span class="n">unit1</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">else</span>
-<span class="k">            </span><span class="n">unit1</span><span class="o">=</span><span class="n">unit_</span><span class="p">;</span>
+<span class="k">            </span><span class="n">unit1</span><span class="o">=</span><span class="n">unit_</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">endif</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM: Results&#39;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span>
-<span class="w">        </span><span class="k">call </span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">parameters</span><span class="p">%</span><span class="k">print</span><span class="p">(</span><span class="n">unit1</span><span class="p">);</span>
+<span class="k">        write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM: Results&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">call </span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">parameters</span><span class="p">%</span><span class="k">print</span><span class="p">(</span><span class="n">unit1</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="c">! write(unit1,*) &#39;After&#39;</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM: Grid nodes&#39;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span>
-<span class="w">        </span><span class="k">do </span><span class="n">iz</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="w">            </span><span class="k">do </span><span class="n">iy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-<span class="w">                </span><span class="k">do </span><span class="n">ix</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="w">                    </span><span class="k">call </span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">)%</span><span class="k">print</span><span class="p">(</span><span class="n">unit1</span><span class="p">);</span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM: Grid nodes&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">do </span><span class="n">iz</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">do </span><span class="n">iy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">do </span><span class="n">ix</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                    </span><span class="k">call </span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">)%</span><span class="k">print</span><span class="p">(</span><span class="n">unit1</span><span class="p">);</span><span class="w"></span>
 <span class="w">                </span><span class="k">enddo</span>
 <span class="k">            enddo</span><span class="c">!iy</span>
 <span class="w">        </span><span class="k">enddo</span><span class="c">!ix</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM: Hit count&#39;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Pattern Numbers&#39;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">do </span><span class="n">iz</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
-<span class="w">            </span><span class="k">do </span><span class="n">ix</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="s1">&#39;(100I5)&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">),</span><span class="n">iy</span><span class="o">=</span><span class="mi">1</span><span class="p">,&amp;</span>
-<span class="w">                   </span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM: Hit count&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Pattern Numbers&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">do </span><span class="n">iz</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">do </span><span class="n">ix</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="s1">&#39;(100I5)&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">),</span><span class="n">iy</span><span class="o">=</span><span class="mi">1</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                   </span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span><span class="w"></span>
 <span class="w">            </span><span class="k">enddo</span>
 <span class="k">        enddo</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM: Pattern index&#39;</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span>
-<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Pattern #, ix   ,iy&#39;</span><span class="p">;</span>
+<span class="k">        write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM: Pattern index&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Pattern #, ix   ,iy&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">do </span><span class="n">ix</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">cells_index</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="w">            </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="s1">&#39;(100I5)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">ix</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">cells_index</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">),&amp;</span>
-<span class="w">                </span><span class="n">iy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">cells_index</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
-<span class="w">        </span><span class="k">enddo</span>
+<span class="w">        </span><span class="k">do </span><span class="n">ix</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">cells_index</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">write</span><span class="p">(</span><span class="n">unit1</span><span class="p">,</span><span class="s1">&#39;(100I5)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">ix</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">cells_index</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">),&amp;</span><span class="w"></span>
+<span class="w">                </span><span class="n">iy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">cells_index</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="k">enddo</span><span class="w"></span>
 <span class="c">!</span>
-<span class="w">    </span><span class="k">end subroutine </span><span class="n">print_som</span>
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">print_som</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -373,14 +373,14 @@
           <div class="col">
             <p>
               KohonenF08
- was developed by Oscar Garcia-Cabrejo<br>              &copy; 2024 
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-12-07 06:16              </p>
+ on 2025-03-08 14:15 -0500             </p>
           </div>
         </div>
         <br>

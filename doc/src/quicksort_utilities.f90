@@ -92,7 +92,6 @@ contains
                             exit
                         end if
                     end do
-    +
                     if (left_end < j) call quick_sort_1(left_end, j)
                     if (i < right_end) call quick_sort_1(i, right_end)
                 end if

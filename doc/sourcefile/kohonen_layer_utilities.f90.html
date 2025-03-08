@@ -1,0 +1,663 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>kohonen_layer_utilities.f90 &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>kohonen_layer_utilities.f90
+      <small>Source File</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Oscar Garcia-Cabrejo</li>
+            <li class="list-inline-item" id="meta-date"><i class="fa fa-calendar-o"></i> 03/05/2025</li>
+            <li class="list-inline-item" id="meta-version"><i class="fa fa-barcode"></i> 0.1</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.7% of total for source files.">15 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/kohonen_layer_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+            <li class="breadcrumb-item active" aria-current="page">kohonen_layer_utilities.f90</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#mods-0"
+         aria-expanded="false" aria-controls="mods-0">
+         <h4 class="card-header bg-primary text-white">Modules</h4>
+      </a>
+      <div id="mods-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/kohonen_layer_utilities.html">kohonen_layer_utilities</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../sourcefile/kohonen_layer_utilities.f90.html#src">kohonen_layer_utilities.f90</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      <p>This module defines a class that represents a layer in a self-organizing map</p>
+      <br>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">This file depends on</h3>
+          </div>
+          <div class="card-body">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilekohonen_layer_utilitiesf90EfferentGraph" width="641pt" height="228pt"
+ viewBox="0.00 0.00 641.00 228.25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph" class="graph" transform="scale(0.581474 0.581474) rotate(0) translate(4 388.54)">
+<title>sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-388.54 1098.37,-388.54 1098.37,4 -4,4"/>
+<!-- sourcefile~kohonen_layer_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~kohonen_layer_utilities.f90</title>
+<polygon fill="none" stroke="black" points="1094.37,-249.16 956.1,-249.16 956.1,-225.64 1094.37,-225.64 1094.37,-249.16"/>
+<text text-anchor="middle" x="1025.24" y="-233.42" font-family="Helvetica,sans-Serif" font-size="10.50">kohonen_layer_utilities.f90</text>
+</g>
+<!-- sourcefile~constants_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~constants_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node2"><a xlink:href="../sourcefile/constants_utilities.f90.html" xlink:title="constants_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="271.67,-269.16 158.15,-269.16 158.15,-245.64 271.67,-245.64 271.67,-269.16"/>
+<text text-anchor="middle" x="214.91" y="-253.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M618.32,-217.4C557.88,-220.16 543.93,-231.59 483.81,-238.4 415.68,-246.12 337.43,-251.24 283.16,-254.2"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="283.27,-250.69 273.47,-254.72 283.64,-257.68 283.27,-250.69"/>
+</g>
+<!-- sourcefile~distance_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~distance_base_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node3"><a xlink:href="../sourcefile/distance_base_utilities.f90.html" xlink:title="distance_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="283.29,-189.16 146.52,-189.16 146.52,-165.64 283.29,-165.64 283.29,-189.16"/>
+<text text-anchor="middle" x="214.91" y="-173.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">distance_base_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M618.32,-217.4C520.85,-220.89 499.98,-181.86 402.55,-177.4"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M836.47,-197.4C741.68,-179.45 716.73,-213.95 620.32,-217.4"/>
+</g>
+<!-- sourcefile~factory_distance_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node4" class="node">
+<title>sourcefile~factory_distance_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node4"><a xlink:href="../sourcefile/factory_distance_utilities.f90.html" xlink:title="factory_distance_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="692.21,-189.16 546.44,-189.16 546.44,-165.64 692.21,-165.64 692.21,-189.16"/>
+<text text-anchor="middle" x="619.32" y="-173.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~factory_distance_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge3" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~factory_distance_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M836.47,-197.4C793.01,-189.51 744.03,-184.65 703.71,-181.7"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="704.03,-178.22 693.81,-181.01 703.54,-185.2 704.03,-178.22"/>
+</g>
+<!-- sourcefile~kohonen_layer_parameters_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node5" class="node">
+<title>sourcefile~kohonen_layer_parameters_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node5"><a xlink:href="../sourcefile/kohonen_layer_parameters_utilities.f90.html" xlink:title="kohonen_layer_parameters_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="718.83,-343.16 519.81,-343.16 519.81,-319.64 718.83,-319.64 718.83,-343.16"/>
+<text text-anchor="middle" x="619.32" y="-327.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_parameters_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~kohonen_layer_parameters_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge4" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~kohonen_layer_parameters_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M836.47,-371.4C821.86,-375.35 742.46,-359.07 684.11,-346.1"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="685.11,-342.73 674.59,-343.97 683.58,-349.56 685.11,-342.73"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1013.66,-249.54C987.54,-278.41 916.39,-350.32 838.47,-371.4"/>
+</g>
+<!-- sourcefile~kohonen_map_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node6" class="node">
+<title>sourcefile~kohonen_map_base_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node6"><a xlink:href="../sourcefile/kohonen_map_base_utilities.f90.html" xlink:title="kohonen_map_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="920.1,-306.16 754.83,-306.16 754.83,-282.64 920.1,-282.64 920.1,-306.16"/>
+<text text-anchor="middle" x="837.47" y="-290.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_map_base_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~kohonen_map_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge5" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~kohonen_map_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M984.38,-249.63C956.47,-258.19 918.94,-269.71 888.93,-278.91"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="888.23,-275.47 879.7,-281.75 890.29,-282.16 888.23,-275.47"/>
+</g>
+<!-- sourcefile~kohonen_pattern_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node7" class="node">
+<title>sourcefile~kohonen_pattern_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node7"><a xlink:href="../sourcefile/kohonen_pattern_utilities.f90.html" xlink:title="kohonen_pattern_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="693.71,-269.16 544.94,-269.16 544.94,-245.64 693.71,-245.64 693.71,-269.16"/>
+<text text-anchor="middle" x="619.32" y="-253.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge6" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M836.47,-197.4C782.92,-187.68 771.28,-216.9 718.83,-231.4 705.78,-235.01 691.72,-238.78 678.43,-242.3"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="677.72,-238.87 668.94,-244.8 679.51,-245.64 677.72,-238.87"/>
+</g>
+<!-- sourcefile~kohonen_prototype_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node8" class="node">
+<title>sourcefile~kohonen_prototype_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node8"><a xlink:href="../sourcefile/kohonen_prototype_utilities.f90.html" xlink:title="kohonen_prototype_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="481.56,-229.16 321.54,-229.16 321.54,-205.64 481.56,-205.64 481.56,-229.16"/>
+<text text-anchor="middle" x="401.55" y="-213.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge7" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M618.32,-217.4C577.28,-219.28 531.8,-219.54 493.22,-219.24"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="493.55,-215.74 483.52,-219.15 493.49,-222.74 493.55,-215.74"/>
+</g>
+<!-- sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node9" class="node">
+<title>sourcefile~precision_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node9"><a xlink:href="../sourcefile/precision_utilities.f90.html" xlink:title="precision_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="110.52,-189.16 0,-189.16 0,-165.64 110.52,-165.64 110.52,-189.16"/>
+<text text-anchor="middle" x="55.26" y="-173.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge8" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M836.47,-371.4C743.73,-396.48 715.92,-361.92 620.32,-371.4"/>
+</g>
+<!-- sourcefile~quicksort_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node10" class="node">
+<title>sourcefile~quicksort_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node10"><a xlink:href="../sourcefile/quicksort_utilities.f90.html" xlink:title="quicksort_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="456.81,-65.16 346.29,-65.16 346.29,-41.64 456.81,-41.64 456.81,-65.16"/>
+<text text-anchor="middle" x="401.55" y="-49.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">quicksort_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~quicksort_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge9" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~quicksort_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M836.47,-197.4C835.83,-197.28 484.43,-74.59 483.81,-74.4 477.22,-72.4 470.3,-70.43 463.38,-68.53"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="464.61,-65.24 454.04,-66.03 462.79,-72 464.61,-65.24"/>
+</g>
+<!-- sourcefile~random_generator_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node11" class="node">
+<title>sourcefile~random_generator_base_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node11"><a xlink:href="../sourcefile/random_generator_base_utilities.f90.html" xlink:title="random_generator_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="712.46,-45.16 526.19,-45.16 526.19,-21.64 712.46,-21.64 712.46,-45.16"/>
+<text text-anchor="middle" x="619.32" y="-29.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_generator_base_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~random_generator_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge10" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~random_generator_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M836.47,-197.4C790.5,-189.06 686.02,-95.2 641.28,-53.34"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="643.71,-50.82 634.03,-46.51 638.91,-55.92 643.71,-50.82"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M971.97,-225.19C934.84,-216.76 883.75,-205.62 838.47,-197.4"/>
+</g>
+<!-- sourcefile~rkiss05_generator_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node12" class="node">
+<title>sourcefile~rkiss05_generator_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node12"><a xlink:href="../sourcefile/rkiss05_generator_utilities.f90.html" xlink:title="rkiss05_generator_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="914.48,-45.16 760.46,-45.16 760.46,-21.64 914.48,-21.64 914.48,-45.16"/>
+<text text-anchor="middle" x="837.47" y="-29.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~rkiss05_generator_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge11" class="edge">
+<title>sourcefile~kohonen_layer_utilities.f90&#45;&gt;sourcefile~rkiss05_generator_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1013.17,-225.25C982.39,-191.44 895.49,-96.02 857.1,-53.86"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="859.81,-51.64 850.49,-46.6 854.64,-56.35 859.81,-51.64"/>
+</g>
+<!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge12" class="edge">
+<title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M178.79,-245.15C168.26,-241.13 156.78,-236.4 146.52,-231.4 124.84,-220.83 101.51,-206.79 83.99,-195.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="85.99,-192.8 75.69,-190.34 82.21,-198.69 85.99,-192.8"/>
+</g>
+<!-- sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge13" class="edge">
+<title>sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ff8b00" stroke-dasharray="5,2" d="M146.13,-177.4C138.17,-177.4 130.06,-177.4 122.12,-177.4"/>
+<polygon fill="#ff8b00" stroke="#ff8b00" points="122.18,-173.9 112.18,-177.4 122.18,-180.9 122.18,-173.9"/>
+</g>
+<!-- sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge14" class="edge">
+<title>sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90</title>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M546.36,-179.04C504.39,-179.59 450.45,-179.59 402.55,-177.4"/>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M400.55,-177.4C365.89,-175.81 327.53,-175.56 294.8,-175.81"/>
+<polygon fill="#e7ff00" stroke="#e7ff00" points="294.95,-172.31 284.98,-175.9 295.01,-179.31 294.95,-172.31"/>
+</g>
+<!-- sourcefile~euclidean_distance_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node13" class="node">
+<title>sourcefile~euclidean_distance_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node13"><a xlink:href="../sourcefile/euclidean_distance_utilities.f90.html" xlink:title="euclidean_distance_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="481.19,-107.16 321.92,-107.16 321.92,-83.64 481.19,-83.64 481.19,-107.16"/>
+<text text-anchor="middle" x="401.55" y="-91.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">euclidean_distance_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~euclidean_distance_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge15" class="edge">
+<title>sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~euclidean_distance_utilities.f90</title>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M552.87,-165.19C541.44,-161.66 529.97,-157.14 519.81,-151.4 500.39,-140.41 503.26,-127.33 483.81,-116.4 480.8,-114.7 477.64,-113.14 474.4,-111.7"/>
+<polygon fill="#e7ff00" stroke="#e7ff00" points="475.8,-108.5 465.22,-108.08 473.23,-115.01 475.8,-108.5"/>
+</g>
+<!-- sourcefile~manhattan_distance_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node14" class="node">
+<title>sourcefile~manhattan_distance_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node14"><a xlink:href="../sourcefile/manhattan_distance_utilities.f90.html" xlink:title="manhattan_distance_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="483.81,-149.16 319.29,-149.16 319.29,-125.64 483.81,-125.64 483.81,-149.16"/>
+<text text-anchor="middle" x="401.55" y="-133.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">manhattan_distance_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~manhattan_distance_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge16" class="edge">
+<title>sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~manhattan_distance_utilities.f90</title>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M552.41,-165.18C529.41,-160.91 503.39,-156.09 479.56,-151.67"/>
+<polygon fill="#e7ff00" stroke="#e7ff00" points="480.39,-148.27 469.92,-149.89 479.11,-155.15 480.39,-148.27"/>
+</g>
+<!-- sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge17" class="edge">
+<title>sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M400.55,-333.4C341.82,-327.75 279.57,-296.02 244.43,-275.38"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="246.53,-272.56 236.15,-270.41 242.92,-278.56 246.53,-272.56"/>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M519.58,-336.66C482.77,-337.48 440.68,-337.06 402.55,-333.4"/>
+</g>
+<!-- sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge18" class="edge">
+<title>sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M400.55,-333.4C318.86,-325.55 291.9,-364.36 215.91,-333.4"/>
+</g>
+<!-- sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~kohonen_layer_parameters_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge19" class="edge">
+<title>sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~kohonen_layer_parameters_utilities.f90</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M765.09,-306.62C745.17,-310.03 723.36,-313.76 702.86,-317.27"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="702.38,-313.8 693.11,-318.94 703.56,-320.7 702.38,-313.8"/>
+</g>
+<!-- sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge20" class="edge">
+<title>sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M765.09,-282.18C745.17,-278.77 723.36,-275.04 702.86,-271.53"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="703.56,-268.1 693.11,-269.86 702.38,-275 703.56,-268.1"/>
+</g>
+<!-- sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge21" class="edge">
+<title>sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M618.32,-371.4C439.36,-387.07 382.27,-401.19 215.91,-333.4"/>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M815.94,-306.64C793.02,-319.79 754.44,-340.43 718.83,-352.4 676.57,-366.61 664.69,-367 620.32,-371.4"/>
+</g>
+<!-- sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge22" class="edge">
+<title>sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M400.55,-295.4C350.84,-299.7 294.86,-285.4 257.7,-273.13"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="259.29,-269.98 248.7,-270.07 257.04,-276.61 259.29,-269.98"/>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M564.58,-269.58C521.13,-278.76 458.26,-290.57 402.55,-295.4"/>
+</g>
+<!-- sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge23" class="edge">
+<title>sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M552.41,-245.18C529.41,-240.91 503.39,-236.09 479.56,-231.67"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="480.39,-228.27 469.92,-229.89 479.11,-235.15 480.39,-228.27"/>
+</g>
+<!-- sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge24" class="edge">
+<title>sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M400.55,-295.4C358.81,-299.01 254.7,-349.21 215.91,-333.4"/>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M213.91,-333.4C147.05,-306.16 93.56,-235.14 69.72,-199.08"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="72.73,-197.28 64.37,-190.77 66.84,-201.07 72.73,-197.28"/>
+</g>
+<!-- sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge25" class="edge">
+<title>sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M344.15,-229.62C324.91,-233.78 303.2,-238.49 283.19,-242.82"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="282.47,-239.4 273.44,-244.93 283.96,-246.24 282.47,-239.4"/>
+</g>
+<!-- sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge26" class="edge">
+<title>sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M344.15,-205.18C325,-201.03 303.4,-196.35 283.47,-192.04"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="284.27,-188.63 273.76,-189.93 282.79,-195.47 284.27,-188.63"/>
+</g>
+<!-- sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge27" class="edge">
+<title>sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M321.24,-214.61C270.96,-212.06 204.67,-207.28 146.52,-198.4 135.78,-196.76 124.42,-194.52 113.52,-192.12"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="114.38,-188.72 103.85,-189.91 112.82,-195.55 114.38,-188.72"/>
+</g>
+<!-- sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge28" class="edge">
+<title>sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#5c00ff" stroke-dasharray="5,2" d="M356.03,-41.17C305.69,-27.75 228.98,-8.68 215.91,-13.4"/>
+</g>
+<!-- sourcefile~sort_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node15" class="node">
+<title>sourcefile~sort_base_utilities.f90</title>
+<g id="a_sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_node15"><a xlink:href="../sourcefile/sort_base_utilities.f90.html" xlink:title="sort_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="272.42,-87.16 157.4,-87.16 157.4,-63.64 272.42,-63.64 272.42,-87.16"/>
+<text text-anchor="middle" x="214.91" y="-71.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_base_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~sort_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge29" class="edge">
+<title>sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~sort_base_utilities.f90</title>
+<path fill="none" stroke="#5c00ff" stroke-dasharray="5,2" d="M346.15,-59.88C326.67,-62.2 304.47,-64.85 283.98,-67.29"/>
+<polygon fill="#5c00ff" stroke="#5c00ff" points="283.82,-63.78 274.31,-68.44 284.65,-70.73 283.82,-63.78"/>
+</g>
+<!-- sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge30" class="edge">
+<title>sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#e700ff" stroke-dasharray="5,2" d="M526.89,-21.16C488.55,-17.01 443.46,-13.4 402.55,-13.4"/>
+</g>
+<!-- sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge31" class="edge">
+<title>sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ff008b" stroke-dasharray="5,2" d="M779.6,-21.16C760.39,-17.58 738.77,-14.16 718.83,-12.4 578.81,0 543.12,-13.4 402.55,-13.4"/>
+<path fill="none" stroke="#ff008b" stroke-dasharray="5,2" d="M400.55,-13.4C318.5,-11.8 293.1,14.44 215.91,-13.4"/>
+<path fill="none" stroke="#ff008b" stroke-dasharray="5,2" d="M213.91,-13.4C180.93,-25.29 172.36,-30.7 146.52,-54.4 113.24,-84.92 84.25,-129.35 68.6,-155.62"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="65.7,-153.65 63.68,-164.05 71.74,-157.18 65.7,-153.65"/>
+</g>
+<!-- sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~random_generator_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge32" class="edge">
+<title>sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~random_generator_base_utilities.f90</title>
+<path fill="none" stroke="#ff008b" stroke-dasharray="5,2" d="M759.96,-33.4C748.24,-33.4 735.98,-33.4 723.8,-33.4"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="724.17,-29.9 714.17,-33.4 724.17,-36.9 724.17,-29.9"/>
+</g>
+<!-- sourcefile~euclidean_distance_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge33" class="edge">
+<title>sourcefile~euclidean_distance_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M339.29,-107.52C332.33,-109.97 325.51,-112.9 319.29,-116.4 299.84,-127.33 302.08,-139.36 283.29,-151.4 277.81,-154.91 271.78,-158.06 265.66,-160.86"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="264.57,-157.52 256.72,-164.65 267.3,-163.97 264.57,-157.52"/>
+</g>
+<!-- sourcefile~euclidean_distance_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge34" class="edge">
+<title>sourcefile~euclidean_distance_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M213.91,-137.4C178.39,-143.81 139.05,-153.79 108.55,-162.18"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.89,-158.73 99.19,-164.78 109.76,-165.47 107.89,-158.73"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M352.2,-107.65C315.09,-116.74 262.49,-128.98 215.91,-137.4"/>
+</g>
+<!-- sourcefile~manhattan_distance_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge35" class="edge">
+<title>sourcefile~manhattan_distance_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M344.15,-149.62C325,-153.77 303.4,-158.44 283.47,-162.76"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="282.79,-159.33 273.76,-164.86 284.27,-166.17 282.79,-159.33"/>
+</g>
+<!-- sourcefile~manhattan_distance_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge36" class="edge">
+<title>sourcefile~manhattan_distance_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M319.1,-131.17C286.75,-130.32 249.34,-131.36 215.91,-137.4"/>
+</g>
+<!-- sourcefile~sort_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~kohonen_layer_utilities.f90~~EfferentGraph_edge37" class="edge">
+<title>sourcefile~sort_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M195.2,-87.5C167.71,-105.29 116.18,-138.63 84.19,-159.33"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="82.7,-156.12 76.21,-164.49 86.51,-162 82.7,-156.12"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var pansourcefilekohonen_layer_utilitiesf90EfferentGraph = svgPanZoom('#sourcefilekohonen_layer_utilitiesf90EfferentGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#EfferentGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="EfferentGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="188pt" height="32pt"
+ viewBox="0.00 0.00 187.89 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 183.89,-27.52 183.89,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="65.52,-23.52 0,-23.52 0,0 65.52,0 65.52,-23.52"/>
+<text text-anchor="middle" x="32.76" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="179.89,-23.52 83.62,-23.52 83.62,0 179.89,0 179.89,-23.52"/>
+<text text-anchor="middle" x="131.76" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a file to a file which it depends on. A file
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+<br>
+      <section>
+        <h2><span class="anchor" id="src"></span>Source Code</h2>
+        <div class="hl codehilite"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="c">!! author: Oscar Garcia-Cabrejo</span>
+<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">!! date: 03/05/2025</span>
+<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">!! version: 0.1</span>
+<a id="ln-4" name="ln-4" href="#ln-4"></a><span class="c">!! This module defines a class that represents a layer in a self-organizing map</span>
+<a id="ln-5" name="ln-5" href="#ln-5"></a><span class="k">module </span><span class="n">kohonen_layer_utilities</span><span class="w"></span>
+<a id="ln-6" name="ln-6" href="#ln-6"></a><span class="c">!! This module defines a class that represents a layer in a self-organizing map</span>
+<a id="ln-7" name="ln-7" href="#ln-7"></a><span class="k">use </span><span class="n">error_handling</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">error_t</span><span class="p">,</span><span class="n">error_stop</span><span class="p">;</span><span class="w"></span>
+<a id="ln-8" name="ln-8" href="#ln-8"></a><span class="k">use </span><span class="n">precision_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">wp</span><span class="p">;</span><span class="w"></span>
+<a id="ln-9" name="ln-9" href="#ln-9"></a><span class="k">use </span><span class="n">constants_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">NUMCHAR</span><span class="p">;</span><span class="w"></span>
+<a id="ln-10" name="ln-10" href="#ln-10"></a><span class="k">use </span><span class="n">random_generator_base_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">random_generator_base</span><span class="p">;</span><span class="w"></span>
+<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="k">use </span><span class="n">rkiss05_generator_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">rkiss05_generator</span><span class="p">;</span><span class="w"></span>
+<a id="ln-12" name="ln-12" href="#ln-12"></a><span class="k">use </span><span class="n">kohonen_layer_parameters_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">kohonen_layer_parameters</span><span class="p">;</span><span class="w"></span>
+<a id="ln-13" name="ln-13" href="#ln-13"></a><span class="k">use </span><span class="n">kohonen_map_base_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">kohonen_map_base</span><span class="p">;</span><span class="w"></span>
+<a id="ln-14" name="ln-14" href="#ln-14"></a><span class="k">use </span><span class="n">kohonen_prototype_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">kohonen_prototype</span><span class="p">;</span><span class="w"></span>
+<a id="ln-15" name="ln-15" href="#ln-15"></a><span class="k">use </span><span class="n">kohonen_pattern_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">kohonen_pattern</span><span class="p">;</span><span class="w"></span>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="k">use </span><span class="n">distance_base_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">distance_base</span><span class="p">;</span><span class="w"></span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="k">use </span><span class="n">factory_distance_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">factory_distance</span><span class="p">;</span><span class="w"></span>
+<a id="ln-18" name="ln-18" href="#ln-18"></a><span class="c">!use influence_function_utilities;</span>
+<a id="ln-19" name="ln-19" href="#ln-19"></a><span class="k">use </span><span class="n">quicksort_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">quicksort</span><span class="p">;</span><span class="w"></span>
+<a id="ln-20" name="ln-20" href="#ln-20"></a><span class="c">!</span>
+<a id="ln-21" name="ln-21" href="#ln-21"></a><span class="k">implicit none</span><span class="p">;</span><span class="w"></span>
+<a id="ln-22" name="ln-22" href="#ln-22"></a><span class="c">!</span>
+<a id="ln-23" name="ln-23" href="#ln-23"></a>
+<a id="ln-24" name="ln-24" href="#ln-24"></a><span class="k">end module </span><span class="n">kohonen_layer_utilities</span><span class="w"></span>
+</pre></div>
+
+      </section>
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-08 14:15 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

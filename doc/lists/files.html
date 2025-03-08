@@ -91,21 +91,24 @@ derive classes used in the calculation of distances between input patterns</p></
                  <td><p>This module defines a factory to create distance objects </p></td>
                </tr>
 			   <tr>
-                 <td><a href='..\sourcefile\fortran_unit_test_utilities.f90.html'>fortran_unit_test_utilities.f90</a></td>
-                 <td><p>This module defines a class called <code>fortran_unit_test</code> which is used to represent the 
-test to be applied to another class or a specific procedure.</p></td>
-               </tr>
-			   <tr>
                  <td><a href='..\sourcefile\general_utilities.f90.html'>general_utilities.f90</a></td>
                  <td><p>This module includes general purpose functions used in several parts of the library</p></td>
+               </tr>
+			   <tr>
+                 <td><a href='..\sourcefile\kohonen_layer_base_utilities.f90.html'>kohonen_layer_base_utilities.f90</a></td>
+                 <td><p>This module defines an abstract class that represents a layer in a self-organizing map</p></td>
                </tr>
 			   <tr>
                  <td><a href='..\sourcefile\kohonen_layer_parameters_utilities.f90.html'>kohonen_layer_parameters_utilities.f90</a></td>
                  <td></td>
                </tr>
 			   <tr>
+                 <td><a href='..\sourcefile\kohonen_layer_utilities.f90.html'>kohonen_layer_utilities.f90</a></td>
+                 <td><p>This module defines a class that represents a layer in a self-organizing map</p></td>
+               </tr>
+			   <tr>
                  <td><a href='..\sourcefile\kohonen_map_base_utilities.f90.html'>kohonen_map_base_utilities.f90</a></td>
-                 <td><p>**<em>h</em> Kohonen/kohonen_map_base_utilities</p><a href="../sourcefile/kohonen_map_base_utilities.f90.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+                 <td><p>This module defines an abstract class for kohonen maps</p></td>
                </tr>
 			   <tr>
                  <td><a href='..\sourcefile\kohonen_pattern_utilities.f90.html'>kohonen_pattern_utilities.f90</a></td>
@@ -116,6 +119,12 @@ test to be applied to another class or a specific procedure.</p></td>
                  <td><p>This module defines a class for kohonen prototype (units inside kohonen layers) </p></td>
                </tr>
 			   <tr>
+                 <td><a href='..\sourcefile\logger_utilities.f90.html'>logger_utilities.f90</a></td>
+                 <td><p>This module includes the definition of a class called logger that is used 
+to log messages on the screen during the development or running of a given 
+application</p></td>
+               </tr>
+			   <tr>
                  <td><a href='..\sourcefile\manhattan_distance_utilities.f90.html'>manhattan_distance_utilities.f90</a></td>
                  <td><p>This module defines a class to calculate the Manhattan distance between kohonen prototypes </p></td>
                </tr>
@@ -123,6 +132,16 @@ test to be applied to another class or a specific procedure.</p></td>
                  <td><a href='..\sourcefile\mt19937_64.f90.html'>mt19937_64.f90</a></td>
                  <td><p>This is a Fortran translation of the 64-bit version of
    the Mersenne Twister pseudorandom number generator</p><a href="../sourcefile/mt19937_64.f90.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+               </tr>
+			   <tr>
+                 <td><a href='..\sourcefile\multilayer_self_organizing_map_utilities.f.html'>multilayer_self_organizing_map_utilities.f</a></td>
+                 <td><p>This module defines a class that represents a multilayer self_organized_map 
+defined using several kohonen layers 
+This module defines a class that represents a multilayer self_organized_map</p></td>
+               </tr>
+			   <tr>
+                 <td><a href='..\sourcefile\neighborhood_function_base_utilities.f90.html'>neighborhood_function_base_utilities.f90</a></td>
+                 <td><p>This module defines an abstract class to define neighborhood functions</p></td>
                </tr>
 			   <tr>
                  <td><a href='..\sourcefile\precision_utilities.f90.html'>precision_utilities.f90</a></td>
@@ -151,8 +170,8 @@ that is used to generate random numbers with an uniform disitribution
 using the rkiss approach</p></td>
                </tr>
 			   <tr>
-                 <td><a href='..\sourcefile\self_organized_map_utilities.f90.html'>self_organized_map_utilities.f90</a></td>
-                 <td><p>This module defines a class for simple self_organized_map (one kohonen layer) </p></td>
+                 <td><a href='..\sourcefile\self_organizing_map_utilities.f90.html'>self_organizing_map_utilities.f90</a></td>
+                 <td><p>This module defines a class for simple self_organizing_map (one kohonen layer) </p></td>
                </tr>
 			   <tr>
                  <td><a href='..\sourcefile\sort_base_utilities.f90.html'>sort_base_utilities.f90</a></td>
@@ -162,20 +181,20 @@ using the rkiss approach</p></td>
 			 <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+<!-- Generated by graphviz version 12.0.0 (0)
  -->
 <!-- Title: file~~graph~~FileGraph Pages: 1 -->
-<svg id="filegraphFileGraph" width="641pt" height="269pt"
- viewBox="0.00 0.00 641.00 268.74" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="file~~graph~~FileGraph" class="graph" transform="scale(0.537923 0.537923) rotate(0) translate(4 495.59)">
+<svg id="filegraphFileGraph" width="641pt" height="325pt"
+ viewBox="0.00 0.00 641.00 325.05" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="file~~graph~~FileGraph" class="graph" transform="scale(0.494362 0.494362) rotate(0) translate(4 653.52)">
 <title>file~~graph~~FileGraph</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-495.59 1187.62,-495.59 1187.62,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-653.52 1292.62,-653.52 1292.62,4 -4,4"/>
 <!-- sourcefile~constants_utilities.f90 -->
 <g id="file~~graph~~FileGraph_node1" class="node">
 <title>sourcefile~constants_utilities.f90</title>
 <g id="a_file~~graph~~FileGraph_node1"><a xlink:href="../sourcefile/constants_utilities.f90.html" xlink:title="constants_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="993.98,-225.52 880.46,-225.52 880.46,-202 993.98,-202 993.98,-225.52"/>
-<text text-anchor="middle" x="937.22" y="-209.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants_utilities.f90</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="999.6,-281.52 886.08,-281.52 886.08,-258 999.6,-258 999.6,-281.52"/>
+<text text-anchor="middle" x="942.84" y="-265.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants_utilities.f90</text>
 </a>
 </g>
 </g>
@@ -183,70 +202,99 @@ using the rkiss approach</p></td>
 <g id="file~~graph~~FileGraph_node7" class="node">
 <title>sourcefile~kohonen_layer_parameters_utilities.f90</title>
 <g id="a_file~~graph~~FileGraph_node7"><a xlink:href="../sourcefile/kohonen_layer_parameters_utilities.f90.html" xlink:title="kohonen_layer_parameters_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="600.81,-145.52 401.79,-145.52 401.79,-122 600.81,-122 600.81,-145.52"/>
-<text text-anchor="middle" x="501.3" y="-129.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_parameters_utilities.f90</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="603.06,-183.52 404.04,-183.52 404.04,-160 603.06,-160 603.06,-183.52"/>
+<text text-anchor="middle" x="503.55" y="-167.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_parameters_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~kohonen_layer_parameters_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge10" class="edge">
+<g id="file~~graph~~FileGraph_edge9" class="edge">
 <title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~kohonen_layer_parameters_utilities.f90</title>
-<path fill="none" stroke="#1aff00" d="M880.22,-214.34C836.57,-214.6 774.45,-214.51 720.07,-212.76"/>
-<path fill="none" stroke="#1aff00" d="M718.07,-212.76C648.01,-210.51 572.48,-174.13 531.99,-151.54"/>
-<polygon fill="#1aff00" stroke="#1aff00" points="533.97,-148.64 523.55,-146.73 530.51,-154.72 533.97,-148.64"/>
+<path fill="none" stroke="#6eff00" d="M720.32,-269.76C683.24,-269.14 669.63,-271.76 639.06,-250.76 615.59,-234.64 626.3,-214.21 603.06,-197.76 597.83,-194.06 592.12,-190.89 586.15,-188.17"/>
+<polygon fill="#6eff00" stroke="#6eff00" points="587.91,-185.1 577.32,-184.57 585.27,-191.58 587.91,-185.1"/>
+<path fill="none" stroke="#6eff00" d="M885.9,-270.28C841.53,-270.56 777.95,-270.7 722.32,-269.76"/>
+</g>
+<!-- sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_node8" class="node">
+<title>sourcefile~kohonen_layer_utilities.f90</title>
+<g id="a_file~~graph~~FileGraph_node8"><a xlink:href="../sourcefile/kohonen_layer_utilities.f90.html" xlink:title="kohonen_layer_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="152.52,-248.52 14.25,-248.52 14.25,-225 152.52,-225 152.52,-248.52"/>
+<text text-anchor="middle" x="83.39" y="-232.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge11" class="edge">
+<title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M918.02,-257.68C863.84,-231.05 726.5,-168.25 603.06,-150.76 426.9,-125.79 372.08,-101.07 202.77,-155.76 164.24,-168.21 126.9,-197.52 104.78,-217.25"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="102.67,-214.44 97.65,-223.77 107.39,-219.6 102.67,-214.44"/>
 </g>
 <!-- sourcefile~kohonen_pattern_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node9" class="node">
+<g id="file~~graph~~FileGraph_node10" class="node">
 <title>sourcefile~kohonen_pattern_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node9"><a xlink:href="../sourcefile/kohonen_pattern_utilities.f90.html" xlink:title="kohonen_pattern_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="575.69,-264.52 426.92,-264.52 426.92,-241 575.69,-241 575.69,-264.52"/>
-<text text-anchor="middle" x="501.3" y="-248.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node10"><a xlink:href="../sourcefile/kohonen_pattern_utilities.f90.html" xlink:title="kohonen_pattern_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="577.94,-339.52 429.17,-339.52 429.17,-316 577.94,-316 577.94,-339.52"/>
+<text text-anchor="middle" x="503.55" y="-323.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge15" class="edge">
+<g id="file~~graph~~FileGraph_edge25" class="edge">
 <title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90</title>
-<path fill="none" stroke="#00ff86" d="M718.07,-212.76C688.92,-211.82 617.46,-226.32 564.72,-238.12"/>
-<polygon fill="#00ff86" stroke="#00ff86" points="564.23,-234.64 555.25,-240.25 565.77,-241.47 564.23,-234.64"/>
+<path fill="none" stroke="#00ff58" d="M720.32,-269.76C666.31,-268.85 655.23,-287.76 603.06,-301.76 589.85,-305.31 575.63,-309.08 562.21,-312.63"/>
+<polygon fill="#00ff58" stroke="#00ff58" points="561.41,-309.22 552.64,-315.15 563.2,-315.99 561.41,-309.22"/>
 </g>
 <!-- sourcefile~kohonen_prototype_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node10" class="node">
+<g id="file~~graph~~FileGraph_node11" class="node">
 <title>sourcefile~kohonen_prototype_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node10"><a xlink:href="../sourcefile/kohonen_prototype_utilities.f90.html" xlink:title="kohonen_prototype_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="799.08,-302.52 639.06,-302.52 639.06,-279 799.08,-279 799.08,-302.52"/>
-<text text-anchor="middle" x="719.07" y="-286.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node11"><a xlink:href="../sourcefile/kohonen_prototype_utilities.f90.html" xlink:title="kohonen_prototype_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="801.33,-359.52 641.31,-359.52 641.31,-336 801.33,-336 801.33,-359.52"/>
+<text text-anchor="middle" x="721.32" y="-343.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge18" class="edge">
+<g id="file~~graph~~FileGraph_edge28" class="edge">
 <title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90</title>
-<path fill="none" stroke="#00ffd6" d="M883.68,-225.98C868.57,-229.92 852.17,-234.61 837.33,-239.76 809.08,-249.55 778.1,-263.16 755.09,-273.85"/>
-<polygon fill="#00ffd6" stroke="#00ffd6" points="753.72,-270.62 746.16,-278.04 756.7,-276.96 753.72,-270.62"/>
+<path fill="none" stroke="#00ff9b" d="M907.54,-281.95C869.79,-295.36 808.97,-316.97 767.39,-331.74"/>
+<polygon fill="#00ff9b" stroke="#00ff9b" points="766.42,-328.38 758.17,-335.02 768.76,-334.97 766.42,-328.38"/>
 </g>
-<!-- sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node18" class="node">
-<title>sourcefile~self_organized_map_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node18"><a xlink:href="../sourcefile/self_organized_map_utilities.f90.html" xlink:title="self_organized_map_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="164.52,-185.52 0,-185.52 0,-162 164.52,-162 164.52,-185.52"/>
-<text text-anchor="middle" x="82.26" y="-169.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organized_map_utilities.f90</text>
+<!-- sourcefile~logger_utilities.f90 -->
+<g id="file~~graph~~FileGraph_node12" class="node">
+<title>sourcefile~logger_utilities.f90</title>
+<g id="a_file~~graph~~FileGraph_node12"><a xlink:href="../sourcefile/logger_utilities.f90.html" xlink:title="logger_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="770.21,-241.52 672.44,-241.52 672.44,-218 770.21,-218 770.21,-241.52"/>
+<text text-anchor="middle" x="721.32" y="-225.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger_utilities.f90</text>
 </a>
 </g>
 </g>
-<!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge30" class="edge">
-<title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M718.07,-212.76C577.32,-208.24 532.58,-179.55 401.79,-231.76 338.33,-257.09 349.5,-350.75 284.16,-330.76"/>
-<path fill="none" stroke="#ff00a1" d="M282.16,-330.76C201.92,-306.07 130.79,-230.95 99.77,-194.3"/>
-<polygon fill="#ff00a1" stroke="#ff00a1" points="102.81,-192.49 93.73,-187.03 97.43,-196.96 102.81,-192.49"/>
+<!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~logger_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge31" class="edge">
+<title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~logger_utilities.f90</title>
+<path fill="none" stroke="#00ffdd" d="M885.59,-259.51C853.78,-253.71 814.01,-246.47 781.7,-240.58"/>
+<polygon fill="#00ffdd" stroke="#00ffdd" points="782.56,-237.18 772.09,-238.83 781.3,-244.06 782.56,-237.18"/>
+</g>
+<!-- sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_node22" class="node">
+<title>sourcefile~self_organizing_map_utilities.f90</title>
+<g id="a_file~~graph~~FileGraph_node22"><a xlink:href="../sourcefile/self_organizing_map_utilities.f90.html" xlink:title="self_organizing_map_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="166.77,-309.52 0,-309.52 0,-286 166.77,-286 166.77,-309.52"/>
+<text text-anchor="middle" x="83.39" y="-293.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge42" class="edge">
+<title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M720.32,-269.76C527.72,-266.52 302.57,-280.67 178.49,-290.04"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="178.38,-286.53 168.68,-290.78 178.91,-293.51 178.38,-286.53"/>
 </g>
 <!-- sourcefile~distance_base_utilities.f90 -->
 <g id="file~~graph~~FileGraph_node2" class="node">
 <title>sourcefile~distance_base_utilities.f90</title>
 <g id="a_file~~graph~~FileGraph_node2"><a xlink:href="../sourcefile/distance_base_utilities.f90.html" xlink:title="distance_base_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1005.6,-389.52 868.83,-389.52 868.83,-366 1005.6,-366 1005.6,-389.52"/>
-<text text-anchor="middle" x="937.22" y="-373.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">distance_base_utilities.f90</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1011.23,-485.52 874.46,-485.52 874.46,-462 1011.23,-462 1011.23,-485.52"/>
+<text text-anchor="middle" x="942.84" y="-469.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">distance_base_utilities.f90</text>
 </a>
 </g>
 </g>
@@ -254,340 +302,424 @@ using the rkiss approach</p></td>
 <g id="file~~graph~~FileGraph_node3" class="node">
 <title>sourcefile~euclidean_distance_utilities.f90</title>
 <g id="a_file~~graph~~FileGraph_node3"><a xlink:href="../sourcefile/euclidean_distance_utilities.f90.html" xlink:title="euclidean_distance_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="798.71,-424.52 639.44,-424.52 639.44,-401 798.71,-401 798.71,-424.52"/>
-<text text-anchor="middle" x="719.07" y="-408.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">euclidean_distance_utilities.f90</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="800.96,-567.52 641.69,-567.52 641.69,-544 800.96,-544 800.96,-567.52"/>
+<text text-anchor="middle" x="721.32" y="-551.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">euclidean_distance_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~euclidean_distance_utilities.f90 -->
 <g id="file~~graph~~FileGraph_edge3" class="edge">
 <title>sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~euclidean_distance_utilities.f90</title>
-<path fill="none" stroke="#ffa100" d="M868.42,-388.74C848.88,-391.9 827.3,-395.4 806.79,-398.72"/>
-<polygon fill="#ffa100" stroke="#ffa100" points="806.33,-395.25 797.02,-400.3 807.45,-402.16 806.33,-395.25"/>
+<path fill="none" stroke="#ff8500" d="M917.85,-485.78C890.64,-499.07 844.72,-520.47 803.58,-534.76 797.82,-536.76 791.76,-538.67 785.67,-540.46"/>
+<polygon fill="#ff8500" stroke="#ff8500" points="784.84,-537.06 776.17,-543.15 786.75,-543.8 784.84,-537.06"/>
 </g>
 <!-- sourcefile~factory_distance_utilities.f90 -->
 <g id="file~~graph~~FileGraph_node4" class="node">
 <title>sourcefile~factory_distance_utilities.f90</title>
 <g id="a_file~~graph~~FileGraph_node4"><a xlink:href="../sourcefile/factory_distance_utilities.f90.html" xlink:title="factory_distance_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="574.19,-382.52 428.42,-382.52 428.42,-359 574.19,-359 574.19,-382.52"/>
-<text text-anchor="middle" x="501.3" y="-366.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance_utilities.f90</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576.44,-525.52 430.67,-525.52 430.67,-502 576.44,-502 576.44,-525.52"/>
+<text text-anchor="middle" x="503.55" y="-509.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~factory_distance_utilities.f90 -->
 <g id="file~~graph~~FileGraph_edge5" class="edge">
 <title>sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~factory_distance_utilities.f90</title>
-<path fill="none" stroke="#fff100" d="M718.07,-330.76C688.69,-328.99 616.18,-343.92 563.3,-356.05"/>
-<polygon fill="#fff100" stroke="#fff100" points="562.76,-352.58 553.81,-358.24 564.34,-359.4 562.76,-352.58"/>
+<path fill="none" stroke="#ffc700" d="M720.32,-473.76C691.01,-472.28 618.85,-487.07 566.02,-499.08"/>
+<polygon fill="#ffc700" stroke="#ffc700" points="565.5,-495.6 556.54,-501.25 567.06,-502.43 565.5,-495.6"/>
+</g>
+<!-- sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge12" class="edge">
+<title>sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M874.07,-475.31C830.66,-475.92 773.15,-476.01 722.32,-473.76"/>
+<path fill="none" stroke="#2cff00" d="M720.32,-473.76C552.97,-466.35 529.63,-383.9 368.04,-339.76 332.53,-330.06 322,-335.14 286.41,-325.76"/>
 </g>
 <!-- sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge19" class="edge">
+<g id="file~~graph~~FileGraph_edge29" class="edge">
 <title>sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90</title>
-<path fill="none" stroke="#00ffd6" d="M868.42,-369.3C857.58,-366.3 846.83,-362.24 837.33,-356.76 816.62,-344.8 821.42,-329.74 801.33,-316.76 795.53,-313.01 789.16,-309.77 782.6,-306.97"/>
-<polygon fill="#00ffd6" stroke="#00ffd6" points="784.21,-303.84 773.62,-303.47 781.67,-310.36 784.21,-303.84"/>
+<path fill="none" stroke="#00ff9b" d="M920.79,-461.68C881.96,-439.39 798.9,-391.71 753.51,-365.66"/>
+<polygon fill="#00ff9b" stroke="#00ff9b" points="755.36,-362.69 744.94,-360.74 751.87,-368.76 755.36,-362.69"/>
 </g>
 <!-- sourcefile~manhattan_distance_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node11" class="node">
+<g id="file~~graph~~FileGraph_node13" class="node">
 <title>sourcefile~manhattan_distance_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node11"><a xlink:href="../sourcefile/manhattan_distance_utilities.f90.html" xlink:title="manhattan_distance_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="801.33,-382.52 636.81,-382.52 636.81,-359 801.33,-359 801.33,-382.52"/>
-<text text-anchor="middle" x="719.07" y="-366.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">manhattan_distance_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node13"><a xlink:href="../sourcefile/manhattan_distance_utilities.f90.html" xlink:title="manhattan_distance_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="803.58,-525.52 639.06,-525.52 639.06,-502 803.58,-502 803.58,-525.52"/>
+<text text-anchor="middle" x="721.32" y="-509.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">manhattan_distance_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~manhattan_distance_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge21" class="edge">
+<g id="file~~graph~~FileGraph_edge32" class="edge">
 <title>sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~manhattan_distance_utilities.f90</title>
-<path fill="none" stroke="#00d6ff" d="M868.42,-375.56C850.89,-375 831.7,-374.38 813.13,-373.77"/>
-<polygon fill="#00d6ff" stroke="#00d6ff" points="813.28,-370.28 803.17,-373.45 813.05,-377.27 813.28,-370.28"/>
+<path fill="none" stroke="#00ddff" d="M874.78,-485.98C851.28,-490.26 824.67,-495.11 800.34,-499.54"/>
+<polygon fill="#00ddff" stroke="#00ddff" points="800.04,-496.04 790.83,-501.28 801.3,-502.93 800.04,-496.04"/>
 </g>
-<!-- sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge31" class="edge">
-<title>sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M718.07,-330.76C622.35,-324.98 598.1,-326.37 502.3,-330.76"/>
-<path fill="none" stroke="#ff00a1" d="M878.16,-365.52C864.74,-362.67 850.54,-359.63 837.33,-356.76 785.16,-345.44 773.35,-333.98 720.07,-330.76"/>
+<!-- sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge43" class="edge">
+<title>sourcefile~distance_base_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M284.41,-515.76C246.19,-499.21 233.51,-497.86 202.77,-469.76 153.52,-424.74 113.89,-355.53 95.5,-320.2"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="98.65,-318.66 90.99,-311.34 92.41,-321.84 98.65,-318.66"/>
+<path fill="none" stroke="#ff0085" d="M720.32,-473.76C579.68,-466.67 543.74,-474.99 404.04,-492.76 351.19,-499.48 335.29,-536.93 286.41,-515.76"/>
 </g>
 <!-- sourcefile~euclidean_distance_utilities.f90&#45;&gt;sourcefile~factory_distance_utilities.f90 -->
 <g id="file~~graph~~FileGraph_edge6" class="edge">
 <title>sourcefile~euclidean_distance_utilities.f90&#45;&gt;sourcefile~factory_distance_utilities.f90</title>
-<path fill="none" stroke="#fff100" d="M655.37,-400.56C630.66,-395.75 602.09,-390.18 576.36,-385.18"/>
-<polygon fill="#fff100" stroke="#fff100" points="577.13,-381.76 566.64,-383.28 575.79,-388.63 577.13,-381.76"/>
+<path fill="none" stroke="#ffc700" d="M657.62,-543.56C632.91,-538.75 604.34,-533.18 578.61,-528.18"/>
+<polygon fill="#ffc700" stroke="#ffc700" points="579.38,-524.76 568.89,-526.28 578.04,-531.63 579.38,-524.76"/>
 </g>
-<!-- sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge32" class="edge">
-<title>sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M428.25,-361.63C385.75,-355.21 331.23,-345.16 284.16,-330.76"/>
+<!-- sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge13" class="edge">
+<title>sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M470.05,-501.58C410.78,-478.03 283.77,-421.31 202.77,-339.76 180.04,-316.88 190.33,-298.79 166.77,-276.76 156.61,-267.26 143.77,-259.58 131.27,-253.59"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="132.85,-250.46 122.3,-249.56 129.99,-256.85 132.85,-250.46"/>
 </g>
-<!-- sourcefile~fortran_unit_test_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node5" class="node">
-<title>sourcefile~fortran_unit_test_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node5"><a xlink:href="../sourcefile/fortran_unit_test_utilities.f90.html" xlink:title="fortran_unit_test_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1010.1,-347.52 864.33,-347.52 864.33,-324 1010.1,-324 1010.1,-347.52"/>
-<text text-anchor="middle" x="937.22" y="-331.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fortran_unit_test_utilities.f90</text>
-</a>
-</g>
+<!-- sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge44" class="edge">
+<title>sourcefile~factory_distance_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M448.63,-526.01C403.39,-533.6 338.06,-538.13 286.41,-515.76"/>
 </g>
 <!-- sourcefile~general_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node6" class="node">
+<g id="file~~graph~~FileGraph_node5" class="node">
 <title>sourcefile~general_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node6"><a xlink:href="../sourcefile/general_utilities.f90.html" xlink:title="general_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="989.1,-305.52 885.33,-305.52 885.33,-282 989.1,-282 989.1,-305.52"/>
-<text text-anchor="middle" x="937.22" y="-289.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">general_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node5"><a xlink:href="../sourcefile/general_utilities.f90.html" xlink:title="general_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="994.73,-649.52 890.96,-649.52 890.96,-626 994.73,-626 994.73,-649.52"/>
+<text text-anchor="middle" x="942.84" y="-633.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">general_utilities.f90</text>
 </a>
 </g>
 </g>
+<!-- sourcefile~kohonen_layer_base_utilities.f90 -->
+<g id="file~~graph~~FileGraph_node6" class="node">
+<title>sourcefile~kohonen_layer_base_utilities.f90</title>
+<g id="a_file~~graph~~FileGraph_node6"><a xlink:href="../sourcefile/kohonen_layer_base_utilities.f90.html" xlink:title="kohonen_layer_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1269.12,-362.52 1101.6,-362.52 1101.6,-339 1269.12,-339 1269.12,-362.52"/>
+<text text-anchor="middle" x="1185.36" y="-346.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_base_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge14" class="edge">
+<title>sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M284.41,-169.76C227.89,-182.41 164.88,-205 124.95,-220.42"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="123.78,-217.12 115.74,-224.01 126.33,-223.64 123.78,-217.12"/>
+<path fill="none" stroke="#2cff00" d="M403.64,-161.42C366.48,-159.99 324.12,-161.32 286.41,-169.76"/>
+</g>
 <!-- sourcefile~kohonen_map_base_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node8" class="node">
+<g id="file~~graph~~FileGraph_node9" class="node">
 <title>sourcefile~kohonen_map_base_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node8"><a xlink:href="../sourcefile/kohonen_map_base_utilities.f90.html" xlink:title="kohonen_map_base_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="365.79,-185.52 200.52,-185.52 200.52,-162 365.79,-162 365.79,-185.52"/>
-<text text-anchor="middle" x="283.16" y="-169.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_map_base_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node9"><a xlink:href="../sourcefile/kohonen_map_base_utilities.f90.html" xlink:title="kohonen_map_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="368.04,-259.52 202.77,-259.52 202.77,-236 368.04,-236 368.04,-259.52"/>
+<text text-anchor="middle" x="285.41" y="-243.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_map_base_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~kohonen_map_base_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge12" class="edge">
+<g id="file~~graph~~FileGraph_edge22" class="edge">
 <title>sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~kohonen_map_base_utilities.f90</title>
-<path fill="none" stroke="#00ff35" d="M434.27,-145.98C411.23,-150.24 385.17,-155.07 361.3,-159.48"/>
-<polygon fill="#00ff35" stroke="#00ff35" points="360.83,-156.01 351.64,-161.27 362.11,-162.89 360.83,-156.01"/>
+<path fill="none" stroke="#00ff16" d="M450.49,-184.01C435.38,-187.96 418.93,-192.66 404.04,-197.76 376.13,-207.32 345.48,-220.43 322.47,-230.83"/>
+<polygon fill="#00ff16" stroke="#00ff16" points="321.17,-227.58 313.53,-234.92 324.08,-233.95 321.17,-227.58"/>
 </g>
-<!-- sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge33" class="edge">
-<title>sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M456.26,-121.62C403.07,-107.59 316.68,-86.98 284.16,-91.76"/>
+<!-- sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge45" class="edge">
+<title>sourcefile~kohonen_layer_parameters_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M284.41,-169.76C241.22,-179.43 237.72,-199.62 202.77,-226.76 186.09,-239.71 184.41,-246.16 166.77,-257.76 153.54,-266.46 138.13,-274.44 124.24,-280.95"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="123,-277.67 115.36,-285 125.91,-284.04 123,-277.67"/>
 </g>
-<!-- sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge34" class="edge">
-<title>sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M200.11,-173.76C192.18,-173.76 184.1,-173.76 176.08,-173.76"/>
-<polygon fill="#ff00a1" stroke="#ff00a1" points="176.31,-170.26 166.31,-173.76 176.31,-177.26 176.31,-170.26"/>
+<!-- sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge15" class="edge">
+<title>sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M202.47,-243.25C189.83,-242.56 176.8,-241.84 164.21,-241.15"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="164.48,-237.66 154.3,-240.61 164.1,-244.65 164.48,-237.66"/>
+</g>
+<!-- sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge46" class="edge">
+<title>sourcefile~kohonen_map_base_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M235.47,-259.99C207.89,-266.89 173.21,-275.56 144.04,-282.85"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="143.48,-279.38 134.62,-285.2 145.18,-286.17 143.48,-279.38"/>
+</g>
+<!-- sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge16" class="edge">
+<title>sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M284.41,-325.76C251.6,-317.11 167.3,-277.25 119.26,-253.91"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="120.91,-250.82 110.38,-249.59 117.84,-257.11 120.91,-250.82"/>
+<path fill="none" stroke="#2cff00" d="M428.82,-335.97C386.47,-338.5 332.67,-337.96 286.41,-325.76"/>
 </g>
 <!-- sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~kohonen_map_base_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge13" class="edge">
+<g id="file~~graph~~FileGraph_edge23" class="edge">
 <title>sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~kohonen_map_base_utilities.f90</title>
-<path fill="none" stroke="#00ff35" d="M467,-240.59C429.79,-226.99 369.4,-204.92 328.28,-189.89"/>
-<polygon fill="#00ff35" stroke="#00ff35" points="329.51,-186.61 318.91,-186.46 327.1,-193.18 329.51,-186.61"/>
+<path fill="none" stroke="#00ff16" d="M469.72,-315.61C432.32,-301.77 371.05,-279.09 329.75,-263.8"/>
+<polygon fill="#00ff16" stroke="#00ff16" points="331.2,-260.61 320.61,-260.42 328.77,-267.17 331.2,-260.61"/>
 </g>
-<!-- sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge35" class="edge">
-<title>sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M485.79,-264.85C451.24,-292.14 361.21,-354.34 284.16,-330.76"/>
+<!-- sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge47" class="edge">
+<title>sourcefile~kohonen_pattern_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M428.69,-339.27C367.66,-346.74 279,-352.88 202.77,-339.76 174.38,-334.87 143.77,-323.85 120.79,-314.32"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="122.45,-311.22 111.88,-310.53 119.71,-317.66 122.45,-311.22"/>
+</g>
+<!-- sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge17" class="edge">
+<title>sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M685.71,-335.58C662.38,-327.38 630.89,-316.36 603.06,-306.76 498.75,-270.77 476.9,-244.78 368.04,-226.76 295.57,-214.76 276.16,-223.67 202.77,-226.76 190.26,-227.29 177.02,-228.13 164.11,-229.1"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="164.07,-225.59 154.38,-229.87 164.62,-232.57 164.07,-225.59"/>
 </g>
 <!-- sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge16" class="edge">
+<g id="file~~graph~~FileGraph_edge26" class="edge">
 <title>sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90</title>
-<path fill="none" stroke="#00ff86" d="M648.61,-278.53C627.63,-274.83 604.42,-270.74 582.78,-266.93"/>
-<polygon fill="#00ff86" stroke="#00ff86" points="583.57,-263.52 573.12,-265.23 582.36,-270.41 583.57,-263.52"/>
+<path fill="none" stroke="#00ff58" d="M640.89,-340.4C624.04,-338.84 606.19,-337.18 589.15,-335.6"/>
+<polygon fill="#00ff58" stroke="#00ff58" points="589.87,-332.15 579.59,-334.72 589.23,-339.12 589.87,-332.15"/>
 </g>
-<!-- sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge36" class="edge">
-<title>sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M500.3,-330.76C404.34,-335.16 376.02,-358.86 284.16,-330.76"/>
-<path fill="none" stroke="#ff00a1" d="M672.61,-302.95C629.24,-313.69 561.86,-328.03 502.3,-330.76"/>
+<!-- sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge48" class="edge">
+<title>sourcefile~kohonen_prototype_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M648.82,-359.96C547.87,-374.74 358.48,-393.41 202.77,-356.76 169.47,-348.92 134.84,-330.23 111.71,-315.97"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="113.83,-313.17 103.51,-310.79 110.09,-319.09 113.83,-313.17"/>
 </g>
 <!-- sourcefile~manhattan_distance_utilities.f90&#45;&gt;sourcefile~factory_distance_utilities.f90 -->
 <g id="file~~graph~~FileGraph_edge7" class="edge">
 <title>sourcefile~manhattan_distance_utilities.f90&#45;&gt;sourcefile~factory_distance_utilities.f90</title>
-<path fill="none" stroke="#fff100" d="M636.5,-370.76C619.92,-370.76 602.45,-370.76 585.81,-370.76"/>
-<polygon fill="#fff100" stroke="#fff100" points="585.95,-367.26 575.95,-370.76 585.95,-374.26 585.95,-367.26"/>
+<path fill="none" stroke="#ffc700" d="M638.75,-513.76C622.17,-513.76 604.7,-513.76 588.06,-513.76"/>
+<polygon fill="#ffc700" stroke="#ffc700" points="588.2,-510.26 578.2,-513.76 588.2,-517.26 588.2,-510.26"/>
 </g>
 <!-- sourcefile~mt19937_64.f90 -->
-<g id="file~~graph~~FileGraph_node12" class="node">
+<g id="file~~graph~~FileGraph_node14" class="node">
 <title>sourcefile~mt19937_64.f90</title>
-<g id="a_file~~graph~~FileGraph_node12"><a xlink:href="../sourcefile/mt19937_64.f90.html" xlink:title="mt19937_64.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1173.12,-23.52 1083.6,-23.52 1083.6,0 1173.12,0 1173.12,-23.52"/>
-<text text-anchor="middle" x="1128.36" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mt19937_64.f90</text>
+<g id="a_file~~graph~~FileGraph_node14"><a xlink:href="../sourcefile/mt19937_64.f90.html" xlink:title="mt19937_64.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1230.12,-23.52 1140.6,-23.52 1140.6,0 1230.12,0 1230.12,-23.52"/>
+<text text-anchor="middle" x="1185.36" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mt19937_64.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~random_number_generator_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node16" class="node">
+<g id="file~~graph~~FileGraph_node20" class="node">
 <title>sourcefile~random_number_generator_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node16"><a xlink:href="../sourcefile/random_number_generator_utilities.f90.html" xlink:title="random_number_generator_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1037.1,-23.52 837.33,-23.52 837.33,0 1037.1,0 1037.1,-23.52"/>
-<text text-anchor="middle" x="937.22" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_number_generator_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node20"><a xlink:href="../sourcefile/random_number_generator_utilities.f90.html" xlink:title="random_number_generator_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1042.73,-23.52 842.96,-23.52 842.96,0 1042.73,0 1042.73,-23.52"/>
+<text text-anchor="middle" x="942.84" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_number_generator_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~mt19937_64.f90&#45;&gt;sourcefile~random_number_generator_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge26" class="edge">
+<g id="file~~graph~~FileGraph_edge38" class="edge">
 <title>sourcefile~mt19937_64.f90&#45;&gt;sourcefile~random_number_generator_utilities.f90</title>
-<path fill="none" stroke="#bb00ff" d="M1083.49,-11.76C1072.88,-11.76 1061.06,-11.76 1048.87,-11.76"/>
-<polygon fill="#bb00ff" stroke="#bb00ff" points="1049.11,-8.26 1039.11,-11.76 1049.11,-15.26 1049.11,-8.26"/>
+<path fill="none" stroke="#f300ff" d="M1140.24,-11.76C1115.97,-11.76 1084.66,-11.76 1054.2,-11.76"/>
+<polygon fill="#f300ff" stroke="#f300ff" points="1054.54,-8.26 1044.54,-11.76 1054.54,-15.26 1054.54,-8.26"/>
+</g>
+<!-- sourcefile~multilayer_self_organizing_map_utilities.f -->
+<g id="file~~graph~~FileGraph_node15" class="node">
+<title>sourcefile~multilayer_self_organizing_map_utilities.f</title>
+<g id="a_file~~graph~~FileGraph_node15"><a xlink:href="../sourcefile/multilayer_self_organizing_map_utilities.f.html" xlink:title="multilayer_self_organizing_map_utilities.f">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1288.62,-404.52 1082.1,-404.52 1082.1,-381 1288.62,-381 1288.62,-404.52"/>
+<text text-anchor="middle" x="1185.36" y="-388.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">multilayer_self_organizing_map_utilities.f</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~neighborhood_function_base_utilities.f90 -->
+<g id="file~~graph~~FileGraph_node16" class="node">
+<title>sourcefile~neighborhood_function_base_utilities.f90</title>
+<g id="a_file~~graph~~FileGraph_node16"><a xlink:href="../sourcefile/neighborhood_function_base_utilities.f90.html" xlink:title="neighborhood_function_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1046.1,-607.52 839.58,-607.52 839.58,-584 1046.1,-584 1046.1,-607.52"/>
+<text text-anchor="middle" x="942.84" y="-591.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">neighborhood_function_base_utilities.f90</text>
+</a>
+</g>
 </g>
 <!-- sourcefile~precision_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node13" class="node">
+<g id="file~~graph~~FileGraph_node17" class="node">
 <title>sourcefile~precision_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node13"><a xlink:href="../sourcefile/precision_utilities.f90.html" xlink:title="precision_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1183.62,-225.52 1073.1,-225.52 1073.1,-202 1183.62,-202 1183.62,-225.52"/>
-<text text-anchor="middle" x="1128.36" y="-209.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node17"><a xlink:href="../sourcefile/precision_utilities.f90.html" xlink:title="precision_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1240.62,-320.52 1130.1,-320.52 1130.1,-297 1240.62,-297 1240.62,-320.52"/>
+<text text-anchor="middle" x="1185.36" y="-304.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90 -->
 <g id="file~~graph~~FileGraph_edge1" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90</title>
-<path fill="none" stroke="#ff0000" d="M1072.65,-213.76C1051.75,-213.76 1027.66,-213.76 1005.7,-213.76"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="1005.96,-210.26 995.96,-213.76 1005.96,-217.26 1005.96,-210.26"/>
+<path fill="none" stroke="#ff0000" d="M1129.78,-299.91C1094.61,-294.21 1048.63,-286.75 1011.19,-280.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1011.8,-277.23 1001.36,-279.09 1010.68,-284.14 1011.8,-277.23"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90 -->
 <g id="file~~graph~~FileGraph_edge2" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~distance_base_utilities.f90</title>
-<path fill="none" stroke="#ff5000" d="M1123.5,-225.64C1113.83,-253.42 1085.76,-322.86 1037.1,-356.76 1030.91,-361.07 1024.01,-364.53 1016.81,-367.3"/>
-<polygon fill="#ff5000" stroke="#ff5000" points="1015.91,-363.91 1007.53,-370.4 1018.13,-370.55 1015.91,-363.91"/>
+<path fill="none" stroke="#ff4200" d="M1129.68,-313.76C1113.64,-316.84 1096.54,-321.79 1082.1,-329.76 1067.42,-337.86 995.95,-415.98 961.92,-453.64"/>
+<polygon fill="#ff4200" stroke="#ff4200" points="959.62,-450.97 955.52,-460.74 964.82,-455.66 959.62,-450.97"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~euclidean_distance_utilities.f90 -->
 <g id="file~~graph~~FileGraph_edge4" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~euclidean_distance_utilities.f90</title>
-<path fill="none" stroke="#ffa100" d="M936.22,-452.76C906.43,-463.83 823.94,-443.57 769.91,-428.06"/>
-<polygon fill="#ffa100" stroke="#ffa100" points="771.21,-424.79 760.63,-425.36 769.25,-431.51 771.21,-424.79"/>
-</g>
-<!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~fortran_unit_test_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge8" class="edge">
-<title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~fortran_unit_test_utilities.f90</title>
-<path fill="none" stroke="#bbff00" d="M1120.16,-225.97C1106.75,-247.57 1075.76,-292.35 1037.1,-314.76 1032.1,-317.66 1026.76,-320.16 1021.24,-322.31"/>
-<polygon fill="#bbff00" stroke="#bbff00" points="1020.18,-318.97 1011.87,-325.55 1022.47,-325.59 1020.18,-318.97"/>
+<path fill="none" stroke="#ff8500" d="M941.84,-555.76C895.42,-575.16 838.5,-574.55 794.26,-569.41"/>
+<polygon fill="#ff8500" stroke="#ff8500" points="794.87,-565.96 784.51,-568.17 793.98,-572.9 794.87,-565.96"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~general_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge9" class="edge">
+<g id="file~~graph~~FileGraph_edge8" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~general_utilities.f90</title>
-<path fill="none" stroke="#6bff00" d="M1110.49,-225.84C1092.91,-237.94 1064.2,-256.36 1037.1,-267.76 1025.46,-272.66 1012.65,-276.84 1000.22,-280.33"/>
-<polygon fill="#6bff00" stroke="#6bff00" points="999.65,-276.86 990.89,-282.82 1001.46,-283.62 999.65,-276.86"/>
+<path fill="none" stroke="#f3ff00" d="M1129.63,-307.94C1112.16,-310.53 1094.22,-316.66 1082.1,-329.76 994.8,-424.13 1133.4,-522.39 1046.1,-616.76 1035.8,-627.89 1021.31,-633.99 1006.47,-637.16"/>
+<polygon fill="#f3ff00" stroke="#f3ff00" points="1005.9,-633.7 996.61,-638.79 1007.05,-640.61 1005.9,-633.7"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_layer_parameters_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge11" class="edge">
+<g id="file~~graph~~FileGraph_edge10" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_layer_parameters_utilities.f90</title>
-<path fill="none" stroke="#1aff00" d="M718.07,-173.76C663.39,-171.25 602.13,-158.96 558.9,-148.66"/>
-<polygon fill="#1aff00" stroke="#1aff00" points="559.77,-145.27 549.23,-146.31 558.12,-152.07 559.77,-145.27"/>
-<path fill="none" stroke="#1aff00" d="M936.22,-173.76C841.21,-159.51 816.03,-178.16 720.07,-173.76"/>
+<path fill="none" stroke="#6eff00" d="M720.32,-133.76C664.63,-133.63 602.06,-146.08 558.7,-156.76"/>
+<polygon fill="#6eff00" stroke="#6eff00" points="557.86,-153.36 549.02,-159.2 559.57,-160.15 557.86,-153.36"/>
+</g>
+<!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge18" class="edge">
+<title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M1181.54,-296.66C1171.45,-256.39 1132.99,-126.37 1046.1,-72.76 984.74,-34.9 794.42,-51.76 722.32,-51.76 722.32,-51.76 722.32,-51.76 502.55,-51.76 369.05,-51.76 319.46,-5.9 202.77,-70.76 144.73,-103.02 108.18,-177.14 92.79,-214.45"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="89.7,-212.76 89.26,-223.35 96.2,-215.35 89.7,-212.76"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_map_base_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge14" class="edge">
+<g id="file~~graph~~FileGraph_edge24" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_map_base_utilities.f90</title>
-<path fill="none" stroke="#00ff35" d="M718.07,-173.76C600.74,-168.38 465.37,-169.56 377.46,-171.29"/>
-<polygon fill="#00ff35" stroke="#00ff35" points="377.62,-167.79 367.69,-171.49 377.76,-174.79 377.62,-167.79"/>
+<path fill="none" stroke="#00ff16" d="M1129.77,-320.57C1081.23,-330.35 1008.2,-343.35 943.84,-347.76"/>
+<path fill="none" stroke="#00ff16" d="M941.84,-347.76C941.4,-347.79 557.73,-289.2 377.68,-261.7"/>
+<polygon fill="#00ff16" stroke="#00ff16" points="378.29,-258.25 367.88,-260.2 377.24,-265.17 378.29,-258.25"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge17" class="edge">
+<g id="file~~graph~~FileGraph_edge27" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_pattern_utilities.f90</title>
-<path fill="none" stroke="#00ff86" d="M1078.3,-226.01C1040.3,-235.04 986.23,-246.89 938.22,-253.76"/>
-<path fill="none" stroke="#00ff86" d="M936.22,-253.76C816.01,-270.95 675.16,-266.1 587.31,-260.14"/>
-<polygon fill="#00ff86" stroke="#00ff86" points="587.8,-256.67 577.58,-259.46 587.31,-263.65 587.8,-256.67"/>
+<path fill="none" stroke="#00ff58" d="M941.84,-347.76C807.38,-358.5 771.33,-395.21 639.06,-368.76 622.06,-365.36 619.48,-359.32 603.06,-353.76 591.58,-349.87 579.19,-346.2 567.19,-342.92"/>
+<polygon fill="#00ff58" stroke="#00ff58" points="568.36,-339.6 557.79,-340.4 566.54,-346.37 568.36,-339.6"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge20" class="edge">
+<g id="file~~graph~~FileGraph_edge30" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~kohonen_prototype_utilities.f90</title>
-<path fill="none" stroke="#00ffd6" d="M936.22,-253.76C889.88,-260.39 838.2,-269.18 796.99,-276.53"/>
-<polygon fill="#00ffd6" stroke="#00ffd6" points="796.38,-273.09 787.15,-278.3 797.61,-279.98 796.38,-273.09"/>
+<path fill="none" stroke="#00ff9b" d="M941.84,-347.76C899.66,-351.13 852.77,-351.58 813.19,-351"/>
+<polygon fill="#00ff9b" stroke="#00ff9b" points="813.27,-347.5 803.21,-350.83 813.15,-354.5 813.27,-347.5"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~manhattan_distance_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge22" class="edge">
+<g id="file~~graph~~FileGraph_edge33" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~manhattan_distance_utilities.f90</title>
-<path fill="none" stroke="#00d6ff" d="M1124.32,-225.62C1115.67,-257.32 1088.19,-345.26 1037.1,-398.76 1002.51,-434.97 985.15,-435.31 938.22,-452.76"/>
-<path fill="none" stroke="#00d6ff" d="M936.22,-452.76C874.54,-475.69 863.38,-413.63 801.33,-391.76 795.66,-389.76 789.71,-387.86 783.71,-386.08"/>
-<polygon fill="#00d6ff" stroke="#00d6ff" points="784.95,-382.8 774.38,-383.42 783.04,-389.53 784.95,-382.8"/>
+<path fill="none" stroke="#00ddff" d="M1129.76,-308.66C1112.5,-311.34 1094.67,-317.34 1082.1,-329.76 1028.7,-382.51 1089.95,-433.84 1046.1,-494.76 1015.18,-537.71 992.67,-535.36 943.84,-555.76"/>
+<path fill="none" stroke="#00ddff" d="M941.84,-555.76C927.2,-561.88 841.65,-543.03 781.78,-528.62"/>
+<polygon fill="#00ddff" stroke="#00ddff" points="782.94,-525.3 772.39,-526.35 781.29,-532.11 782.94,-525.3"/>
+</g>
+<!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~neighborhood_function_base_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge34" class="edge">
+<title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~neighborhood_function_base_utilities.f90</title>
+<path fill="none" stroke="#0016ff" d="M1129.81,-308.11C1112.35,-310.71 1094.38,-316.8 1082.1,-329.76 1007.9,-408.05 1118.46,-489.77 1046.1,-569.76 1043.52,-572.61 1040.67,-575.17 1037.62,-577.47"/>
+<polygon fill="#0016ff" stroke="#0016ff" points="1035.79,-574.49 1029.21,-582.78 1039.53,-580.4 1035.79,-574.49"/>
 </g>
 <!-- sourcefile~quicksort_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node14" class="node">
+<g id="file~~graph~~FileGraph_node18" class="node">
 <title>sourcefile~quicksort_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node14"><a xlink:href="../sourcefile/quicksort_utilities.f90.html" xlink:title="quicksort_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="774.33,-145.52 663.81,-145.52 663.81,-122 774.33,-122 774.33,-145.52"/>
-<text text-anchor="middle" x="719.07" y="-129.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">quicksort_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node18"><a xlink:href="../sourcefile/quicksort_utilities.f90.html" xlink:title="quicksort_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="340.67,-103.52 230.15,-103.52 230.15,-80 340.67,-80 340.67,-103.52"/>
+<text text-anchor="middle" x="285.41" y="-87.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">quicksort_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~quicksort_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge23" class="edge">
+<g id="file~~graph~~FileGraph_edge35" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~quicksort_utilities.f90</title>
-<path fill="none" stroke="#1a00ff" d="M1077.48,-201.51C1039.51,-192.61 985.85,-180.9 938.22,-173.76"/>
-<path fill="none" stroke="#1a00ff" d="M936.22,-173.76C885.46,-166.15 828.38,-155.5 785.63,-147.1"/>
-<polygon fill="#1a00ff" stroke="#1a00ff" points="786.5,-143.7 776.01,-145.2 785.15,-150.57 786.5,-143.7"/>
+<path fill="none" stroke="#6e00ff" d="M1166.79,-296.76C1107.29,-257.33 906.74,-134.18 722.32,-133.76"/>
+<path fill="none" stroke="#6e00ff" d="M720.32,-133.76C623.46,-122.32 601.93,-99.22 504.55,-93.76"/>
 </g>
 <!-- sourcefile~random_generator_base_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node15" class="node">
+<g id="file~~graph~~FileGraph_node19" class="node">
 <title>sourcefile~random_generator_base_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node15"><a xlink:href="../sourcefile/random_generator_base_utilities.f90.html" xlink:title="random_generator_base_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1030.35,-65.52 844.08,-65.52 844.08,-42 1030.35,-42 1030.35,-65.52"/>
-<text text-anchor="middle" x="937.22" y="-49.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_generator_base_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node19"><a xlink:href="../sourcefile/random_generator_base_utilities.f90.html" xlink:title="random_generator_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="596.69,-567.52 410.42,-567.52 410.42,-544 596.69,-544 596.69,-567.52"/>
+<text text-anchor="middle" x="503.55" y="-551.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_generator_base_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~random_generator_base_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge25" class="edge">
+<g id="file~~graph~~FileGraph_edge37" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~random_generator_base_utilities.f90</title>
-<path fill="none" stroke="#6b00ff" d="M1122.7,-201.6C1111.91,-175.12 1082.61,-112.08 1037.1,-79.76 1031.86,-76.04 1026.13,-72.85 1020.14,-70.12"/>
-<polygon fill="#6b00ff" stroke="#6b00ff" points="1021.86,-67.04 1011.28,-66.51 1019.22,-73.52 1021.86,-67.04"/>
+<path fill="none" stroke="#b100ff" d="M720.32,-595.76C691.09,-597.03 619.28,-582.38 566.49,-570.46"/>
+<polygon fill="#b100ff" stroke="#b100ff" points="567.55,-567.11 557.02,-568.3 565.99,-573.93 567.55,-567.11"/>
+<path fill="none" stroke="#b100ff" d="M941.84,-555.76C940.41,-556.36 723.87,-595.69 722.32,-595.76"/>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~random_number_generator_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge27" class="edge">
+<g id="file~~graph~~FileGraph_edge39" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~random_number_generator_utilities.f90</title>
-<path fill="none" stroke="#bb00ff" d="M1125.12,-201.77C1118.34,-169.01 1094.86,-77.47 1037.1,-32.76 1035.57,-31.58 1034,-30.46 1032.37,-29.4"/>
-<polygon fill="#bb00ff" stroke="#bb00ff" points="1034.41,-26.53 1023.97,-24.7 1030.99,-32.64 1034.41,-26.53"/>
+<path fill="none" stroke="#f300ff" d="M1181.95,-296.79C1172.73,-254.27 1135.65,-109.29 1046.1,-37.76 1041.81,-34.33 1037.12,-31.35 1032.18,-28.76"/>
+<polygon fill="#f300ff" stroke="#f300ff" points="1033.68,-25.59 1023.13,-24.6 1030.76,-31.95 1033.68,-25.59"/>
 </g>
 <!-- sourcefile~rkiss05_generator_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node17" class="node">
+<g id="file~~graph~~FileGraph_node21" class="node">
 <title>sourcefile~rkiss05_generator_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node17"><a xlink:href="../sourcefile/rkiss05_generator_utilities.f90.html" xlink:title="rkiss05_generator_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="796.08,-103.52 642.06,-103.52 642.06,-80 796.08,-80 796.08,-103.52"/>
-<text text-anchor="middle" x="719.07" y="-87.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node21"><a xlink:href="../sourcefile/rkiss05_generator_utilities.f90.html" xlink:title="rkiss05_generator_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="362.42,-567.52 208.4,-567.52 208.4,-544 362.42,-544 362.42,-567.52"/>
+<text text-anchor="middle" x="285.41" y="-551.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~rkiss05_generator_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge28" class="edge">
+<g id="file~~graph~~FileGraph_edge40" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~rkiss05_generator_utilities.f90</title>
-<path fill="none" stroke="#ff00f1" d="M1120.87,-201.69C1108.16,-179.47 1077.68,-132.55 1037.1,-112.76 965.63,-77.9 874.12,-75.64 807.8,-80.32"/>
-<polygon fill="#ff00f1" stroke="#ff00f1" points="807.76,-76.81 798.06,-81.08 808.31,-83.79 807.76,-76.81"/>
+<path fill="none" stroke="#ff00c7" d="M502.55,-595.76C447.78,-593.25 386.41,-580.96 343.1,-570.66"/>
+<polygon fill="#ff00c7" stroke="#ff00c7" points="343.96,-567.27 333.41,-568.31 342.31,-574.07 343.96,-567.27"/>
+<path fill="none" stroke="#ff00c7" d="M720.32,-595.76C624.51,-599.93 600.35,-600.14 504.55,-595.76"/>
 </g>
-<!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge37" class="edge">
-<title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M936.22,-452.76C712.14,-536.07 628.14,-468.69 401.79,-391.76 346.03,-372.81 340.44,-348.08 284.16,-330.76"/>
+<!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge49" class="edge">
+<title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M502.55,-595.76C369.19,-589.66 311.7,-653.94 202.77,-576.76 115.94,-515.24 92.42,-376.79 86.37,-321.36"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="89.86,-321.11 85.4,-311.5 82.89,-321.79 89.86,-321.11"/>
 </g>
 <!-- sourcefile~sort_base_utilities.f90 -->
-<g id="file~~graph~~FileGraph_node19" class="node">
+<g id="file~~graph~~FileGraph_node23" class="node">
 <title>sourcefile~sort_base_utilities.f90</title>
-<g id="a_file~~graph~~FileGraph_node19"><a xlink:href="../sourcefile/sort_base_utilities.f90.html" xlink:title="sort_base_utilities.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="994.73,-145.52 879.71,-145.52 879.71,-122 994.73,-122 994.73,-145.52"/>
-<text text-anchor="middle" x="937.22" y="-129.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_base_utilities.f90</text>
+<g id="a_file~~graph~~FileGraph_node23"><a xlink:href="../sourcefile/sort_base_utilities.f90.html" xlink:title="sort_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1000.35,-105.52 885.33,-105.52 885.33,-82 1000.35,-82 1000.35,-105.52"/>
+<text text-anchor="middle" x="942.84" y="-89.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_base_utilities.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~precision_utilities.f90&#45;&gt;sourcefile~sort_base_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge41" class="edge">
+<g id="file~~graph~~FileGraph_edge53" class="edge">
 <title>sourcefile~precision_utilities.f90&#45;&gt;sourcefile~sort_base_utilities.f90</title>
-<path fill="none" stroke="#ff0050" d="M1110.49,-201.68C1092.91,-189.58 1064.2,-171.16 1037.1,-159.76 1027.26,-155.62 1016.59,-151.99 1006.02,-148.87"/>
-<polygon fill="#ff0050" stroke="#ff0050" points="1007.12,-145.54 996.54,-146.19 1005.22,-152.27 1007.12,-145.54"/>
+<path fill="none" stroke="#ff0042" d="M1179.21,-296.8C1164.11,-263.2 1116.51,-167.32 1046.1,-119.76 1035.81,-112.81 1023.81,-107.72 1011.72,-103.99"/>
+<polygon fill="#ff0042" stroke="#ff0042" points="1012.66,-100.62 1002.09,-101.33 1010.8,-107.37 1012.66,-100.62"/>
 </g>
-<!-- sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge38" class="edge">
-<title>sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M667.11,-121.52C613.83,-109.14 533.69,-91.81 502.3,-91.76"/>
+<!-- sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge19" class="edge">
+<title>sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M233.11,-103.95C222.66,-107.56 212.04,-112.1 202.77,-117.76 159.57,-144.13 120.5,-189.49 99.84,-215.94"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="97.31,-213.49 94.01,-223.55 102.87,-217.74 97.31,-213.49"/>
+</g>
+<!-- sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge50" class="edge">
+<title>sourcefile~quicksort_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M262.84,-103.86C244.52,-115.13 218.73,-133.52 202.77,-155.76 174.74,-194.81 198.79,-221.91 166.77,-257.76 158.09,-267.48 146.52,-275.08 134.8,-280.92"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="133.55,-277.64 125.91,-284.97 136.46,-284.01 133.55,-277.64"/>
+</g>
+<!-- sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge20" class="edge">
+<title>sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M425.58,-543.58C418.11,-541.15 410.8,-538.25 404.04,-534.76 384.75,-524.81 385.64,-514.46 368.04,-501.76 299.86,-452.58 254.55,-475.99 202.77,-409.76 165.05,-361.52 205.82,-323.93 166.77,-276.76 158.7,-267.01 147.67,-259.45 136.32,-253.67"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="137.79,-250.5 127.25,-249.48 134.86,-256.85 137.79,-250.5"/>
 </g>
 <!-- sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~rkiss05_generator_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge29" class="edge">
+<g id="file~~graph~~FileGraph_edge41" class="edge">
 <title>sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~rkiss05_generator_utilities.f90</title>
-<path fill="none" stroke="#ff00f1" d="M866.64,-65.99C845.62,-69.69 822.36,-73.78 800.69,-77.59"/>
-<polygon fill="#ff00f1" stroke="#ff00f1" points="800.25,-74.11 791.01,-79.29 801.46,-81 800.25,-74.11"/>
+<path fill="none" stroke="#ff00c7" d="M409.94,-555.76C398.05,-555.76 385.9,-555.76 374.08,-555.76"/>
+<polygon fill="#ff00c7" stroke="#ff00c7" points="374.39,-552.26 364.39,-555.76 374.39,-559.26 374.39,-552.26"/>
 </g>
-<!-- sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge39" class="edge">
-<title>sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M282.16,-91.76C218.65,-101.08 150.78,-134.84 113.02,-156.02"/>
-<polygon fill="#ff00a1" stroke="#ff00a1" points="111.46,-152.89 104.51,-160.89 114.93,-158.96 111.46,-152.89"/>
-<path fill="none" stroke="#ff00a1" d="M500.3,-91.76C404.24,-91.61 379.2,-77.81 284.16,-91.76"/>
-<path fill="none" stroke="#ff00a1" d="M843.63,-56.67C784.38,-59.11 705.93,-63.42 636.81,-70.76 576.64,-77.15 562.81,-91.85 502.3,-91.76"/>
+<!-- sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge51" class="edge">
+<title>sourcefile~random_generator_base_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M427.1,-543.5C370.05,-533.95 299.41,-521.39 286.41,-515.76"/>
 </g>
-<!-- sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge40" class="edge">
-<title>sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~self_organized_map_utilities.f90</title>
-<path fill="none" stroke="#ff00a1" d="M641.68,-91.82C600.41,-91.83 548.56,-91.83 502.3,-91.76"/>
+<!-- sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge21" class="edge">
+<title>sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~kohonen_layer_utilities.f90</title>
+<path fill="none" stroke="#2cff00" d="M260.72,-543.66C241.88,-532.73 216.47,-514.83 202.77,-491.76 153.3,-408.46 224.81,-354.34 166.77,-276.76 159.4,-266.92 148.97,-259.37 138,-253.63"/>
+<polygon fill="#2cff00" stroke="#2cff00" points="139.75,-250.58 129.21,-249.5 136.77,-256.92 139.75,-250.58"/>
+</g>
+<!-- sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90 -->
+<g id="file~~graph~~FileGraph_edge52" class="edge">
+<title>sourcefile~rkiss05_generator_utilities.f90&#45;&gt;sourcefile~self_organizing_map_utilities.f90</title>
+<path fill="none" stroke="#ff0085" d="M226.09,-543.53C217.67,-540.03 209.57,-535.53 202.77,-529.76 135.35,-472.56 101.86,-367.4 89.8,-320.9"/>
+<polygon fill="#ff0085" stroke="#ff0085" points="93.24,-320.25 87.43,-311.39 86.45,-321.94 93.24,-320.25"/>
 </g>
 <!-- sourcefile~sort_base_utilities.f90&#45;&gt;sourcefile~quicksort_utilities.f90 -->
-<g id="file~~graph~~FileGraph_edge24" class="edge">
+<g id="file~~graph~~FileGraph_edge36" class="edge">
 <title>sourcefile~sort_base_utilities.f90&#45;&gt;sourcefile~quicksort_utilities.f90</title>
-<path fill="none" stroke="#1a00ff" d="M879.43,-133.76C850.7,-133.76 815.68,-133.76 785.8,-133.76"/>
-<polygon fill="#1a00ff" stroke="#1a00ff" points="786.13,-130.26 776.13,-133.76 786.13,-137.26 786.13,-130.26"/>
+<path fill="none" stroke="#6e00ff" d="M502.55,-93.76C452.25,-91.22 395.29,-90.8 352.48,-90.97"/>
+<polygon fill="#6e00ff" stroke="#6e00ff" points="352.57,-87.46 342.59,-91.02 352.61,-94.46 352.57,-87.46"/>
+<path fill="none" stroke="#6e00ff" d="M884.84,-95.59C801.33,-97.85 640.84,-100.63 504.55,-93.76"/>
 </g>
 </g>
 </svg>
@@ -610,7 +742,7 @@ using the rkiss approach</p></td>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 12.1.0 (20240811.2233)
+<!-- Generated by graphviz version 12.0.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
 <svg width="188pt" height="32pt"
@@ -653,14 +785,14 @@ large graphs.</div>
           <div class="col">
             <p>
               KohonenF08
- was developed by Oscar Garcia-Cabrejo<br>              &copy; 2024 
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-12-07 06:16              </p>
+ on 2025-03-08 14:15 -0500             </p>
           </div>
         </div>
         <br>
