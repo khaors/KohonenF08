@@ -18,6 +18,7 @@ creation_date: %Y-%m-%d %H:%M %z
 dbg: true
 email: khaors@gmail.com
 ---
+<img src="../media/logo.svg" width=80% height=10%>
 
 [TOC]
 
@@ -63,3 +64,8 @@ License
 =======
 
 The `ATALIBF08fpm` source code and related files and documentation are distributed under the [MIT license](page/License.html).
+
+
+
+
+
