@@ -139,7 +139,7 @@ The options are a direct extension of the _som_train_ program and these are expl
 
 ## Testing
 
-A simple example is included in the repository in which the goal is to find the clusters present in the _iris_ dataset. This dataset is included in the _iris.dat_ file where the samples have been properly scaled in the range between 0 and 1. The input parameters of the program _som_train_ are specified in a parameter file as explained in the previous section. The clustering of the _iris dataset_ can be done writing on the command line:
+A simple example is included in the repository in which the goal is to find the clusters present in the _iris_ dataset, which is included in the _iris.dat_ file where the samples have been properly scaled in the range between 0 and 1. The input parameters of the program _som_train_ are specified in a parameter file as explained in the previous section. The clustering of the _iris dataset_ can be done writing on the command line:
 
 ```
 som_train som_train.par
@@ -147,6 +147,15 @@ som_train som_train.par
 
 ```
 two_level_som_train two_level_som_train.par
+```
+
+The executables have the following command line options:
+
+```
+som_train --version
+som_train --help
+som_train -v
+som_train -h
 ```
 
 
