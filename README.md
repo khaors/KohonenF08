@@ -169,7 +169,7 @@ BibTeX entry:
  author = {Garcia-Cabrejo, O},
  title 	= {{KohonenF03: A library for Self-Organizing Maps in Fortran 2008}},
  year 	= 2025,
- howpublished = {\url{https://github.com/khaors/KohonenF03}},
+ howpublished = {\url{https://github.com/khaors/KohonenF08}},
  note 	= {Accessed: day month year}
 }
 ```
