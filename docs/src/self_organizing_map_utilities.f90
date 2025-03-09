@@ -19,10 +19,7 @@ use factory_distance_utilities, only: factory_distance;
 use quicksort_utilities, only: quicksort;
 !
 implicit none;
-!****c* self_organizing_map_utilities/self_organizing_map
-! NAME
-!   self_organizing_map
-! PURPOSE
+!
 type,extends(kohonen_map_base) :: self_organizing_map
 !!   Class to represent a self_organizing_map
     private
@@ -94,6 +91,7 @@ contains
         nvar1=training_parameters(1)%number_variables1;
         nvar2=training_parameters(1)%number_variables2;
         nepoch=training_parameters(1)%number_epochs;
+        write(*,*) 'Create= ',nx,ny,nz,nvar1,nvar2,nepoch;
         allocate(kohonen_map%grid(nx,ny,nz),stat=ierr);
         if(ierr /= 0) then
             message = trim(base_message)//'_allocating memory for grid array';
@@ -155,18 +153,19 @@ contains
         do i=1,nvar1;
             do j=1,nvar2;
                 input(i,j)=kohonen_map%rnumber_grator%generate();
+                !write(*,*) 'input= ',input(i,j);
             enddo
         enddo
 !   
-!   write(*,*) 'SOM: Initializing grid...',seed
+    write(*,*) 'SOM: Initializing grid...',kohonen_map%seed;
         do iz=1,nz;
             do iy=1,ny;
                 do ix=1,nx;
-                   !write(*,*) 'creating ',ix,iy,iz
-                   call kohonen_map%grid(ix,iy,iz)%create(input); 
-                   current_index=position2index(ix,iy,iz,nx,ny);
-                   call calculate_coordinates(current_index,ix,iy,iz,nx,ny,nz,&
-                      kohonen_map%coordinates,training_parameters(1)%node_type);
+                    !write(*,*) 'creating ',ix,iy,iz
+                    call kohonen_map%grid(ix,iy,iz)%create(input); 
+                        current_index=position2index(ix,iy,iz,nx,ny);
+                    call calculate_coordinates(current_index,ix,iy,iz,nx,ny,nz,&
+                        kohonen_map%coordinates,training_parameters(1)%node_type);
                 enddo!ix
             enddo !iy
          enddo !iz
@@ -174,7 +173,7 @@ contains
    !
          call calculate_distance_matrix(kohonen_map%coordinates,kohonen_map%cells_distances,&
              training_parameters(1)%node_type,training_parameters(1)%toroidal_grid);
-!   write(*,*) 'SOM: Initializing grid...OK'
+    write(*,*) 'SOM: Initializing grid...OK';
 !
     end subroutine create_som
 !========================================================================================
@@ -289,7 +288,7 @@ contains
       do iepoch = 1,kohonen_map%parameters%number_epochs;
          kohonen_map%distortion(iepoch)=distortion;
          write(6,*) ' Starting epoch -- distortion',iepoch,' -- ',distortion;
-         !write(idisto,*) iepoch,distortion
+         write(idisto,*) iepoch,distortion
          distortion = 0.0_wp;
          do ipattern = 1, kohonen_map%parameters%number_patterns;
             iteration = iteration + 1;
@@ -389,9 +388,11 @@ contains
          deallocate(pattern_index);
       endif
       !
-      if(debug_option .gt. 0) then 
-         close(idbg);
-      endif
+        if(debug_option .gt. 0) then 
+            close(idbg);
+        endif
+        close(idisto);
+    
       !     print hit counter
       if(kohonen_map%parameters%train_option < 3) then
          do iz=1,size(kohonen_map%grid,3)
