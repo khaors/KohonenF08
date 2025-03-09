@@ -11,12 +11,12 @@ iris.dat                                          !FILE WITH INPUT PATTERNS
 150                                               !NUMBER OF PATTERNS
 4                                                 !NUMBER INPUT VARIABLES
 1 2 3 4                                           !COLUMNS
-visom                                        !SOM_TYPE (normal_som,visom,robust_some)
+normal_som                                        !SOM_TYPE (normal_som,visom,robust_some)
 10 10 1                                           !NUMBER_NODES IN SOM (NODES IN X, Y AND Z)
-400                                               !NUMBER EPOCHS
-0.05                                               !LEARNING RATE
+500                                               !NUMBER EPOCHS
+0.05                                              !LEARNING RATE
 12345                                             !RANDOM SEED
-euclidean                                         !DISTANCE TYPE(euclidean is the only option)
+euclidean                                         !DISTANCE TYPE(euclidean,manhattan)
 rectangular                                       !NODE TYPE(rectangular,hexagonal)
 gaussian                                          !NEIGHBORHOOD TYPE(bubble,gaussian)
 0                                                 !DEBUG LEVEL
