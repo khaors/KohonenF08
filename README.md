@@ -158,6 +158,8 @@ som_train -v
 som_train -h
 ```
 
+The options `--version` or `-v` print the current version of the program whereas the options `--help` or `-h` print a short summary of the command line options available. 
+
 
 ## Documentation
 
