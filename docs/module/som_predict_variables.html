@@ -1,0 +1,1005 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>som_predict_variables &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>som_predict_variables
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 4.8% of total for modules and submodules.">132 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/som_predict_variables.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\som_predict_variables.f90.html'>som_predict_variables.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">som_predict_variables</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/som_predict_variables.html#variable-my_som~4">my_som</a>
+            <a class="list-group-item" href="../module/som_predict_variables.html#variable-som_parameters~2">som_parameters</a>
+            <a class="list-group-item" href="../module/som_predict_variables.html#variable-input_patterns~3">input_patterns</a>
+            <a class="list-group-item" href="../module/som_predict_variables.html#variable-map_output~3">map_output</a>
+            <a class="list-group-item" href="../module/som_predict_variables.html#variable-parfl~2">parfl</a>
+            <a class="list-group-item" href="../module/som_predict_variables.html#variable-som_parameter_file">som_parameter_file</a>
+            <a class="list-group-item" href="../module/som_predict_variables.html#variable-prototype_file">prototype_file</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/som_predict_variables.html#proc-initialize_variables~2">initialize_variables</a>
+            <a class="list-group-item" href="../module/som_predict_variables.html#proc-release_variables~2">release_variables</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='kohonen_layer_parameters_utilities.html'>kohonen_layer_parameters_utilities</a></li>
+                  <li class="list-inline-item"><a href='constants_utilities.html'>constants_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_map_base_utilities.html'>kohonen_map_base_utilities</a></li>
+                  <li class="list-inline-item">error_handling</li>
+                  <li class="list-inline-item"><a href='kohonen_pattern_utilities.html'>kohonen_pattern_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_prototype_utilities.html'>kohonen_prototype_utilities</a></li>
+                  <li class="list-inline-item"><a href='precision_utilities.html'>precision_utilities</a></li>
+                  <li class="list-inline-item"><a href='self_organizing_map_utilities.html'>self_organizing_map_utilities</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: module~~som_predict_variables~~UsesGraph Pages: 1 -->
+<svg id="modulesom_predict_variablesUsesGraph" width="641pt" height="285pt"
+ viewBox="0.00 0.00 641.00 285.06" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~som_predict_variables~~UsesGraph" class="graph" transform="scale(0.493301 0.493301) rotate(0) translate(4 573.86)">
+<title>module~~som_predict_variables~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-573.86 1295.41,-573.86 1295.41,4 -4,4"/>
+<!-- module~som_predict_variables -->
+<g id="module~~som_predict_variables~~UsesGraph_node1" class="node">
+<title>module~som_predict_variables</title>
+<polygon fill="none" stroke="black" points="1291.41,-420.52 1172.64,-420.52 1172.64,-397 1291.41,-397 1291.41,-420.52"/>
+<text text-anchor="middle" x="1232.02" y="-404.78" font-family="Helvetica,sans-Serif" font-size="10.50">som_predict_variables</text>
+</g>
+<!-- error_handling -->
+<g id="module~~som_predict_variables~~UsesGraph_node2" class="node">
+<title>error_handling</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="350.31,-417.52 269.04,-417.52 269.04,-394 350.31,-394 350.31,-417.52"/>
+<text text-anchor="middle" x="309.67" y="-401.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">error_handling</text>
+</g>
+<!-- module~som_predict_variables&#45;&gt;error_handling -->
+<g id="module~~som_predict_variables~~UsesGraph_edge1" class="edge">
+<title>module~som_predict_variables&#45;&gt;error_handling</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M877.23,-561.76C829.12,-569.2 816.91,-553.73 768.6,-547.76 687.86,-537.78 470.44,-553.17 405.06,-504.76 373.07,-481.07 398.98,-449.01 369.06,-422.76 366.6,-420.61 363.89,-418.72 361.02,-417.08"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="362.69,-414 352.14,-412.99 359.76,-420.35 362.69,-414"/>
+</g>
+<!-- module~constants_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node3" class="node">
+<title>module~constants_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node3"><a xlink:href="../module/constants_utilities.html" xlink:title="constants_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="357.43,-341.52 261.91,-341.52 261.91,-318 357.43,-318 357.43,-341.52"/>
+<text text-anchor="middle" x="309.67" y="-325.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~som_predict_variables&#45;&gt;module~constants_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge2" class="edge">
+<title>module~som_predict_variables&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M877.23,-407.76C672.88,-352.19 614.73,-373.52 405.06,-343.76 393.38,-342.1 380.89,-340.28 368.95,-338.52"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="369.61,-335.08 359.2,-337.08 368.58,-342 369.61,-335.08"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node4" class="node">
+<title>module~kohonen_layer_parameters_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node4"><a xlink:href="../module/kohonen_layer_parameters_utilities.html" xlink:title="kohonen_layer_parameters_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="768.6,-459.52 587.58,-459.52 587.58,-436 768.6,-436 768.6,-459.52"/>
+<text text-anchor="middle" x="678.09" y="-443.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_parameters_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~som_predict_variables&#45;&gt;module~kohonen_layer_parameters_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge3" class="edge">
+<title>module~som_predict_variables&#45;&gt;module~kohonen_layer_parameters_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1061.25,-447.76C967.33,-464.8 973.57,-547.18 879.23,-561.76"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M877.23,-561.76C858.43,-564.67 756.59,-499.24 706.69,-466.23"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="708.68,-463.35 698.42,-460.74 704.81,-469.18 708.68,-463.35"/>
+</g>
+<!-- module~kohonen_map_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node5" class="node">
+<title>module~kohonen_map_base_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node5"><a xlink:href="../module/kohonen_map_base_utilities.html" xlink:title="kohonen_map_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="951.87,-459.52 804.6,-459.52 804.6,-436 951.87,-436 951.87,-459.52"/>
+<text text-anchor="middle" x="878.23" y="-443.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_map_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~som_predict_variables&#45;&gt;module~kohonen_map_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge4" class="edge">
+<title>module~som_predict_variables&#45;&gt;module~kohonen_map_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1061.25,-447.76C1029.55,-453.51 994.22,-454.68 963.18,-454.01"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="963.57,-450.52 953.47,-453.73 963.37,-457.52 963.57,-450.52"/>
+</g>
+<!-- module~kohonen_pattern_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node6" class="node">
+<title>module~kohonen_pattern_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node6"><a xlink:href="../module/kohonen_pattern_utilities.html" xlink:title="kohonen_pattern_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="743.47,-341.52 612.7,-341.52 612.7,-318 743.47,-318 743.47,-341.52"/>
+<text text-anchor="middle" x="678.09" y="-325.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~som_predict_variables&#45;&gt;module~kohonen_pattern_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge5" class="edge">
+<title>module~som_predict_variables&#45;&gt;module~kohonen_pattern_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M877.23,-407.76C818.85,-391.93 754.16,-364.47 715.07,-346.72"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="716.67,-343.6 706.13,-342.62 713.76,-349.97 716.67,-343.6"/>
+</g>
+<!-- module~kohonen_prototype_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node7" class="node">
+<title>module~kohonen_prototype_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node7"><a xlink:href="../module/kohonen_prototype_utilities.html" xlink:title="kohonen_prototype_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="549.33,-263.52 407.31,-263.52 407.31,-240 549.33,-240 549.33,-263.52"/>
+<text text-anchor="middle" x="478.32" y="-247.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~som_predict_variables&#45;&gt;module~kohonen_prototype_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge6" class="edge">
+<title>module~som_predict_variables&#45;&gt;module~kohonen_prototype_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1061.25,-447.76C1040.88,-451.46 899.22,-413.18 879.23,-407.76"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M877.23,-407.76C844.42,-398.86 830.13,-406.21 804.6,-383.76 776.83,-359.35 797.83,-331.4 768.6,-308.76 752.17,-296.04 640.22,-276.53 560.52,-263.95"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="561.42,-260.55 551,-262.46 560.33,-267.47 561.42,-260.55"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1183.92,-421.01C1150.43,-429.4 1104.3,-440.31 1063.25,-447.76"/>
+</g>
+<!-- module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node8" class="node">
+<title>module~precision_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node8"><a xlink:href="../module/precision_utilities.html" xlink:title="precision_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="214.29,-203.52 121.77,-203.52 121.77,-180 214.29,-180 214.29,-203.52"/>
+<text text-anchor="middle" x="168.03" y="-187.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~som_predict_variables&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge7" class="edge">
+<title>module~som_predict_variables&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M877.23,-561.76C790.43,-576.58 766.31,-549.58 679.09,-561.76"/>
+</g>
+<!-- module~self_organizing_map_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node9" class="node">
+<title>module~self_organizing_map_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node9"><a xlink:href="../module/self_organizing_map_utilities.html" xlink:title="self_organizing_map_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="1136.64,-381.52 987.87,-381.52 987.87,-358 1136.64,-358 1136.64,-381.52"/>
+<text text-anchor="middle" x="1062.25" y="-365.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~som_predict_variables&#45;&gt;module~self_organizing_map_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge8" class="edge">
+<title>module~som_predict_variables&#45;&gt;module~self_organizing_map_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1178.4,-396.53C1162.08,-392.73 1143.92,-388.51 1126.94,-384.56"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1127.99,-381.21 1117.45,-382.36 1126.4,-388.03 1127.99,-381.21"/>
+</g>
+<!-- module~constants_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge9" class="edge">
+<title>module~constants_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M296.28,-317.51C272.1,-293.62 218.44,-240.59 189.12,-211.61"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="191.84,-209.39 182.27,-204.85 186.92,-214.36 191.84,-209.39"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;error_handling -->
+<g id="module~~som_predict_variables~~UsesGraph_edge10" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M477.32,-443.76C438.61,-435.03 394.86,-425.05 361.91,-417.51"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="362.74,-414.11 352.21,-415.29 361.17,-420.93 362.74,-414.11"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge11" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M587.57,-453.51C553.33,-453.75 514.16,-451.61 479.32,-443.76"/>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M477.32,-443.76C445.56,-436.6 372.15,-379.81 334.26,-349.18"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="336.57,-346.56 326.61,-342.96 332.16,-351.99 336.57,-346.56"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge12" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M477.32,-561.76C396.34,-573.09 255.81,-434.16 250.29,-426.76 200.4,-359.86 179.52,-259.98 172.29,-215.09"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="175.78,-214.82 170.82,-205.46 168.86,-215.87 175.78,-214.82"/>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M667.1,-459.6C639.87,-490.41 560.93,-570.07 479.32,-561.76"/>
+</g>
+<!-- tomlf -->
+<g id="module~~som_predict_variables~~UsesGraph_node16" class="node">
+<title>tomlf</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="505.32,-495.52 451.32,-495.52 451.32,-472 505.32,-472 505.32,-495.52"/>
+<text text-anchor="middle" x="478.32" y="-479.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tomlf</text>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;tomlf -->
+<g id="module~~som_predict_variables~~UsesGraph_edge13" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;tomlf</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M609.86,-460C578.88,-465.64 543.27,-472.12 517.08,-476.89"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="516.46,-473.44 507.24,-478.68 517.71,-480.33 516.46,-473.44"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~kohonen_layer_parameters_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge14" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~kohonen_layer_parameters_utilities</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M804.3,-447.76C796.5,-447.76 788.46,-447.76 780.41,-447.76"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="780.55,-444.26 770.55,-447.76 780.55,-451.26 780.55,-444.26"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~kohonen_pattern_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge15" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~kohonen_pattern_utilities</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M836.76,-435.6C826.04,-431.76 814.66,-427.1 804.6,-421.76 765.84,-401.18 725.74,-369.67 701.6,-349.4"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="703.91,-346.76 694.02,-342.95 699.37,-352.09 703.91,-346.76"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge16" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M864.67,-459.76C835.19,-486.74 758.1,-550.73 679.09,-561.76"/>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M677.09,-561.76C590.04,-573.91 566.77,-570.67 479.32,-561.76"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;error_handling -->
+<g id="module~~som_predict_variables~~UsesGraph_edge17" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M477.32,-329.76C422.24,-328.56 365.39,-363.79 334.39,-386.7"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="332.31,-383.88 326.47,-392.72 336.55,-389.45 332.31,-383.88"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge18" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M477.32,-329.76C441.38,-328.98 401.08,-328.96 369.11,-329.14"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="369.22,-325.64 359.24,-329.21 369.27,-332.64 369.22,-325.64"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~kohonen_prototype_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge19" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~kohonen_prototype_utilities</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M629.69,-317.57C615.95,-313.61 601.03,-308.9 587.58,-303.76 561.42,-293.76 532.91,-279.94 511.72,-269.06"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="513.48,-266.03 502.99,-264.53 510.26,-272.24 513.48,-266.03"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge20" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M612.51,-330.47C573.86,-330.71 523.77,-330.73 479.32,-329.76"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M477.32,-329.76C391.42,-327.89 395.42,-245.94 310.67,-231.76"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;error_handling -->
+<g id="module~~som_predict_variables~~UsesGraph_edge21" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#003fff" stroke-dasharray="5,2" d="M463.3,-263.84C448.61,-276.57 424.96,-297.29 405.06,-315.76 388.7,-330.94 385.18,-335.33 369.06,-350.76 356.83,-362.46 343.06,-375.44 331.96,-385.86"/>
+<polygon fill="#003fff" stroke="#003fff" points="329.72,-383.16 324.82,-392.55 334.51,-388.27 329.72,-383.16"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge22" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#003fff" stroke-dasharray="5,2" d="M439.74,-264.01C428.44,-268.03 416.12,-272.76 405.06,-277.76 382.72,-287.85 358.53,-301.24 340.23,-311.9"/>
+<polygon fill="#003fff" stroke="#003fff" points="338.6,-308.8 331.76,-316.89 342.15,-314.83 338.6,-308.8"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge24" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#003fff" stroke-dasharray="5,2" d="M406.98,-244.78C377.18,-241.44 342.14,-237.02 310.67,-231.76"/>
+</g>
+<!-- module~distance_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node11" class="node">
+<title>module~distance_base_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node11"><a xlink:href="../module/distance_base_utilities.html" xlink:title="distance_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="369.06,-163.52 250.29,-163.52 250.29,-140 369.06,-140 369.06,-163.52"/>
+<text text-anchor="middle" x="309.67" y="-147.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">distance_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge23" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#003fff" stroke-dasharray="5,2" d="M457.22,-239.7C428.19,-222.28 374.33,-189.96 340.61,-169.73"/>
+<polygon fill="#003fff" stroke="#003fff" points="342.52,-166.79 332.15,-164.64 338.92,-172.79 342.52,-166.79"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~som_predict_variables~~UsesGraph_node10" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node10"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="85.77,-203.52 0,-203.52 0,-180 85.77,-180 85.77,-203.52"/>
+<text text-anchor="middle" x="42.88" y="-187.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~precision_utilities&#45;&gt;iso_fortran_env -->
+<g id="module~~som_predict_variables~~UsesGraph_edge25" class="edge">
+<title>module~precision_utilities&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M121.53,-191.76C113.61,-191.76 105.31,-191.76 97.21,-191.76"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="97.45,-188.26 87.45,-191.76 97.45,-195.26 97.45,-188.26"/>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;error_handling -->
+<g id="module~~som_predict_variables~~UsesGraph_edge26" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M877.23,-369.76C686.91,-360.27 460.9,-385.65 361.67,-398.64"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="361.45,-395.14 351.99,-399.92 362.37,-402.08 361.45,-395.14"/>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge27" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M677.09,-251.76C662.21,-247.7 468.2,-292.48 368.7,-315.95"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="368.03,-312.52 359.1,-318.22 369.64,-319.33 368.03,-312.52"/>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~kohonen_layer_parameters_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge30" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~kohonen_layer_parameters_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M877.23,-369.76C811.76,-366.5 741.92,-405.18 705.18,-429.26"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="703.32,-426.29 696.98,-434.78 707.23,-432.1 703.32,-426.29"/>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~kohonen_map_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge31" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~kohonen_map_base_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M1037.67,-381.82C1015.72,-392.83 981.97,-409.26 951.87,-421.76 943.69,-425.16 934.9,-428.53 926.35,-431.67"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="925.36,-428.31 917.14,-434.99 927.73,-434.89 925.36,-428.31"/>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~kohonen_pattern_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge32" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~kohonen_pattern_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M877.23,-369.76C827.2,-367.27 771.36,-355.12 731.74,-344.86"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="732.79,-341.51 722.22,-342.34 731,-348.28 732.79,-341.51"/>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~kohonen_prototype_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge33" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~kohonen_prototype_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M677.09,-251.76C639.88,-241.61 597.24,-240.36 561.1,-242.17"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="560.9,-238.67 551.13,-242.76 561.32,-245.66 560.9,-238.67"/>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge34" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M677.09,-251.76C590.59,-228.08 568.78,-205.5 479.32,-211.76"/>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M987.71,-371.4C954.54,-371.72 914.9,-371.52 879.23,-369.76"/>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M877.23,-369.76C810.48,-366.47 828.51,-295.4 768.6,-265.76 732.51,-247.91 717.93,-262.39 679.09,-251.76"/>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge28" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M677.09,-51.76C557.69,-30.98 515.7,-21.28 405.06,-70.76 384.69,-79.87 385.85,-91.06 369.06,-105.76 358.58,-114.94 346.56,-124.56 336.16,-132.61"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="334.16,-129.73 328.35,-138.59 338.42,-135.29 334.16,-129.73"/>
+</g>
+<!-- module~factory_distance_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node12" class="node">
+<title>module~factory_distance_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node12"><a xlink:href="../module/factory_distance_utilities.html" xlink:title="factory_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="741.97,-113.52 614.2,-113.52 614.2,-90 741.97,-90 741.97,-113.52"/>
+<text text-anchor="middle" x="678.09" y="-97.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~factory_distance_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge29" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~factory_distance_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M877.23,-101.76C835.44,-80.24 781.8,-81.7 740.88,-87.73"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="740.5,-84.25 731.19,-89.3 741.62,-91.16 740.5,-84.25"/>
+</g>
+<!-- module~quicksort_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node13" class="node">
+<title>module~quicksort_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node13"><a xlink:href="../module/quicksort_utilities.html" xlink:title="quicksort_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="524.58,-23.52 432.06,-23.52 432.06,0 524.58,0 524.58,-23.52"/>
+<text text-anchor="middle" x="478.32" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">quicksort_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~quicksort_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge35" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~quicksort_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M1057.62,-357.51C1043.59,-312.76 988.25,-157.88 879.23,-101.76"/>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M877.23,-101.76C796.48,-60.19 768.57,-67.33 679.09,-51.76"/>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M677.09,-51.76C629.35,-43.45 575.45,-32.44 535.99,-24.08"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="536.74,-20.66 526.23,-22 535.28,-27.5 536.74,-20.66"/>
+</g>
+<!-- module~random_generator_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node14" class="node">
+<title>module~random_generator_base_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node14"><a xlink:href="../module/random_generator_base_utilities.html" xlink:title="random_generator_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="762.22,-174.52 593.95,-174.52 593.95,-151 762.22,-151 762.22,-174.52"/>
+<text text-anchor="middle" x="678.09" y="-158.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_generator_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~random_generator_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge36" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~random_generator_base_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M877.23,-101.76C863.13,-94.5 774.43,-126.19 720.6,-146.61"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="719.51,-143.28 711.42,-150.11 722.01,-149.82 719.51,-143.28"/>
+</g>
+<!-- module~rkiss05_generator_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node15" class="node">
+<title>module~rkiss05_generator_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node15"><a xlink:href="../module/rkiss05_generator_utilities.html" xlink:title="rkiss05_generator_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="946.24,-223.52 810.22,-223.52 810.22,-200 946.24,-200 946.24,-223.52"/>
+<text text-anchor="middle" x="878.23" y="-207.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~self_organizing_map_utilities&#45;&gt;module~rkiss05_generator_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge37" class="edge">
+<title>module~self_organizing_map_utilities&#45;&gt;module~rkiss05_generator_utilities</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M1047.27,-357.62C1015.91,-330.4 939.7,-264.25 901.64,-231.21"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="904.25,-228.84 894.41,-224.93 899.66,-234.13 904.25,-228.84"/>
+</g>
+<!-- module~distance_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge38" class="edge">
+<title>module~distance_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M266.02,-163.98C252.21,-167.93 236.73,-172.37 222.25,-176.51"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="221.53,-173.08 212.88,-179.2 223.46,-179.81 221.53,-173.08"/>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge39" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M614.1,-110.36C549.21,-119.21 448.28,-132.98 380.87,-142.18"/>
+<polygon fill="#48ff00" stroke="#48ff00" points="380.45,-138.71 371.01,-143.53 381.4,-145.64 380.45,-138.71"/>
+</g>
+<!-- module~euclidean_distance_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node17" class="node">
+<title>module~euclidean_distance_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node17"><a xlink:href="../module/euclidean_distance_utilities.html" xlink:title="euclidean_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="548.95,-183.52 407.68,-183.52 407.68,-160 548.95,-160 548.95,-183.52"/>
+<text text-anchor="middle" x="478.32" y="-167.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">euclidean_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~euclidean_distance_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge40" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~euclidean_distance_utilities</title>
+<path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M642.64,-113.95C609.85,-125.56 560.3,-143.1 524.38,-155.81"/>
+<polygon fill="#48ff00" stroke="#48ff00" points="523.39,-152.45 515.13,-159.08 525.73,-159.05 523.39,-152.45"/>
+</g>
+<!-- module~manhattan_distance_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node18" class="node">
+<title>module~manhattan_distance_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node18"><a xlink:href="../module/manhattan_distance_utilities.html" xlink:title="manhattan_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="551.58,-103.52 405.06,-103.52 405.06,-80 551.58,-80 551.58,-103.52"/>
+<text text-anchor="middle" x="478.32" y="-87.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">manhattan_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~manhattan_distance_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge41" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~manhattan_distance_utilities</title>
+<path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M613.97,-98.57C597.74,-97.75 580.03,-96.85 562.94,-95.99"/>
+<polygon fill="#48ff00" stroke="#48ff00" points="563.5,-92.51 553.33,-95.5 563.14,-99.5 563.5,-92.51"/>
+</g>
+<!-- module~quicksort_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge42" class="edge">
+<title>module~quicksort_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M439.69,-23.9C428.39,-27.92 416.08,-32.67 405.06,-37.76 361.18,-58.02 354.73,-71.89 310.67,-91.76"/>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M308.67,-91.76C262.72,-112.49 216.56,-149.46 190.51,-172.17"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="188.46,-169.3 183.3,-178.56 193.1,-174.54 188.46,-169.3"/>
+</g>
+<!-- module~sort_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_node19" class="node">
+<title>module~sort_base_utilities</title>
+<g id="a_module~~som_predict_variables~~UsesGraph_node19"><a xlink:href="../module/sort_base_utilities.html" xlink:title="sort_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="358.18,-43.52 261.16,-43.52 261.16,-20 358.18,-20 358.18,-43.52"/>
+<text text-anchor="middle" x="309.67" y="-27.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~quicksort_utilities&#45;&gt;module~sort_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge43" class="edge">
+<title>module~quicksort_utilities&#45;&gt;module~sort_base_utilities</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M431.78,-17.23C412.68,-19.52 390.22,-22.21 369.86,-24.66"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="369.5,-21.17 359.99,-25.84 370.33,-28.13 369.5,-21.17"/>
+</g>
+<!-- module~random_generator_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge44" class="edge">
+<title>module~random_generator_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#0091ff" stroke-dasharray="5,2" d="M643.37,-174.99C604.47,-188.18 538.26,-207.83 479.32,-211.76"/>
+<path fill="none" stroke="#0091ff" stroke-dasharray="5,2" d="M477.32,-211.76C402.89,-216.72 384.25,-244.07 310.67,-231.76"/>
+</g>
+<!-- module~rkiss05_generator_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge45" class="edge">
+<title>module~rkiss05_generator_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M809.91,-209.04C730.7,-206.46 595.29,-204.03 479.32,-211.76"/>
+</g>
+<!-- module~rkiss05_generator_utilities&#45;&gt;module~random_generator_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge46" class="edge">
+<title>module~rkiss05_generator_utilities&#45;&gt;module~random_generator_base_utilities</title>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M827.75,-199.52C801.03,-192.92 767.83,-184.71 739.59,-177.72"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="740.65,-174.38 730.1,-175.38 738.97,-181.17 740.65,-174.38"/>
+</g>
+<!-- module~euclidean_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge48" class="edge">
+<title>module~euclidean_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M308.67,-231.76C276.54,-226.38 241.27,-216.25 214.22,-207.52"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="215.57,-204.28 204.97,-204.49 213.38,-210.93 215.57,-204.28"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M443.5,-183.93C431.37,-188.29 417.6,-193.24 405.06,-197.76 363.11,-212.86 354.65,-239.12 310.67,-231.76"/>
+</g>
+<!-- module~euclidean_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge47" class="edge">
+<title>module~euclidean_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M407.61,-163.39C398.71,-162.33 389.59,-161.23 380.68,-160.16"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="381.39,-156.72 371.04,-159 380.55,-163.67 381.39,-156.72"/>
+</g>
+<!-- module~manhattan_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge50" class="edge">
+<title>module~manhattan_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M411.38,-79.52C379.63,-76.62 341.79,-77.72 310.67,-91.76"/>
+</g>
+<!-- module~manhattan_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge49" class="edge">
+<title>module~manhattan_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M443.5,-103.93C431.37,-108.29 417.6,-113.24 405.06,-117.76 388.68,-123.66 370.71,-130.13 354.88,-135.83"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="353.96,-132.45 345.73,-139.13 356.33,-139.03 353.96,-132.45"/>
+</g>
+<!-- module~sort_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~som_predict_variables~~UsesGraph_edge51" class="edge">
+<title>module~sort_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M290.73,-43.85C278.58,-52.51 262.58,-64.87 250.29,-77.76 222.54,-106.88 196.7,-146 181.91,-170.01"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="179.07,-167.94 176.88,-178.31 185.06,-171.57 179.07,-167.94"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panmodulesom_predict_variablesUsesGraph = svgPanZoom('#modulesom_predict_variablesUsesGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="485pt" height="32pt"
+ viewBox="0.00 0.00 485.13 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 481.13,-27.52 481.13,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-23.52 0,-23.52 0,0 54,0 54,-23.52"/>
+<text text-anchor="middle" x="27" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="137.76,-23.52 72.24,-23.52 72.24,0 137.76,0 137.76,-23.52"/>
+<text text-anchor="middle" x="105" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="218.63,-23.52 155.37,-23.52 155.37,0 218.63,0 218.63,-23.52"/>
+<text text-anchor="middle" x="187" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="291,-23.52 237,-23.52 237,0 291,0 291,-23.52"/>
+<text text-anchor="middle" x="264" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="363,-23.52 309,-23.52 309,0 363,0 363,-23.52"/>
+<text text-anchor="middle" x="336" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="477.13,-23.52 380.87,-23.52 380.87,0 477.13,0 477.13,-23.52"/>
+<text text-anchor="middle" x="429" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-my_som~4"></span>
+              type(<a href='..\type\self_organizing_map.html'>self_organizing_map</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              save
+            </td>
+            <td>::</td>
+            <td><strong>my_som</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-som_parameters~2"></span>
+              type(<a href='..\type\kohonen_layer_parameters.html'>kohonen_layer_parameters</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(1)
+            </td>
+            <td>::</td>
+            <td><strong>som_parameters</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_patterns~3"></span>
+              type(<a href='..\type\kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>input_patterns</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-map_output~3"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>map_output</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parfl~2"></span>
+              character(len=NUMCHAR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parfl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-som_parameter_file"></span>
+              character(len=NUMCHAR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>som_parameter_file</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prototype_file"></span>
+              character(len=NUMCHAR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prototype_file</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-initialize_variables~2"></span> <h3>public  subroutine <a href='..\proc\initialize_variables~2.html'>initialize_variables</a>(par_file)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-par_file~2"></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>par_file</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-release_variables~2"></span> <h3>public  subroutine <a href='..\proc\release_variables~2.html'>release_variables</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-10 00:03 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

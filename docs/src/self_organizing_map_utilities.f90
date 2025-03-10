@@ -1030,12 +1030,6 @@ contains
 !
 !
     end subroutine find_bmu_grid
-!****f* self_organizing_map_utilities/calculate_u_matrix
-! NAME
-!   calculate_u_matrix
-! PURPOSE
-!    Subroutine to calculate  the u_matrix
-! SYNOPSIS
 !========================================================================================
     subroutine calculate_u_matrix(kohonen_map)
 !========================================================================================
@@ -1396,15 +1390,10 @@ contains
         deallocate(sample_pos,sample_index,p_vector,sigma_table,current_sigma);   
 !
     end function calculate_sigma 
-!****f* self_organizing_map_utilities/external_train_map
-! NAME
-!   external_train_map
-! PURPOSE
-! SYNOPSIS
 !========================================================================================
     subroutine external_train_map(x,nvar,npat,nx,ny,nepoch,alpha,grid_type,&
        distance_type,neigh_type,toroidal,prot,distortion,&
-       u_matrix,coords,number_patterns,node_index) bind(C, name="train_som_")
+       u_matrix,coords,number_patterns,node_index) bind(C, name="train_som__")
 !========================================================================================
 !!    Subroutine to connect the self_organizing_map module to R o C
         use, intrinsic :: iso_c_binding, only : c_double, c_int, c_char
@@ -1544,7 +1533,7 @@ contains
     end subroutine external_train_map
 !========================================================================================
     subroutine external_predict_map(prot,nx,ny,new_pat,npat,nvar,node_index) & 
-        bind(C, name="predict_som_")
+        bind(C, name="predict_som__")
 !========================================================================================
 !!    Subroutine to connect this module to R
 
