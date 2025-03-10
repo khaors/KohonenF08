@@ -38,6 +38,7 @@ type,extends(kohonen_map_base) :: self_organizing_map
     contains
         procedure,public :: create => create_som
         procedure,public :: destroy => destroy_som
+        procedure,private :: create_random_sample
         procedure,private :: train_som_data
         procedure,public :: train => train_som_data 
         procedure,public :: predict => predict_som
@@ -150,18 +151,19 @@ contains
 !
         kohonen_map%seed=training_parameters(1)%random_seed_(1);
         call kohonen_map%rnumber_grator%create(kohonen_map%seed);
-        do i=1,nvar1;
-            do j=1,nvar2;
-                input(i,j)=kohonen_map%rnumber_grator%generate();
-                !write(*,*) 'input= ',input(i,j);
-            enddo
-        enddo
+        ! do i=1,nvar1;
+        !     do j=1,nvar2;
+        !         input(i,j)=kohonen_map%rnumber_grator%generate();
+        !         !write(*,*) 'input= ',input(i,j);
+        !     enddo
+        ! enddo
 !   
     write(*,*) 'SOM: Initializing grid...',kohonen_map%seed;
         do iz=1,nz;
             do iy=1,ny;
                 do ix=1,nx;
                     !write(*,*) 'creating ',ix,iy,iz
+                    call kohonen_map%create_random_sample(input);
                     call kohonen_map%grid(ix,iy,iz)%create(input); 
                         current_index=position2index(ix,iy,iz,nx,ny);
                     call calculate_coordinates(current_index,ix,iy,iz,nx,ny,nz,&
@@ -241,12 +243,25 @@ contains
 !        write(*,*) 'SOM: Releasing memory...OK!'
 !
     end subroutine destroy_som
-!****f* self_organizing_map_utilities/train_som_data
-! NAME
-!   train_som_data
-! PURPOSE
-!!   Training function for self_organizing_map 
-! SYNOPSIS
+!========================================================================================
+    subroutine create_random_sample(kohonen_map,input)
+!========================================================================================
+!! Subroutine to generate random values that serve as inputs to the SOM
+    class(self_organizing_map) :: kohonen_map
+!! A `self_organizing_map` object
+    real(kind=wp),dimension(:,:),intent(out) :: input 
+!! A real array with the initial values of the prototypes
+    integer :: nvar1,nvar2,i,j
+!
+    nvar1=size(input,1);
+    nvar2=size(input,2);
+    do i=1,nvar1;
+        do j=1,nvar2;
+            input(i,j)=kohonen_map%rnumber_grator%generate();
+        end do
+    end do
+!    
+    end subroutine create_random_sample
 !========================================================================================
    subroutine train_som_data(kohonen_map,input_data)
 !========================================================================================
@@ -288,7 +303,7 @@ contains
       do iepoch = 1,kohonen_map%parameters%number_epochs;
          kohonen_map%distortion(iepoch)=distortion;
          write(6,*) ' Starting epoch -- distortion',iepoch,' -- ',distortion;
-         write(idisto,*) iepoch,distortion
+        if(iepoch > 1) write(idisto,*) iepoch,distortion
          distortion = 0.0_wp;
          do ipattern = 1, kohonen_map%parameters%number_patterns;
             iteration = iteration + 1;
