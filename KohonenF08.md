@@ -18,7 +18,7 @@ creation_date: %Y-%m-%d %H:%M %z
 dbg: true
 email: khaors@gmail.com
 ---
-<img src="../media/logo.svg" width=80% height=10%>
+<img src="https://github.com/khaors/KohonenF08/blob/main/media/logo.svg?raw=true" width=80% height=10%>
 
 [TOC]
 
