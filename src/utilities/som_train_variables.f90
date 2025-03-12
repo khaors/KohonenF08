@@ -226,10 +226,13 @@ module som_train_variables
                     call error_stop(message);
                 endif
                 write(*,*) 'Currently reading ',trim(pattern_files(ipattern));
+                call global_logger%message('Currently reading '//trim(pattern_files(ipattern)));
                 open(idata,file=trim(pattern_files(ipattern)),status='unknown',action='read',&
                     access='sequential',iostat=ferr);
                 if(ferr /= 0) then
                     message=trim(base_message)//" while opening the "//trim(pattern_files(ipattern))//' file';
+                    call global_logger%message(message);
+                    call global_logger%delimiter('volume');
                     call error_stop(message);
                 endif
                 do i=1,size(var,1)
@@ -237,17 +240,22 @@ module som_train_variables
                 enddo!ix
                 close(idata);
                 write(*,*) 'Currently reading ',trim(pattern_files(ipattern)),' finished';
+                call global_logger%message('Currently reading '//trim(pattern_files(ipattern))//' finished');
                 call input_patterns(ipattern)%create(var);
             enddo!ipattern
             write(*,*) 'Reading patterns...finished!';
-            call global_logger%message('Reading patterns finished');
+            call global_logger%message('Reading patterns finished!');
+            call global_logger%delimiter('volume');
         !
         elseif(som_parameters(1)%train_option .eq. 2) then
-            write(*,*) 'Reading patterns...'
+            write(*,*) 'Reading patterns...';
+            call global_logger%message('Reading patterns...');
             open(idata,file=trim(som_parameters(1)%pattern_file),status='unknown',&
                 access='sequential',action='read',iostat=ferr);
             if(ferr /= 0) then
                 message=trim(base_message)//" while opening the "//trim(som_parameters(1)%pattern_file)//' file';
+                call global_logger%message(message);
+                call global_logger%delimiter('volume');
                 call error_stop(message);
             endif
             do ipattern=1,som_parameters(1)%number_patterns
@@ -256,24 +264,30 @@ module som_train_variables
                 call input_patterns(ipattern)%create(var);
             enddo!ipatterns
             close(idata)
-            write(*,*) 'Reading patterns...OK!!!'
+            write(*,*) 'Reading patterns...OK!!!';
+            call global_logger%message('Reading patterns...OK!!!');
         !   
             write(*,*) 'Reading distance matrix....';
             allocate(distance_matrix(som_parameters(1)%number_patterns,som_parameters(1)%number_patterns),stat=ierr);
             if(ierr /= 0) then
                 message=trim(base_message)//"while allocating memory for distance_matrix array";
+                call global_logger%message(message);
+                call global_logger%delimiter('volume');        
                 call error_stop(message);
             endif
             open(idata,file=trim(som_parameters(1)%pattern_file),status='unknown',&
                 access='sequential',action='read',iostat=ferr);
             if(ferr /= 0) then
                 message=trim(base_message)//" while opening the "//trim(som_parameters(1)%pattern_file)//' file';
+                call global_logger%message(message);
+                call global_logger%delimiter('volume');                
                 call error_stop(message);
             endif
             do i=1,som_parameters(1)%number_patterns
                 read(idata,*) (distance_matrix(i,j),j=1,som_parameters(1)%number_patterns);
             enddo
             write(*,*) 'Reading distance matrix....finished!';
+            call global_logger%message('Reading distance matrix....finished!');
         endif
         !
         if(som_parameters(1)%debug_level .gt. 0) then
@@ -281,6 +295,8 @@ module som_train_variables
                 status='unknown',access='sequential',action='write',iostat=ferr);
             if(ferr /= 0) then
                 message=trim(base_message)//" while opening the "//trim(som_parameters(1)%debug_file)//' file';
+                call global_logger%message(message);
+                call global_logger%delimiter('volume');                
                 call error_stop(message);
             endif
         endif
@@ -293,6 +309,8 @@ module som_train_variables
                     action='write',access='sequential',iostat=ferr);
             if(ferr /= 0) then
                 message=trim(base_message)//" while opening the "//trim(som_parameters(1)%output_file)//'_parameter.som file';
+                call global_logger%message(message);
+                call global_logger%delimiter('volume');                
                 call error_stop(message);
             endif
             layer_ind=1;     
@@ -304,6 +322,8 @@ module som_train_variables
                     action='write',access='sequential',iostat=ferr);
             if(ferr /= 0) then
                 message=trim(base_message)//" while opening the "//trim(som_parameters(1)%output_file)//'_neuron_indices.out file';
+                call global_logger%message(message);
+                call global_logger%delimiter('volume');                
                 call error_stop(message);
             endif
             !   write(som_parameters(1)%iindex,'(A)') 'KOHONEN MAP PATTERN INDICES'
@@ -316,6 +336,8 @@ module som_train_variables
                     action='write',access='sequential',iostat=ferr);
             if(ferr /= 0) then
                 message=trim(base_message)//" while opening the "//trim(som_parameters(1)%output_file)//'_prototypes.out file';
+                call global_logger%message(message);
+                call global_logger%delimiter('volume');                
                 call error_stop(message);
             endif
             write(som_parameters(1)%iprot,'(A)') 'KOHONEN MAP PROTOTYPES'
@@ -328,8 +350,6 @@ module som_train_variables
             !hexagonal
             write(som_parameters(1)%iprot,'(A25,1X,A11,1X,L4)') 'node_type,toroidal_grid= ',&
                     trim(som_parameters(1)%node_type),som_parameters(1)%toroidal_grid
-                    
-                    
             ! neuron hit        
             current_file=trim(som_parameters(1)%output_file)//'_neuron_hit.out';
             open(som_parameters(1)%ihit,file=trim(current_file),status='unknown',&
@@ -362,6 +382,8 @@ module som_train_variables
                     action='write',access='sequential',iostat=ferr);
             if(ferr /= 0) then
                 message=trim(base_message)//" while opening the "//trim(som_parameters(1)%output_file)//'_u_matrix.out file';
+                call global_logger%message(message);
+                call global_logger%delimiter('volume');                
                 call error_stop(message);
             endif
             write(som_parameters(1)%iumat,'(A)') 'KOHONEN MAP U-MATRIX'
@@ -408,7 +430,7 @@ module som_train_variables
         !  
         if(allocated(input_patterns)) then
             do i=1,size(input_patterns)
-            call input_patterns(i)%destroy();
+                call input_patterns(i)%destroy();
             enddo
             deallocate(input_patterns);
         endif
