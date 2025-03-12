@@ -4,7 +4,7 @@ program som_predict
     use constants_utilities, only: NUMCHAR;
     use som_predict_variables, only: initialize_variables,release_variables,parfl,&
         my_som,input_patterns,map_output,prototype_file,som_parameters;
-    use self_organized_map_utilities;
+    use self_organizing_map_utilities;
 !
     implicit none;
 !
