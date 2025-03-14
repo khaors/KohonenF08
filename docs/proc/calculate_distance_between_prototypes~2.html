@@ -1,0 +1,790 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>calculate_distance_between_prototypes &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>calculate_distance_between_prototypes
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.9% of total for procedures.">29 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/self_organizing_map_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\self_organizing_map_utilities.f90.html'>self_organizing_map_utilities.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\self_organizing_map_utilities.html'>self_organizing_map_utilities</a></li>
+            <li class="breadcrumb-item active" aria-current="page">calculate_distance_between_prototypes</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-nx~18">nx</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-ny~18">ny</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-ix~26">ix</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-iy~25">iy</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-iz~24">iz</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-ix1~5">ix1</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-iy1~5">iy1</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-iz1~5">iz1</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-pos~10">pos</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-pos1~4">pos1</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-current_prototype~10">current_prototype</a>
+            <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#variable-current_prototype1~6">current_prototype1</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/calculate_distance_between_prototypes~2.html#src">calculate_distance_between_prototypes</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine calculate_distance_between_prototypes(kohonen_map)  
+</h2>
+    
+
+    <p>Subroutine to calculate the distance between the prototypes</p>
+
+    <h3>Type Bound</h3>
+    <p><a href='..\type\self_organizing_map.html'>self_organizing_map</a></p>
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kohonen_map~37"></span>
+              class(<a href='..\type\self_organizing_map.html'>self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+                <p>A <code>self_organizing_map</code> object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: proc~~calculate_distance_between_prototypes~2~~CallsGraph Pages: 1 -->
+<svg id="proccalculate_distance_between_prototypes2CallsGraph" width="542pt" height="32pt"
+ viewBox="0.00 0.00 541.79 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~calculate_distance_between_prototypes~2~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>proc~~calculate_distance_between_prototypes~2~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 537.79,-27.52 537.79,4 -4,4"/>
+<!-- proc~calculate_distance_between_prototypes~2 -->
+<g id="proc~~calculate_distance_between_prototypes~2~~CallsGraph_node1" class="node">
+<title>proc~calculate_distance_between_prototypes~2</title>
+<polygon fill="none" stroke="black" points="310.02,-23.52 0,-23.52 0,0 310.02,0 310.02,-23.52"/>
+<text text-anchor="middle" x="155.01" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">self_organizing_map%calculate_distance_between_prototypes</text>
+</g>
+<!-- proc~position2index~2 -->
+<g id="proc~~calculate_distance_between_prototypes~2~~CallsGraph_node2" class="node">
+<title>proc~position2index~2</title>
+<g id="a_proc~~calculate_distance_between_prototypes~2~~CallsGraph_node2"><a xlink:href="../proc/position2index~2.html" xlink:title="self_organizing_map%position2index">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="533.79,-23.52 346.02,-23.52 346.02,0 533.79,0 533.79,-23.52"/>
+<text text-anchor="middle" x="439.9" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%position2index</text>
+</a>
+</g>
+</g>
+<!-- proc~calculate_distance_between_prototypes~2&#45;&gt;proc~position2index~2 -->
+<g id="proc~~calculate_distance_between_prototypes~2~~CallsGraph_edge1" class="edge">
+<title>proc~calculate_distance_between_prototypes~2&#45;&gt;proc~position2index~2</title>
+<path fill="none" stroke="#ff0000" d="M310.29,-11.76C318.37,-11.76 326.39,-11.76 334.25,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="334.12,-15.26 344.12,-11.76 334.12,-8.26 334.12,-15.26"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.923937 0.923937) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 689.77,-27.52 689.77,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="63.27,-23.52 0,-23.52 0,0 63.27,0 63.27,-23.52"/>
+<text text-anchor="middle" x="31.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="135.63,-23.52 81.64,-23.52 81.64,0 135.63,0 135.63,-23.52"/>
+<text text-anchor="middle" x="108.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="207.63,-23.52 153.63,-23.52 153.63,0 207.63,0 207.63,-23.52"/>
+<text text-anchor="middle" x="180.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="347.14,-23.52 226.12,-23.52 226.12,0 347.14,0 347.14,-23.52"/>
+<text text-anchor="middle" x="286.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="499.89,-23.52 365.38,-23.52 365.38,0 499.89,0 499.89,-23.52"/>
+<text text-anchor="middle" x="432.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="571.63,-23.52 517.63,-23.52 517.63,0 571.63,0 571.63,-23.52"/>
+<text text-anchor="middle" x="544.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="685.77,-23.52 589.5,-23.52 589.5,0 685.77,0 685.77,-23.52"/>
+<text text-anchor="middle" x="637.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: proc~~calculate_distance_between_prototypes~2~~CalledByGraph Pages: 1 -->
+<svg id="proccalculate_distance_between_prototypes2CalledByGraph" width="641pt" height="25pt"
+ viewBox="0.00 0.00 641.00 25.40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~calculate_distance_between_prototypes~2~~CalledByGraph" class="graph" transform="scale(0.805722 0.805722) rotate(0) translate(4 27.52)">
+<title>proc~~calculate_distance_between_prototypes~2~~CalledByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 791.56,-27.52 791.56,4 -4,4"/>
+<!-- proc~calculate_distance_between_prototypes~2 -->
+<g id="proc~~calculate_distance_between_prototypes~2~~CalledByGraph_node1" class="node">
+<title>proc~calculate_distance_between_prototypes~2</title>
+<polygon fill="none" stroke="black" points="787.56,-23.52 477.54,-23.52 477.54,0 787.56,0 787.56,-23.52"/>
+<text text-anchor="middle" x="632.55" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">self_organizing_map%calculate_distance_between_prototypes</text>
+</g>
+<!-- proc~train_som_data -->
+<g id="proc~~calculate_distance_between_prototypes~2~~CalledByGraph_node2" class="node">
+<title>proc~train_som_data</title>
+<g id="a_proc~~calculate_distance_between_prototypes~2~~CalledByGraph_node2"><a xlink:href="../proc/train_som_data.html" xlink:title="self_organizing_map%train_som_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="441.54,-23.52 247.77,-23.52 247.77,0 441.54,0 441.54,-23.52"/>
+<text text-anchor="middle" x="344.65" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%train_som_data</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~calculate_distance_between_prototypes~2 -->
+<g id="proc~~calculate_distance_between_prototypes~2~~CalledByGraph_edge1" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~calculate_distance_between_prototypes~2</title>
+<path fill="none" stroke="#ff0000" d="M441.65,-11.76C449.57,-11.76 457.7,-11.76 465.94,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="465.71,-15.26 475.71,-11.76 465.71,-8.26 465.71,-15.26"/>
+</g>
+<!-- proc~external_train_map~2 -->
+<g id="proc~~calculate_distance_between_prototypes~2~~CalledByGraph_node3" class="node">
+<title>proc~external_train_map~2</title>
+<g id="a_proc~~calculate_distance_between_prototypes~2~~CalledByGraph_node3"><a xlink:href="../proc/external_train_map~2.html" xlink:title="self_organizing_map%external_train_map">
+<polygon fill="#d9534f" stroke="#d9534f" points="211.77,-23.52 0,-23.52 0,0 211.77,0 211.77,-23.52"/>
+<text text-anchor="middle" x="105.88" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%external_train_map</text>
+</a>
+</g>
+</g>
+<!-- proc~external_train_map~2&#45;&gt;proc~train_som_data -->
+<g id="proc~~calculate_distance_between_prototypes~2~~CalledByGraph_edge2" class="edge">
+<title>proc~external_train_map~2&#45;&gt;proc~train_som_data</title>
+<path fill="none" stroke="#ff0000" d="M212.11,-11.76C220,-11.76 227.96,-11.76 235.86,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="235.86,-15.26 245.86,-11.76 235.86,-8.26 235.86,-15.26"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panproccalculate_distance_between_prototypes2CalledByGraph = svgPanZoom('#proccalculate_distance_between_prototypes2CalledByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.923937 0.923937) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 689.77,-27.52 689.77,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="63.27,-23.52 0,-23.52 0,0 63.27,0 63.27,-23.52"/>
+<text text-anchor="middle" x="31.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="135.63,-23.52 81.64,-23.52 81.64,0 135.63,0 135.63,-23.52"/>
+<text text-anchor="middle" x="108.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="207.63,-23.52 153.63,-23.52 153.63,0 207.63,0 207.63,-23.52"/>
+<text text-anchor="middle" x="180.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="347.14,-23.52 226.12,-23.52 226.12,0 347.14,0 347.14,-23.52"/>
+<text text-anchor="middle" x="286.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="499.89,-23.52 365.38,-23.52 365.38,0 499.89,0 499.89,-23.52"/>
+<text text-anchor="middle" x="432.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="571.63,-23.52 517.63,-23.52 517.63,0 571.63,0 571.63,-23.52"/>
+<text text-anchor="middle" x="544.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="685.77,-23.52 589.5,-23.52 589.5,0 685.77,0 685.77,-23.52"/>
+<text text-anchor="middle" x="637.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    <section>    
+      <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nx~18"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ny~18"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ix~26"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ix</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iy~25"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iy</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iz~24"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iz</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ix1~5"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ix1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iy1~5"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iy1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iz1~5"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iz1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pos~10"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pos</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pos1~4"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pos1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-current_prototype~10"></span>
+              type(<a href='..\type\kohonen_prototype.html'>kohonen_prototype</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_prototype</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-current_prototype1~6"></span>
+              type(<a href='..\type\kohonen_prototype.html'>kohonen_prototype</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_prototype1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">calculate_distance_between_prototypes</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">)</span><span class="w"></span>
+<span class="c">!========================================================================================</span>
+<span class="c">!! Subroutine to calculate the distance between the prototypes</span>
+<span class="w">        </span><span class="k">class</span><span class="p">(</span><span class="n">self_organizing_map</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">kohonen_map</span><span class="w"></span>
+<span class="c">!! A `self_organizing_map` object</span>
+<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">,</span><span class="n">ix1</span><span class="p">,</span><span class="n">iy1</span><span class="p">,</span><span class="n">iz1</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">pos1</span><span class="w"></span>
+<span class="c">!</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">kohonen_prototype</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">current_prototype</span><span class="p">,</span><span class="n">current_prototype1</span><span class="w"></span>
+<span class="c">!!</span>
+<span class="w">        </span><span class="n">nx</span><span class="o">=</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">parameters</span><span class="p">%</span><span class="n">number_nodes_nx</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ny</span><span class="o">=</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">parameters</span><span class="p">%</span><span class="n">number_nodes_ny</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c">!$OMP parallel do  </span>
+<span class="w">        </span><span class="k">do </span><span class="n">iz</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">do </span><span class="n">iy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">do </span><span class="n">ix</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                    </span><span class="n">current_prototype</span><span class="o">=</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">);</span><span class="w"></span>
+<span class="w">                    </span><span class="n">pos</span><span class="o">=</span><span class="n">position2index</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">);</span><span class="w"></span>
+<span class="w">                    </span><span class="k">do </span><span class="n">iz1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="w">                        </span><span class="k">do </span><span class="n">iy1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">                            </span><span class="k">do </span><span class="n">ix1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                                </span><span class="n">pos1</span><span class="o">=</span><span class="n">position2index</span><span class="p">(</span><span class="n">ix1</span><span class="p">,</span><span class="n">iy1</span><span class="p">,</span><span class="n">iz1</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">)</span><span class="w"></span>
+<span class="w">                                </span><span class="n">current_prototype1</span><span class="o">=</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">grid</span><span class="p">(</span><span class="n">ix1</span><span class="p">,</span><span class="n">iy1</span><span class="p">,</span><span class="n">iz1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                                </span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">distance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="n">pos1</span><span class="p">)</span><span class="o">=</span><span class="n">current_prototype1</span><span class="p">%</span><span class="n">distance</span><span class="p">(</span><span class="n">current_prototype</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                                      </span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">distance_function</span><span class="p">);</span><span class="w"></span>
+<span class="w">                            </span><span class="k">enddo</span><span class="c">!ix1</span>
+<span class="w">                        </span><span class="k">enddo</span><span class="c">!iy1  </span>
+<span class="w">                    </span><span class="k">enddo</span><span class="c">!iz1</span>
+<span class="w">                </span><span class="k">enddo</span><span class="c">!ix</span>
+<span class="w">            </span><span class="k">enddo</span><span class="c">!iy         </span>
+<span class="w">        </span><span class="k">enddo</span><span class="c">!iz</span>
+<span class="w">        </span><span class="c">!$OMP end parallel do  </span>
+<span class="c">!</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">parameters</span><span class="p">%</span><span class="n">train_option</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            do </span><span class="n">ix</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">distance</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">parameters</span><span class="p">%</span><span class="n">idist</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">distance</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">),</span><span class="n">iy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">kohonen_map</span><span class="p">%</span><span class="n">distance</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<span class="w">            </span><span class="k">enddo</span><span class="c">!ix</span>
+<span class="w">        </span><span class="k">endif</span><span class="w"></span>
+<span class="c">! </span>
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">calculate_distance_between_prototypes</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-14 08:23 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

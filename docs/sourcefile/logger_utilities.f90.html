@@ -79,7 +79,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 9.1% of total for source files.">252 statements</a>
+                 title=" 5.8% of total for source files.">252 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -453,7 +453,7 @@ large graphs.</div>
 <a id="ln-100" name="ln-100" href="#ln-100"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">append_real</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <a id="ln-101" name="ln-101" href="#ln-101"></a><span class="k">                open</span><span class="p">(</span><span class="n">current_log</span><span class="p">%</span><span class="n">fileunit</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="n">log_file</span><span class="p">,</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="n">position</span><span class="o">=</span><span class="s1">&#39;append&#39;</span><span class="p">);</span><span class="w"></span>
 <a id="ln-102" name="ln-102" href="#ln-102"></a><span class="w">            </span><span class="k">else</span>
-<a id="ln-103" name="ln-103" href="#ln-103"></a><span class="k">                open</span><span class="p">(</span><span class="n">current_log</span><span class="p">%</span><span class="n">fileunit</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="n">log_file</span><span class="p">,</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">);</span><span class="w"> </span>
+<a id="ln-103" name="ln-103" href="#ln-103"></a><span class="k">                open</span><span class="p">(</span><span class="n">current_log</span><span class="p">%</span><span class="n">fileunit</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="n">log_file</span><span class="p">,</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="n">form</span><span class="o">=</span><span class="s1">&#39;formatted&#39;</span><span class="p">);</span><span class="w"> </span>
 <a id="ln-104" name="ln-104" href="#ln-104"></a><span class="w">            </span><span class="k">endif</span>
 <a id="ln-105" name="ln-105" href="#ln-105"></a><span class="k">            </span><span class="n">current_log</span><span class="p">%</span><span class="n">initialized</span><span class="o">=</span><span class="p">.</span><span class="n">TRUE</span><span class="p">.;</span><span class="w"> </span>
 <a id="ln-106" name="ln-106" href="#ln-106"></a><span class="w">        </span><span class="k">endif</span><span class="w"></span>
@@ -678,14 +678,14 @@ large graphs.</div>
 <a id="ln-325" name="ln-325" href="#ln-325"></a><span class="k">            </span><span class="n">used_level</span><span class="o">=</span><span class="s1">&#39;volume&#39;</span><span class="p">;</span><span class="w"></span>
 <a id="ln-326" name="ln-326" href="#ln-326"></a><span class="w">        </span><span class="k">endif</span>
 <a id="ln-327" name="ln-327" href="#ln-327"></a><span class="k">        call </span><span class="n">current_log</span><span class="p">%</span><span class="n">get_delimiter</span><span class="p">(</span><span class="n">used_level</span><span class="p">,</span><span class="n">msg</span><span class="p">);</span><span class="w"></span>
-<a id="ln-328" name="ln-328" href="#ln-328"></a><span class="w">        </span><span class="k">call </span><span class="n">current_log</span><span class="p">%</span><span class="n">message</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span><span class="w"></span>
+<a id="ln-328" name="ln-328" href="#ln-328"></a><span class="w">        </span><span class="k">call </span><span class="n">current_log</span><span class="p">%</span><span class="n">message</span><span class="p">(</span><span class="n">msg</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">30</span><span class="p">));</span><span class="w"></span>
 <a id="ln-329" name="ln-329" href="#ln-329"></a><span class="c">!</span>
 <a id="ln-330" name="ln-330" href="#ln-330"></a><span class="w">    </span><span class="k">end subroutine </span><span class="n">delimiter</span><span class="w"></span>
 <a id="ln-331" name="ln-331" href="#ln-331"></a><span class="c">!========================================================================================</span>
 <a id="ln-332" name="ln-332" href="#ln-332"></a><span class="w">    </span><span class="k">subroutine </span><span class="n">get_delimiter</span><span class="p">(</span><span class="n">current_log</span><span class="p">,</span><span class="n">level</span><span class="p">,</span><span class="n">msg</span><span class="p">)</span><span class="w"></span>
 <a id="ln-333" name="ln-333" href="#ln-333"></a><span class="c">!========================================================================================</span>
 <a id="ln-334" name="ln-334" href="#ln-334"></a><span class="c">!! Subroutine to get the delimiter text</span>
-<a id="ln-335" name="ln-335" href="#ln-335"></a><span class="w">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">LOG_LEVEL_DELIMITER_LENGTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="w"></span>
+<a id="ln-335" name="ln-335" href="#ln-335"></a><span class="w">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">LOG_LEVEL_DELIMITER_LENGTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
 <a id="ln-336" name="ln-336" href="#ln-336"></a><span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">LOG_LEVEL_DELIMITER_LENGTH</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">log_level_string_volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;==============================&quot;</span><span class="p">;</span><span class="w"></span>
 <a id="ln-337" name="ln-337" href="#ln-337"></a><span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">LOG_LEVEL_DELIMITER_LENGTH</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">log_level_string_chapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;------------------------------&quot;</span><span class="p">;</span><span class="w"></span>
 <a id="ln-338" name="ln-338" href="#ln-338"></a><span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">LOG_LEVEL_DELIMITER_LENGTH</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">log_level_string_section</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;******************************&quot;</span><span class="p">;</span><span class="w"></span>
@@ -762,7 +762,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-10 00:03 -0500             </p>
+ on 2025-03-14 08:23 -0500             </p>
           </div>
         </div>
         <br>

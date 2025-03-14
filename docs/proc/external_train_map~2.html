@@ -1,0 +1,1507 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>external_train_map &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>external_train_map
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 2.7% of total for procedures.">88 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/self_organizing_map_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\self_organizing_map_utilities.f90.html'>self_organizing_map_utilities.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\self_organizing_map_utilities.html'>self_organizing_map_utilities</a></li>
+            <li class="breadcrumb-item active" aria-current="page">external_train_map</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-version~2">version</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-program_name~2">program_name</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-my_som~3">my_som</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-parameters~7">parameters</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-var~3">var</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-i~22">i</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-j~18">j</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-k~7">k</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-ierr~16">ierr</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-pos~12">pos</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-ihit~15">ihit</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-jhit~13">jhit</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-khit~13">khit</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-nx1~2">nx1</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-ny1~2">ny1</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-input_patterns~4">input_patterns</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-prototypes~3">prototypes</a>
+            <a class="list-group-item" href="../proc/external_train_map~2.html#variable-temp~4">temp</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/external_train_map~2.html#src">external_train_map</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine external_train_map(x, nvar, npat, nx, ny, nepoch, alpha, grid_type, distance_type, neigh_type, toroidal, prot, distortion, u_matrix, coords, number_patterns, node_index) bind(C, name="train_som")  
+</h2>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_c_binding'>iso_c_binding</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: proc~~external_train_map~2~~UsesGraph Pages: 1 -->
+<svg id="procexternal_train_map2UsesGraph" width="333pt" height="32pt"
+ viewBox="0.00 0.00 332.54 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~external_train_map~2~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>proc~~external_train_map~2~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 328.54,-27.52 328.54,4 -4,4"/>
+<!-- proc~external_train_map~2 -->
+<g id="proc~~external_train_map~2~~UsesGraph_node1" class="node">
+<title>proc~external_train_map~2</title>
+<polygon fill="none" stroke="black" points="324.54,-23.52 112.77,-23.52 112.77,0 324.54,0 324.54,-23.52"/>
+<text text-anchor="middle" x="218.66" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">self_organizing_map%external_train_map</text>
+</g>
+<!-- iso_c_binding -->
+<g id="proc~~external_train_map~2~~UsesGraph_node2" class="node">
+<title>iso_c_binding</title>
+<g id="a_proc~~external_train_map~2~~UsesGraph_node2"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="76.77,-23.52 0,-23.52 0,0 76.77,0 76.77,-23.52"/>
+<text text-anchor="middle" x="38.38" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- proc~external_train_map~2&#45;&gt;iso_c_binding -->
+<g id="proc~~external_train_map~2~~UsesGraph_edge1" class="edge">
+<title>proc~external_train_map~2&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M112.41,-11.76C104.2,-11.76 96.17,-11.76 88.63,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="88.73,-8.26 78.73,-11.76 88.73,-15.26 88.73,-8.26"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="485pt" height="32pt"
+ viewBox="0.00 0.00 485.13 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 481.13,-27.52 481.13,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-23.52 0,-23.52 0,0 54,0 54,-23.52"/>
+<text text-anchor="middle" x="27" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="137.76,-23.52 72.24,-23.52 72.24,0 137.76,0 137.76,-23.52"/>
+<text text-anchor="middle" x="105" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="218.63,-23.52 155.37,-23.52 155.37,0 218.63,0 218.63,-23.52"/>
+<text text-anchor="middle" x="187" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="291,-23.52 237,-23.52 237,0 291,0 291,-23.52"/>
+<text text-anchor="middle" x="264" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="363,-23.52 309,-23.52 309,0 363,0 363,-23.52"/>
+<text text-anchor="middle" x="336" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="477.13,-23.52 380.87,-23.52 380.87,0 477.13,0 477.13,-23.52"/>
+<text text-anchor="middle" x="429" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <p>Subroutine to connect the self_organizing_map module to R o C
+Import section</p>
+
+    <h3>Type Bound</h3>
+    <p><a href='..\type\self_organizing_map.html'>self_organizing_map</a></p>
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~4"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(npat,nvar)</td>
+            <td>
+                <p>Real array with the input patterns</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nvar~4"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nvar</strong></td>
+            <td>
+                <p>Integer variables to indicate the number of variables and patterns</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-npat~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>npat</strong></td>
+            <td>
+                <p>Integer variables to indicate the number of variables and patterns</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nx~22"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx</strong></td>
+            <td>
+                <p>Integer variables to indicate the number of nodes of the SOM</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ny~22"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny</strong></td>
+            <td>
+                <p>Integer variables to indicate the number of nodes of the SOM</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nepoch~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nepoch</strong></td>
+            <td>
+                <p>Integer variables to indicate the number of epochs for training</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alpha~6"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alpha</strong></td>
+            <td>
+                <p>Real value with the initial learning rate</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid_type~3"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_type</strong></td>
+            <td>
+                <p>Integer variable to indicate the type of grid  </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distance_type~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distance_type</strong></td>
+            <td>
+                <p>Integer variable to indicate the distance type</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-neigh_type"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>neigh_type</strong></td>
+            <td>
+                <p>Integer variable to indicate the neighborhood type</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-toroidal~4"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>toroidal</strong></td>
+            <td>
+                <p>Integer variable to indicate if a toroidal grid is used</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prot~2"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prot</strong>(nx*ny,nvar)</td>
+            <td>
+                <p>Real array for the prototypes</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distortion~6"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distortion</strong>(nepoch)</td>
+            <td>
+                <p>Real array for the distortion measure (error during training)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u_matrix~5"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>u_matrix</strong>(2*nx-1,2*ny-1)</td>
+            <td>
+                <p>Real array for the u_matrix </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coords~2"></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>coords</strong>(nx*ny,3)</td>
+            <td>
+                <p>Real array for the grid coordinates of the SOM</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-number_patterns~8"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>number_patterns</strong>(nx,ny)</td>
+            <td>
+                <p>Integer array with the number of hits for each neuron</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-node_index~2"></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>node_index</strong>(npat,3)</td>
+            <td>
+                <p>Integer array with the index node for all the neurons of the SOM       </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: proc~~external_train_map~2~~CallsGraph Pages: 1 -->
+<svg id="procexternal_train_map2CallsGraph" width="641pt" height="231pt"
+ viewBox="0.00 0.00 641.00 230.87" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~external_train_map~2~~CallsGraph" class="graph" transform="scale(0.509195 0.509195) rotate(0) translate(4 449.41)">
+<title>proc~~external_train_map~2~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-449.41 1254.85,-449.41 1254.85,4 -4,4"/>
+<!-- proc~external_train_map~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node1" class="node">
+<title>proc~external_train_map~2</title>
+<polygon fill="none" stroke="black" points="211.77,-221.41 0,-221.41 0,-197.89 211.77,-197.89 211.77,-221.41"/>
+<text text-anchor="middle" x="105.88" y="-205.68" font-family="Helvetica,sans-Serif" font-size="10.50">self_organizing_map%external_train_map</text>
+</g>
+<!-- none~get_prototype -->
+<g id="proc~~external_train_map~2~~CallsGraph_node2" class="node">
+<title>none~get_prototype</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node2"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-get_prototype" xlink:title="kohonen_prototype%get_prototype">
+<polygon fill="#a7506f" stroke="#a7506f" points="1250.85,-260.41 1072.08,-260.41 1072.08,-236.89 1250.85,-236.89 1250.85,-260.41"/>
+<text text-anchor="middle" x="1161.46" y="-244.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%get_prototype</text>
+</a>
+</g>
+</g>
+<!-- proc~external_train_map~2&#45;&gt;none~get_prototype -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge1" class="edge">
+<title>proc~external_train_map~2&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#ff0000" d="M116.62,-197.42C137.55,-172.12 189.66,-114.28 247.77,-88.65 408.32,-17.83 883.26,43.59 1036.08,-42.65 1106.9,-82.62 1141.94,-180.91 1154.66,-225.72"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1151.22,-226.41 1157.21,-235.15 1157.98,-224.58 1151.22,-226.41"/>
+</g>
+<!-- proc~destroy_som -->
+<g id="proc~~external_train_map~2~~CallsGraph_node3" class="node">
+<title>proc~destroy_som</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node3"><a xlink:href="../proc/destroy_som.html" xlink:title="self_organizing_map%destroy_som">
+<polygon fill="#d9534f" stroke="#d9534f" points="447.54,-425.41 266.52,-425.41 266.52,-401.89 447.54,-401.89 447.54,-425.41"/>
+<text text-anchor="middle" x="357.03" y="-409.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%destroy_som</text>
+</a>
+</g>
+</g>
+<!-- proc~external_train_map~2&#45;&gt;proc~destroy_som -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge2" class="edge">
+<title>proc~external_train_map~2&#45;&gt;proc~destroy_som</title>
+<path fill="none" stroke="#ff0000" d="M116.86,-221.89C138.66,-248.11 192.96,-310.73 247.77,-352.65 270.15,-369.77 297.88,-385.3 319.67,-396.41"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="317.98,-399.48 328.49,-400.82 321.11,-393.21 317.98,-399.48"/>
+</g>
+<!-- proc~kohonen_pattern_create -->
+<g id="proc~~external_train_map~2~~CallsGraph_node4" class="node">
+<title>proc~kohonen_pattern_create</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node4"><a xlink:href="../proc/kohonen_pattern_create.html" xlink:title="kohonen_pattern%kohonen_pattern_create">
+<polygon fill="#d9534f" stroke="#d9534f" points="466.29,-343.41 247.77,-343.41 247.77,-319.89 466.29,-319.89 466.29,-343.41"/>
+<text text-anchor="middle" x="357.03" y="-327.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern%kohonen_pattern_create</text>
+</a>
+</g>
+</g>
+<!-- proc~external_train_map~2&#45;&gt;proc~kohonen_pattern_create -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge3" class="edge">
+<title>proc~external_train_map~2&#45;&gt;proc~kohonen_pattern_create</title>
+<path fill="none" stroke="#ff0000" d="M131.68,-221.79C176.27,-243.63 270.06,-289.55 321.12,-314.56"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="319.45,-317.64 329.97,-318.89 322.53,-311.35 319.45,-317.64"/>
+</g>
+<!-- proc~position2index~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node5" class="node">
+<title>proc~position2index~2</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node5"><a xlink:href="../proc/position2index~2.html" xlink:title="self_organizing_map%position2index">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="1036.08,-75.41 848.31,-75.41 848.31,-51.89 1036.08,-51.89 1036.08,-75.41"/>
+<text text-anchor="middle" x="942.19" y="-59.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%position2index</text>
+</a>
+</g>
+</g>
+<!-- proc~external_train_map~2&#45;&gt;proc~position2index~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge4" class="edge">
+<title>proc~external_train_map~2&#45;&gt;proc~position2index~2</title>
+<path fill="none" stroke="#ff0000" d="M135.99,-197.57C200.56,-171.42 361.26,-109.88 502.29,-84.65 615.35,-64.43 747.24,-60.73 836.7,-61.11"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="836.41,-64.61 846.43,-61.17 836.45,-57.61 836.41,-64.61"/>
+</g>
+<!-- proc~train_som_data -->
+<g id="proc~~external_train_map~2~~CallsGraph_node6" class="node">
+<title>proc~train_som_data</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node6"><a xlink:href="../proc/train_som_data.html" xlink:title="self_organizing_map%train_som_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="453.91,-221.41 260.14,-221.41 260.14,-197.89 453.91,-197.89 453.91,-221.41"/>
+<text text-anchor="middle" x="357.03" y="-205.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%train_som_data</text>
+</a>
+</g>
+</g>
+<!-- proc~external_train_map~2&#45;&gt;proc~train_som_data -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge5" class="edge">
+<title>proc~external_train_map~2&#45;&gt;proc~train_som_data</title>
+<path fill="none" stroke="#ff0000" d="M212.18,-209.65C224.16,-209.65 236.38,-209.65 248.39,-209.65"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="248.3,-213.15 258.3,-209.65 248.3,-206.15 248.3,-213.15"/>
+</g>
+<!-- none~destroy~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node8" class="node">
+<title>none~destroy~2</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node8"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-destroy~2" xlink:title="kohonen_prototype%destroy">
+<polygon fill="#a7506f" stroke="#a7506f" points="731.31,-445.41 583.29,-445.41 583.29,-421.89 731.31,-421.89 731.31,-445.41"/>
+<text text-anchor="middle" x="657.3" y="-429.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%destroy</text>
+</a>
+</g>
+</g>
+<!-- proc~destroy_som&#45;&gt;none~destroy~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge6" class="edge">
+<title>proc~destroy_som&#45;&gt;none~destroy~2</title>
+<path fill="none" stroke="#cbff00" d="M447.93,-419.68C487.27,-422.32 533.18,-425.4 571.88,-427.99"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="571.39,-431.47 581.6,-428.64 571.86,-424.48 571.39,-431.47"/>
+</g>
+<!-- none~create~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node7" class="node">
+<title>none~create~2</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node7"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-create~2" xlink:title="kohonen_prototype%create">
+<polygon fill="#a7506f" stroke="#a7506f" points="728.68,-403.41 585.91,-403.41 585.91,-379.89 728.68,-379.89 728.68,-403.41"/>
+<text text-anchor="middle" x="657.3" y="-387.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%create</text>
+</a>
+</g>
+</g>
+<!-- proc~kohonen_pattern_create&#45;&gt;none~create~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge7" class="edge">
+<title>proc~kohonen_pattern_create&#45;&gt;none~create~2</title>
+<path fill="none" stroke="#00ff66" d="M397.81,-343.89C426.6,-352.38 466.56,-363.42 502.29,-370.65 525.47,-375.35 550.84,-379.29 574.17,-382.44"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="573.57,-385.89 583.94,-383.73 574.49,-378.95 573.57,-385.89"/>
+</g>
+<!-- proc~train_som_data&#45;&gt;none~get_prototype -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge8" class="edge">
+<title>proc~train_som_data&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#cc00ff" d="M454.3,-215.08C553.15,-220.58 711.44,-229.17 848.31,-235.65 919.21,-239.01 999.19,-242.33 1060.44,-244.77"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="1060.01,-248.26 1070.14,-245.16 1060.28,-241.27 1060.01,-248.26"/>
+</g>
+<!-- proc~calculate_distance_between_prototypes~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node9" class="node">
+<title>proc~calculate_distance_between_prototypes~2</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node9"><a xlink:href="../proc/calculate_distance_between_prototypes~2.html" xlink:title="self_organizing_map%calculate_distance_between_prototypes">
+<polygon fill="#d9534f" stroke="#d9534f" points="812.31,-117.41 502.29,-117.41 502.29,-93.89 812.31,-93.89 812.31,-117.41"/>
+<text text-anchor="middle" x="657.3" y="-101.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%calculate_distance_between_prototypes</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~calculate_distance_between_prototypes~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge9" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~calculate_distance_between_prototypes~2</title>
+<path fill="none" stroke="#cc00ff" d="M374.32,-197.42C400.03,-178.8 452.25,-143.73 502.29,-126.65 509.07,-124.34 516.11,-122.28 523.27,-120.44"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="523.83,-123.91 532.74,-118.18 522.2,-117.1 523.83,-123.91"/>
+</g>
+<!-- proc~calculate_u_matrix~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node10" class="node">
+<title>proc~calculate_u_matrix~2</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node10"><a xlink:href="../proc/calculate_u_matrix~2.html" xlink:title="self_organizing_map%calculate_u_matrix">
+<polygon fill="#d9534f" stroke="#d9534f" points="761.68,-361.41 552.91,-361.41 552.91,-337.89 761.68,-337.89 761.68,-361.41"/>
+<text text-anchor="middle" x="657.3" y="-345.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%calculate_u_matrix</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~calculate_u_matrix~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge10" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~calculate_u_matrix~2</title>
+<path fill="none" stroke="#cc00ff" d="M368.15,-221.61C389.86,-246.36 443.7,-303 502.29,-328.65 514.68,-334.07 528.11,-338.18 541.72,-341.27"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="540.66,-344.63 551.16,-343.23 542.08,-337.77 540.66,-344.63"/>
+</g>
+<!-- proc~find_best_match_unit~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node11" class="node">
+<title>proc~find_best_match_unit~2</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node11"><a xlink:href="../proc/find_best_match_unit~2.html" xlink:title="self_organizing_map%find_best_match_unit">
+<polygon fill="#d9534f" stroke="#d9534f" points="768.06,-319.41 546.54,-319.41 546.54,-295.89 768.06,-295.89 768.06,-319.41"/>
+<text text-anchor="middle" x="657.3" y="-303.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%find_best_match_unit</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~find_best_match_unit~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge11" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~find_best_match_unit~2</title>
+<path fill="none" stroke="#cc00ff" d="M377.77,-221.88C404.83,-238.08 455.45,-266.38 502.29,-281.65 516.4,-286.25 531.51,-290.07 546.55,-293.23"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="545.5,-296.59 556,-295.13 546.88,-289.73 545.5,-296.59"/>
+</g>
+<!-- proc~kohonen_pattern_accessor -->
+<g id="proc~~external_train_map~2~~CallsGraph_node12" class="node">
+<title>proc~kohonen_pattern_accessor</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node12"><a xlink:href="../proc/kohonen_pattern_accessor.html" xlink:title="kohonen_pattern%kohonen_pattern_accessor">
+<polygon fill="#d9534f" stroke="#d9534f" points="772.93,-159.41 541.66,-159.41 541.66,-135.89 772.93,-135.89 772.93,-159.41"/>
+<text text-anchor="middle" x="657.3" y="-143.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern%kohonen_pattern_accessor</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~kohonen_pattern_accessor -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge12" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~kohonen_pattern_accessor</title>
+<path fill="none" stroke="#cc00ff" d="M395.33,-197.48C424.25,-188.42 465.46,-176.35 502.29,-168.65 514.55,-166.09 527.42,-163.76 540.29,-161.67"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="540.74,-165.15 550.08,-160.14 539.66,-158.23 540.74,-165.15"/>
+</g>
+<!-- proc~update_weights~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node13" class="node">
+<title>proc~update_weights~2</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node13"><a xlink:href="../proc/update_weights~2.html" xlink:title="self_organizing_map%update_weights">
+<polygon fill="#d9534f" stroke="#d9534f" points="754.56,-201.41 560.04,-201.41 560.04,-177.89 754.56,-177.89 754.56,-201.41"/>
+<text text-anchor="middle" x="657.3" y="-185.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%update_weights</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~update_weights~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge13" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~update_weights~2</title>
+<path fill="none" stroke="#cc00ff" d="M454.05,-203.21C484.15,-201.19 517.58,-198.95 548.45,-196.88"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="548.44,-200.39 558.19,-196.23 547.97,-193.41 548.44,-200.39"/>
+</g>
+<!-- proc~calculate_distance_between_prototypes~2&#45;&gt;proc~position2index~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge14" class="edge">
+<title>proc~calculate_distance_between_prototypes~2&#45;&gt;proc~position2index~2</title>
+<path fill="none" stroke="#48ff00" d="M740.5,-93.45C774.07,-88.46 813.06,-82.67 847.7,-77.53"/>
+<polygon fill="#48ff00" stroke="#48ff00" points="847.91,-81.04 857.29,-76.11 846.88,-74.11 847.91,-81.04"/>
+</g>
+<!-- none~distance~4 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node16" class="node">
+<title>none~distance~4</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node16"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-distance~4" xlink:title="kohonen_prototype%distance">
+<polygon fill="#a7506f" stroke="#a7506f" points="1018.45,-361.41 865.93,-361.41 865.93,-337.89 1018.45,-337.89 1018.45,-361.41"/>
+<text text-anchor="middle" x="942.19" y="-345.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%distance</text>
+</a>
+</g>
+</g>
+<!-- proc~calculate_u_matrix~2&#45;&gt;none~distance~4 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge15" class="edge">
+<title>proc~calculate_u_matrix~2&#45;&gt;none~distance~4</title>
+<path fill="none" stroke="#00ff91" d="M762.03,-349.65C792.38,-349.65 825.23,-349.65 854.41,-349.65"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="854.31,-353.15 864.31,-349.65 854.31,-346.15 854.31,-353.15"/>
+</g>
+<!-- float -->
+<g id="proc~~external_train_map~2~~CallsGraph_node15" class="node">
+<title>float</title>
+<polygon fill="#777777" stroke="#777777" points="969.19,-319.41 915.19,-319.41 915.19,-295.89 969.19,-295.89 969.19,-319.41"/>
+<text text-anchor="middle" x="942.19" y="-303.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">float</text>
+</g>
+<!-- proc~find_best_match_unit~2&#45;&gt;float -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge16" class="edge">
+<title>proc~find_best_match_unit~2&#45;&gt;float</title>
+<path fill="none" stroke="#0091ff" d="M768.48,-307.65C816.22,-307.65 868.97,-307.65 903.45,-307.65"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="903.34,-311.15 913.34,-307.65 903.34,-304.15 903.34,-311.15"/>
+</g>
+<!-- proc~find_best_match_unit~2&#45;&gt;none~distance~4 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge17" class="edge">
+<title>proc~find_best_match_unit~2&#45;&gt;none~distance~4</title>
+<path fill="none" stroke="#0091ff" d="M750.79,-319.86C771.07,-322.65 792.43,-325.68 812.31,-328.65 826.78,-330.82 842.15,-333.22 857.04,-335.62"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="856.39,-339.06 866.82,-337.2 857.51,-332.15 856.39,-339.06"/>
+</g>
+<!-- proc~update_weights~2&#45;&gt;none~get_prototype -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge19" class="edge">
+<title>proc~update_weights~2&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#ff00da" d="M754.83,-200.99C842.66,-211.31 971.8,-226.48 1060.65,-236.92"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="1059.98,-240.37 1070.32,-238.06 1060.8,-233.42 1059.98,-240.37"/>
+</g>
+<!-- proc~update_weights~2&#45;&gt;proc~position2index~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge22" class="edge">
+<title>proc~update_weights~2&#45;&gt;proc~position2index~2</title>
+<path fill="none" stroke="#ff00da" d="M755.04,-191.6C775.52,-188.06 795.88,-181.16 812.31,-168.65 844.63,-144.05 817.09,-110.63 848.31,-84.65 849.62,-83.56 850.98,-82.52 852.37,-81.54"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="853.99,-84.65 860.79,-76.52 850.41,-78.63 853.99,-84.65"/>
+</g>
+<!-- dexp -->
+<g id="proc~~external_train_map~2~~CallsGraph_node14" class="node">
+<title>dexp</title>
+<polygon fill="#777777" stroke="#777777" points="969.19,-201.41 915.19,-201.41 915.19,-177.89 969.19,-177.89 969.19,-201.41"/>
+<text text-anchor="middle" x="942.19" y="-185.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dexp</text>
+</g>
+<!-- proc~update_weights~2&#45;&gt;dexp -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge18" class="edge">
+<title>proc~update_weights~2&#45;&gt;dexp</title>
+<path fill="none" stroke="#ff00da" d="M754.87,-189.65C805.85,-189.65 865.51,-189.65 903.32,-189.65"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="903.28,-193.15 913.28,-189.65 903.28,-186.15 903.28,-193.15"/>
+</g>
+<!-- none~set_prototype -->
+<g id="proc~~external_train_map~2~~CallsGraph_node17" class="node">
+<title>none~set_prototype</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node17"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-set_prototype" xlink:title="kohonen_prototype%set_prototype">
+<polygon fill="#a7506f" stroke="#a7506f" points="1031.2,-159.41 853.18,-159.41 853.18,-135.89 1031.2,-135.89 1031.2,-159.41"/>
+<text text-anchor="middle" x="942.19" y="-143.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%set_prototype</text>
+</a>
+</g>
+</g>
+<!-- proc~update_weights~2&#45;&gt;none~set_prototype -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge20" class="edge">
+<title>proc~update_weights~2&#45;&gt;none~set_prototype</title>
+<path fill="none" stroke="#ff00da" d="M750.79,-177.44C771.07,-174.65 792.43,-171.63 812.31,-168.65 826.78,-166.49 842.15,-164.08 857.04,-161.69"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="857.51,-165.16 866.82,-160.11 856.39,-158.25 857.51,-165.16"/>
+</g>
+<!-- proc~index2position~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_node18" class="node">
+<title>proc~index2position~2</title>
+<g id="a_proc~~external_train_map~2~~CallsGraph_node18"><a xlink:href="../proc/index2position~2.html" xlink:title="self_organizing_map%index2position">
+<polygon fill="#d9534f" stroke="#d9534f" points="1036.08,-117.41 848.31,-117.41 848.31,-93.89 1036.08,-93.89 1036.08,-117.41"/>
+<text text-anchor="middle" x="942.19" y="-101.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%index2position</text>
+</a>
+</g>
+</g>
+<!-- proc~update_weights~2&#45;&gt;proc~index2position~2 -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge21" class="edge">
+<title>proc~update_weights~2&#45;&gt;proc~index2position~2</title>
+<path fill="none" stroke="#ff00da" d="M754.96,-187.32C774.78,-183.91 794.89,-178.14 812.31,-168.65 833.9,-156.89 827.25,-139.34 848.31,-126.65 850.94,-125.07 853.68,-123.6 856.5,-122.24"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="857.74,-125.52 865.59,-118.4 855.01,-119.07 857.74,-125.52"/>
+</g>
+<!-- none~distance~4&#45;&gt;none~get_prototype -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge24" class="edge">
+<title>none~distance~4&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M1010.05,-337.51C1018.95,-335.03 1027.85,-332.1 1036.08,-328.65 1073.54,-312.95 1112.2,-286.1 1136.28,-267.88"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="1138.37,-270.69 1144.16,-261.82 1134.1,-265.14 1138.37,-270.69"/>
+</g>
+<!-- calculate -->
+<g id="proc~~external_train_map~2~~CallsGraph_node19" class="node">
+<title>calculate</title>
+<polygon fill="#777777" stroke="#777777" points="1188.46,-361.41 1134.46,-361.41 1134.46,-337.89 1188.46,-337.89 1188.46,-361.41"/>
+<text text-anchor="middle" x="1161.46" y="-345.68" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">calculate</text>
+</g>
+<!-- none~distance~4&#45;&gt;calculate -->
+<g id="proc~~external_train_map~2~~CallsGraph_edge23" class="edge">
+<title>none~distance~4&#45;&gt;calculate</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M1018.88,-349.65C1053.92,-349.65 1094.02,-349.65 1122.57,-349.65"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="1122.54,-353.15 1132.54,-349.65 1122.54,-346.15 1122.54,-353.15"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprocexternal_train_map2CallsGraph = svgPanZoom('#procexternal_train_map2CallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.923937 0.923937) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 689.77,-27.52 689.77,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="63.27,-23.52 0,-23.52 0,0 63.27,0 63.27,-23.52"/>
+<text text-anchor="middle" x="31.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="135.63,-23.52 81.64,-23.52 81.64,0 135.63,0 135.63,-23.52"/>
+<text text-anchor="middle" x="108.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="207.63,-23.52 153.63,-23.52 153.63,0 207.63,0 207.63,-23.52"/>
+<text text-anchor="middle" x="180.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="347.14,-23.52 226.12,-23.52 226.12,0 347.14,0 347.14,-23.52"/>
+<text text-anchor="middle" x="286.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="499.89,-23.52 365.38,-23.52 365.38,0 499.89,0 499.89,-23.52"/>
+<text text-anchor="middle" x="432.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="571.63,-23.52 517.63,-23.52 517.63,0 571.63,0 571.63,-23.52"/>
+<text text-anchor="middle" x="544.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="685.77,-23.52 589.5,-23.52 589.5,0 685.77,0 685.77,-23.52"/>
+<text text-anchor="middle" x="637.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    <section>    
+      <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-version~2"></span>
+              real(kind=wp),
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>version</strong></td>
+<td> =</td>
+                <td>0.1_wp</td>
+            <td>
+                <p>Parameter version</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-program_name~2"></span>
+              character(len=*),
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>program_name</strong></td>
+<td> =</td>
+                <td>&#34;som_train&#34;</td>
+            <td>
+                <p>Parameter name of the function</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-my_som~3"></span>
+              type(<a href='..\type\self_organizing_map.html'>self_organizing_map</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>my_som</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parameters~7"></span>
+              type(<a href='..\type\kohonen_layer_parameters.html'>kohonen_layer_parameters</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(1)
+            </td>
+            <td>::</td>
+            <td><strong>parameters</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-var~3"></span>
+              real(kind=wp),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(nvar,1)
+            </td>
+            <td>::</td>
+            <td><strong>var</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~22"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~18"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~7"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ierr~16"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ierr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pos~12"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pos</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihit~15"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ihit</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jhit~13"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>jhit</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-khit~13"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>khit</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nx1~2"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ny1~2"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_patterns~4"></span>
+              type(<a href='..\type\kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>input_patterns</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prototypes~3"></span>
+              real(kind=wp),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(nx*ny,nvar)
+            </td>
+            <td>::</td>
+            <td><strong>prototypes</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-temp~4"></span>
+              real(kind=wp),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(nvar,1)
+            </td>
+            <td>::</td>
+            <td><strong>temp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">external_train_map</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">nvar</span><span class="p">,</span><span class="n">npat</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nepoch</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">grid_type</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">       </span><span class="n">distance_type</span><span class="p">,</span><span class="n">neigh_type</span><span class="p">,</span><span class="n">toroidal</span><span class="p">,</span><span class="n">prot</span><span class="p">,</span><span class="n">distortion</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">       </span><span class="n">u_matrix</span><span class="p">,</span><span class="n">coords</span><span class="p">,</span><span class="n">number_patterns</span><span class="p">,</span><span class="n">node_index</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;train_som&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="c">!========================================================================================</span>
+<span class="c">!!    Subroutine to connect the self_organizing_map module to R o C</span>
+<span class="w">        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">iso_c_binding</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">c_double</span><span class="p">,</span><span class="w"> </span><span class="kt">c_int</span><span class="p">,</span><span class="w"> </span><span class="kt">c_char</span><span class="w"></span>
+<span class="c">!! Import section</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">version</span><span class="o">=</span><span class="mf">0.1_wp</span><span class="p">;</span><span class="w"></span>
+<span class="c">!! Parameter version</span>
+<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">program_name</span><span class="o">=</span><span class="s2">&quot;som_train&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c">!! Parameter name of the function</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nvar</span><span class="p">,</span><span class="n">npat</span><span class="w"></span>
+<span class="c">!! Integer variables to indicate the number of variables and patterns</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="w"></span>
+<span class="c">!! Integer variables to indicate the number of nodes of the SOM</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nepoch</span><span class="w"></span>
+<span class="c">!! Integer variables to indicate the number of epochs for training</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">toroidal</span><span class="w"></span>
+<span class="c">!! Integer variable to indicate if a toroidal grid is used</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">prot</span><span class="p">(</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="p">,</span><span class="n">nvar</span><span class="p">)</span><span class="w"></span>
+<span class="c">!! Real array for the prototypes</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">distortion</span><span class="p">(</span><span class="n">nepoch</span><span class="p">)</span><span class="w"></span>
+<span class="c">!! Real array for the distortion measure (error during training)</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">u_matrix</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">nx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">ny</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="c">!! Real array for the u_matrix </span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coords</span><span class="p">(</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="c">!! Real array for the grid coordinates of the SOM</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">number_patterns</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">)</span><span class="w"></span>
+<span class="c">!! Integer array with the number of hits for each neuron</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">node_index</span><span class="p">(</span><span class="n">npat</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="c">!! Integer array with the index node for all the neurons of the SOM       </span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">npat</span><span class="p">,</span><span class="n">nvar</span><span class="p">)</span><span class="w"></span>
+<span class="c">!! Real array with the input patterns</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alpha</span><span class="w"></span>
+<span class="c">!! Real value with the initial learning rate</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_type</span><span class="w"></span>
+<span class="c">!! Integer variable to indicate the type of grid  </span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">distance_type</span><span class="w"></span>
+<span class="c">!! Integer variable to indicate the distance type</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">neigh_type</span><span class="w"></span>
+<span class="c">!! Integer variable to indicate the neighborhood type</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">self_organizing_map</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_som</span><span class="w"></span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">kohonen_layer_parameters</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">parameters</span><span class="w"></span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">nvar</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">var</span><span class="w"></span>
+<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">ierr</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">ihit</span><span class="p">,</span><span class="n">jhit</span><span class="p">,</span><span class="n">khit</span><span class="p">,</span><span class="n">nx1</span><span class="p">,</span><span class="n">ny1</span><span class="w"></span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">kohonen_pattern</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">input_patterns</span><span class="p">(:)</span><span class="w"></span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="p">,</span><span class="n">nvar</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">prototypes</span><span class="w"></span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">nvar</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">temp</span><span class="w"></span>
+<span class="c">!</span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">train_option</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="o">=</span><span class="n">nx</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="o">=</span><span class="n">ny</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables1</span><span class="o">=</span><span class="n">nvar</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables2</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables</span><span class="o">=</span><span class="n">nvar</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="o">=</span><span class="n">npat</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_epochs</span><span class="o">=</span><span class="n">nepoch</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">learning_rate</span><span class="o">=</span><span class="n">alpha</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">random_seed_</span><span class="o">=</span><span class="mi">12345</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">grid_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">node_type</span><span class="o">=</span><span class="s2">&quot;rectangular&quot;</span><span class="p">;</span><span class="w"> </span><span class="c">!&quot;hexagonal&quot; !rectangular, hexagonal</span>
+<span class="w">         </span><span class="n">elseif</span><span class="p">(</span><span class="n">grid_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">node_type</span><span class="o">=</span><span class="s2">&quot;hexagonal&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="k">endif</span>
+<span class="k">         </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">debug_level</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">debug_file</span><span class="o">=</span><span class="s2">&quot;NOFILE&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">pattern_file</span><span class="o">=</span><span class="s2">&quot;NOFILE&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="o">=</span><span class="s2">&quot;NOFILE&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">distance_type</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span><span class="p">;</span><span class="w"> </span><span class="c">!&quot;euclidean&quot; !euclidean, manhattan, correlation, correlation2</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="n">neigh_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">neighborhood_type</span><span class="o">=</span><span class="s2">&quot;bubble&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="n">elseif</span><span class="p">(</span><span class="n">neigh_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">neighborhood_type</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">;</span><span class="w"> </span><span class="c">!gaussian,bubble</span>
+<span class="w">         </span><span class="k">endif</span>
+<span class="k">         </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">som_type</span><span class="o">=</span><span class="s2">&quot;normal_som&quot;</span><span class="c">!,visom</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="n">toroidal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">toroidal_grid</span><span class="o">=</span><span class="p">.</span><span class="n">TRUE</span><span class="p">.;</span><span class="w"></span>
+<span class="w">         </span><span class="k">else</span>
+<span class="k">             </span><span class="n">parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">toroidal_grid</span><span class="o">=</span><span class="p">.</span><span class="n">FALSE</span><span class="p">.;</span><span class="w"></span>
+<span class="w">         </span><span class="k">endif</span><span class="w"></span>
+<span class="w">         </span><span class="c">!</span>
+<span class="w">         </span><span class="c">! ADDED TO AVOID PRINTING UNIT INFO (THE CAUSE IS UNKNONW)</span>
+<span class="w">         </span><span class="c">! write(*,*) &#39;&#39;</span>
+<span class="w">         </span><span class="c">! write(*,&#39;(A,A,f10.5)&#39;) trim(program_name),&#39; version: &#39;,version</span>
+<span class="w">         </span><span class="c">! write(*,*) &#39;&#39;</span>
+<span class="w">         </span><span class="k">allocate</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">(</span><span class="n">npat</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">ierr</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">npat</span><span class="w"></span>
+<span class="w">             </span><span class="n">var</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nvar</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">nvar</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="c">!write(*,*) i,var</span>
+<span class="w">             </span><span class="k">call </span><span class="n">input_patterns</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">create</span><span class="p">(</span><span class="n">var</span><span class="p">);</span><span class="w"></span>
+<span class="w">             </span><span class="c">!    call input_patterns(i)%print();</span>
+<span class="w">         </span><span class="k">enddo</span><span class="w"></span>
+<span class="w">        </span><span class="c">! Create SOM</span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">create</span><span class="p">(</span><span class="n">parameters</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">! Train SOM</span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">train</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">! Extract results</span>
+<span class="w">        </span><span class="n">pos</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="n">nx1</span><span class="o">=</span><span class="n">nx</span><span class="p">;</span><span class="n">ny1</span><span class="o">=</span><span class="n">ny</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ny</span><span class="w"></span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nx</span><span class="w"></span>
+<span class="w">                </span><span class="n">pos</span><span class="o">=</span><span class="n">position2index</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">nx1</span><span class="p">,</span><span class="n">ny1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="c">!write(*,*) i,j,pos,i+(j-1)*nx</span>
+<span class="w">                </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">grid</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">get_prototype</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="c">!position2index()</span>
+<span class="w">                </span><span class="n">prototypes</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">nvar</span><span class="p">)</span><span class="o">=</span><span class="n">temp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nvar</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">enddo</span>
+<span class="k">        enddo</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="c">! Get the results in the arrays</span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="n">distortion</span><span class="o">=</span><span class="n">my_som</span><span class="p">%</span><span class="n">distortion</span><span class="w"></span>
+<span class="w">        </span><span class="n">u_matrix</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">nx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">ny</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">my_som</span><span class="p">%</span><span class="n">u_matrix</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">!do i=1,size(my_som%coordinates,1);</span>
+<span class="w">        </span><span class="c">!write(*,*) my_som%coordinates(i,1:3);</span>
+<span class="w">        </span><span class="c">!   coords(i,1:3)=my_som%coordinates(i,1:3);</span>
+<span class="w">        </span><span class="c">!enddo</span>
+<span class="w">        </span><span class="n">coords</span><span class="o">=</span><span class="n">my_som</span><span class="p">%</span><span class="n">coordinates</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c">!coords(1:nx*nx,1)=my_som%coordinates(:,1);</span>
+<span class="w">        </span><span class="c">!coords(1:nx*nx,2)=my_som%coordinates(:,2);</span>
+<span class="w">        </span><span class="c">!coords(1:nx*nx,3)=my_som%coordinates(:,3);</span>
+<span class="w">        </span><span class="n">number_patterns</span><span class="o">=</span><span class="n">my_som</span><span class="p">%</span><span class="n">number_patterns</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">node_index</span><span class="o">=</span><span class="n">my_som</span><span class="p">%</span><span class="n">cells_index</span><span class="w"></span>
+<span class="w">        </span><span class="n">prot</span><span class="o">=</span><span class="n">prototypes</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c">! </span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">destroy</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">npat</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">input_patterns</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">destroy</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">enddo</span>
+<span class="k">        deallocate</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="c">! write(*,*)</span>
+<span class="w">        </span><span class="c">! write(*,&#39;(A,A,f10.5,2X,A)&#39;) trim(program_name),&#39; version: &#39;,version,&#39;Finished&#39;</span>
+<span class="w">        </span><span class="c">! write(*,*)</span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">external_train_map</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-14 08:23 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

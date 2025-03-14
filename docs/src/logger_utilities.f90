@@ -100,7 +100,7 @@ contains
             if(append_real) then
                 open(current_log%fileunit,file=log_file,status='unknown',action='write',position='append');
             else
-                open(current_log%fileunit,file=log_file,status='unknown',action='write'); 
+                open(current_log%fileunit,file=log_file,status='unknown',action='write',form='formatted'); 
             endif
             current_log%initialized=.TRUE.; 
         endif
@@ -325,14 +325,14 @@ contains
             used_level='volume';
         endif
         call current_log%get_delimiter(used_level,msg);
-        call current_log%message(msg);
+        call current_log%message(msg(1:30));
 !
     end subroutine delimiter
 !========================================================================================
     subroutine get_delimiter(current_log,level,msg)
 !========================================================================================
 !! Subroutine to get the delimiter text
-        integer,parameter :: LOG_LEVEL_DELIMITER_LENGTH = 50
+        integer,parameter :: LOG_LEVEL_DELIMITER_LENGTH = 30
         character(len=LOG_LEVEL_DELIMITER_LENGTH),parameter :: log_level_string_volume = "==============================";
         character(len=LOG_LEVEL_DELIMITER_LENGTH),parameter :: log_level_string_chapter = "------------------------------";
         character(len=LOG_LEVEL_DELIMITER_LENGTH),parameter :: log_level_string_section = "******************************";

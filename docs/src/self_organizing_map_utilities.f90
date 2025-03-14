@@ -3,7 +3,8 @@
 !! version: 0.1
 !!  This module defines a class for simple self_organizing_map (one kohonen layer) 
 module self_organizing_map_utilities
-!!  This module defines a class for simple self_organizing_map (one kohonen layer) 
+!!  This module defines a class for simple self_organizing_map (one kohonen layer)
+!$  use omp_lib     
 use error_handling, only: error_t,error_stop;
 use precision_utilities, only: wp;
 use constants_utilities, only: NUMCHAR;
@@ -1393,7 +1394,7 @@ contains
 !========================================================================================
     subroutine external_train_map(x,nvar,npat,nx,ny,nepoch,alpha,grid_type,&
        distance_type,neigh_type,toroidal,prot,distortion,&
-       u_matrix,coords,number_patterns,node_index) bind(C, name="train_som__")
+       u_matrix,coords,number_patterns,node_index) bind(C, name="train_som")
 !========================================================================================
 !!    Subroutine to connect the self_organizing_map module to R o C
         use, intrinsic :: iso_c_binding, only : c_double, c_int, c_char
@@ -1533,7 +1534,7 @@ contains
     end subroutine external_train_map
 !========================================================================================
     subroutine external_predict_map(prot,nx,ny,new_pat,npat,nvar,node_index) & 
-        bind(C, name="predict_som__")
+        bind(C, name="predict_som")
 !========================================================================================
 !!    Subroutine to connect this module to R
 

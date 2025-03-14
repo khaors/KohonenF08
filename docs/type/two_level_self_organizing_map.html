@@ -1,0 +1,1839 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>two_level_self_organizing_map &ndash; KohonenF08 </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>two_level_self_organizing_map
+      <small>Derived Type</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="<p>18.9% of total for derived types.</p>Including implementation: 1532 statements, 43.7% of total for derived types.">42 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/two_level_self_organizing_map_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\two_level_self_organizing_map_utilities.f90.html'>two_level_self_organizing_map_utilities.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\two_level_self_organizing_map_utilities.html'>two_level_self_organizing_map_utilities</a></li>
+            <li class="breadcrumb-item active" aria-current="page">two_level_self_organizing_map</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#boundprocs-0"
+         aria-expanded="false" aria-controls="boundprocs-0">
+         <h4 class="card-header bg-primary text-white">Type-Bound Procedures</h4>
+      </a>
+      <div id="boundprocs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-create~7">create</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-destroy~7">destroy</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-train~2">train</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-predict~2">predict</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-train_grid_layer">train_grid_layer</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-train_cluster_layer">train_cluster_layer</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-print~4">print</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-query">query</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-set_cluster_layer">set_cluster_layer</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-set_parameters">set_parameters</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-read_som_layer">read_som_layer</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-calculate_sum2_clusters_samples">calculate_sum2_clusters_samples</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-get_cluster_samples">get_cluster_samples</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-calculate_sum2_clusters_grid">calculate_sum2_clusters_grid</a>
+            <a class="list-group-item" href="../type/two_level_self_organizing_map.html#boundprocedure-external_train_map">external_train_map</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../type/two_level_self_organizing_map.html#src">two_level_self_organizing_map</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2 id="type-def-statement">
+        type, public, extends(<a href='kohonen_map_base.html'>kohonen_map_base</a>) :: two_level_self_organizing_map</h2>
+    <p>Class to represent a two level self_organized_map</p>
+<br>      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Inherits</h3>
+        </div>
+        <div class="card-body">
+          <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: type~~two_level_self_organizing_map~~InheritsGraph Pages: 1 -->
+<svg id="typetwo_level_self_organizing_mapInheritsGraph" width="590pt" height="242pt"
+ viewBox="0.00 0.00 589.56 241.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~two_level_self_organizing_map~~InheritsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 237.52)">
+<title>type~~two_level_self_organizing_map~~InheritsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-237.52 585.56,-237.52 585.56,4 -4,4"/>
+<!-- type~two_level_self_organizing_map -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_node1" class="node">
+<title>type~two_level_self_organizing_map</title>
+<polygon fill="none" stroke="black" points="581.56,-128.52 420.79,-128.52 420.79,-105 581.56,-105 581.56,-128.52"/>
+<text text-anchor="middle" x="501.18" y="-112.79" font-family="Helvetica,sans-Serif" font-size="10.50">two_level_self_organizing_map</text>
+</g>
+<!-- type~distance_base -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_node2" class="node">
+<title>type~distance_base</title>
+<g id="a_type~~two_level_self_organizing_map~~InheritsGraph_node2"><a xlink:href="../type/distance_base.html" xlink:title="distance_base">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="278.67,-233.52 198.15,-233.52 198.15,-210 278.67,-210 278.67,-233.52"/>
+<text text-anchor="middle" x="238.41" y="-217.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">distance_base</text>
+</a>
+</g>
+</g>
+<!-- type~two_level_self_organizing_map&#45;&gt;type~distance_base -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_edge4" class="edge">
+<title>type~two_level_self_organizing_map&#45;&gt;type~distance_base</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M483.35,-128.9C464.52,-142.02 432.71,-162.77 402.79,-175.76 366.4,-191.56 323.1,-203.46 290.22,-211.2"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="289.49,-207.77 280.53,-213.42 291.06,-214.6 289.49,-207.77"/>
+<text text-anchor="middle" x="365.29" y="-202.98" font-family="Helvetica,sans-Serif" font-size="9.50">distance_function</text>
+</g>
+<!-- type~factory_distance -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_node3" class="node">
+<title>type~factory_distance</title>
+<g id="a_type~~two_level_self_organizing_map~~InheritsGraph_node3"><a xlink:href="../type/factory_distance.html" xlink:title="factory_distance">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="283.17,-191.52 193.65,-191.52 193.65,-168 283.17,-168 283.17,-191.52"/>
+<text text-anchor="middle" x="238.41" y="-175.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance</text>
+</a>
+</g>
+</g>
+<!-- type~two_level_self_organizing_map&#45;&gt;type~factory_distance -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_edge3" class="edge">
+<title>type~two_level_self_organizing_map&#45;&gt;type~factory_distance</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M460.07,-128.97C442.56,-134.12 421.73,-140.01 402.79,-144.76 367.08,-153.71 326.62,-162.39 294.9,-168.86"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="294.22,-165.43 285.11,-170.84 295.61,-172.29 294.22,-165.43"/>
+<text text-anchor="middle" x="365.29" y="-162.98" font-family="Helvetica,sans-Serif" font-size="9.50">factory</text>
+</g>
+<!-- type~kohonen_layer_parameters -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_node4" class="node">
+<title>type~kohonen_layer_parameters</title>
+<g id="a_type~~two_level_self_organizing_map~~InheritsGraph_node4"><a xlink:href="../type/kohonen_layer_parameters.html" xlink:title="kohonen_layer_parameters">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="309.79,-149.52 167.02,-149.52 167.02,-126 309.79,-126 309.79,-149.52"/>
+<text text-anchor="middle" x="238.41" y="-133.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_parameters</text>
+</a>
+</g>
+</g>
+<!-- type~two_level_self_organizing_map&#45;&gt;type~kohonen_layer_parameters -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_edge2" class="edge">
+<title>type~two_level_self_organizing_map&#45;&gt;type~kohonen_layer_parameters</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M420.52,-123.17C389.17,-125.7 353.19,-128.6 321.6,-131.14"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="321.37,-127.65 311.68,-131.94 321.93,-134.63 321.37,-127.65"/>
+<text text-anchor="middle" x="365.29" y="-131.98" font-family="Helvetica,sans-Serif" font-size="9.50">parameters</text>
+</g>
+<!-- type~kohonen_map_base -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_node5" class="node">
+<title>type~kohonen_map_base</title>
+<g id="a_type~~two_level_self_organizing_map~~InheritsGraph_node5"><a xlink:href="../type/kohonen_map_base.html" xlink:title="kohonen_map_base">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="292.92,-107.52 183.9,-107.52 183.9,-84 292.92,-84 292.92,-107.52"/>
+<text text-anchor="middle" x="238.41" y="-91.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_map_base</text>
+</a>
+</g>
+</g>
+<!-- type~two_level_self_organizing_map&#45;&gt;type~kohonen_map_base -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_edge6" class="edge">
+<title>type~two_level_self_organizing_map&#45;&gt;type~kohonen_map_base</title>
+<path fill="none" stroke="#ff0000" d="M420.52,-110.35C383.22,-107.34 339.35,-103.81 304.13,-100.97"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="304.78,-97.51 294.53,-100.2 304.22,-104.49 304.78,-97.51"/>
+</g>
+<!-- type~kohonen_prototype -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_node6" class="node">
+<title>type~kohonen_prototype</title>
+<g id="a_type~~two_level_self_organizing_map~~InheritsGraph_node6"><a xlink:href="../type/kohonen_prototype.html" xlink:title="kohonen_prototype">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="290.29,-65.52 186.52,-65.52 186.52,-42 290.29,-42 290.29,-65.52"/>
+<text text-anchor="middle" x="238.41" y="-49.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype</text>
+</a>
+</g>
+</g>
+<!-- type~two_level_self_organizing_map&#45;&gt;type~kohonen_prototype -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_edge1" class="edge">
+<title>type~two_level_self_organizing_map&#45;&gt;type~kohonen_prototype</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M462.47,-104.59C444.5,-99.01 422.64,-92.53 402.79,-87.51 369.53,-79.1 332.07,-71.24 301.41,-65.23"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="302.42,-61.86 291.93,-63.39 301.08,-68.73 302.42,-61.86"/>
+<text text-anchor="middle" x="365.29" y="-88.98" font-family="Helvetica,sans-Serif" font-size="9.50">grid, cluster_layer</text>
+</g>
+<!-- type~rkiss05_generator -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_node7" class="node">
+<title>type~rkiss05_generator</title>
+<g id="a_type~~two_level_self_organizing_map~~InheritsGraph_node7"><a xlink:href="../type/rkiss05_generator.html" xlink:title="rkiss05_generator">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="287.29,-23.52 189.52,-23.52 189.52,0 287.29,0 287.29,-23.52"/>
+<text text-anchor="middle" x="238.41" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator</text>
+</a>
+</g>
+</g>
+<!-- type~two_level_self_organizing_map&#45;&gt;type~rkiss05_generator -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_edge5" class="edge">
+<title>type~two_level_self_organizing_map&#45;&gt;type~rkiss05_generator</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M484.13,-104.54C465.49,-90.85 433.36,-68.85 402.79,-55.51 369.45,-40.96 330.11,-30.24 298.39,-23.06"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="299.51,-19.72 288.99,-20.99 298,-26.56 299.51,-19.72"/>
+<text text-anchor="middle" x="365.29" y="-56.98" font-family="Helvetica,sans-Serif" font-size="9.50">rnumber_grator</text>
+</g>
+<!-- type~random_generator_base -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_node8" class="node">
+<title>type~random_generator_base</title>
+<g id="a_type~~two_level_self_organizing_map~~InheritsGraph_node8"><a xlink:href="../type/random_generator_base.html" xlink:title="random_generator_base">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="130.02,-23.52 0,-23.52 0,0 130.02,0 130.02,-23.52"/>
+<text text-anchor="middle" x="65.01" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_generator_base</text>
+</a>
+</g>
+</g>
+<!-- type~rkiss05_generator&#45;&gt;type~random_generator_base -->
+<g id="type~~two_level_self_organizing_map~~InheritsGraph_edge7" class="edge">
+<title>type~rkiss05_generator&#45;&gt;type~random_generator_base</title>
+<path fill="none" stroke="#ff00ff" d="M189.21,-11.76C174.4,-11.76 157.74,-11.76 141.57,-11.76"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="141.99,-8.26 131.99,-11.76 141.99,-15.26 141.99,-8.26"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#InheritsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="InheritsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="176pt" height="32pt"
+ viewBox="0.00 0.00 176.13 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 172.13,-27.52 172.13,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node">
+<title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-23.52 0,-23.52 0,0 54,0 54,-23.52"/>
+<text text-anchor="middle" x="27" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="168.13,-23.52 71.87,-23.52 71.87,0 168.13,0 168.13,-23.52"/>
+<text text-anchor="middle" x="120" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a derived type to the parent type which it
+extends. Dashed arrows point from a derived type to the other
+types it contains as a components, with a label listing the name(s) of
+said component(s).
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    <br>
+
+    
+
+
+      <section>
+        <h2>Type-Bound Procedures</h2>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-create~7"></span>
+      <h3>
+          procedure, public ::
+  <strong>create</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\create_2lsom.html'>create_2lsom</a>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\create_2lsom.html'>create_2lsom</a>(kohonen_map, training_parameters)  
+</h3>
+    
+
+  <p>Constructor of a two_level self_organized_map class </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='kohonen_layer_parameters.html'>kohonen_layer_parameters</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>training_parameters</strong></td>
+            <td>
+<p>A <code>kohonen_layer_parameters</code> structure</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-destroy~7"></span>
+      <h3>
+          procedure, public ::
+  <strong>destroy</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\destroy_2lsom.html'>destroy_2lsom</a>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\destroy_2lsom.html'>destroy_2lsom</a>(kohonen_map)  
+</h3>
+    
+
+  <p>Destructor of a two_level self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-train~2"></span>
+      <h3>
+          procedure, public ::
+  <strong>train</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\train_2lsom.html'>train_2lsom</a>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\train_2lsom.html'>train_2lsom</a>(kohonen_map, input_data)  
+</h3>
+    
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+<p>A <code>kohonen_pattern</code> array</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-predict~2"></span>
+      <h3>
+          procedure, public ::
+  <strong>predict</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\predict_2lsom.html'>predict_2lsom</a>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\predict_2lsom.html'>predict_2lsom</a>(kohonen_map, input_data, map_output)  
+</h3>
+    
+
+  <p>Subroutine to make a prediction from a trained two_level self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+<p>A <code>kohonen_pattern</code> array</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>map_output</strong></td>
+            <td>
+<p>An integer array</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-train_grid_layer"></span>
+      <h3>
+          procedure, public ::
+  <strong>train_grid_layer</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\train_grid_layer.html'>train_grid_layer</a>(kohonen_map, input_data)  
+</h3>
+    
+
+  <p>Subroutine to train the grid layer of a two_level self_organized_map</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+<p>A <code>kohonen_pattern</code> array</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-train_cluster_layer"></span>
+      <h3>
+          procedure, public ::
+  <strong>train_cluster_layer</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\train_cluster_layer.html'>train_cluster_layer</a>(kohonen_map)  
+</h3>
+    
+
+  <p>Subroutine to train the cluster layer of a two_level self_organized_map</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-print~4"></span>
+      <h3>
+          procedure, public ::
+  <strong>print</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\print_2lsom.html'>print_2lsom</a>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\print_2lsom.html'>print_2lsom</a>(kohonen_map, unit_)  
+</h3>
+    
+
+  <p>Subroutine to print the layers of a two_level self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit_</strong></td>
+            <td>
+<p>An integer variable with the unit</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-query"></span>
+      <h3>
+          procedure, public ::
+  <strong>query</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\query_2lsom.html'>query_2lsom</a>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\query_2lsom.html'>query_2lsom</a>(kohonen_map, input_pattern, sample_index)  
+</h3>
+    
+
+  <p>Function to find the input samples associated with specific vector </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=wp),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>input_pattern</strong></td>
+            <td>
+<p>A real array</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td></td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>sample_index</strong>(:)</td>
+            <td>
+<p>An integer array</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_cluster_layer"></span>
+      <h3>
+          procedure, public ::
+  <strong>set_cluster_layer</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\set_cluster_layer.html'>set_cluster_layer</a>(kohonen_map, seed)  
+</h3>
+    
+
+  <p>Subroutine to initialize the cluster layer of a Two Level Self-Organizing Map</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>seed</strong></td>
+            <td>
+<p>An integer variable with the random seed</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_parameters"></span>
+      <h3>
+          procedure, public ::
+  <strong>set_parameters</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\set_parameters.html'>set_parameters</a>(kohonen_map, training_parameters)  
+</h3>
+    
+
+  <p>Subroutine to set parameters</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='kohonen_layer_parameters.html'>kohonen_layer_parameters</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              dimension(2)
+            </td>
+            <td>::</td>
+            <td><strong>training_parameters</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-read_som_layer"></span>
+      <h3>
+          procedure, public ::
+  <strong>read_som_layer</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\read_som_layer.html'>read_som_layer</a>(kohonen_map, som_fl, layer_type)  
+</h3>
+    
+
+  <p>Subroutine to read the prototypes of the first/seconf layer of a two level self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>som_fl</strong></td>
+            <td>
+<p>A character variable</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layer_type</strong></td>
+            <td>
+<p>A character variable</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-calculate_sum2_clusters_samples"></span>
+      <h3>
+          procedure, public ::
+  <strong>calculate_sum2_clusters_samples</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\evaluate_2lsom.html'>evaluate_2lsom</a>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\evaluate_2lsom.html'>evaluate_2lsom</a>(kohonen_map, input_data, results)  
+</h3>
+    
+
+  <p>Subroutine to calculate some clustering statistics of a two-level self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='kohonen_pattern.html'>kohonen_pattern</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>input_data</strong></td>
+            <td>
+<p>A <code>kohonen_pattern</code> array</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=wp),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>results</strong></td>
+            <td>
+<p>A real array</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-get_cluster_samples"></span>
+      <h3>
+          procedure, public ::
+  <strong>get_cluster_samples</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\get_cluster_samples.html'>get_cluster_samples</a>(kohonen_map, clusters)  
+</h3>
+    
+
+  <p>Accessor to cluster results obtained using a two-level self_organized_map</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>clusters</strong></td>
+            <td>
+<p>An integer array</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-calculate_sum2_clusters_grid"></span>
+      <h3>
+          procedure, public ::
+  <strong>calculate_sum2_clusters_grid</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\calculate_sum2_clusters_grid.html'>calculate_sum2_clusters_grid</a>(kohonen_map, results)  
+</h3>
+    
+
+  <p>Subroutine to calculate some clustering statistics of a two-level self_organized_map </p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='two_level_self_organizing_map.html'>two_level_self_organizing_map</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>kohonen_map</strong></td>
+            <td>
+<p>A <code>two_level_self_organizing_map</code> object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=wp),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>results</strong></td>
+            <td>
+<p>A real array</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-external_train_map"></span>
+      <h3>
+          procedure, public, nopass ::
+  <strong>external_train_map</strong>
+        
+      </h3>
+    </div>
+      <div class="card-body">
+        
+        <hr>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    public  subroutine <a href='..\proc\external_train_map.html'>external_train_map</a>(x, nvar, npat, som_type, nx1, ny1, nepoch1, alpha1, grid_type1, distance_type1, neigh_type1, toroidal1, nx2, nepoch2, alpha2, grid_type2, prot, distortion, u_matrix, coords, number_patterns, node_index) bind(C, name="train_2lsom")  
+</h3>
+    
+
+  <p>Subroutine to connect the two_level_self_organizing_map module to R o C
+Use iso_c_binding module</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(npat,nvar)</td>
+            <td>
+<p>Real variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nvar</strong></td>
+            <td>
+<p>Integere variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>npat</strong></td>
+            <td>
+<p>Integere variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>som_type</strong></td>
+            <td>
+<p>Integere variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx1</strong></td>
+            <td>
+<p>Integere variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ny1</strong></td>
+            <td>
+<p>Integere variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nepoch1</strong></td>
+            <td>
+<p>Integere variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alpha1</strong></td>
+            <td>
+<p>Real variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_type1</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distance_type1</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>neigh_type1</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>toroidal1</strong></td>
+            <td>
+<p>Integere variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nx2</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nepoch2</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=c_double),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alpha2</strong></td>
+            <td>
+<p>Real variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_type2</strong></td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prot</strong>(nx1*ny1,nvar)</td>
+            <td>
+<p>Real variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distortion</strong>(nepoch1)</td>
+            <td>
+<p>Real variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>u_matrix</strong>(2*nx1-1,2*ny1-1)</td>
+            <td>
+<p>Real variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=c_double),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>coords</strong>(nx1*ny1,3)</td>
+            <td>
+<p>Real variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>number_patterns</strong>(nx1,ny1)</td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=c_int),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>node_index</strong>(npat,3)</td>
+            <td>
+<p>Integer variables</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+      </section>
+
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">type</span><span class="p">,</span><span class="k">extends</span><span class="p">(</span><span class="n">kohonen_map_base</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">two_level_self_organizing_map</span><span class="w"></span>
+<span class="w">   </span><span class="k">private</span><span class="w"></span>
+<span class="c">!!   Class to represent a two level self_organized_map</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">kohonen_prototype</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid</span><span class="p">(:,:,:),</span><span class="n">cluster_layer</span><span class="p">(:)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coordinates</span><span class="p">(:,:)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">number_patterns</span><span class="p">(:,:,:),</span><span class="n">cells_index</span><span class="p">(:,:)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cluster_number_patterns</span><span class="p">(:),</span><span class="n">cluster_cells_index</span><span class="p">(:,:)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_cluster</span><span class="p">(:,:,:),</span><span class="n">cluster_samples</span><span class="p">(:)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">u_matrix</span><span class="p">(:,:,:),</span><span class="n">distance</span><span class="p">(:,:),</span><span class="n">cells_distances</span><span class="p">(:,:)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">number_cluster_samples</span><span class="p">(:),</span><span class="n">index_cluster_samples</span><span class="p">(:,:)</span><span class="w"></span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">kohonen_layer_parameters</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">parameters</span><span class="w"></span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">factory_distance</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">factory</span><span class="w"></span>
+<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">distance_base</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">distance_function</span><span class="w"></span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">rkiss05_generator</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rnumber_grator</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">seed1</span><span class="p">,</span><span class="n">seed2</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">number_variables</span><span class="p">,</span><span class="n">number_variables1</span><span class="p">,</span><span class="n">number_variables2</span><span class="p">,</span><span class="n">number_clusters</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">number_nodes</span><span class="w"></span>
+<span class="w">   </span><span class="k">contains</span>
+<span class="k">      procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">create_2lsom</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">destroy</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">destroy_2lsom</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">create_random_sample</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">train</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">train_2lsom</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">predict</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">predict_2lsom</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">train_grid_layer</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">train_cluster_layer</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">print_2lsom</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">query_2lsom</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_cluster_layer</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_parameters</span><span class="w"></span>
+<span class="w">   </span><span class="c">!    procedure,public :: read =&gt; read_som</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">query_2lsom</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">read_som_layer</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calculate_u_matrix</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">find_best_match_unit</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">update_weights</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calculate_distance_between_prototypes</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assign_input_to_clusters</span><span class="w"></span>
+<span class="w">      </span><span class="c">!procedure,public :: get_count =&gt; get_count_2lsom</span>
+<span class="w">      </span><span class="c">!procedure,public :: get_index =&gt; get_index_som</span>
+<span class="w">      </span><span class="c">!procedure,public :: get_u_matrix =&gt; get_u_matrix_som</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calculate_sum2_clusters_samples</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">evaluate_2lsom</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_cluster_samples</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calculate_sum2_clusters_grid</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">nopass</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calculate_distance_matrix</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">nopass</span><span class="p">,</span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calculate_coordinates</span><span class="w"></span>
+<span class="w">   </span><span class="c">!    </span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="k">nopass</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">external_train_map</span><span class="w"></span>
+<span class="w">   </span><span class="c">!    procedure,nopass,public :: external_predict_map    </span>
+<span class="w">   </span><span class="c">!*****   </span>
+<span class="w">   </span><span class="k">end type </span><span class="n">two_level_self_organizing_map</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-14 08:23 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
