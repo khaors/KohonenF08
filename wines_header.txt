@@ -1,0 +1,1 @@
+"alcohol" "malic acid" "ash" "ash alkalinity" "magnesium" "tot. phenols" "flavonoids" "non-flav. phenols" "proanth" "col. int." "col. hue" "OD ratio" "proline"
