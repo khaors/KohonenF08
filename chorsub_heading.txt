@@ -1,0 +1,1 @@
+"Al" "Ca" "Fe" "K" "Mg" "Mn" "Na" "P" "Si" "Ti"
