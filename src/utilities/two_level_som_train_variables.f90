@@ -10,11 +10,15 @@ module two_level_som_train_variables
     !
     implicit none;
     !
+    private;
+    !
      type(two_level_self_organizing_map),save :: my_som
      type(kohonen_layer_parameters),dimension(2) :: som_parameters
      type(kohonen_pattern),allocatable :: input_patterns(:)
      integer :: ipattern
      character(len=NUMCHAR) :: parfl
+    !
+    public :: train_two_level_som;
     !
      contains
     !============================================================================== 
@@ -340,8 +344,9 @@ module two_level_som_train_variables
     91 stop 'ERROR while reading pattern sample file'
     !
      end subroutine initialize_variables
-    
+    !==============================================================================
      subroutine release_variables()
+    !==============================================================================
       integer :: i
       logical :: testop
     !  
@@ -408,5 +413,25 @@ module two_level_som_train_variables
       endif
     ! 
      end subroutine release_variables
-    
+    !==============================================================================
+    subroutine train_two_level_som(parameter_file)
+    !==============================================================================
+        character(len=*),intent(inout) :: parameter_file
+        !
+        call initialize_variables(parameter_file);
+        !
+        call my_som%create(som_parameters);
+        !
+        call my_som%train(input_patterns);
+        !
+        if(som_parameters(1)%train_option == 0) then
+            call my_som%calculate_sum2_clusters_grid();
+        endif
+        !
+        call my_som%destroy();
+        !
+        call release_variables();
+        
+    end subroutine train_two_level_som
+!
     end module two_level_som_train_variables

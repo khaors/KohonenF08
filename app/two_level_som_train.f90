@@ -1,16 +1,14 @@
 program two_level_som_train
     use precision_utilities, only: wp;
     use constants_utilities, only: NUMCHAR;
-    use two_level_som_train_variables, only: initialize_variables,release_variables,parfl,&
-        my_som,som_parameters,input_patterns;
-    use two_level_self_organizing_map_utilities;
+    use two_level_som_train_variables, only: train_two_level_som;
     !
     implicit none;
     !
     real(kind=wp),parameter :: version=0.1_wp;
     character(len=*),parameter :: name='TWO_LEVEL_SOM_TRAIN'
-    character(len=NUMCHAR) :: arg
-    integer :: number_arguments,i
+    character(len=NUMCHAR) :: arg,parfl
+    integer :: number_arguments,i        
     !
     write(*,*)
     write(*,'(A,A,f10.5)') name,' version: ',version
@@ -45,19 +43,7 @@ program two_level_som_train
     endif
     write(*,*) 'Parameter file= ',trim(parfl)        
     !
-    call initialize_variables(parfl);
-    !
-    call my_som%create(som_parameters);
-    !
-    call my_som%train(input_patterns);
-    !
-    if(som_parameters(1)%train_option == 0) then
-    call my_som%calculate_sum2_clusters_grid();
-    endif
-    !
-    call my_som%destroy();
-    !
-    call release_variables();
+    call train_two_level_som(parfl);
     !
     write(*,*)
     write(*,'(A,A,f10.5,2X,A)') name,' version: ',version,'Finished'
