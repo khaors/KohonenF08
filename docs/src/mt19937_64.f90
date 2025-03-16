@@ -1,3 +1,7 @@
+!! author: M. Matsumoto and T. Nishimura. Modified by Oscar Garcia-Cabrejo
+!! date: 03/16/2025
+!! version: 0.1
+!! This module defines a class that encapsulates the mersenne-twister random number generator
 !!-------------------------------------------------------------------------------
 !!   This is a Fortran translation of the 64-bit version of
 !!   the Mersenne Twister pseudorandom number generator
@@ -75,7 +79,7 @@
 !-------------------------------------------------------------------------------
 
 module mt19937_64
-
+!! This module defines a class that encapsulates the mersenne-twister random number generator
   use iso_fortran_env, only: output_unit, real64, int64
 implicit none
 
@@ -110,6 +114,7 @@ integer(i64) :: mt(nn)       ! array for the state vector
 integer     :: mti = nn+1   ! mti==nn+1 means mt(nn) is not initialized
 
 type :: mt19937
+    !! Class that encapsulates the mersenne-twister random number generator
     private
         integer(i64) :: mt(nn) =0_i64       ! array for the state vector
         integer     :: mti = nn+1   ! mti==nn+1 means mt(nn) is not initialized

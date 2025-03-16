@@ -132,17 +132,17 @@
       </a>
       <div id="boundprocs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-create~7">create</a>
-            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-destroy~6">destroy</a>
-            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-train~2">train</a>
-            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-predict~2">predict</a>
-            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-print~3">print</a>
+            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-create~10">create</a>
+            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-destroy~8">destroy</a>
+            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-train~3">train</a>
+            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-predict~3">predict</a>
+            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-print~5">print</a>
             <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-read">read</a>
             <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-get_count">get_count</a>
-            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-query">query</a>
+            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-query~2">query</a>
             <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-get_prototypes">get_prototypes</a>
             <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-get_u_matrix">get_u_matrix</a>
-            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-external_train_map">external_train_map</a>
+            <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-external_train_map~2">external_train_map</a>
             <a class="list-group-item" href="../type/self_organizing_map.html#boundprocedure-external_predict_map">external_predict_map</a>
         </div>
       </div>
@@ -361,7 +361,7 @@ large graphs.</div>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-create~7"></span>
+      <span class="anchor" id="boundprocedure-create~10"></span>
       <h3>
           procedure, public ::
   <strong>create</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\create_som.html'>create_som</a>
@@ -430,7 +430,7 @@ large graphs.</div>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-destroy~6"></span>
+      <span class="anchor" id="boundprocedure-destroy~8"></span>
       <h3>
           procedure, public ::
   <strong>destroy</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\destroy_som.html'>destroy_som</a>
@@ -484,7 +484,7 @@ large graphs.</div>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-train~2"></span>
+      <span class="anchor" id="boundprocedure-train~3"></span>
       <h3>
           procedure, public ::
   <strong>train</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\train_som_data.html'>train_som_data</a>
@@ -553,7 +553,7 @@ large graphs.</div>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-predict~2"></span>
+      <span class="anchor" id="boundprocedure-predict~3"></span>
       <h3>
           procedure, public ::
   <strong>predict</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\predict_som.html'>predict_som</a>
@@ -637,7 +637,7 @@ large graphs.</div>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-print~3"></span>
+      <span class="anchor" id="boundprocedure-print~5"></span>
       <h3>
           procedure, public ::
   <strong>print</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\print_som.html'>print_som</a>
@@ -844,7 +844,7 @@ large graphs.</div>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-query"></span>
+      <span class="anchor" id="boundprocedure-query~2"></span>
       <h3>
           procedure, public ::
   <strong>query</strong> => <a href='C:\GITProjects\KohonenF08\docs\proc\query_som.html'>query_som</a>
@@ -1066,7 +1066,7 @@ large graphs.</div>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-external_train_map"></span>
+      <span class="anchor" id="boundprocedure-external_train_map~2"></span>
       <h3>
           procedure, public, nopass ::
   <strong>external_train_map</strong>
@@ -1076,7 +1076,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    public  subroutine <a href='..\proc\external_train_map.html'>external_train_map</a>(x, nvar, npat, nx, ny, nepoch, alpha, grid_type, distance_type, neigh_type, toroidal, prot, distortion, u_matrix, coords, number_patterns, node_index) bind(C, name="train_som")  
+    public  subroutine <a href='..\proc\external_train_map~2.html'>external_train_map</a>(x, nvar, npat, nx, ny, nepoch, alpha, grid_type, distance_type, neigh_type, toroidal, prot, distortion, u_matrix, coords, number_patterns, node_index) bind(C, name="train_som")  
 </h3>
     
 
@@ -1574,7 +1574,7 @@ Import section</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-16 14:48 -0500             </p>
+ on 2025-03-16 14:57 -0500             </p>
           </div>
         </div>
         <br>
