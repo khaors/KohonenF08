@@ -84,17 +84,12 @@ module mt19937_64
 implicit none
 
 private
-! public :: init_genrand64
-! public :: init_by_array64
-! public :: genrand64_real1
-! public :: genrand64_real2
-! public :: genrand64_real3
 
-!! NOTE: genrand64_int64 is kept private, as it generates different numbers
-!!       compared to the original C code. This is because the original C code
-!!       uses unsigned integers, while Fortran relies on signed integers.
-!!       This, however, has no impact on the generation of real numbers
-!!       (they are identical to those produced by the original C code).
+! NOTE: genrand64_int64 is kept private, as it generates different numbers
+!       compared to the original C code. This is because the original C code
+!       uses unsigned integers, while Fortran relies on signed integers.
+!       This, however, has no impact on the generation of real numbers
+!       (they are identical to those produced by the original C code).
 
 integer, parameter :: r64 = real64
 integer, parameter :: i64 = int64
