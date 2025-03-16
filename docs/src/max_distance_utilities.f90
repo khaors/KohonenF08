@@ -32,6 +32,6 @@ module max_distance_utilities
     !! A real vector
             d=maxval(vector1-vector2);
     !! A real variable with the distance
-        end function calculate_manhattan_distance
+        end function calculate_max_distance
     ! 
 end module max_distance_utilities

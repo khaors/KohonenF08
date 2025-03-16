@@ -2,7 +2,7 @@
 !! date: 03/16/2025
 !! version: 0.1
 !! This module defines the Gaussian neighborhood function
-module gaussian_neighborhood_utilities
+module gaussian_neighborhood_function_utilities
     !! This module defines the Gaussian neighborhood function
     use precision_utilities, only: wp;
     use neighborhood_function_base_utilities, only: neighborhood_function_base;
@@ -47,4 +47,4 @@ contains
     !
     end function calculate_gaussian_neighborhood
 !
-end module gaussian_neighborhood_utilities
+end module gaussian_neighborhood_function_utilities

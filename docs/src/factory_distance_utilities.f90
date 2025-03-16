@@ -39,7 +39,7 @@ contains
             allocate(manhattan_distance :: dist);
         case('max')
             if(allocated(dist)) deallocate(dist);
-            allocate(max_distnace :: dist);
+            allocate(max_distance :: dist);
           case default
             write(*,*) 'ERROR: the requested distance is not defined'
             stop
