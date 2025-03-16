@@ -1,0 +1,828 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>train_two_level_som &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>train_two_level_som
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for procedures.">10 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/two_level_som_train_variables.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\two_level_som_train_variables.f90.html'>two_level_som_train_variables.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\two_level_som_train_variables.html'>two_level_som_train_variables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">train_two_level_som</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/train_two_level_som.html#src">train_two_level_som</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine train_two_level_som(parameter_file)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parameter_file~2"></span>
+              real
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parameter_file</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: proc~~train_two_level_som~~CallsGraph Pages: 1 -->
+<svg id="proctrain_two_level_somCallsGraph" width="641pt" height="239pt"
+ viewBox="0.00 0.00 641.00 238.92" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~train_two_level_som~~CallsGraph" class="graph" transform="scale(0.381748 0.381748) rotate(0) translate(4 621.85)">
+<title>proc~~train_two_level_som~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-621.85 1675.12,-621.85 1675.12,4 -4,4"/>
+<!-- proc~train_two_level_som -->
+<g id="proc~~train_two_level_som~~CallsGraph_node1" class="node">
+<title>proc~train_two_level_som</title>
+<polygon fill="none" stroke="black" points="109.02,-378.75 0,-378.75 0,-355.23 109.02,-355.23 109.02,-378.75"/>
+<text text-anchor="middle" x="54.51" y="-363.02" font-family="Helvetica,sans-Serif" font-size="10.50">train_two_level_som</text>
+</g>
+<!-- proc~calculate_sum2_clusters_grid -->
+<g id="proc~~train_two_level_som~~CallsGraph_node2" class="node">
+<title>proc~calculate_sum2_clusters_grid</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node2"><a xlink:href="../proc/calculate_sum2_clusters_grid.html" xlink:title="two_level_self_organizing_map%calculate_sum2_clusters_grid">
+<polygon fill="#d9534f" stroke="#d9534f" points="1456.35,-497.75 1145.58,-497.75 1145.58,-474.23 1456.35,-474.23 1456.35,-497.75"/>
+<text text-anchor="middle" x="1300.96" y="-482.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%calculate_sum2_clusters_grid</text>
+</a>
+</g>
+</g>
+<!-- proc~train_two_level_som&#45;&gt;proc~calculate_sum2_clusters_grid -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge1" class="edge">
+<title>proc~train_two_level_som&#45;&gt;proc~calculate_sum2_clusters_grid</title>
+<path fill="none" stroke="#ff0000" d="M62.84,-379.15C76.45,-400.75 107.67,-445.99 145.02,-471.99 252.06,-546.51 292.13,-550.2 420.54,-572.99 722.07,-626.52 810.35,-638.12 1109.58,-572.99 1170.18,-559.8 1234.59,-525.54 1270.8,-504.16"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1272.6,-507.16 1279.37,-499.01 1268.99,-501.16 1272.6,-507.16"/>
+</g>
+<!-- proc~create_2lsom -->
+<g id="proc~~train_two_level_som~~CallsGraph_node3" class="node">
+<title>proc~create_2lsom</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node3"><a xlink:href="../proc/create_2lsom.html" xlink:title="two_level_self_organizing_map%create_2lsom">
+<polygon fill="#d9534f" stroke="#d9534f" points="381.91,-462.75 147.64,-462.75 147.64,-439.23 381.91,-439.23 381.91,-462.75"/>
+<text text-anchor="middle" x="264.78" y="-447.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%create_2lsom</text>
+</a>
+</g>
+</g>
+<!-- proc~train_two_level_som&#45;&gt;proc~create_2lsom -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge2" class="edge">
+<title>proc~train_two_level_som&#45;&gt;proc~create_2lsom</title>
+<path fill="none" stroke="#ff0000" d="M79.91,-379.24C97.75,-388 122.63,-399.81 145.02,-408.99 167.95,-418.4 193.86,-427.71 215.61,-435.17"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="214.22,-438.39 224.81,-438.29 216.47,-431.76 214.22,-438.39"/>
+</g>
+<!-- proc~destroy_2lsom -->
+<g id="proc~~train_two_level_som~~CallsGraph_node4" class="node">
+<title>proc~destroy_2lsom</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node4"><a xlink:href="../proc/destroy_2lsom.html" xlink:title="two_level_self_organizing_map%destroy_2lsom">
+<polygon fill="#d9534f" stroke="#d9534f" points="384.54,-399.75 145.02,-399.75 145.02,-376.23 384.54,-376.23 384.54,-399.75"/>
+<text text-anchor="middle" x="264.78" y="-384.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%destroy_2lsom</text>
+</a>
+</g>
+</g>
+<!-- proc~train_two_level_som&#45;&gt;proc~destroy_2lsom -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge3" class="edge">
+<title>proc~train_two_level_som&#45;&gt;proc~destroy_2lsom</title>
+<path fill="none" stroke="#ff0000" d="M109.42,-372.43C116.96,-373.19 124.96,-374 133.2,-374.83"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="132.75,-378.3 143.05,-375.82 133.45,-371.33 132.75,-378.3"/>
+</g>
+<!-- proc~kohonen_pattern_create -->
+<g id="proc~~train_two_level_som~~CallsGraph_node5" class="node">
+<title>proc~kohonen_pattern_create</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node5"><a xlink:href="../proc/kohonen_pattern_create.html" xlink:title="kohonen_pattern%kohonen_pattern_create">
+<polygon fill="#d9534f" stroke="#d9534f" points="374.04,-315.75 155.52,-315.75 155.52,-292.23 374.04,-292.23 374.04,-315.75"/>
+<text text-anchor="middle" x="264.78" y="-300.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern%kohonen_pattern_create</text>
+</a>
+</g>
+</g>
+<!-- proc~train_two_level_som&#45;&gt;proc~kohonen_pattern_create -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge4" class="edge">
+<title>proc~train_two_level_som&#45;&gt;proc~kohonen_pattern_create</title>
+<path fill="none" stroke="#ff0000" d="M77.29,-354.78C95.02,-345.33 120.97,-332.62 145.02,-324.99 152.35,-322.67 160.01,-320.58 167.77,-318.71"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="168.33,-322.17 177.3,-316.54 166.77,-315.35 168.33,-322.17"/>
+</g>
+<!-- proc~kohonen_pattern_destroy -->
+<g id="proc~~train_two_level_som~~CallsGraph_node6" class="node">
+<title>proc~kohonen_pattern_destroy</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node6"><a xlink:href="../proc/kohonen_pattern_destroy.html" xlink:title="kohonen_pattern%kohonen_pattern_destroy">
+<polygon fill="#d9534f" stroke="#d9534f" points="376.66,-357.75 152.89,-357.75 152.89,-334.23 376.66,-334.23 376.66,-357.75"/>
+<text text-anchor="middle" x="264.78" y="-342.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern%kohonen_pattern_destroy</text>
+</a>
+</g>
+</g>
+<!-- proc~train_two_level_som&#45;&gt;proc~kohonen_pattern_destroy -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge5" class="edge">
+<title>proc~train_two_level_som&#45;&gt;proc~kohonen_pattern_destroy</title>
+<path fill="none" stroke="#ff0000" d="M109.42,-361.56C119.45,-360.55 130.3,-359.45 141.44,-358.33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="141.55,-361.84 151.15,-357.35 140.85,-354.87 141.55,-361.84"/>
+</g>
+<!-- proc~train_2lsom -->
+<g id="proc~~train_two_level_som~~CallsGraph_node7" class="node">
+<title>proc~train_2lsom</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node7"><a xlink:href="../proc/train_2lsom.html" xlink:title="two_level_self_organizing_map%train_2lsom">
+<polygon fill="#d9534f" stroke="#d9534f" points="377.41,-252.75 152.14,-252.75 152.14,-229.23 377.41,-229.23 377.41,-252.75"/>
+<text text-anchor="middle" x="264.78" y="-237.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%train_2lsom</text>
+</a>
+</g>
+</g>
+<!-- proc~train_two_level_som&#45;&gt;proc~train_2lsom -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge6" class="edge">
+<title>proc~train_two_level_som&#45;&gt;proc~train_2lsom</title>
+<path fill="none" stroke="#ff0000" d="M65.57,-354.75C80.97,-336.74 112.07,-303.05 145.02,-282.99 163.23,-271.91 184.78,-263.18 204.5,-256.62"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="205.32,-260.03 213.78,-253.65 203.19,-253.36 205.32,-260.03"/>
+</g>
+<!-- none~get_prototype -->
+<g id="proc~~train_two_level_som~~CallsGraph_node11" class="node">
+<title>none~get_prototype</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node11"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-get_prototype" xlink:title="kohonen_prototype%get_prototype">
+<polygon fill="#a7506f" stroke="#a7506f" points="1671.12,-312.75 1492.35,-312.75 1492.35,-289.23 1671.12,-289.23 1671.12,-312.75"/>
+<text text-anchor="middle" x="1581.73" y="-297.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%get_prototype</text>
+</a>
+</g>
+</g>
+<!-- proc~calculate_sum2_clusters_grid&#45;&gt;none~get_prototype -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge7" class="edge">
+<title>proc~calculate_sum2_clusters_grid&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#ff0000" d="M1320.26,-473.85C1367.91,-442.23 1496.1,-357.16 1552.94,-319.44"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1554.72,-322.46 1561.12,-314.01 1550.85,-316.63 1554.72,-322.46"/>
+</g>
+<!-- none~create~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node8" class="node">
+<title>none~create~2</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node8"><a xlink:href="../type/rkiss05_generator.html#boundprocedure-create~2" xlink:title="rkiss05_generator%create">
+<polygon fill="#a7506f" stroke="#a7506f" points="635.31,-483.75 498.54,-483.75 498.54,-460.23 635.31,-460.23 635.31,-483.75"/>
+<text text-anchor="middle" x="566.92" y="-468.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator%create</text>
+</a>
+</g>
+</g>
+<!-- proc~create_2lsom&#45;&gt;none~create~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge8" class="edge">
+<title>proc~create_2lsom&#45;&gt;none~create~2</title>
+<path fill="none" stroke="#ffff00" d="M382.25,-459.14C417.34,-461.6 455,-464.23 487.03,-466.47"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="486.39,-469.94 496.6,-467.14 486.87,-462.95 486.39,-469.94"/>
+</g>
+<!-- proc~calculate_distance_matrix~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node13" class="node">
+<title>proc~calculate_distance_matrix~2</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node13"><a xlink:href="../proc/calculate_distance_matrix~2.html" xlink:title="two_level_self_organizing_map%calculate_distance_matrix">
+<polygon fill="#d9534f" stroke="#d9534f" points="713.31,-441.75 420.54,-441.75 420.54,-418.23 713.31,-418.23 713.31,-441.75"/>
+<text text-anchor="middle" x="566.92" y="-426.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%calculate_distance_matrix</text>
+</a>
+</g>
+</g>
+<!-- proc~create_2lsom&#45;&gt;proc~calculate_distance_matrix~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge9" class="edge">
+<title>proc~create_2lsom&#45;&gt;proc~calculate_distance_matrix~2</title>
+<path fill="none" stroke="#ffff00" d="M382.25,-442.84C391,-442.23 399.91,-441.61 408.85,-440.98"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="408.94,-444.49 418.67,-440.3 408.45,-437.5 408.94,-444.49"/>
+</g>
+<!-- proc~create_distance -->
+<g id="proc~~train_two_level_som~~CallsGraph_node14" class="node">
+<title>proc~create_distance</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node14"><a xlink:href="../proc/create_distance.html" xlink:title="factory_distance%create_distance">
+<polygon fill="#d9534f" stroke="#d9534f" points="654.06,-399.75 479.79,-399.75 479.79,-376.23 654.06,-376.23 654.06,-399.75"/>
+<text text-anchor="middle" x="566.92" y="-384.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance%create_distance</text>
+</a>
+</g>
+</g>
+<!-- proc~create_2lsom&#45;&gt;proc~create_distance -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge10" class="edge">
+<title>proc~create_2lsom&#45;&gt;proc~create_distance</title>
+<path fill="none" stroke="#ffff00" d="M305.54,-438.77C336.61,-429.57 381.01,-417.18 420.54,-408.99 435.96,-405.8 452.4,-402.92 468.47,-400.4"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="468.67,-403.91 478.03,-398.94 467.61,-396.99 468.67,-403.91"/>
+</g>
+<!-- proc~create_random_sample~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node15" class="node">
+<title>proc~create_random_sample~2</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node15"><a xlink:href="../proc/create_random_sample~2.html" xlink:title="two_level_self_organizing_map%create_random_sample">
+<polygon fill="#d9534f" stroke="#d9534f" points="708.43,-563.75 425.41,-563.75 425.41,-540.23 708.43,-540.23 708.43,-563.75"/>
+<text text-anchor="middle" x="566.92" y="-548.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%create_random_sample</text>
+</a>
+</g>
+</g>
+<!-- proc~create_2lsom&#45;&gt;proc~create_random_sample~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge11" class="edge">
+<title>proc~create_2lsom&#45;&gt;proc~create_random_sample~2</title>
+<path fill="none" stroke="#ffff00" d="M286.05,-463.06C314.92,-479.73 370,-509.57 420.54,-525.99 434.43,-530.51 449.35,-534.3 464.13,-537.47"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="463.42,-540.89 473.91,-539.47 464.82,-534.04 463.42,-540.89"/>
+</g>
+<!-- proc~position2index~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node16" class="node">
+<title>proc~position2index~2</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node16"><a xlink:href="../proc/position2index~2.html" xlink:title="position2index">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="1340.85,-291.75 1261.08,-291.75 1261.08,-268.23 1340.85,-268.23 1340.85,-291.75"/>
+<text text-anchor="middle" x="1300.96" y="-276.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">position2index</text>
+</a>
+</g>
+</g>
+<!-- proc~create_2lsom&#45;&gt;proc~position2index~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge12" class="edge">
+<title>proc~create_2lsom&#45;&gt;proc~position2index~2</title>
+<path fill="none" stroke="#ffff00" d="M300.27,-463.19C331.29,-473.46 378.32,-487.37 420.54,-492.99 572.39,-513.23 969.78,-534.64 1109.58,-471.99 1192.71,-434.74 1259.21,-343.64 1286.52,-301.73"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="1289.36,-303.79 1291.79,-293.48 1283.46,-300.02 1289.36,-303.79"/>
+</g>
+<!-- none~destroy~9 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node10" class="node">
+<title>none~destroy~9</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node10"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-destroy~9" xlink:title="kohonen_prototype%destroy">
+<polygon fill="#a7506f" stroke="#a7506f" points="640.93,-357.75 492.91,-357.75 492.91,-334.23 640.93,-334.23 640.93,-357.75"/>
+<text text-anchor="middle" x="566.92" y="-342.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%destroy</text>
+</a>
+</g>
+</g>
+<!-- proc~destroy_2lsom&#45;&gt;none~destroy~9 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge13" class="edge">
+<title>proc~destroy_2lsom&#45;&gt;none~destroy~9</title>
+<path fill="none" stroke="#00ff00" d="M353,-375.79C393.41,-370.13 441.25,-363.44 481.34,-357.83"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="481.78,-361.3 491.19,-356.45 480.81,-354.37 481.78,-361.3"/>
+</g>
+<!-- none~create~9 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node9" class="node">
+<title>none~create~9</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node9"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-create~9" xlink:title="kohonen_prototype%create">
+<polygon fill="#a7506f" stroke="#a7506f" points="638.31,-315.75 495.54,-315.75 495.54,-292.23 638.31,-292.23 638.31,-315.75"/>
+<text text-anchor="middle" x="566.92" y="-300.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%create</text>
+</a>
+</g>
+</g>
+<!-- proc~kohonen_pattern_create&#45;&gt;none~create~9 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge14" class="edge">
+<title>proc~kohonen_pattern_create&#45;&gt;none~create~9</title>
+<path fill="none" stroke="#00ffff" d="M374.14,-303.99C410.35,-303.99 450.07,-303.99 483.93,-303.99"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="483.66,-307.49 493.66,-303.99 483.66,-300.49 483.66,-307.49"/>
+</g>
+<!-- proc~kohonen_pattern_destroy&#45;&gt;none~destroy~9 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge15" class="edge">
+<title>proc~kohonen_pattern_destroy&#45;&gt;none~destroy~9</title>
+<path fill="none" stroke="#0000ff" d="M377.12,-345.99C411.59,-345.99 448.99,-345.99 481.34,-345.99"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="481.05,-349.49 491.05,-345.99 481.05,-342.49 481.05,-349.49"/>
+</g>
+<!-- proc~assign_input_to_clusters -->
+<g id="proc~~train_two_level_som~~CallsGraph_node12" class="node">
+<title>proc~assign_input_to_clusters</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node12"><a xlink:href="../proc/assign_input_to_clusters.html" xlink:title="two_level_self_organizing_map%assign_input_to_clusters">
+<polygon fill="#d9534f" stroke="#d9534f" points="710.68,-273.75 423.16,-273.75 423.16,-250.23 710.68,-250.23 710.68,-273.75"/>
+<text text-anchor="middle" x="566.92" y="-258.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%assign_input_to_clusters</text>
+</a>
+</g>
+</g>
+<!-- proc~train_2lsom&#45;&gt;proc~assign_input_to_clusters -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge16" class="edge">
+<title>proc~train_2lsom&#45;&gt;proc~assign_input_to_clusters</title>
+<path fill="none" stroke="#ff00ff" d="M377.54,-248.81C388.61,-249.59 399.97,-250.38 411.36,-251.18"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="411.03,-254.66 421.25,-251.87 411.52,-247.68 411.03,-254.66"/>
+</g>
+<!-- proc~train_cluster_layer -->
+<g id="proc~~train_two_level_som~~CallsGraph_node17" class="node">
+<title>proc~train_cluster_layer</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node17"><a xlink:href="../proc/train_cluster_layer.html" xlink:title="two_level_self_organizing_map%train_cluster_layer">
+<polygon fill="#d9534f" stroke="#d9534f" points="695.68,-87.75 438.16,-87.75 438.16,-64.23 695.68,-64.23 695.68,-87.75"/>
+<text text-anchor="middle" x="566.92" y="-72.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%train_cluster_layer</text>
+</a>
+</g>
+</g>
+<!-- proc~train_2lsom&#45;&gt;proc~train_cluster_layer -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge17" class="edge">
+<title>proc~train_2lsom&#45;&gt;proc~train_cluster_layer</title>
+<path fill="none" stroke="#ff00ff" d="M287.85,-228.86C340.32,-200.02 472.7,-127.24 533.94,-93.58"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="535.42,-96.76 542.5,-88.87 532.05,-90.62 535.42,-96.76"/>
+</g>
+<!-- proc~train_grid_layer -->
+<g id="proc~~train_two_level_som~~CallsGraph_node18" class="node">
+<title>proc~train_grid_layer</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node18"><a xlink:href="../proc/train_grid_layer.html" xlink:title="two_level_self_organizing_map%train_grid_layer">
+<polygon fill="#d9534f" stroke="#d9534f" points="688.93,-231.75 444.91,-231.75 444.91,-208.23 688.93,-208.23 688.93,-231.75"/>
+<text text-anchor="middle" x="566.92" y="-216.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%train_grid_layer</text>
+</a>
+</g>
+</g>
+<!-- proc~train_2lsom&#45;&gt;proc~train_grid_layer -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge18" class="edge">
+<title>proc~train_2lsom&#45;&gt;proc~train_grid_layer</title>
+<path fill="none" stroke="#ff00ff" d="M377.54,-233.17C395.62,-231.91 414.5,-230.59 433.02,-229.29"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="433.26,-232.78 442.99,-228.59 432.77,-225.8 433.26,-232.78"/>
+</g>
+<!-- none~distance~6 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node20" class="node">
+<title>none~distance~6</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node20"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-distance~6" xlink:title="kohonen_prototype%distance">
+<polygon fill="#a7506f" stroke="#a7506f" points="1377.22,-211.75 1224.7,-211.75 1224.7,-188.23 1377.22,-188.23 1377.22,-211.75"/>
+<text text-anchor="middle" x="1300.96" y="-196.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%distance</text>
+</a>
+</g>
+</g>
+<!-- proc~assign_input_to_clusters&#45;&gt;none~distance~6 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge19" class="edge">
+<title>proc~assign_input_to_clusters&#45;&gt;none~distance~6</title>
+<path fill="none" stroke="#00ff2e" d="M701.42,-274.16C705.62,-276.75 709.6,-279.68 713.31,-282.99 760.56,-325.24 699.15,-382.24 749.31,-420.99 876.02,-518.89 984.68,-521.18 1109.58,-420.99 1167.11,-374.84 1097.38,-314.82 1145.58,-258.99 1163.79,-237.9 1190.4,-224.32 1216.42,-215.59"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="1217.17,-219.02 1225.68,-212.7 1215.09,-212.34 1217.17,-219.02"/>
+</g>
+<!-- proc~kohonen_pattern_accessor -->
+<g id="proc~~train_two_level_som~~CallsGraph_node26" class="node">
+<title>proc~kohonen_pattern_accessor</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node26"><a xlink:href="../proc/kohonen_pattern_accessor.html" xlink:title="kohonen_pattern%kohonen_pattern_accessor">
+<polygon fill="#d9534f" stroke="#d9534f" points="1045.08,-411.75 813.81,-411.75 813.81,-388.23 1045.08,-388.23 1045.08,-411.75"/>
+<text text-anchor="middle" x="929.44" y="-396.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern%kohonen_pattern_accessor</text>
+</a>
+</g>
+</g>
+<!-- proc~assign_input_to_clusters&#45;&gt;proc~kohonen_pattern_accessor -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge20" class="edge">
+<title>proc~assign_input_to_clusters&#45;&gt;proc~kohonen_pattern_accessor</title>
+<path fill="none" stroke="#00ff2e" d="M699.91,-274.2C704.62,-276.76 709.11,-279.67 713.31,-282.99 747.44,-309.96 715.19,-347.01 749.31,-373.99 764.73,-386.19 783.32,-393.98 802.6,-398.78"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="801.69,-402.17 812.21,-400.89 803.19,-395.33 801.69,-402.17"/>
+</g>
+<!-- none~generate~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node21" class="node">
+<title>none~generate~2</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node21"><a xlink:href="../type/rkiss05_generator.html#boundprocedure-generate~2" xlink:title="rkiss05_generator%generate">
+<polygon fill="#a7506f" stroke="#a7506f" points="1004.2,-563.75 854.68,-563.75 854.68,-540.23 1004.2,-540.23 1004.2,-563.75"/>
+<text text-anchor="middle" x="929.44" y="-548.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator%generate</text>
+</a>
+</g>
+</g>
+<!-- proc~create_random_sample~2&#45;&gt;none~generate~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge21" class="edge">
+<title>proc~create_random_sample~2&#45;&gt;none~generate~2</title>
+<path fill="none" stroke="#002eff" d="M708.86,-551.99C754.16,-551.99 802.95,-551.99 843.01,-551.99"/>
+<polygon fill="#002eff" stroke="#002eff" points="842.82,-555.49 852.82,-551.99 842.82,-548.49 842.82,-555.49"/>
+</g>
+<!-- proc~train_cluster_layer&#45;&gt;none~get_prototype -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge24" class="edge">
+<title>proc~train_cluster_layer&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#e700ff" d="M598.76,-63.82C634.37,-50.47 695.01,-29.9 749.31,-21.99 907.76,1.09 953.06,11.79 1109.58,-21.99 1274.95,-57.69 1321.02,-77.46 1456.35,-178.99 1476.02,-193.75 1475.2,-203.38 1492.35,-220.99 1513.47,-242.69 1539.31,-265.71 1557.58,-281.46"/>
+<polygon fill="#e700ff" stroke="#e700ff" points="1555.11,-283.95 1564.99,-287.8 1559.66,-278.63 1555.11,-283.95"/>
+</g>
+<!-- float -->
+<g id="proc~~train_two_level_som~~CallsGraph_node19" class="node">
+<title>float</title>
+<polygon fill="#777777" stroke="#777777" points="956.44,-87.75 902.44,-87.75 902.44,-64.23 956.44,-64.23 956.44,-87.75"/>
+<text text-anchor="middle" x="929.44" y="-72.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">float</text>
+</g>
+<!-- proc~train_cluster_layer&#45;&gt;float -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge22" class="edge">
+<title>proc~train_cluster_layer&#45;&gt;float</title>
+<path fill="none" stroke="#e700ff" d="M696.05,-75.99C764.79,-75.99 844.6,-75.99 890.54,-75.99"/>
+<polygon fill="#e700ff" stroke="#e700ff" points="890.5,-79.49 900.5,-75.99 890.5,-72.49 890.5,-79.49"/>
+</g>
+<!-- proc~train_cluster_layer&#45;&gt;none~distance~6 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge23" class="edge">
+<title>proc~train_cluster_layer&#45;&gt;none~distance~6</title>
+<path fill="none" stroke="#e700ff" d="M612.62,-63.81C707.28,-40.22 933.7,4.36 1109.58,-54.99 1183.3,-79.87 1251.04,-145.94 1282.1,-179.63"/>
+<polygon fill="#e700ff" stroke="#e700ff" points="1279.21,-181.64 1288.52,-186.71 1284.4,-176.95 1279.21,-181.64"/>
+</g>
+<!-- none~set_prototype -->
+<g id="proc~~train_two_level_som~~CallsGraph_node22" class="node">
+<title>none~set_prototype</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node22"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-set_prototype" xlink:title="kohonen_prototype%set_prototype">
+<polygon fill="#a7506f" stroke="#a7506f" points="1018.45,-129.75 840.43,-129.75 840.43,-106.23 1018.45,-106.23 1018.45,-129.75"/>
+<text text-anchor="middle" x="929.44" y="-114.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%set_prototype</text>
+</a>
+</g>
+</g>
+<!-- proc~train_cluster_layer&#45;&gt;none~set_prototype -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge25" class="edge">
+<title>proc~train_cluster_layer&#45;&gt;none~set_prototype</title>
+<path fill="none" stroke="#e700ff" d="M672.69,-88.2C721.97,-93.94 780.43,-100.75 829.02,-106.41"/>
+<polygon fill="#e700ff" stroke="#e700ff" points="828.34,-109.86 838.68,-107.54 829.15,-102.9 828.34,-109.86"/>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;none~get_prototype -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge28" class="edge">
+<title>proc~train_grid_layer&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#ff008b" d="M689.38,-226.86C697.99,-230.48 706.1,-235.11 713.31,-240.99 749.91,-270.85 710.66,-313.83 749.31,-340.99 807.83,-382.12 1273.11,-335.71 1481,-312.56"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="1481.15,-316.07 1490.7,-311.48 1480.38,-309.11 1481.15,-316.07"/>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;proc~position2index~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge34" class="edge">
+<title>proc~train_grid_layer&#45;&gt;proc~position2index~2</title>
+<path fill="none" stroke="#ff008b" d="M681.19,-232.22C692.17,-234.64 703.04,-237.53 713.31,-240.99 730.65,-246.84 731.67,-256.1 749.31,-260.99 927.56,-310.48 1150.74,-296.04 1249.25,-286.02"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="1249.55,-289.51 1259.13,-284.98 1248.82,-282.55 1249.55,-289.51"/>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;float -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge26" class="edge">
+<title>proc~train_grid_layer&#45;&gt;float</title>
+<path fill="none" stroke="#ff008b" d="M580.77,-207.96C608.81,-182.48 678.71,-123.27 749.31,-96.99 795.92,-79.65 853.64,-75.74 890.75,-75.28"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="890.53,-78.78 900.52,-75.24 890.5,-71.78 890.53,-78.78"/>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;none~distance~6 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge27" class="edge">
+<title>proc~train_grid_layer&#45;&gt;none~distance~6</title>
+<path fill="none" stroke="#ff008b" d="M689.22,-216.68C836.93,-212.64 1082.78,-205.93 1212.94,-202.37"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="1212.99,-205.87 1222.89,-202.1 1212.8,-198.87 1212.99,-205.87"/>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;none~set_prototype -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge29" class="edge">
+<title>proc~train_grid_layer&#45;&gt;none~set_prototype</title>
+<path fill="none" stroke="#ff008b" d="M589.46,-207.77C622.64,-189.55 688.79,-155.64 749.31,-138.99 774.67,-132.02 802.68,-127.36 828.86,-124.25"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="828.9,-127.77 838.45,-123.18 828.12,-120.81 828.9,-127.77"/>
+</g>
+<!-- proc~calculate_distance_between_prototypes~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node23" class="node">
+<title>proc~calculate_distance_between_prototypes~2</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node23"><a xlink:href="../proc/calculate_distance_between_prototypes~2.html" xlink:title="two_level_self_organizing_map%calculate_distance_between_prototypes">
+<polygon fill="#d9534f" stroke="#d9534f" points="1109.58,-251.75 749.31,-251.75 749.31,-228.23 1109.58,-228.23 1109.58,-251.75"/>
+<text text-anchor="middle" x="929.44" y="-236.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%calculate_distance_between_prototypes</text>
+</a>
+</g>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;proc~calculate_distance_between_prototypes~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge30" class="edge">
+<title>proc~train_grid_layer&#45;&gt;proc~calculate_distance_between_prototypes~2</title>
+<path fill="none" stroke="#ff008b" d="M689.23,-226.72C704.84,-227.59 721.13,-228.49 737.53,-229.4"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="737.2,-232.89 747.38,-229.95 737.59,-225.9 737.2,-232.89"/>
+</g>
+<!-- proc~calculate_u_matrix~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node24" class="node">
+<title>proc~calculate_u_matrix~2</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node24"><a xlink:href="../proc/calculate_u_matrix~2.html" xlink:title="two_level_self_organizing_map%calculate_u_matrix">
+<polygon fill="#d9534f" stroke="#d9534f" points="1058.95,-171.75 799.93,-171.75 799.93,-148.23 1058.95,-148.23 1058.95,-171.75"/>
+<text text-anchor="middle" x="929.44" y="-156.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%calculate_u_matrix</text>
+</a>
+</g>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;proc~calculate_u_matrix~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge31" class="edge">
+<title>proc~train_grid_layer&#45;&gt;proc~calculate_u_matrix~2</title>
+<path fill="none" stroke="#ff008b" d="M629.52,-207.8C664.57,-201.02 709.33,-192.64 749.31,-185.99 774.69,-181.77 802.17,-177.59 827.79,-173.86"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="828.14,-177.35 837.54,-172.45 827.14,-170.42 828.14,-177.35"/>
+</g>
+<!-- proc~index2position~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_node25" class="node">
+<title>proc~index2position~2</title>
+<g id="a_proc~~train_two_level_som~~CallsGraph_node25"><a xlink:href="../proc/index2position~2.html" xlink:title="index2position">
+<polygon fill="#d9534f" stroke="#d9534f" points="969.33,-331.75 889.56,-331.75 889.56,-308.23 969.33,-308.23 969.33,-331.75"/>
+<text text-anchor="middle" x="929.44" y="-316.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">index2position</text>
+</a>
+</g>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;proc~index2position~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge32" class="edge">
+<title>proc~train_grid_layer&#45;&gt;proc~index2position~2</title>
+<path fill="none" stroke="#ff008b" d="M689.35,-229.48C697.76,-232.54 705.85,-236.33 713.31,-240.99 737.45,-256.09 725.17,-278.89 749.31,-293.99 787.82,-318.09 839.95,-323.26 878.04,-323.2"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="877.93,-326.7 887.87,-323.05 877.82,-319.7 877.93,-326.7"/>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;proc~kohonen_pattern_accessor -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge33" class="edge">
+<title>proc~train_grid_layer&#45;&gt;proc~kohonen_pattern_accessor</title>
+<path fill="none" stroke="#ff008b" d="M689.22,-225.91C697.97,-229.72 706.15,-234.65 713.31,-240.99 759.15,-281.6 703.49,-333.37 749.31,-373.99 764.22,-387.21 782.74,-395.48 802.15,-400.43"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="801.34,-403.84 811.86,-402.59 802.86,-397 801.34,-403.84"/>
+</g>
+<!-- none~distance~6&#45;&gt;none~get_prototype -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge36" class="edge">
+<title>none~distance~6&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M1335.59,-212.18C1385.82,-230.38 1480.51,-264.68 1536.36,-284.92"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="1534.97,-288.14 1545.57,-288.25 1537.36,-281.55 1534.97,-288.14"/>
+</g>
+<!-- calculate -->
+<g id="proc~~train_two_level_som~~CallsGraph_node27" class="node">
+<title>calculate</title>
+<polygon fill="#777777" stroke="#777777" points="1608.73,-211.75 1554.73,-211.75 1554.73,-188.23 1608.73,-188.23 1608.73,-211.75"/>
+<text text-anchor="middle" x="1581.73" y="-196.02" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">calculate</text>
+</g>
+<!-- none~distance~6&#45;&gt;calculate -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge35" class="edge">
+<title>none~distance~6&#45;&gt;calculate</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M1377.4,-199.99C1430.94,-199.99 1500.54,-199.99 1542.87,-199.99"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="1542.79,-203.49 1552.79,-199.99 1542.79,-196.49 1542.79,-203.49"/>
+</g>
+<!-- proc~calculate_distance_between_prototypes~2&#45;&gt;proc~position2index~2 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge37" class="edge">
+<title>proc~calculate_distance_between_prototypes~2&#45;&gt;proc~position2index~2</title>
+<path fill="none" stroke="#00ffff" d="M1043.57,-252.24C1112.23,-259.67 1196.49,-268.79 1249.23,-274.5"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="1248.81,-277.98 1259.12,-275.57 1249.56,-271.02 1248.81,-277.98"/>
+</g>
+<!-- proc~calculate_u_matrix~2&#45;&gt;none~distance~6 -->
+<g id="proc~~train_two_level_som~~CallsGraph_edge38" class="edge">
+<title>proc~calculate_u_matrix~2&#45;&gt;none~distance~6</title>
+<path fill="none" stroke="#003fff" d="M1043.57,-172.24C1098.12,-178.14 1162.52,-185.12 1213.14,-190.59"/>
+<polygon fill="#003fff" stroke="#003fff" points="1212.55,-194.05 1222.87,-191.65 1213.3,-187.09 1212.55,-194.05"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panproctrain_two_level_somCallsGraph = svgPanZoom('#proctrain_two_level_somCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.923937 0.923937) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 689.77,-27.52 689.77,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="63.27,-23.52 0,-23.52 0,0 63.27,0 63.27,-23.52"/>
+<text text-anchor="middle" x="31.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="135.63,-23.52 81.64,-23.52 81.64,0 135.63,0 135.63,-23.52"/>
+<text text-anchor="middle" x="108.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="207.63,-23.52 153.63,-23.52 153.63,0 207.63,0 207.63,-23.52"/>
+<text text-anchor="middle" x="180.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="347.14,-23.52 226.12,-23.52 226.12,0 347.14,0 347.14,-23.52"/>
+<text text-anchor="middle" x="286.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="499.89,-23.52 365.38,-23.52 365.38,0 499.89,0 499.89,-23.52"/>
+<text text-anchor="middle" x="432.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="571.63,-23.52 517.63,-23.52 517.63,0 571.63,0 571.63,-23.52"/>
+<text text-anchor="middle" x="544.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="685.77,-23.52 589.5,-23.52 589.5,0 685.77,0 685.77,-23.52"/>
+<text text-anchor="middle" x="637.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">train_two_level_som</span><span class="p">(</span><span class="n">parameter_file</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">!==============================================================================</span>
+<span class="w">        </span><span class="k">call </span><span class="n">initialize_variables</span><span class="p">(</span><span class="n">parfl</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">create</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">train</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">train_option</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">my_som</span><span class="p">%</span><span class="n">calculate_sum2_clusters_grid</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">endif</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">destroy</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">call </span><span class="n">release_variables</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">train_two_level_som</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-15 20:29 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

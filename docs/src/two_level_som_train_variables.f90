@@ -415,7 +415,20 @@ module two_level_som_train_variables
     !==============================================================================
     subroutine train_two_level_som(parameter_file)
     !==============================================================================
-
+        call initialize_variables(parfl);
+        !
+        call my_som%create(som_parameters);
+        !
+        call my_som%train(input_patterns);
+        !
+        if(som_parameters(1)%train_option == 0) then
+            call my_som%calculate_sum2_clusters_grid();
+        endif
+        !
+        call my_som%destroy();
+        !
+        call release_variables();
+        
     end subroutine train_two_level_som
 !
     end module two_level_som_train_variables
