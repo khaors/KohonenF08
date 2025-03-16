@@ -1,11 +1,9 @@
 !! author: Oscar Garcia-Cabrejo
 !! date: 03/12/2025
 !! version: 0.1
-!! This module defines a class that represents a two layer self_organizing_map 
-!! for clustering 
+!! This module defines a class that represents a two layer self_organizing_map  for clustering 
 module two_level_self_organizing_map_utilities
-!! This module defines a class that represents a two layer self_organizing_map 
-!! for clustering
+!! This module defines a class that represents a two layer self_organizing_map  for clustering
    use precision_utilities, only: wp;
    use kohonen_layer_parameters_utilities;
    use kohonen_map_base_utilities;
@@ -275,15 +273,10 @@ module two_level_self_organizing_map_utilities
       end do
 !    
       end subroutine create_random_sample         
-   !****f* two_level_self_organizing_map_utilities/train_2lsom
-   ! NAME
-   !   train_2lsom
-   ! PURPOSE
-   !   Subroutine to train a two_level self_organized_map 
-   ! SYNOPSIS
    !========================================================================================
    subroutine train_2lsom(kohonen_map,input_data)
    !========================================================================================
+!!   Subroutine to train a two_level self_organized_map
       class(two_level_self_organizing_map) :: kohonen_map
 !! A `two_level_self_organizing_map` object
       type(kohonen_pattern),dimension(:),intent(inout) :: input_data
@@ -1672,12 +1665,6 @@ module two_level_self_organizing_map_utilities
       enddo!ic
    
    end subroutine update_weights
-   !****f* two_level_self_organizing_map_utilities/calculate_distance_between_prototypes
-   ! NAME
-   !   calculate_distance_between_prototypes
-   ! PURPOSE
-   !    Subroutine to calculate distance between prototypes
-   ! SYNOPSIS
    !========================================================================================
    subroutine calculate_distance_between_prototypes(kohonen_map)
    !========================================================================================
@@ -1714,12 +1701,6 @@ module two_level_self_organizing_map_utilities
       enddo!ix
    ! 
    end subroutine calculate_distance_between_prototypes
-   !****f* two_level_self_organizing_map/calculate_u_matrix
-   ! NAME
-   !   calculate_u_matrix
-   ! PURPOSE
-   !    Subroutine to calculate  the u_matrix
-   ! SYNOPSIS
    !========================================================================================
    subroutine calculate_u_matrix(kohonen_map)
    !========================================================================================
@@ -1954,12 +1935,6 @@ module two_level_self_organizing_map_utilities
    
    !
    end subroutine calculate_u_matrix
-   !****f* two_level_self_organizing_map/assign_input_to_clusters
-   ! NAME
-   !   assign_input_to_clusters
-   ! PURPOSE
-   !    Subroutine to assign input to clusters
-   ! SYNOPSIS
    !======================================================================================== 
    subroutine assign_input_to_clusters(kohonen_map,input_patterns)
    !========================================================================================
@@ -1999,12 +1974,6 @@ module two_level_self_organizing_map_utilities
    !  enddo
    !
    end subroutine assign_input_to_clusters
-   !****f* two_level_self_organizing_map/external_train_map
-   ! NAME
-   !   external_train_map
-   ! PURPOSE
-   !    Subroutine to connect the two_level_self_organizing_map module to R o C
-   ! SYNOPSIS
    !========================================================================================
    subroutine external_train_map(x,nvar,npat,som_type,nx1,ny1,nepoch1,alpha1,grid_type1,&
                distance_type1,neigh_type1,toroidal1,nx2,nepoch2,alpha2,grid_type2,&

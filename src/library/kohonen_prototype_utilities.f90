@@ -34,12 +34,6 @@ end type kohonen_prototype
 public :: kohonen_prototype;
 !
  contains
-!****f* kohonen_prototype_utilities/kohonen_prototype_constructor
-!  NAME
-!    kohonen_prototype_constructor
-!  PURPOSE
-!! Class Constructor
-!  SYNOPSIS
 !========================================================================================
     subroutine kohonen_prototype_constructor(prototype,input_data)
 !========================================================================================
