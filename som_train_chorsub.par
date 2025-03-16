@@ -1,0 +1,25 @@
+!
+! Parameter file to the som_train program
+!
+! Here you can specify all the information related with this specific run of the program such as date and reason 
+! why you run the program in first place.
+! 
+!
+SOM_TRAIN_PARAMETERS
+0                                                 !SOM OPTION
+chorsub.dat                                       !FILE WITH INPUT PATTERNS
+61                                                !NUMBER OF PATTERNS
+10                                                !NUMBER INPUT VARIABLES
+1 2 3 4 5 6 7 8 9 10                              !COLUMNS
+normal_som                                        !SOM_TYPE (normal_som,visom,robust_some)
+10 10 1                                           !NUMBER_NODES IN SOM (NODES IN X, Y AND Z)
+1000                                              !NUMBER EPOCHS
+0.05                                              !LEARNING RATE
+12345                                             !RANDOM SEED
+euclidean                                         !DISTANCE TYPE(euclidean,manhattan)
+rectangular                                       !NODE TYPE(rectangular,hexagonal)
+gaussian                                          !NEIGHBORHOOD TYPE(bubble,gaussian)
+0                                                 !DEBUG LEVEL
+som_chorsub.dbg                                   !DEBUG FILE
+som_chorsub                                       !BASE NAME FOR THE OUTPUT FILES
+1                                                 !TOROIDAL GRID(0=NO, 1=YES)
