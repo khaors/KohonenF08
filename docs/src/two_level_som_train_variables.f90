@@ -19,6 +19,7 @@ module two_level_som_train_variables
      character(len=NUMCHAR) :: parfl
     !
     public :: train_two_level_som;
+    !
      contains
     !============================================================================== 
      subroutine initialize_variables(par_file)
@@ -415,7 +416,9 @@ module two_level_som_train_variables
     !==============================================================================
     subroutine train_two_level_som(parameter_file)
     !==============================================================================
-        call initialize_variables(parfl);
+        character(len=*),intent(inout) :: parameter_file
+        !
+        call initialize_variables(parameter_file);
         !
         call my_som%create(som_parameters);
         !

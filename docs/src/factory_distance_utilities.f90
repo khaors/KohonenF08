@@ -1,12 +1,13 @@
 !! author: Oscar Garcia-Cabrejo
-!! date: 12/04/2024
-!! version: 0.1
+!! date: 03/16/2025
+!! version: 0.2
 !! This module defines a factory to create distance objects 
 module factory_distance_utilities
 !! This module defines a factory to create distance objects 
 use distance_base_utilities, only: distance_base;
 use euclidean_distance_utilities, only: euclidean_distance;
 use manhattan_distance_utilities, only: manhattan_distance;
+use max_distance_utilities, only: max_distance;
 !
 implicit none;
 !
@@ -36,6 +37,9 @@ contains
     !         !write(*,*) 'Manhattan distance allocated';
             if(allocated(dist)) deallocate(dist);
             allocate(manhattan_distance :: dist);
+        case('max')
+            if(allocated(dist)) deallocate(dist);
+            allocate(max_distnace :: dist);
           case default
             write(*,*) 'ERROR: the requested distance is not defined'
             stop
