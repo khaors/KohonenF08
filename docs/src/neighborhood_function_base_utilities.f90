@@ -1,6 +1,6 @@
 !! author: Oscar Garcia-Cabrejo
-!! date: 03/08/2025
-!! version: 0.1
+!! date: 03/16/2025
+!! version: 0.2
 !! This module defines an abstract class to define neighborhood functions
 module neighborhood_function_base_utilities
 !! This module defines an abstract class to define neighborhood functions
@@ -15,7 +15,7 @@ type,abstract :: neighborhood_function_base
 end type neighborhood_function_base
 !
 abstract interface
-    subroutine neighborhood_function_calculate(my_neigh_fn,geometric_distance)
+    function neighborhood_function_calculate(my_neigh_fn,geometric_distance) result(n)
 !! Subroutine template to calculate function
         import :: neighborhood_function_base
         import :: wp
@@ -24,7 +24,9 @@ abstract interface
 !! A `neighborhood_function_base` object
         real(kind=wp),intent(inout) :: geometric_distance
 !! A real variable with the geometric or grid distance of a SOM unit
-    end subroutine neighborhood_function_calculate
+        real(kind=wp) :: n
+!! A real variable with the value of the neighborhood function
+    end function neighborhood_function_calculate
 !
 end interface
 !
