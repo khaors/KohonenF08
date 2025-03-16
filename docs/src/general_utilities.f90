@@ -15,7 +15,7 @@ interface maximum
 end interface 
 !
 public :: minimum,maximum,mean,variance,std
-public :: coefficient_of_variation
+public :: coefficient_of_variation,correlation_coefficient
 !
 contains
 !===================================================================================================
@@ -124,5 +124,18 @@ contains
         cov=std(a)/mean(a);
 
     end function coefficient_of_variation
+!============================================================================================
+    function correlation_coefficient(x,y) result(cor)
+!============================================================================================
+!! Function to calculate the correlation coefficient between two real vectors
+        real(kind=wp),dimension(:),intent(inout) :: x,y
+!! Real arrays
+        real(kind=wp) :: cor 
+!! Real value with the correlation coefficient
+        integer :: ndat
+        !
+        ndat=size(x);
+        cor=(sum((x-mean(x))*(y-mean(y)))/dble(ndat))/(std(x)*std(y));
+    end function correlation_coefficient
 !
 end module general_utilities

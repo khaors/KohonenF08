@@ -76,20 +76,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.6% of total for procedures.">17 statements</a>
+                 title=" 1.0% of total for procedures.">30 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/som_predict_variables.f90"> Source File</a>
+              <a href="../src/two_level_som_estimate_variables.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='..\sourcefile\som_predict_variables.f90.html'>som_predict_variables.f90</a></li>
-                <li class="breadcrumb-item"><a href='..\module\som_predict_variables.html'>som_predict_variables</a></li>
+                <li class="breadcrumb-item"><a href='..\sourcefile\two_level_som_estimate_variables.f90.html'>two_level_som_estimate_variables.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\two_level_som_estimate_variables.html'>two_level_som_estimate_variables</a></li>
             <li class="breadcrumb-item active" aria-current="page">release_variables</li>
           </ol>
         </nav>
@@ -116,8 +116,8 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../proc/release_variables~2.html#variable-i~7">i</a>
-            <a class="list-group-item" href="../proc/release_variables~2.html#variable-testop~3">testop</a>
+            <a class="list-group-item" href="../proc/release_variables~2.html#variable-i~29">i</a>
+            <a class="list-group-item" href="../proc/release_variables~2.html#variable-testop~9">testop</a>
         </div>
       </div>
     </div>
@@ -315,7 +315,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-i~7"></span>
+              <span class="anchor" id="variable-i~29"></span>
               integer,
             </td>
               <td>public</td>
@@ -332,7 +332,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-testop~3"></span>
+              <span class="anchor" id="variable-testop~9"></span>
               logical,
             </td>
               <td>public</td>
@@ -364,10 +364,9 @@ large graphs.</div>
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="hl codehilite"><pre><span></span><span class="w">     </span><span class="k">subroutine </span><span class="n">release_variables</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="c">!</span>
 <span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
 <span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testop</span><span class="w"></span>
-<span class="w">    </span><span class="c">!  </span>
+<span class="w">    </span><span class="c">!</span>
 <span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
 <span class="k">        do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">)</span><span class="w"></span>
 <span class="w">           </span><span class="k">call </span><span class="n">input_patterns</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">destroy</span><span class="p">();</span><span class="w"></span>
@@ -375,18 +374,82 @@ large graphs.</div>
 <span class="k">        deallocate</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">);</span><span class="w"></span>
 <span class="w">      </span><span class="k">endif</span><span class="w"></span>
 <span class="w">    </span><span class="c">!</span>
-<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">map_output</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
-<span class="w">        </span><span class="c">!do i=1,size(map_output)</span>
-<span class="w">        </span><span class="c">!   call map_output(i)%destroy();</span>
-<span class="w">        </span><span class="c">!enddo</span>
-<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="n">map_output</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">seeds</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        deallocate</span><span class="p">(</span><span class="n">seeds</span><span class="p">);</span><span class="w"></span>
 <span class="w">      </span><span class="k">endif</span><span class="w"></span>
 <span class="w">    </span><span class="c">!</span>
-<span class="w">      </span><span class="k">inquire</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iout</span><span class="p">,</span><span class="n">opened</span><span class="o">=</span><span class="n">testop</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">total_results</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        deallocate</span><span class="p">(</span><span class="n">total_results</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">endif</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">association_matrix</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       deallocate</span><span class="p">(</span><span class="n">association_matrix</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="k">endif</span><span class="w"></span>
+<span class="w">    </span><span class="c">! </span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">clusters</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       deallocate</span><span class="p">(</span><span class="n">clusters</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="k">endif</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">      </span><span class="k">inquire</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iout1</span><span class="p">,</span><span class="n">opened</span><span class="o">=</span><span class="n">testop</span><span class="p">);</span><span class="w"></span>
 <span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">testop</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<span class="k">        close</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iout</span><span class="p">)</span><span class="w"></span>
+<span class="k">        close</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iout1</span><span class="p">);</span><span class="w"></span>
 <span class="w">      </span><span class="k">endif</span><span class="w"></span>
 <span class="w">    </span><span class="c">!</span>
+<span class="w">      </span><span class="k">inquire</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">imeas</span><span class="p">,</span><span class="n">opened</span><span class="o">=</span><span class="n">testop</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">testop</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        close</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">imeas</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">endif</span><span class="w"></span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%iindex,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%iindex);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%iprot,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%iprot);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%ihit,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%ihit);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%idist,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%idist);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%iumat,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%iumat);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%isam,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%isam);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%iclus,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%iclus);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%icen,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%icen);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(unit=som_parameters(1)%iclus1,opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%iclus1);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! </span>
+<span class="w">    </span><span class="c">! !</span>
+<span class="w">    </span><span class="c">!   inquire(file=trim(som_parameters(1)%debug_file),opened=testop);</span>
+<span class="w">    </span><span class="c">!   if(testop) then</span>
+<span class="w">    </span><span class="c">!     close(som_parameters(1)%idbg);</span>
+<span class="w">    </span><span class="c">!   endif</span>
+<span class="w">    </span><span class="c">! </span>
 <span class="w">     </span><span class="k">end subroutine </span><span class="n">release_variables</span><span class="w"></span>
 </pre></div>
 
@@ -411,7 +474,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-16 15:07 -0500             </p>
+ on 2025-03-16 16:54 -0500             </p>
           </div>
         </div>
         <br>
