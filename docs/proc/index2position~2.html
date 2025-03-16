@@ -76,20 +76,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.2% of total for procedures.">8 statements</a>
+                 title=" 0.2% of total for procedures.">7 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/self_organizing_map_utilities.f90"> Source File</a>
+              <a href="../src/two_level_self_organizing_map_utilities.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='..\sourcefile\self_organizing_map_utilities.f90.html'>self_organizing_map_utilities.f90</a></li>
-                <li class="breadcrumb-item"><a href='..\module\self_organizing_map_utilities.html'>self_organizing_map_utilities</a></li>
+                <li class="breadcrumb-item"><a href='..\sourcefile\two_level_self_organizing_map_utilities.f90.html'>two_level_self_organizing_map_utilities.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\two_level_self_organizing_map_utilities.html'>two_level_self_organizing_map_utilities</a></li>
             <li class="breadcrumb-item active" aria-current="page">index2position</li>
           </ol>
         </nav>
@@ -147,8 +147,6 @@
 
     <p>Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index</p>
 
-    <h3>Type Bound</h3>
-    <p><a href='..\type\self_organizing_map.html'>self_organizing_map</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -173,12 +171,12 @@
             <td>::</td>
             <td><strong>index_</strong></td>
             <td>
-                <p>Integer variable representing the index</p>
+                <p>Integer variables, index_,nx,ny,nz</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nx~15"></span>
+              <span class="anchor" id="variable-nx~19"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -188,12 +186,12 @@
             <td>::</td>
             <td><strong>nx</strong></td>
             <td>
-                <p>Integer variables representing the dimensions of the kohonen map</p>
+                <p>Integer variables, index_,nx,ny,nz</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ny~15"></span>
+              <span class="anchor" id="variable-ny~19"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -203,12 +201,12 @@
             <td>::</td>
             <td><strong>ny</strong></td>
             <td>
-                <p>Integer variables representing the dimensions of the kohonen map</p>
+                <p>Integer variables, index_,nx,ny,nz</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nz~12"></span>
+              <span class="anchor" id="variable-nz~14"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -218,12 +216,12 @@
             <td>::</td>
             <td><strong>nz</strong></td>
             <td>
-                <p>Integer variables representing the dimensions of the kohonen map</p>
+                <p>Integer variables, index_,nx,ny,nz</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-cx~5"></span>
+              <span class="anchor" id="variable-cx~6"></span>
               integer,
             </td>
 <td>intent(inout)</td>
@@ -233,12 +231,12 @@
             <td>::</td>
             <td><strong>cx</strong></td>
             <td>
-                <p>Integer variables representing the position of the node</p>
+                <p>Integer variables cx,cy,cz</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-cy~5"></span>
+              <span class="anchor" id="variable-cy~6"></span>
               integer,
             </td>
 <td>intent(inout)</td>
@@ -248,12 +246,12 @@
             <td>::</td>
             <td><strong>cy</strong></td>
             <td>
-                <p>Integer variables representing the position of the node</p>
+                <p>Integer variables cx,cy,cz</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-cz~5"></span>
+              <span class="anchor" id="variable-cz~6"></span>
               integer,
             </td>
 <td>intent(inout)</td>
@@ -263,7 +261,7 @@
             <td>::</td>
             <td><strong>cz</strong></td>
             <td>
-                <p>Integer variables representing the position of the node</p>
+                <p>Integer variables cx,cy,cz</p>
             </td>
         </tr>
     </tbody>
@@ -281,69 +279,65 @@
 <!-- Generated by graphviz version 12.0.0 (0)
  -->
 <!-- Title: proc~~index2position~2~~CalledByGraph Pages: 1 -->
-<svg id="procindex2position2CalledByGraph" width="641pt" height="22pt"
- viewBox="0.00 0.00 641.00 22.35" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~index2position~2~~CalledByGraph" class="graph" transform="scale(0.709204 0.709204) rotate(0) translate(4 27.52)">
+<svg id="procindex2position2CalledByGraph" width="630pt" height="74pt"
+ viewBox="0.00 0.00 629.81 73.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~index2position~2~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 69.52)">
 <title>proc~~index2position~2~~CalledByGraph</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 899.83,-27.52 899.83,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-69.52 625.81,-69.52 625.81,4 -4,4"/>
 <!-- proc~index2position~2 -->
 <g id="proc~~index2position~2~~CalledByGraph_node1" class="node">
 <title>proc~index2position~2</title>
-<polygon fill="none" stroke="black" points="895.83,-23.52 708.06,-23.52 708.06,0 895.83,0 895.83,-23.52"/>
-<text text-anchor="middle" x="801.95" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">self_organizing_map%index2position</text>
+<polygon fill="none" stroke="black" points="621.81,-44.52 542.04,-44.52 542.04,-21 621.81,-21 621.81,-44.52"/>
+<text text-anchor="middle" x="581.93" y="-28.78" font-family="Helvetica,sans-Serif" font-size="10.50">index2position</text>
+</g>
+<!-- proc~train_grid_layer -->
+<g id="proc~~index2position~2~~CalledByGraph_node2" class="node">
+<title>proc~train_grid_layer</title>
+<g id="a_proc~~index2position~2~~CalledByGraph_node2"><a xlink:href="../proc/train_grid_layer.html" xlink:title="two_level_self_organizing_map%train_grid_layer">
+<polygon fill="#d9534f" stroke="#d9534f" points="505.67,-65.52 261.65,-65.52 261.65,-42 505.67,-42 505.67,-65.52"/>
+<text text-anchor="middle" x="383.66" y="-49.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%train_grid_layer</text>
+</a>
+</g>
+</g>
+<!-- proc~train_grid_layer&#45;&gt;proc~index2position~2 -->
+<g id="proc~~index2position~2~~CalledByGraph_edge1" class="edge">
+<title>proc~train_grid_layer&#45;&gt;proc~index2position~2</title>
+<path fill="none" stroke="#ff0000" d="M499.11,-41.51C510.11,-40.34 520.83,-39.19 530.7,-38.13"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="530.78,-41.65 540.35,-37.1 530.03,-34.69 530.78,-41.65"/>
 </g>
 <!-- proc~update_weights~2 -->
-<g id="proc~~index2position~2~~CalledByGraph_node2" class="node">
+<g id="proc~~index2position~2~~CalledByGraph_node3" class="node">
 <title>proc~update_weights~2</title>
-<g id="a_proc~~index2position~2~~CalledByGraph_node2"><a xlink:href="../proc/update_weights~2.html" xlink:title="self_organizing_map%update_weights">
-<polygon fill="#d9534f" stroke="#d9534f" points="672.06,-23.52 477.54,-23.52 477.54,0 672.06,0 672.06,-23.52"/>
-<text text-anchor="middle" x="574.8" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%update_weights</text>
+<g id="a_proc~~index2position~2~~CalledByGraph_node3"><a xlink:href="../proc/update_weights~2.html" xlink:title="two_level_self_organizing_map%update_weights">
+<polygon fill="#d9534f" stroke="#d9534f" points="506.04,-23.52 261.27,-23.52 261.27,0 506.04,0 506.04,-23.52"/>
+<text text-anchor="middle" x="383.66" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%update_weights</text>
 </a>
 </g>
 </g>
 <!-- proc~update_weights~2&#45;&gt;proc~index2position~2 -->
-<g id="proc~~index2position~2~~CalledByGraph_edge1" class="edge">
-<title>proc~update_weights~2&#45;&gt;proc~index2position~2</title>
-<path fill="none" stroke="#ff0000" d="M672.26,-11.76C680.29,-11.76 688.44,-11.76 696.52,-11.76"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="696.39,-15.26 706.39,-11.76 696.39,-8.26 696.39,-15.26"/>
-</g>
-<!-- proc~train_som_data -->
-<g id="proc~~index2position~2~~CalledByGraph_node3" class="node">
-<title>proc~train_som_data</title>
-<g id="a_proc~~index2position~2~~CalledByGraph_node3"><a xlink:href="../proc/train_som_data.html" xlink:title="self_organizing_map%train_som_data">
-<polygon fill="#d9534f" stroke="#d9534f" points="441.54,-23.52 247.77,-23.52 247.77,0 441.54,0 441.54,-23.52"/>
-<text text-anchor="middle" x="344.65" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%train_som_data</text>
-</a>
-</g>
-</g>
-<!-- proc~train_som_data&#45;&gt;proc~update_weights~2 -->
 <g id="proc~~index2position~2~~CalledByGraph_edge2" class="edge">
-<title>proc~train_som_data&#45;&gt;proc~update_weights~2</title>
-<path fill="none" stroke="#ff0000" d="M441.75,-11.76C449.69,-11.76 457.76,-11.76 465.78,-11.76"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="465.57,-15.26 475.57,-11.76 465.57,-8.26 465.57,-15.26"/>
+<title>proc~update_weights~2&#45;&gt;proc~index2position~2</title>
+<path fill="none" stroke="#ff0000" d="M499.11,-24.01C510.11,-25.18 520.83,-26.33 530.7,-27.39"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="530.03,-30.83 540.35,-28.42 530.78,-23.87 530.03,-30.83"/>
 </g>
-<!-- proc~external_train_map~2 -->
+<!-- proc~train_2lsom -->
 <g id="proc~~index2position~2~~CalledByGraph_node4" class="node">
-<title>proc~external_train_map~2</title>
-<g id="a_proc~~index2position~2~~CalledByGraph_node4"><a xlink:href="../proc/external_train_map~2.html" xlink:title="self_organizing_map%external_train_map">
-<polygon fill="#d9534f" stroke="#d9534f" points="211.77,-23.52 0,-23.52 0,0 211.77,0 211.77,-23.52"/>
-<text text-anchor="middle" x="105.88" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%external_train_map</text>
+<title>proc~train_2lsom</title>
+<g id="a_proc~~index2position~2~~CalledByGraph_node4"><a xlink:href="../proc/train_2lsom.html" xlink:title="two_level_self_organizing_map%train_2lsom">
+<polygon fill="#d9534f" stroke="#d9534f" points="225.27,-65.52 0,-65.52 0,-42 225.27,-42 225.27,-65.52"/>
+<text text-anchor="middle" x="112.63" y="-49.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">two_level_self_organizing_map%train_2lsom</text>
 </a>
 </g>
 </g>
-<!-- proc~external_train_map~2&#45;&gt;proc~train_som_data -->
+<!-- proc~train_2lsom&#45;&gt;proc~train_grid_layer -->
 <g id="proc~~index2position~2~~CalledByGraph_edge3" class="edge">
-<title>proc~external_train_map~2&#45;&gt;proc~train_som_data</title>
-<path fill="none" stroke="#ff0000" d="M212.11,-11.76C220,-11.76 227.96,-11.76 235.86,-11.76"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="235.86,-15.26 245.86,-11.76 235.86,-8.26 235.86,-15.26"/>
+<title>proc~train_2lsom&#45;&gt;proc~train_grid_layer</title>
+<path fill="none" stroke="#ff0000" d="M225.39,-53.76C233.43,-53.76 241.59,-53.76 249.74,-53.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="249.73,-57.26 259.73,-53.76 249.73,-50.26 249.73,-57.26"/>
 </g>
 </g>
 </svg>
-</div>                <script>
-                  var panprocindex2position2CalledByGraph = svgPanZoom('#procindex2position2CalledByGraph',
-                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
-                  );
-                </script>          <div>
+</div>          <div>
             <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
           </div>
           <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
@@ -438,21 +432,19 @@ large graphs.</div>
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">index2position</span><span class="p">(</span><span class="n">index_</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">cx</span><span class="p">,</span><span class="n">cy</span><span class="p">,</span><span class="n">cz</span><span class="p">)</span><span class="w"></span>
-<span class="c">!========================================================================================</span>
-<span class="c">!! Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index</span>
-<span class="w">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">index_</span><span class="w"></span>
-<span class="c">!! Integer variable representing the index</span>
-<span class="w">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nz</span><span class="w"></span>
-<span class="c">!! Integer variables representing the dimensions of the kohonen map</span>
-<span class="w">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cx</span><span class="p">,</span><span class="n">cy</span><span class="p">,</span><span class="n">cz</span><span class="w"></span>
-<span class="c">!! Integer variables representing the position of the node</span>
-<span class="c">!  write(*,*) index_,nx,ny,1+int((index_-1)/(nx*ny))</span>
-<span class="w">        </span><span class="n">cz</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">int</span><span class="p">((</span><span class="n">index_</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="p">)),</span><span class="n">nz</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">cy</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">int</span><span class="p">((</span><span class="n">index_</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">cz</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="p">)</span><span class="o">/</span><span class="n">nx</span><span class="p">),</span><span class="n">ny</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">cx</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">index_</span><span class="o">-</span><span class="p">(</span><span class="n">cz</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="o">-</span><span class="p">(</span><span class="n">cy</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">nx</span><span class="p">,</span><span class="n">nx</span><span class="p">);</span><span class="w"></span>
-<span class="c">!</span>
-<span class="w">    </span><span class="k">end subroutine </span><span class="n">index2position</span><span class="w"></span>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">index2position</span><span class="p">(</span><span class="n">index_</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">cx</span><span class="p">,</span><span class="n">cy</span><span class="p">,</span><span class="n">cz</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="c">!========================================================================================</span>
+<span class="c">!!  Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">index_</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nz</span><span class="w"></span>
+<span class="c">!! Integer variables, index_,nx,ny,nz</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cx</span><span class="p">,</span><span class="n">cy</span><span class="p">,</span><span class="n">cz</span><span class="w"></span>
+<span class="c">!! Integer variables cx,cy,cz</span>
+<span class="w">   </span><span class="c">!  write(*,*) index_,nx,ny,1+int((index_-1)/(nx*ny))</span>
+<span class="w">   </span><span class="n">cz</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">int</span><span class="p">((</span><span class="n">index_</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="p">)),</span><span class="n">nz</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="n">cy</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">int</span><span class="p">((</span><span class="n">index_</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">cz</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="p">)</span><span class="o">/</span><span class="n">nx</span><span class="p">),</span><span class="n">ny</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="n">cx</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">index_</span><span class="o">-</span><span class="p">(</span><span class="n">cz</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="o">-</span><span class="p">(</span><span class="n">cy</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">nx</span><span class="p">,</span><span class="n">nx</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="c">!</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">index2position</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -476,7 +468,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-14 08:23 -0500             </p>
+ on 2025-03-15 20:04 -0500             </p>
           </div>
         </div>
         <br>

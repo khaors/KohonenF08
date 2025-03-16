@@ -1,0 +1,924 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>train_som &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>train_som
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for procedures.">8 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/som_train_variables.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\som_train_variables.f90.html'>som_train_variables.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\som_train_variables.html'>som_train_variables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">train_som</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/train_som.html#src">train_som</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine train_som(parameter_file)  
+</h2>
+    
+
+    <p>Subroutine to train the SOM </p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parameter_file"></span>
+              character(len=*),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parameter_file</strong></td>
+            <td>
+                <p>A character variable with the name of the parameter file</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: proc~~train_som~~CallsGraph Pages: 1 -->
+<svg id="proctrain_somCallsGraph" width="641pt" height="473pt"
+ viewBox="0.00 0.00 641.00 472.79" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~train_som~~CallsGraph" class="graph" transform="scale(0.576906 0.576906) rotate(0) translate(4 815.52)">
+<title>proc~~train_som~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-815.52 1107.1,-815.52 1107.1,4 -4,4"/>
+<!-- proc~train_som -->
+<g id="proc~~train_som~~CallsGraph_node1" class="node">
+<title>proc~train_som</title>
+<polygon fill="none" stroke="black" points="58.77,-251.52 0,-251.52 0,-228 58.77,-228 58.77,-251.52"/>
+<text text-anchor="middle" x="29.38" y="-235.78" font-family="Helvetica,sans-Serif" font-size="10.50">train_som</text>
+</g>
+<!-- error_stop -->
+<g id="proc~~train_som~~CallsGraph_node2" class="node">
+<title>error_stop</title>
+<polygon fill="#777777" stroke="#777777" points="540.06,-811.52 479.04,-811.52 479.04,-788 540.06,-788 540.06,-811.52"/>
+<text text-anchor="middle" x="509.55" y="-795.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">error_stop</text>
+</g>
+<!-- proc~train_som&#45;&gt;error_stop -->
+<g id="proc~~train_som~~CallsGraph_edge1" class="edge">
+<title>proc~train_som&#45;&gt;error_stop</title>
+<path fill="none" stroke="#ff0000" d="M30.6,-251.75C31.95,-314.58 41.05,-605.53 94.77,-673.76 186.28,-789.98 381.95,-801.95 467.31,-801.29"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="467.14,-804.79 477.08,-801.14 467.03,-797.79 467.14,-804.79"/>
+</g>
+<!-- none~configure -->
+<g id="proc~~train_som~~CallsGraph_node3" class="node">
+<title>none~configure</title>
+<g id="a_proc~~train_som~~CallsGraph_node3"><a xlink:href="../type/logger.html#boundprocedure-configure" xlink:title="logger%configure">
+<polygon fill="#a7506f" stroke="#a7506f" points="254.04,-355.52 159.27,-355.52 159.27,-332 254.04,-332 254.04,-355.52"/>
+<text text-anchor="middle" x="206.65" y="-339.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%configure</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;none~configure -->
+<g id="proc~~train_som~~CallsGraph_edge2" class="edge">
+<title>proc~train_som&#45;&gt;none~configure</title>
+<path fill="none" stroke="#ff0000" d="M36.16,-251.91C45.63,-270.41 66.3,-305.34 94.77,-322.76 110.54,-332.41 129.76,-337.8 147.73,-340.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="147.13,-344.21 157.51,-342.13 148.1,-337.28 147.13,-344.21"/>
+</g>
+<!-- none~create~6 -->
+<g id="proc~~train_som~~CallsGraph_node4" class="node">
+<title>none~create~6</title>
+<g id="a_proc~~train_som~~CallsGraph_node4"><a xlink:href="../type/logger.html#boundprocedure-create~6" xlink:title="logger%create">
+<polygon fill="#a7506f" stroke="#a7506f" points="246.91,-271.52 166.39,-271.52 166.39,-248 246.91,-248 246.91,-271.52"/>
+<text text-anchor="middle" x="206.65" y="-255.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%create</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;none~create~6 -->
+<g id="proc~~train_som~~CallsGraph_edge3" class="edge">
+<title>proc~train_som&#45;&gt;none~create~6</title>
+<path fill="none" stroke="#ff0000" d="M58.94,-243.02C84.85,-245.98 123.68,-250.41 154.88,-253.97"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="154.15,-257.41 164.49,-255.06 154.95,-250.45 154.15,-257.41"/>
+</g>
+<!-- none~delimiter -->
+<g id="proc~~train_som~~CallsGraph_node5" class="node">
+<title>none~delimiter</title>
+<g id="a_proc~~train_som~~CallsGraph_node5"><a xlink:href="../type/logger.html#boundprocedure-delimiter" xlink:title="logger%delimiter">
+<polygon fill="#a7506f" stroke="#a7506f" points="252.16,-191.52 161.14,-191.52 161.14,-168 252.16,-168 252.16,-191.52"/>
+<text text-anchor="middle" x="206.65" y="-175.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%delimiter</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;none~delimiter -->
+<g id="proc~~train_som~~CallsGraph_edge4" class="edge">
+<title>proc~train_som&#45;&gt;none~delimiter</title>
+<path fill="none" stroke="#ff0000" d="M50.35,-227.51C62.76,-220.33 79.26,-211.56 94.77,-205.76 112.25,-199.22 131.91,-193.97 149.77,-189.94"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="150.39,-193.39 159.43,-187.86 148.92,-186.55 150.39,-193.39"/>
+</g>
+<!-- none~is_initialized -->
+<g id="proc~~train_som~~CallsGraph_node6" class="node">
+<title>none~is_initialized</title>
+<g id="a_proc~~train_som~~CallsGraph_node6"><a xlink:href="../type/logger.html#boundprocedure-is_initialized" xlink:title="logger%is_initialized">
+<polygon fill="#a7506f" stroke="#a7506f" points="260.41,-149.52 152.89,-149.52 152.89,-126 260.41,-126 260.41,-149.52"/>
+<text text-anchor="middle" x="206.65" y="-133.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%is_initialized</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;none~is_initialized -->
+<g id="proc~~train_som~~CallsGraph_edge5" class="edge">
+<title>proc~train_som&#45;&gt;none~is_initialized</title>
+<path fill="none" stroke="#ff0000" d="M36.4,-227.6C46.05,-209.47 66.78,-175.66 94.77,-158.76 108.74,-150.33 125.35,-145.16 141.42,-142.02"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="141.64,-145.53 150.92,-140.41 140.47,-138.63 141.64,-145.53"/>
+</g>
+<!-- none~message~3 -->
+<g id="proc~~train_som~~CallsGraph_node7" class="node">
+<title>none~message~3</title>
+<g id="a_proc~~train_som~~CallsGraph_node7"><a xlink:href="../type/logger.html#boundprocedure-message~3" xlink:title="logger%message">
+<polygon fill="#a7506f" stroke="#a7506f" points="556.56,-231.52 462.54,-231.52 462.54,-208 556.56,-208 556.56,-231.52"/>
+<text text-anchor="middle" x="509.55" y="-215.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%message</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;none~message~3 -->
+<g id="proc~~train_som~~CallsGraph_edge6" class="edge">
+<title>proc~train_som&#45;&gt;none~message~3</title>
+<path fill="none" stroke="#ff0000" d="M59.22,-238.55C136.21,-235.33 347.74,-226.49 450.71,-222.18"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="450.76,-225.68 460.61,-221.77 450.47,-218.69 450.76,-225.68"/>
+</g>
+<!-- none~shutdown -->
+<g id="proc~~train_som~~CallsGraph_node8" class="node">
+<title>none~shutdown</title>
+<g id="a_proc~~train_som~~CallsGraph_node8"><a xlink:href="../type/logger.html#boundprocedure-shutdown" xlink:title="logger%shutdown">
+<polygon fill="#a7506f" stroke="#a7506f" points="254.79,-107.52 158.52,-107.52 158.52,-84 254.79,-84 254.79,-107.52"/>
+<text text-anchor="middle" x="206.65" y="-91.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%shutdown</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;none~shutdown -->
+<g id="proc~~train_som~~CallsGraph_edge7" class="edge">
+<title>proc~train_som&#45;&gt;none~shutdown</title>
+<path fill="none" stroke="#ff0000" d="M32.99,-227.68C39.06,-202.63 56.62,-145.04 94.77,-116.76 109.69,-105.7 128.76,-99.95 146.87,-97.1"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="147.29,-100.57 156.77,-95.83 146.41,-93.63 147.29,-100.57"/>
+</g>
+<!-- none~startup -->
+<g id="proc~~train_som~~CallsGraph_node9" class="node">
+<title>none~startup</title>
+<g id="a_proc~~train_som~~CallsGraph_node9"><a xlink:href="../type/logger.html#boundprocedure-startup" xlink:title="logger%startup">
+<polygon fill="#a7506f" stroke="#a7506f" points="248.41,-313.52 164.89,-313.52 164.89,-290 248.41,-290 248.41,-313.52"/>
+<text text-anchor="middle" x="206.65" y="-297.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%startup</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;none~startup -->
+<g id="proc~~train_som~~CallsGraph_edge8" class="edge">
+<title>proc~train_som&#45;&gt;none~startup</title>
+<path fill="none" stroke="#ff0000" d="M45.87,-252.02C58.37,-261.3 76.78,-273.64 94.77,-280.76 113.26,-288.08 134.52,-292.9 153.45,-296.05"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="152.67,-299.47 163.09,-297.53 153.73,-292.55 152.67,-299.47"/>
+</g>
+<!-- proc~create_som -->
+<g id="proc~~train_som~~CallsGraph_node10" class="node">
+<title>proc~create_som</title>
+<g id="a_proc~~train_som~~CallsGraph_node10"><a xlink:href="../proc/create_som.html" xlink:title="self_organizing_map%create_som">
+<polygon fill="#d9534f" stroke="#d9534f" points="294.54,-664.52 118.77,-664.52 118.77,-641 294.54,-641 294.54,-664.52"/>
+<text text-anchor="middle" x="206.65" y="-648.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%create_som</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;proc~create_som -->
+<g id="proc~~train_som~~CallsGraph_edge9" class="edge">
+<title>proc~train_som&#45;&gt;proc~create_som</title>
+<path fill="none" stroke="#ff0000" d="M34.84,-252.01C44.99,-279.74 70.81,-349.42 94.77,-406.76 129.58,-490.09 174.84,-587.41 195.07,-630.4"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="191.8,-631.66 199.23,-639.21 198.13,-628.67 191.8,-631.66"/>
+</g>
+<!-- proc~destroy_som -->
+<g id="proc~~train_som~~CallsGraph_node11" class="node">
+<title>proc~destroy_som</title>
+<g id="a_proc~~train_som~~CallsGraph_node11"><a xlink:href="../proc/destroy_som.html" xlink:title="self_organizing_map%destroy_som">
+<polygon fill="#d9534f" stroke="#d9534f" points="297.16,-65.52 116.14,-65.52 116.14,-42 297.16,-42 297.16,-65.52"/>
+<text text-anchor="middle" x="206.65" y="-49.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%destroy_som</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;proc~destroy_som -->
+<g id="proc~~train_som~~CallsGraph_edge10" class="edge">
+<title>proc~train_som&#45;&gt;proc~destroy_som</title>
+<path fill="none" stroke="#ff0000" d="M31.26,-227.52C34.16,-196.61 46.27,-115.03 94.77,-74.76 98.09,-72 101.67,-69.56 105.42,-67.41"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="106.95,-70.56 114.38,-63.01 103.86,-64.27 106.95,-70.56"/>
+</g>
+<!-- proc~kohonen_pattern_destroy -->
+<g id="proc~~train_som~~CallsGraph_node12" class="node">
+<title>proc~kohonen_pattern_destroy</title>
+<g id="a_proc~~train_som~~CallsGraph_node12"><a xlink:href="../proc/kohonen_pattern_destroy.html" xlink:title="kohonen_pattern%kohonen_pattern_destroy">
+<polygon fill="#d9534f" stroke="#d9534f" points="318.54,-23.52 94.77,-23.52 94.77,0 318.54,0 318.54,-23.52"/>
+<text text-anchor="middle" x="206.65" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern%kohonen_pattern_destroy</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;proc~kohonen_pattern_destroy -->
+<g id="proc~~train_som~~CallsGraph_edge11" class="edge">
+<title>proc~train_som&#45;&gt;proc~kohonen_pattern_destroy</title>
+<path fill="none" stroke="#ff0000" d="M30.16,-227.72C30.19,-191.96 35.5,-85.61 94.77,-32.76 95.72,-31.91 96.69,-31.09 97.69,-30.3"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="99.56,-33.26 105.92,-24.79 95.66,-27.45 99.56,-33.26"/>
+</g>
+<!-- proc~train_som_data -->
+<g id="proc~~train_som~~CallsGraph_node13" class="node">
+<title>proc~train_som_data</title>
+<g id="a_proc~~train_som~~CallsGraph_node13"><a xlink:href="../proc/train_som_data.html" xlink:title="self_organizing_map%train_som_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="303.54,-397.52 109.77,-397.52 109.77,-374 303.54,-374 303.54,-397.52"/>
+<text text-anchor="middle" x="206.65" y="-381.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%train_som_data</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som&#45;&gt;proc~train_som_data -->
+<g id="proc~~train_som~~CallsGraph_edge12" class="edge">
+<title>proc~train_som&#45;&gt;proc~train_som_data</title>
+<path fill="none" stroke="#ff0000" d="M32.84,-251.65C38.7,-276.88 56.04,-335.85 94.77,-364.76 96.34,-365.93 97.95,-367.04 99.6,-368.09"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="97.68,-371.03 108.13,-372.79 101.06,-364.9 97.68,-371.03"/>
+</g>
+<!-- none~error -->
+<g id="proc~~train_som~~CallsGraph_node16" class="node">
+<title>none~error</title>
+<g id="a_proc~~train_som~~CallsGraph_node16"><a xlink:href="../type/logger.html#boundprocedure-error" xlink:title="logger%error">
+<polygon fill="#a7506f" stroke="#a7506f" points="546.43,-273.52 472.66,-273.52 472.66,-250 546.43,-250 546.43,-273.52"/>
+<text text-anchor="middle" x="509.55" y="-257.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%error</text>
+</a>
+</g>
+</g>
+<!-- none~configure&#45;&gt;none~error -->
+<g id="proc~~train_som~~CallsGraph_edge13" class="edge">
+<title>none~configure&#45;&gt;none~error</title>
+<path fill="none" stroke="#ff7f00" stroke-dasharray="5,2" d="M254.46,-341.62C275.17,-339.03 299.16,-333.67 318.54,-322.76 339.38,-311.03 333.4,-293.95 354.54,-282.76 387.25,-265.45 429.12,-260.66 460.94,-259.94"/>
+<polygon fill="#ff7f00" stroke="#ff7f00" points="460.69,-263.44 470.66,-259.86 460.64,-256.44 460.69,-263.44"/>
+</g>
+<!-- none~delimiter&#45;&gt;none~message~3 -->
+<g id="proc~~train_som~~CallsGraph_edge15" class="edge">
+<title>none~delimiter&#45;&gt;none~message~3</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M252.38,-185.71C305.17,-192.72 393.1,-204.41 450.95,-212.1"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="450.22,-215.54 460.6,-213.39 451.15,-208.6 450.22,-215.54"/>
+</g>
+<!-- none~get_delimiter -->
+<g id="proc~~train_som~~CallsGraph_node17" class="node">
+<title>none~get_delimiter</title>
+<g id="a_proc~~train_som~~CallsGraph_node17"><a xlink:href="../type/logger.html#boundprocedure-get_delimiter" xlink:title="logger%get_delimiter">
+<polygon fill="#a7506f" stroke="#a7506f" points="565.56,-189.52 453.54,-189.52 453.54,-166 565.56,-166 565.56,-189.52"/>
+<text text-anchor="middle" x="509.55" y="-173.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logger%get_delimiter</text>
+</a>
+</g>
+</g>
+<!-- none~delimiter&#45;&gt;none~get_delimiter -->
+<g id="proc~~train_som~~CallsGraph_edge14" class="edge">
+<title>none~delimiter&#45;&gt;none~get_delimiter</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M252.38,-179.46C302.49,-179.13 384.24,-178.59 441.89,-178.2"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="441.6,-181.71 451.57,-178.14 441.55,-174.71 441.6,-181.71"/>
+</g>
+<!-- none~startup&#45;&gt;none~error -->
+<g id="proc~~train_som~~CallsGraph_edge16" class="edge">
+<title>none~startup&#45;&gt;none~error</title>
+<path fill="none" stroke="#007fff" stroke-dasharray="5,2" d="M248.86,-296.28C304.39,-288.9 403,-275.79 461.41,-268.03"/>
+<polygon fill="#007fff" stroke="#007fff" points="461.58,-271.53 471.03,-266.75 460.66,-264.6 461.58,-271.53"/>
+</g>
+<!-- proc~create_som&#45;&gt;error_stop -->
+<g id="proc~~train_som~~CallsGraph_edge17" class="edge">
+<title>proc~create_som&#45;&gt;error_stop</title>
+<path fill="none" stroke="#0000ff" d="M223.5,-664.79C245.41,-681.6 285.94,-713.38 318.54,-742.76 335.35,-757.91 334.27,-768.71 354.54,-778.76 389.96,-796.33 435.28,-800.67 467.57,-801.16"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="467.31,-804.66 477.32,-801.19 467.33,-797.66 467.31,-804.66"/>
+</g>
+<!-- none~create~3 -->
+<g id="proc~~train_som~~CallsGraph_node14" class="node">
+<title>none~create~3</title>
+<g id="a_proc~~train_som~~CallsGraph_node14"><a xlink:href="../type/rkiss05_generator.html#boundprocedure-create~3" xlink:title="rkiss05_generator%create">
+<polygon fill="#a7506f" stroke="#a7506f" points="577.93,-685.52 441.16,-685.52 441.16,-662 577.93,-662 577.93,-685.52"/>
+<text text-anchor="middle" x="509.55" y="-669.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator%create</text>
+</a>
+</g>
+</g>
+<!-- proc~create_som&#45;&gt;none~create~3 -->
+<g id="proc~~train_som~~CallsGraph_edge18" class="edge">
+<title>proc~create_som&#45;&gt;none~create~3</title>
+<path fill="none" stroke="#0000ff" d="M294.69,-658.83C337.2,-661.8 387.99,-665.35 429.41,-668.24"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="429.09,-671.72 439.31,-668.93 429.58,-664.74 429.09,-671.72"/>
+</g>
+<!-- proc~calculate_coordinates -->
+<g id="proc~~train_som~~CallsGraph_node19" class="node">
+<title>proc~calculate_coordinates</title>
+<g id="a_proc~~train_som~~CallsGraph_node19"><a xlink:href="../proc/calculate_coordinates.html" xlink:title="self_organizing_map%calculate_coordinates">
+<polygon fill="#d9534f" stroke="#d9534f" points="621.06,-643.52 398.04,-643.52 398.04,-620 621.06,-620 621.06,-643.52"/>
+<text text-anchor="middle" x="509.55" y="-627.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%calculate_coordinates</text>
+</a>
+</g>
+</g>
+<!-- proc~create_som&#45;&gt;proc~calculate_coordinates -->
+<g id="proc~~train_som~~CallsGraph_edge19" class="edge">
+<title>proc~create_som&#45;&gt;proc~calculate_coordinates</title>
+<path fill="none" stroke="#0000ff" d="M294.69,-646.69C323.28,-644.69 355.62,-642.43 386.34,-640.29"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="386.32,-643.8 396.06,-639.61 385.84,-636.82 386.32,-643.8"/>
+</g>
+<!-- proc~calculate_distance_matrix -->
+<g id="proc~~train_som~~CallsGraph_node21" class="node">
+<title>proc~calculate_distance_matrix</title>
+<g id="a_proc~~train_som~~CallsGraph_node21"><a xlink:href="../proc/calculate_distance_matrix.html" xlink:title="self_organizing_map%calculate_distance_matrix">
+<polygon fill="#d9534f" stroke="#d9534f" points="630.81,-601.52 388.29,-601.52 388.29,-578 630.81,-578 630.81,-601.52"/>
+<text text-anchor="middle" x="509.55" y="-585.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%calculate_distance_matrix</text>
+</a>
+</g>
+</g>
+<!-- proc~create_som&#45;&gt;proc~calculate_distance_matrix -->
+<g id="proc~~train_som~~CallsGraph_edge20" class="edge">
+<title>proc~create_som&#45;&gt;proc~calculate_distance_matrix</title>
+<path fill="none" stroke="#0000ff" d="M244.72,-640.57C274.2,-631.26 316.64,-618.72 354.54,-610.76 366.8,-608.19 379.67,-605.86 392.53,-603.76"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="392.99,-607.24 402.32,-602.22 391.9,-600.32 392.99,-607.24"/>
+</g>
+<!-- proc~create_distance -->
+<g id="proc~~train_som~~CallsGraph_node23" class="node">
+<title>proc~create_distance</title>
+<g id="a_proc~~train_som~~CallsGraph_node23"><a xlink:href="../proc/create_distance.html" xlink:title="factory_distance%create_distance">
+<polygon fill="#d9534f" stroke="#d9534f" points="596.68,-769.52 422.41,-769.52 422.41,-746 596.68,-746 596.68,-769.52"/>
+<text text-anchor="middle" x="509.55" y="-753.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance%create_distance</text>
+</a>
+</g>
+</g>
+<!-- proc~create_som&#45;&gt;proc~create_distance -->
+<g id="proc~~train_som~~CallsGraph_edge21" class="edge">
+<title>proc~create_som&#45;&gt;proc~create_distance</title>
+<path fill="none" stroke="#0000ff" d="M223.83,-664.83C249.87,-683.59 303.36,-719.37 354.54,-736.76 372.29,-742.79 391.75,-747.09 410.68,-750.17"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="410.16,-753.63 420.57,-751.65 411.2,-746.7 410.16,-753.63"/>
+</g>
+<!-- proc~create_random_sample -->
+<g id="proc~~train_som~~CallsGraph_node24" class="node">
+<title>proc~create_random_sample</title>
+<g id="a_proc~~train_som~~CallsGraph_node24"><a xlink:href="../proc/create_random_sample.html" xlink:title="self_organizing_map%create_random_sample">
+<polygon fill="#d9534f" stroke="#d9534f" points="625.93,-727.52 393.16,-727.52 393.16,-704 625.93,-704 625.93,-727.52"/>
+<text text-anchor="middle" x="509.55" y="-711.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%create_random_sample</text>
+</a>
+</g>
+</g>
+<!-- proc~create_som&#45;&gt;proc~create_random_sample -->
+<g id="proc~~train_som~~CallsGraph_edge22" class="edge">
+<title>proc~create_som&#45;&gt;proc~create_random_sample</title>
+<path fill="none" stroke="#0000ff" d="M244.72,-664.95C274.2,-674.26 316.64,-686.8 354.54,-694.76 366.8,-697.33 379.67,-699.66 392.53,-701.76"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="391.9,-705.2 402.32,-703.3 392.99,-698.28 391.9,-705.2"/>
+</g>
+<!-- proc~position2index -->
+<g id="proc~~train_som~~CallsGraph_node27" class="node">
+<title>proc~position2index</title>
+<g id="a_proc~~train_som~~CallsGraph_node27"><a xlink:href="../proc/position2index.html" xlink:title="self_organizing_map%position2index">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="888.33,-477.52 700.56,-477.52 700.56,-454 888.33,-454 888.33,-477.52"/>
+<text text-anchor="middle" x="794.44" y="-461.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%position2index</text>
+</a>
+</g>
+</g>
+<!-- proc~create_som&#45;&gt;proc~position2index -->
+<g id="proc~~train_som~~CallsGraph_edge23" class="edge">
+<title>proc~create_som&#45;&gt;proc~position2index</title>
+<path fill="none" stroke="#0000ff" d="M217.16,-640.82C238.54,-614.91 293.37,-553.75 354.54,-526.76 481.55,-470.73 527.29,-509.41 664.56,-488.76 681.8,-486.17 700.28,-483.06 717.71,-479.99"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="718.26,-483.44 727.49,-478.24 717.03,-476.55 718.26,-483.44"/>
+</g>
+<!-- none~destroy~8 -->
+<g id="proc~~train_som~~CallsGraph_node15" class="node">
+<title>none~destroy~8</title>
+<g id="a_proc~~train_som~~CallsGraph_node15"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-destroy~8" xlink:title="kohonen_prototype%destroy">
+<polygon fill="#a7506f" stroke="#a7506f" points="583.56,-44.52 435.54,-44.52 435.54,-21 583.56,-21 583.56,-44.52"/>
+<text text-anchor="middle" x="509.55" y="-28.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%destroy</text>
+</a>
+</g>
+</g>
+<!-- proc~destroy_som&#45;&gt;none~destroy~8 -->
+<g id="proc~~train_som~~CallsGraph_edge24" class="edge">
+<title>proc~destroy_som&#45;&gt;none~destroy~8</title>
+<path fill="none" stroke="#7f00ff" d="M297.53,-47.49C337.56,-44.69 384.46,-41.42 423.87,-38.67"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="424.07,-42.16 433.8,-37.98 423.58,-35.18 424.07,-42.16"/>
+</g>
+<!-- proc~kohonen_pattern_destroy&#45;&gt;none~destroy~8 -->
+<g id="proc~~train_som~~CallsGraph_edge25" class="edge">
+<title>proc~kohonen_pattern_destroy&#45;&gt;none~destroy~8</title>
+<path fill="none" stroke="#ff00ff" d="M318.84,-19.52C353.59,-21.94 391.33,-24.58 423.94,-26.85"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="423.51,-30.33 433.73,-27.54 424,-23.35 423.51,-30.33"/>
+</g>
+<!-- none~get_prototype -->
+<g id="proc~~train_som~~CallsGraph_node18" class="node">
+<title>none~get_prototype</title>
+<g id="a_proc~~train_som~~CallsGraph_node18"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-get_prototype" xlink:title="kohonen_prototype%get_prototype">
+<polygon fill="#a7506f" stroke="#a7506f" points="1103.1,-397.52 924.33,-397.52 924.33,-374 1103.1,-374 1103.1,-397.52"/>
+<text text-anchor="middle" x="1013.71" y="-381.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%get_prototype</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;none~get_prototype -->
+<g id="proc~~train_som~~CallsGraph_edge26" class="edge">
+<title>proc~train_som_data&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#ff007f" d="M303.96,-385.76C457.57,-385.76 756.56,-385.76 912.56,-385.76"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="912.48,-389.26 922.48,-385.76 912.48,-382.26 912.48,-389.26"/>
+</g>
+<!-- proc~calculate_distance_between_prototypes -->
+<g id="proc~~train_som~~CallsGraph_node20" class="node">
+<title>proc~calculate_distance_between_prototypes</title>
+<g id="a_proc~~train_som~~CallsGraph_node20"><a xlink:href="../proc/calculate_distance_between_prototypes.html" xlink:title="self_organizing_map%calculate_distance_between_prototypes">
+<polygon fill="#d9534f" stroke="#d9534f" points="664.56,-479.52 354.54,-479.52 354.54,-456 664.56,-456 664.56,-479.52"/>
+<text text-anchor="middle" x="509.55" y="-463.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%calculate_distance_between_prototypes</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~calculate_distance_between_prototypes -->
+<g id="proc~~train_som~~CallsGraph_edge27" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~calculate_distance_between_prototypes</title>
+<path fill="none" stroke="#ff007f" d="M231.67,-398C260.21,-412.02 309.63,-434.59 354.54,-446.76 363.81,-449.27 373.49,-451.49 383.27,-453.45"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="382.38,-456.85 392.85,-455.27 383.68,-449.97 382.38,-456.85"/>
+</g>
+<!-- proc~calculate_u_matrix -->
+<g id="proc~~train_som~~CallsGraph_node22" class="node">
+<title>proc~calculate_u_matrix</title>
+<g id="a_proc~~train_som~~CallsGraph_node22"><a xlink:href="../proc/calculate_u_matrix.html" xlink:title="self_organizing_map%calculate_u_matrix">
+<polygon fill="#d9534f" stroke="#d9534f" points="613.93,-315.52 405.16,-315.52 405.16,-292 613.93,-292 613.93,-315.52"/>
+<text text-anchor="middle" x="509.55" y="-299.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%calculate_u_matrix</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~calculate_u_matrix -->
+<g id="proc~~train_som~~CallsGraph_edge28" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~calculate_u_matrix</title>
+<path fill="none" stroke="#ff007f" d="M298.96,-373.55C305.78,-371.12 312.39,-368.22 318.54,-364.76 339.38,-353.03 333.4,-335.95 354.54,-324.76 366.68,-318.34 380.08,-313.64 393.76,-310.23"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="394.3,-313.69 403.29,-308.1 392.77,-306.86 394.3,-313.69"/>
+</g>
+<!-- proc~find_best_match_unit -->
+<g id="proc~~train_som~~CallsGraph_node25" class="node">
+<title>proc~find_best_match_unit</title>
+<g id="a_proc~~train_som~~CallsGraph_node25"><a xlink:href="../proc/find_best_match_unit.html" xlink:title="self_organizing_map%find_best_match_unit">
+<polygon fill="#d9534f" stroke="#d9534f" points="620.31,-357.52 398.79,-357.52 398.79,-334 620.31,-334 620.31,-357.52"/>
+<text text-anchor="middle" x="509.55" y="-341.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%find_best_match_unit</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~find_best_match_unit -->
+<g id="proc~~train_som~~CallsGraph_edge29" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~find_best_match_unit</title>
+<path fill="none" stroke="#ff007f" d="M299.57,-373.54C333.02,-369.09 371.04,-364.04 405.41,-359.47"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="405.47,-362.99 414.92,-358.21 404.55,-356.06 405.47,-362.99"/>
+</g>
+<!-- proc~kohonen_pattern_accessor -->
+<g id="proc~~train_som~~CallsGraph_node26" class="node">
+<title>proc~kohonen_pattern_accessor</title>
+<g id="a_proc~~train_som~~CallsGraph_node26"><a xlink:href="../proc/kohonen_pattern_accessor.html" xlink:title="kohonen_pattern%kohonen_pattern_accessor">
+<polygon fill="#d9534f" stroke="#d9534f" points="625.18,-437.52 393.91,-437.52 393.91,-414 625.18,-414 625.18,-437.52"/>
+<text text-anchor="middle" x="509.55" y="-421.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern%kohonen_pattern_accessor</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~kohonen_pattern_accessor -->
+<g id="proc~~train_som~~CallsGraph_edge30" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~kohonen_pattern_accessor</title>
+<path fill="none" stroke="#ff007f" d="M299.57,-397.98C333.02,-402.43 371.04,-407.48 405.41,-412.05"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="404.55,-415.46 414.92,-413.31 405.47,-408.53 404.55,-415.46"/>
+</g>
+<!-- proc~update_weights -->
+<g id="proc~~train_som~~CallsGraph_node28" class="node">
+<title>proc~update_weights</title>
+<g id="a_proc~~train_som~~CallsGraph_node28"><a xlink:href="../proc/update_weights.html" xlink:title="self_organizing_map%update_weights">
+<polygon fill="#d9534f" stroke="#d9534f" points="606.81,-559.52 412.29,-559.52 412.29,-536 606.81,-536 606.81,-559.52"/>
+<text text-anchor="middle" x="509.55" y="-543.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%update_weights</text>
+</a>
+</g>
+</g>
+<!-- proc~train_som_data&#45;&gt;proc~update_weights -->
+<g id="proc~~train_som~~CallsGraph_edge31" class="edge">
+<title>proc~train_som_data&#45;&gt;proc~update_weights</title>
+<path fill="none" stroke="#ff007f" d="M222.3,-397.88C247.86,-418.61 302.84,-461.27 354.54,-488.76 387.64,-506.36 427.16,-521.39 457.88,-531.87"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="456.75,-535.18 467.34,-535.05 458.97,-528.55 456.75,-535.18"/>
+</g>
+<!-- proc~calculate_distance_between_prototypes&#45;&gt;proc~position2index -->
+<g id="proc~~train_som~~CallsGraph_edge32" class="edge">
+<title>proc~calculate_distance_between_prototypes&#45;&gt;proc~position2index</title>
+<path fill="none" stroke="#00ff66" d="M664.83,-466.67C672.91,-466.61 680.93,-466.56 688.79,-466.5"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="688.69,-470 698.66,-466.43 688.64,-463 688.69,-470"/>
+</g>
+<!-- none~distance~4 -->
+<g id="proc~~train_som~~CallsGraph_node31" class="node">
+<title>none~distance~4</title>
+<g id="a_proc~~train_som~~CallsGraph_node31"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-distance~4" xlink:title="kohonen_prototype%distance">
+<polygon fill="#a7506f" stroke="#a7506f" points="870.7,-315.52 718.18,-315.52 718.18,-292 870.7,-292 870.7,-315.52"/>
+<text text-anchor="middle" x="794.44" y="-299.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%distance</text>
+</a>
+</g>
+</g>
+<!-- proc~calculate_u_matrix&#45;&gt;none~distance~4 -->
+<g id="proc~~train_som~~CallsGraph_edge33" class="edge">
+<title>proc~calculate_u_matrix&#45;&gt;none~distance~4</title>
+<path fill="none" stroke="#00cbff" d="M614.28,-303.76C644.63,-303.76 677.48,-303.76 706.66,-303.76"/>
+<polygon fill="#00cbff" stroke="#00cbff" points="706.56,-307.26 716.56,-303.76 706.56,-300.26 706.56,-307.26"/>
+</g>
+<!-- none~generate~2 -->
+<g id="proc~~train_som~~CallsGraph_node32" class="node">
+<title>none~generate~2</title>
+<g id="a_proc~~train_som~~CallsGraph_node32"><a xlink:href="../type/rkiss05_generator.html#boundprocedure-generate~2" xlink:title="rkiss05_generator%generate">
+<polygon fill="#a7506f" stroke="#a7506f" points="869.2,-727.52 719.68,-727.52 719.68,-704 869.2,-704 869.2,-727.52"/>
+<text text-anchor="middle" x="794.44" y="-711.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator%generate</text>
+</a>
+</g>
+</g>
+<!-- proc~create_random_sample&#45;&gt;none~generate~2 -->
+<g id="proc~~train_som~~CallsGraph_edge34" class="edge">
+<title>proc~create_random_sample&#45;&gt;none~generate~2</title>
+<path fill="none" stroke="#0000ff" d="M626.43,-715.76C653.81,-715.76 682.52,-715.76 708.25,-715.76"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="707.95,-719.26 717.95,-715.76 707.95,-712.26 707.95,-719.26"/>
+</g>
+<!-- float -->
+<g id="proc~~train_som~~CallsGraph_node30" class="node">
+<title>float</title>
+<polygon fill="#777777" stroke="#777777" points="821.44,-357.52 767.44,-357.52 767.44,-334 821.44,-334 821.44,-357.52"/>
+<text text-anchor="middle" x="794.44" y="-341.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">float</text>
+</g>
+<!-- proc~find_best_match_unit&#45;&gt;float -->
+<g id="proc~~train_som~~CallsGraph_edge35" class="edge">
+<title>proc~find_best_match_unit&#45;&gt;float</title>
+<path fill="none" stroke="#6500ff" d="M620.73,-345.76C668.47,-345.76 721.22,-345.76 755.7,-345.76"/>
+<polygon fill="#6500ff" stroke="#6500ff" points="755.59,-349.26 765.59,-345.76 755.59,-342.26 755.59,-349.26"/>
+</g>
+<!-- proc~find_best_match_unit&#45;&gt;none~distance~4 -->
+<g id="proc~~train_som~~CallsGraph_edge36" class="edge">
+<title>proc~find_best_match_unit&#45;&gt;none~distance~4</title>
+<path fill="none" stroke="#6500ff" d="M603.04,-333.55C623.32,-330.76 644.68,-327.73 664.56,-324.76 679.03,-322.59 694.4,-320.19 709.29,-317.79"/>
+<polygon fill="#6500ff" stroke="#6500ff" points="709.76,-321.27 719.07,-316.22 708.64,-314.35 709.76,-321.27"/>
+</g>
+<!-- proc~update_weights&#45;&gt;none~get_prototype -->
+<g id="proc~~train_som~~CallsGraph_edge38" class="edge">
+<title>proc~update_weights&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#ff0066" d="M606.97,-549.72C626.92,-553.14 647.13,-559.01 664.56,-568.76 686.61,-581.1 677.73,-601.94 700.56,-612.76 775.97,-648.5 816.53,-655.29 888.33,-612.76 964.62,-567.57 997.2,-457.18 1008.13,-408.95"/>
+<polygon fill="#ff0066" stroke="#ff0066" points="1011.52,-409.84 1010.19,-399.33 1004.67,-408.37 1011.52,-409.84"/>
+</g>
+<!-- proc~update_weights&#45;&gt;proc~position2index -->
+<g id="proc~~train_som~~CallsGraph_edge41" class="edge">
+<title>proc~update_weights&#45;&gt;proc~position2index</title>
+<path fill="none" stroke="#ff0066" d="M607.07,-540.62C626.8,-536.67 646.91,-530.71 664.56,-521.76 684.46,-511.67 680.94,-497.4 700.56,-486.76 703.76,-485.03 707.09,-483.44 710.51,-481.98"/>
+<polygon fill="#ff0066" stroke="#ff0066" points="711.49,-485.35 719.59,-478.52 709,-478.81 711.49,-485.35"/>
+</g>
+<!-- dexp -->
+<g id="proc~~train_som~~CallsGraph_node29" class="node">
+<title>dexp</title>
+<polygon fill="#777777" stroke="#777777" points="821.44,-561.52 767.44,-561.52 767.44,-538 821.44,-538 821.44,-561.52"/>
+<text text-anchor="middle" x="794.44" y="-545.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dexp</text>
+</g>
+<!-- proc~update_weights&#45;&gt;dexp -->
+<g id="proc~~train_som~~CallsGraph_edge37" class="edge">
+<title>proc~update_weights&#45;&gt;dexp</title>
+<path fill="none" stroke="#ff0066" d="M607.12,-548.44C658.1,-548.8 717.76,-549.22 755.57,-549.49"/>
+<polygon fill="#ff0066" stroke="#ff0066" points="755.51,-552.99 765.53,-549.56 755.56,-545.99 755.51,-552.99"/>
+</g>
+<!-- none~set_prototype -->
+<g id="proc~~train_som~~CallsGraph_node33" class="node">
+<title>none~set_prototype</title>
+<g id="a_proc~~train_som~~CallsGraph_node33"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-set_prototype" xlink:title="kohonen_prototype%set_prototype">
+<polygon fill="#a7506f" stroke="#a7506f" points="883.45,-519.52 705.43,-519.52 705.43,-496 883.45,-496 883.45,-519.52"/>
+<text text-anchor="middle" x="794.44" y="-503.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%set_prototype</text>
+</a>
+</g>
+</g>
+<!-- proc~update_weights&#45;&gt;none~set_prototype -->
+<g id="proc~~train_som~~CallsGraph_edge39" class="edge">
+<title>proc~update_weights&#45;&gt;none~set_prototype</title>
+<path fill="none" stroke="#ff0066" d="M596.96,-535.54C628.22,-531.12 663.71,-526.1 695.86,-521.56"/>
+<polygon fill="#ff0066" stroke="#ff0066" points="696.16,-525.05 705.57,-520.18 695.18,-518.12 696.16,-525.05"/>
+</g>
+<!-- proc~index2position -->
+<g id="proc~~train_som~~CallsGraph_node34" class="node">
+<title>proc~index2position</title>
+<g id="a_proc~~train_som~~CallsGraph_node34"><a xlink:href="../proc/index2position.html" xlink:title="self_organizing_map%index2position">
+<polygon fill="#d9534f" stroke="#d9534f" points="888.33,-603.52 700.56,-603.52 700.56,-580 888.33,-580 888.33,-603.52"/>
+<text text-anchor="middle" x="794.44" y="-587.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_organizing_map%index2position</text>
+</a>
+</g>
+</g>
+<!-- proc~update_weights&#45;&gt;proc~index2position -->
+<g id="proc~~train_som~~CallsGraph_edge40" class="edge">
+<title>proc~update_weights&#45;&gt;proc~index2position</title>
+<path fill="none" stroke="#ff0066" d="M604.71,-559.97C624.5,-562.72 645.23,-565.72 664.56,-568.76 681.51,-571.43 699.66,-574.52 716.84,-577.56"/>
+<polygon fill="#ff0066" stroke="#ff0066" points="716.02,-580.96 726.48,-579.27 717.24,-574.07 716.02,-580.96"/>
+</g>
+<!-- none~distance~4&#45;&gt;none~get_prototype -->
+<g id="proc~~train_som~~CallsGraph_edge43" class="edge">
+<title>none~distance~4&#45;&gt;none~get_prototype</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M858.47,-315.91C868.57,-318.46 878.82,-321.4 888.33,-324.76 921.47,-336.45 957.31,-354.67 981.96,-368.16"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="980.03,-371.09 990.48,-372.88 983.43,-364.97 980.03,-371.09"/>
+</g>
+<!-- calculate -->
+<g id="proc~~train_som~~CallsGraph_node35" class="node">
+<title>calculate</title>
+<polygon fill="#777777" stroke="#777777" points="1040.71,-315.52 986.71,-315.52 986.71,-292 1040.71,-292 1040.71,-315.52"/>
+<text text-anchor="middle" x="1013.71" y="-299.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">calculate</text>
+</g>
+<!-- none~distance~4&#45;&gt;calculate -->
+<g id="proc~~train_som~~CallsGraph_edge42" class="edge">
+<title>none~distance~4&#45;&gt;calculate</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M871.13,-303.76C906.17,-303.76 946.27,-303.76 974.82,-303.76"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="974.79,-307.26 984.79,-303.76 974.79,-300.26 974.79,-307.26"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panproctrain_somCallsGraph = svgPanZoom('#proctrain_somCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.923937 0.923937) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 689.77,-27.52 689.77,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="63.27,-23.52 0,-23.52 0,0 63.27,0 63.27,-23.52"/>
+<text text-anchor="middle" x="31.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="135.63,-23.52 81.64,-23.52 81.64,0 135.63,0 135.63,-23.52"/>
+<text text-anchor="middle" x="108.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="207.63,-23.52 153.63,-23.52 153.63,0 207.63,0 207.63,-23.52"/>
+<text text-anchor="middle" x="180.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="347.14,-23.52 226.12,-23.52 226.12,0 347.14,0 347.14,-23.52"/>
+<text text-anchor="middle" x="286.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="499.89,-23.52 365.38,-23.52 365.38,0 499.89,0 499.89,-23.52"/>
+<text text-anchor="middle" x="432.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="571.63,-23.52 517.63,-23.52 517.63,0 571.63,0 571.63,-23.52"/>
+<text text-anchor="middle" x="544.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="685.77,-23.52 589.5,-23.52 589.5,0 685.77,0 685.77,-23.52"/>
+<text text-anchor="middle" x="637.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">train_som</span><span class="p">(</span><span class="n">parameter_file</span><span class="p">)</span><span class="w">    </span>
+<span class="w">    </span><span class="c">!==============================================================================</span>
+<span class="w">    </span><span class="c">!! Subroutine to train the SOM </span>
+<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">parameter_file</span><span class="w"></span>
+<span class="w">    </span><span class="c">!! A character variable with the name of the parameter file</span>
+<span class="w">        </span><span class="k">call </span><span class="n">initialize_variables</span><span class="p">(</span><span class="n">parameter_file</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">create</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">train</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">call </span><span class="n">my_som</span><span class="p">%</span><span class="n">destroy</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="k">call </span><span class="n">release_variables</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">train_som</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-15 20:04 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

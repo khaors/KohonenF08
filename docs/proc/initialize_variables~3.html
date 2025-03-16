@@ -1,0 +1,1072 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>initialize_variables &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>initialize_variables
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 6.8% of total for procedures.">229 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/two_level_som_train_variables.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\two_level_som_train_variables.f90.html'>two_level_som_train_variables.f90</a></li>
+                <li class="breadcrumb-item"><a href='..\module\two_level_som_train_variables.html'>two_level_som_train_variables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">initialize_variables</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-idata~2">idata</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-ipattern~7">ipattern</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-ivar~4">ivar</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-ierr~11">ierr</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-number_variables~6">number_variables</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-i~17">i</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-j~14">j</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-ipar~4">ipar</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-train_option~3">train_option</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-k">K</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-iprint">iprint</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-itoroidal">itoroidal</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-layer_ind~3">layer_ind</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-var~4">var</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-testfl~4">testfl</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-testop~4">testop</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-current_line~5">current_line</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-current_file~3">current_file</a>
+            <a class="list-group-item" href="../proc/initialize_variables~3.html#variable-pattern_files~3">pattern_files</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/initialize_variables~3.html#src">initialize_variables</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine initialize_variables(par_file)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-par_file~3"></span>
+              character(len=*)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>par_file</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: proc~~initialize_variables~3~~CallsGraph Pages: 1 -->
+<svg id="procinitialize_variables3CallsGraph" width="539pt" height="32pt"
+ viewBox="0.00 0.00 539.06 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~initialize_variables~3~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>proc~~initialize_variables~3~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 535.06,-27.52 535.06,4 -4,4"/>
+<!-- proc~initialize_variables~3 -->
+<g id="proc~~initialize_variables~3~~CallsGraph_node1" class="node">
+<title>proc~initialize_variables~3</title>
+<polygon fill="none" stroke="black" points="97.77,-23.52 0,-23.52 0,0 97.77,0 97.77,-23.52"/>
+<text text-anchor="middle" x="48.88" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">initialize_variables</text>
+</g>
+<!-- proc~kohonen_pattern_create -->
+<g id="proc~~initialize_variables~3~~CallsGraph_node2" class="node">
+<title>proc~kohonen_pattern_create</title>
+<g id="a_proc~~initialize_variables~3~~CallsGraph_node2"><a xlink:href="../proc/kohonen_pattern_create.html" xlink:title="kohonen_pattern%kohonen_pattern_create">
+<polygon fill="#d9534f" stroke="#d9534f" points="352.29,-23.52 133.77,-23.52 133.77,0 352.29,0 352.29,-23.52"/>
+<text text-anchor="middle" x="243.03" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern%kohonen_pattern_create</text>
+</a>
+</g>
+</g>
+<!-- proc~initialize_variables~3&#45;&gt;proc~kohonen_pattern_create -->
+<g id="proc~~initialize_variables~3~~CallsGraph_edge1" class="edge">
+<title>proc~initialize_variables~3&#45;&gt;proc~kohonen_pattern_create</title>
+<path fill="none" stroke="#ff0000" d="M97.88,-11.76C105.53,-11.76 113.73,-11.76 122.19,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="121.93,-15.26 131.93,-11.76 121.93,-8.26 121.93,-15.26"/>
+</g>
+<!-- none~create~8 -->
+<g id="proc~~initialize_variables~3~~CallsGraph_node3" class="node">
+<title>none~create~8</title>
+<g id="a_proc~~initialize_variables~3~~CallsGraph_node3"><a xlink:href="../type/kohonen_prototype.html#boundprocedure-create~8" xlink:title="kohonen_prototype%create">
+<polygon fill="#a7506f" stroke="#a7506f" points="531.06,-23.52 388.29,-23.52 388.29,0 531.06,0 531.06,-23.52"/>
+<text text-anchor="middle" x="459.68" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype%create</text>
+</a>
+</g>
+</g>
+<!-- proc~kohonen_pattern_create&#45;&gt;none~create~8 -->
+<g id="proc~~initialize_variables~3~~CallsGraph_edge2" class="edge">
+<title>proc~kohonen_pattern_create&#45;&gt;none~create~8</title>
+<path fill="none" stroke="#ff0000" d="M352.61,-11.76C360.64,-11.76 368.67,-11.76 376.5,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="376.31,-15.26 386.31,-11.76 376.31,-8.26 376.31,-15.26"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.923937 0.923937) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 689.77,-27.52 689.77,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="63.27,-23.52 0,-23.52 0,0 63.27,0 63.27,-23.52"/>
+<text text-anchor="middle" x="31.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="135.63,-23.52 81.64,-23.52 81.64,0 135.63,0 135.63,-23.52"/>
+<text text-anchor="middle" x="108.64" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="207.63,-23.52 153.63,-23.52 153.63,0 207.63,0 207.63,-23.52"/>
+<text text-anchor="middle" x="180.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="347.14,-23.52 226.12,-23.52 226.12,0 347.14,0 347.14,-23.52"/>
+<text text-anchor="middle" x="286.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="499.89,-23.52 365.38,-23.52 365.38,0 499.89,0 499.89,-23.52"/>
+<text text-anchor="middle" x="432.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="571.63,-23.52 517.63,-23.52 517.63,0 571.63,0 571.63,-23.52"/>
+<text text-anchor="middle" x="544.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="685.77,-23.52 589.5,-23.52 589.5,0 685.77,0 685.77,-23.52"/>
+<text text-anchor="middle" x="637.63" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    <section>    
+      <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-idata~2"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>idata</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ipattern~7"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ipattern</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ivar~4"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ivar</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ierr~11"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ierr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-number_variables~6"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>number_variables</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~17"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~14"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ipar~4"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ipar</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-train_option~3"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>train_option</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>K</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iprint"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iprint</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-itoroidal"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>itoroidal</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-layer_ind~3"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layer_ind</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-var~4"></span>
+              real(kind=wp),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>var</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testfl~4"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testfl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testop~4"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testop</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-current_line~5"></span>
+              character(len=NUMCHAR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_line</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-current_file~3"></span>
+              character(len=NUMCHAR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>current_file</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pattern_files~3"></span>
+              character(len=NUMCHAR),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>pattern_files</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">     </span><span class="k">subroutine </span><span class="n">initialize_variables</span><span class="p">(</span><span class="n">par_file</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">!============================================================================== </span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">par_file</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">idata</span><span class="p">,</span><span class="n">ipattern</span><span class="p">,</span><span class="n">ivar</span><span class="p">,</span><span class="n">ierr</span><span class="p">,</span><span class="n">number_variables</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">ipar</span><span class="p">,</span><span class="n">train_option</span><span class="w"></span>
+<span class="w">       </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="n">iprint</span><span class="p">,</span><span class="n">itoroidal</span><span class="p">,</span><span class="n">layer_ind</span><span class="w">   </span>
+<span class="w">       </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="k">allocatable</span><span class="kd">::</span><span class="w"> </span><span class="n">var</span><span class="p">(:,:)</span><span class="w"></span>
+<span class="w">       </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testfl</span><span class="p">,</span><span class="n">testop</span><span class="w"></span>
+<span class="w">       </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">NUMCHAR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">current_line</span><span class="w"></span>
+<span class="w">       </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">NUMCHAR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">current_file</span><span class="w">    </span>
+<span class="w">       </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">NUMCHAR</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pattern_files</span><span class="p">(:)</span><span class="w"> </span>
+<span class="w">    </span><span class="c">!  </span>
+<span class="w">       </span><span class="n">idata</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">ipar</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="c">!</span>
+<span class="w">       </span><span class="k">inquire</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">par_file</span><span class="p">),</span><span class="n">exist</span><span class="o">=</span><span class="n">testfl</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">testfl</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          stop</span><span class="w"> </span><span class="s1">&#39;ERROR: parameter file does not exist&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">       open</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">par_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;read&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Reading parameter file...&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="n">current_line</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">do while</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_line</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="s1">&#39;TWO_LEVEL_SOM_TRAIN_PARAMETERS&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">current_line</span><span class="w"></span>
+<span class="w">       </span><span class="k">enddo</span>
+<span class="k">       do while</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_line</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="s1">&#39;LAYER1&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">current_line</span><span class="w"></span>
+<span class="w">       </span><span class="k">enddo</span>
+<span class="k">       write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;LAYER 1: Reading parameters...&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">train_option</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Train option= &#39;</span><span class="p">,</span><span class="n">train_option</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">train_option</span><span class="o">=</span><span class="n">train_option</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">pattern_file</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Pattern file= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">pattern_file</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Number patterns= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables1</span><span class="c">!,&amp;</span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables2</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">number_variables</span><span class="o">=</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables1</span><span class="o">*</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                        </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables2</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables</span><span class="o">=</span><span class="n">number_variables</span><span class="p">;</span><span class="w">                 </span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;nvar1,nvar2,nvar= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables1</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                                       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables2</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                                       </span><span class="n">number_variables</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables1</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables2</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">ierr</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">column_var</span><span class="p">(</span><span class="n">number_variables</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">ierr</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">train_option</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         if</span><span class="p">(</span><span class="n">number_variables</span><span class="w"> </span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">column_var</span><span class="p">(</span><span class="n">ivar</span><span class="p">),</span><span class="n">ivar</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">number_variables</span><span class="p">);</span><span class="w"></span>
+<span class="w">           </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;columns= &#39;</span><span class="p">,(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">column_var</span><span class="p">(</span><span class="n">ivar</span><span class="p">),</span><span class="n">ivar</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">number_variables</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">else</span>
+<span class="k">           read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;WARNING: Assigning columns internally&#39;</span><span class="w"></span>
+<span class="w">           </span><span class="k">do </span><span class="n">ivar</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">number_variables</span><span class="w"></span>
+<span class="w">              </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">column_var</span><span class="p">(</span><span class="n">ivar</span><span class="p">)</span><span class="o">=</span><span class="n">ivar</span><span class="p">;</span><span class="w"></span>
+<span class="w">           </span><span class="k">enddo</span>
+<span class="k">         endif</span>
+<span class="k">       else</span>
+<span class="k">          read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">       read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">som_type</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;SOM type= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">som_type</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number nodes= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w">              </span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_epochs</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number epochs= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_epochs</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">learning_rate</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;learning rate= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">learning_rate</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">random_seed_</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;random seed= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">random_seed_</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">distance_type</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;distance type= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">distance_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">node_type</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;node type= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">node_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">neighborhood_type</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;neighborhood type= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">neighborhood_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">debug_level</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;debug level= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">debug_level</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">debug_file</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;debug file= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">debug_file</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;output file base= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">iprint</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">view_flag</span><span class="o">=</span><span class="p">.</span><span class="n">FALSE</span><span class="p">.</span><span class="w"></span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">iprint</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">   </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">view_flag</span><span class="o">=</span><span class="p">.</span><span class="n">TRUE</span><span class="p">.;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Print Training Results= &#39;</span><span class="p">,</span><span class="n">iprint</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">itoroidal</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">toroidal_grid</span><span class="o">=</span><span class="p">.</span><span class="n">FALSE</span><span class="p">.;</span><span class="w"></span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">itoroidal</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">toroidal_grid</span><span class="o">=</span><span class="p">.</span><span class="n">TRUE</span><span class="p">.;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Toroidal grid= &#39;</span><span class="p">,</span><span class="n">itoroidal</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;LAYER 1: Reading parameters...finished&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="n">current_line</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">do while</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_line</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="s1">&#39;LAYER2&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">current_line</span><span class="w"></span>
+<span class="w">       </span><span class="k">enddo</span>
+<span class="k">       write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;LAYER 2: Reading parameters...&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number nodes= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w">              </span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_epochs</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number epochs= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_epochs</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">learning_rate</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;learning rate= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">learning_rate</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">random_seed_</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;random seed= &#39;</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">random_seed_</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">distance_type</span><span class="w"> </span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;distance type= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">distance_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">node_type</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;node type= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">node_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">read</span><span class="p">(</span><span class="n">ipar</span><span class="p">,</span><span class="s1">&#39;(A40)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">neighborhood_type</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;neighborhood type= &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">neighborhood_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;LAYER 2: Reading parameters...finished&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="c">! </span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Reading parameter file...finished&#39;</span><span class="w">  </span>
+<span class="w">       </span><span class="k">close</span><span class="p">(</span><span class="n">ipar</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">inquire</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">pattern_file</span><span class="p">),</span><span class="n">exist</span><span class="o">=</span><span class="n">testfl</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">testfl</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         stop</span><span class="w"> </span><span class="s1">&#39;ERROR: input file does not exist&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">endif</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="c">! Assigning units to output files</span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">idbg</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iout</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iindex</span><span class="o">=</span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iprot</span><span class="o">=</span><span class="mi">13</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ihit</span><span class="o">=</span><span class="mi">14</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">idist</span><span class="o">=</span><span class="mi">15</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iumat</span><span class="o">=</span><span class="mi">16</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ipar</span><span class="o">=</span><span class="mi">17</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">isam</span><span class="o">=</span><span class="mi">18</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iclus</span><span class="o">=</span><span class="mi">19</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">icen</span><span class="o">=</span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iclus1</span><span class="o">=</span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">!   som_parameters(1)%view_flag=.TRUE.;</span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="c">!   K=1;</span>
+<span class="w">    </span><span class="c">!   call random_seed(size=K);</span>
+<span class="w">    </span><span class="c">!   call random_seed(put=som_parameters(1)%random_seed_(1:K));</span>
+<span class="w">       </span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">input_patterns</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">ierr</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">train_option</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">   </span>
+<span class="w">       </span><span class="c">!</span>
+<span class="w">         </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Reading patterns...&#39;</span><span class="w"></span>
+<span class="w">         </span><span class="k">open</span><span class="p">(</span><span class="n">idata</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">pattern_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;read&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">           </span><span class="k">do </span><span class="n">ipattern</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="w"></span>
+<span class="w">             </span><span class="k">read</span><span class="p">(</span><span class="n">idata</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">err</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">ivar</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">ivar</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">number_variables</span><span class="p">);</span><span class="w"></span>
+<span class="w">             </span><span class="c">!write(*,*) (var(ivar,1),ivar=1,number_variables);</span>
+<span class="w">             </span><span class="k">call </span><span class="n">input_patterns</span><span class="p">(</span><span class="n">ipattern</span><span class="p">)%</span><span class="n">create</span><span class="p">(</span><span class="n">var</span><span class="p">);</span><span class="w"></span>
+<span class="w">           </span><span class="k">enddo</span><span class="c">!ipatterns</span>
+<span class="w">         </span><span class="k">close</span><span class="p">(</span><span class="n">idata</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Reading patterns...OK!!!&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="n">elseif</span><span class="p">(</span><span class="n">train_option</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         allocate</span><span class="p">(</span><span class="n">pattern_files</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">ierr</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Reading pattern files...&#39;</span><span class="w"></span>
+<span class="w">         </span><span class="k">open</span><span class="p">(</span><span class="n">idata</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">pattern_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;read&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">do </span><span class="n">ipattern</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="w"></span>
+<span class="w">            </span><span class="k">read</span><span class="p">(</span><span class="n">idata</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">,</span><span class="n">err</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">pattern_files</span><span class="p">(</span><span class="n">ipattern</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">enddo</span><span class="c">!ipattern</span>
+<span class="w">         </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Reading pattern files...finished!&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="c">!</span>
+<span class="w">         </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Reading patterns...&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="k">do </span><span class="n">ipattern</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="w"></span>
+<span class="w">            </span><span class="k">inquire</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">pattern_files</span><span class="p">(</span><span class="n">ipattern</span><span class="p">)),</span><span class="n">exist</span><span class="o">=</span><span class="n">testfl</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">testfl</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;ERROR: the file &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">pattern_files</span><span class="p">(</span><span class="n">ipattern</span><span class="p">)),</span><span class="s1">&#39; does not exist&#39;</span><span class="w"></span>
+<span class="w">              </span><span class="k">stop</span>
+<span class="k">            endif</span>
+<span class="k">            if</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">view_flag</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Currently reading &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">pattern_files</span><span class="p">(</span><span class="n">ipattern</span><span class="p">));</span><span class="w"></span>
+<span class="w">            </span><span class="k">endif</span>
+<span class="k">            open</span><span class="p">(</span><span class="n">idata</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">pattern_files</span><span class="p">(</span><span class="n">ipattern</span><span class="p">)),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;read&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">var</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">               </span><span class="k">read</span><span class="p">(</span><span class="n">idata</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">err</span><span class="o">=</span><span class="mi">91</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">var</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<span class="w">            </span><span class="k">enddo</span><span class="c">!ix</span>
+<span class="w">            </span><span class="k">close</span><span class="p">(</span><span class="n">idata</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">view_flag</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Currently reading &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">pattern_files</span><span class="p">(</span><span class="n">ipattern</span><span class="p">)),</span><span class="s1">&#39; finished&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">endif</span>
+<span class="k">            call </span><span class="n">input_patterns</span><span class="p">(</span><span class="n">ipattern</span><span class="p">)%</span><span class="n">create</span><span class="p">(</span><span class="n">var</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">enddo</span><span class="c">!ipattern</span>
+<span class="w">         </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Reading patterns...finished!&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">endif</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">debug_level</span><span class="w"> </span><span class="p">.</span><span class="n">gt</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">idbg</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">debug_file</span><span class="p">),&amp;</span><span class="w"></span>
+<span class="w">              </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">endif</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Opening output files...&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">! parameter file</span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_parameters.som&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ipar</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="n">layer_ind</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">call </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">print</span><span class="p">(</span><span class="n">layer_ind</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ipar</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c">!   </span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;NOFILE&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">pattern_file</span><span class="o">=</span><span class="s1">&#39;NOFILE&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">debug_file</span><span class="o">=</span><span class="s1">&#39;NOFILE&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">som_type</span><span class="o">=</span><span class="s1">&#39;NOTYPE&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="n">layer_ind</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">call </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="k">print</span><span class="p">(</span><span class="n">layer_ind</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ipar</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">close</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ipar</span><span class="p">)</span><span class="w">     </span>
+<span class="w">    </span><span class="c">! neuron indices   </span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_neuron_indices.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iindex</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c">!    write(som_parameters(1)%iindex,&#39;(A)&#39;) &#39;KOHONEN MAP PATTERN INDICES&#39;</span>
+<span class="w">    </span><span class="c">!    write(som_parameters(1)%iindex,&#39;(A17,1X,2I6)&#39;) &#39;Number Patterns= &#39;,&amp;</span>
+<span class="w">    </span><span class="c">!          som_parameters(1)%number_patterns,3;</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iindex</span><span class="p">,</span><span class="s1">&#39;(A22)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;PatternNumber ix iy iz&#39;</span><span class="w">         </span>
+<span class="w">    </span><span class="c">! neuron prototypes        </span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_prototypes.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iprot</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iprot</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;KOHONEN MAP PROTOTYPES&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iprot</span><span class="p">,</span><span class="s1">&#39;(A17,1X,3I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of nodes= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iprot</span><span class="p">,</span><span class="s1">&#39;(A21,1X,2I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of variables= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables1</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_variables2</span><span class="w"></span>
+<span class="w">    </span><span class="c">!rectangular</span>
+<span class="w">    </span><span class="c">!hexagonal</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iprot</span><span class="p">,</span><span class="s1">&#39;(A25,1X,A11,1X,L4)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;node_type,toroidal_grid= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">node_type</span><span class="p">),</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">toroidal_grid</span><span class="w"></span>
+<span class="w">            </span>
+<span class="w">    </span><span class="c">! neuron hit        </span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_neuron_hit.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ihit</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ihit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;KOHONEN MAP NEURON HITS&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">ihit</span><span class="p">,</span><span class="s1">&#39;(A17,1X,3I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of nodes= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w">     </span>
+<span class="w">    </span><span class="c">! neuron distances        </span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_neuron_distances.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">idist</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">idist</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;KOHONEN MAP DISTANCE MATRIX&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">idist</span><span class="p">,</span><span class="s1">&#39;(A17,1X,2I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of nodes= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="o">*</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="o">*</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="o">*</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="o">*</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w"></span>
+<span class="w">    </span><span class="c">! u-matrix        </span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_u-matrix.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iumat</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iumat</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;KOHONEN MAP U-MATRIX&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iumat</span><span class="p">,</span><span class="s1">&#39;(A17,1X,3I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of nodes= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="mi">2</span><span class="o">*</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="o">-</span><span class="mi">1</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="mi">2</span><span class="o">*</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="o">-</span><span class="mi">1</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="mi">2</span><span class="o">*</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="o">-</span><span class="mi">1</span><span class="w">     </span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_map_samples.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">isam</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">isam</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;KOHONEN MAP SAMPLE LOCATION&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">isam</span><span class="p">,</span><span class="s1">&#39;(A17,1X,3I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of nodes= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w">     </span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_clusters.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iclus</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iclus</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;KOHONEN MAP CLUSTERS&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iclus</span><span class="p">,</span><span class="s1">&#39;(A17,1X,3I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of nodes= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w">     </span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_cluster_centers.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">icen</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">icen</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;KOHONEN MAP CLUSTER CENTERS&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">icen</span><span class="p">,</span><span class="s1">&#39;(A17,1X,3I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of nodes= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nx</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_ny</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_nodes_nz</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">iprot</span><span class="p">,</span><span class="s1">&#39;(A21,1X,2I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;number of variables= &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_variables1</span><span class="p">,</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">number_variables2</span><span class="w">        </span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="n">current_file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">output_file</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;_cluster_samples.out&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">open</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iclus1</span><span class="p">,</span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">current_file</span><span class="p">),</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;write&#39;</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;sequential&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iclus1</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;KOHONEN MAP CLUSTER SAMPLES&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c">!   write(som_parameters(1)%icen,&#39;(A17,1X,3I6)&#39;) &#39;number of nodes= &#39;,&amp;</span>
+<span class="w">    </span><span class="c">!        som_parameters(1)%number_nodes_nx,som_parameters(1)%number_nodes_ny,&amp;</span>
+<span class="w">    </span><span class="c">!        som_parameters(1)%number_nodes_nz</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">iclus1</span><span class="p">,</span><span class="s1">&#39;(2I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">som_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">number_patterns</span><span class="p">,</span><span class="mi">5</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Opening output files...finished!!!&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="k">deallocate</span><span class="p">(</span><span class="n">var</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">       </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="mi">90</span><span class="w"> </span><span class="k">stop</span><span class="w"> </span><span class="s1">&#39;ERROR while reading pattern file&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="mi">91</span><span class="w"> </span><span class="k">stop</span><span class="w"> </span><span class="s1">&#39;ERROR while reading pattern sample file&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">     </span><span class="k">end subroutine </span><span class="n">initialize_variables</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-15 20:04 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

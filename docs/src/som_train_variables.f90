@@ -1,5 +1,10 @@
+
+!! author: Oscar Garcia-Cabrejo
+!! date: 03/12/2025
+!! version: 0.1
+!! This module defines the variables for the program som_train
 module som_train_variables
-    !
+    !! This module defines the variables for the program som_train
     use error_handling, only: error_stop,error_t;
     use precision_utilities, only: wp;
     use constants_utilities, only: NUMCHAR;
@@ -10,7 +15,9 @@ module som_train_variables
     use self_organizing_map_utilities, only: self_organizing_map;
     use kohonen_pattern_utilities, only: kohonen_pattern;
     !
-    implicit none
+    implicit none;
+    !
+    private;
     !
     type(self_organizing_map),save :: my_som
     type(kohonen_layer_parameters),dimension(1) :: som_parameters
@@ -19,7 +26,9 @@ module som_train_variables
     integer :: ipattern
     character(len=NUMCHAR) :: parfl
     !
-     contains
+    public :: train_som;
+    !
+    contains
     !
     ! Outputs:
     !  - neuron indices for each input pattern
@@ -31,7 +40,9 @@ module som_train_variables
     !============================================================================== 
      subroutine initialize_variables(par_file)
     !============================================================================== 
+    !! Subroutine that initilizes the variables of the som_train program
         character(len=*) :: par_file
+    !! A character variable with the name of the parameter_file
     !
         integer :: idata,ipattern,ivar,ierr,number_variables,i,j,ipar,toroidal
         integer :: layer_ind,ferr
@@ -425,6 +436,8 @@ module som_train_variables
     !==============================================================================
     subroutine release_variables()
     !==============================================================================
+    !! Subroutine used to deallocate all the memory used in the initialization of the 
+    !! variables used in the som_train program
         integer :: i
         logical :: testop
         !  
@@ -488,5 +501,22 @@ module som_train_variables
         call global_logger%destroy();
     !
     end subroutine release_variables
+    !==============================================================================
+    subroutine train_som(parameter_file)    
+    !==============================================================================
+    !! Subroutine to train the SOM 
+        character(len=*),intent(inout) :: parameter_file
+    !! A character variable with the name of the parameter file
+        call initialize_variables(parameter_file);
+        !
+        call my_som%create(som_parameters);
+        !
+        call my_som%train(input_patterns);
+        !
+        call my_som%destroy();
+        !
+        call release_variables();
+        !
+    end subroutine train_som
     !
 end module som_train_variables
