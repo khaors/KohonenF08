@@ -69,19 +69,22 @@
 !!   Any feedback is very welcome.
 !!   http://www.math.hiroshima-u.ac.jp/~m-mat/MT/emt.html
 !!   email: m-mat @ math.sci.hiroshima-u.ac.jp (remove spaces)
+!!
+!! Modified by Oscar Garcia-Cabrejo from the original Fortran source code
+!! 03-16-2025
 !-------------------------------------------------------------------------------
 
 module mt19937_64
 
-  use, intrinsic :: iso_fortran_env
-  implicit none
+  use iso_fortran_env, only: output_unit, real64, int64
+implicit none
 
-  private
-  public :: init_genrand64
-  public :: init_by_array64
-  public :: genrand64_real1
-  public :: genrand64_real2
-  public :: genrand64_real3
+private
+! public :: init_genrand64
+! public :: init_by_array64
+! public :: genrand64_real1
+! public :: genrand64_real2
+! public :: genrand64_real3
 
 !! NOTE: genrand64_int64 is kept private, as it generates different numbers
 !!       compared to the original C code. This is because the original C code
@@ -89,169 +92,177 @@ module mt19937_64
 !!       This, however, has no impact on the generation of real numbers
 !!       (they are identical to those produced by the original C code).
 
-  integer, parameter :: r64 = real64
-  integer, parameter :: i64 = int64
+integer, parameter :: r64 = real64
+integer, parameter :: i64 = int64
 
-  integer(i64), parameter :: nn       = 312_i64
-  integer(i64), parameter :: mm       = 156_i64
-  integer(i64), parameter :: seed_def = 5489_i64
-  integer(i64), parameter :: matrix_a = -5403634167711393303_i64
-  integer(i64), parameter :: um       = -2147483648_i64 ! most significant 33 bits
-  integer(i64), parameter :: lm       =  2147483647_i64 ! least significant 31 bits
+integer(i64), parameter :: nn       = 312_i64
+integer(i64), parameter :: mm       = 156_i64
+integer(i64), parameter :: seed_def = 5489_i64
+integer(i64), parameter :: matrix_a = -5403634167711393303_i64
+integer(i64), parameter :: um       = -2147483648_i64 ! most significant 33 bits
+integer(i64), parameter :: lm       =  2147483647_i64 ! least significant 31 bits
 
-  real(r64),    parameter :: pi253_1  = 1._r64/(2._r64**53 - 1._r64)
-  real(r64),    parameter :: pi253    = 1._r64/(2._r64**53)
-  real(r64),    parameter :: pi252    = 1._r64/(2._r64**52)
+real(r64),    parameter :: pi253_1  = 1._r64/(2._r64**53 - 1._r64)
+real(r64),    parameter :: pi253    = 1._r64/(2._r64**53)
+real(r64),    parameter :: pi252    = 1._r64/(2._r64**52)
 
-  integer(i64) :: mt(nn)       ! array for the state vector
-  integer     :: mti = nn+1   ! mti==nn+1 means mt(nn) is not initialized
+integer(i64) :: mt(nn)       ! array for the state vector
+integer     :: mti = nn+1   ! mti==nn+1 means mt(nn) is not initialized
 
+type :: mt19937
+    private
+        integer(i64) :: mt(nn) =0_i64       ! array for the state vector
+        integer     :: mti = nn+1   ! mti==nn+1 means mt(nn) is not initialized
+    contains
+        procedure,public :: init_genrand64
+        procedure,public :: init_by_array64
+        generic,public :: initialize => init_genrand64,init_by_array64
+        procedure,public :: genrand64_real1
+        procedure,public :: genrand64_real2
+        procedure,public :: genrand64_real3
+        procedure,public :: genrand64_int64
+
+end type mt19937
+
+public :: mt19937
 
 contains
 
 
-  !-----------------------------------------------------------------------------
-  ! Initializes mt(nn) with a seed
+!-----------------------------------------------------------------------------
+! Initializes mt(nn) with a seed
 
-  subroutine init_genrand64(seed)
+subroutine init_genrand64(mt,seed)
 !! Initializes mt(nn) with a seed
-    implicit none
-    integer(i64), intent(in) :: seed
-    integer :: i
+  implicit none
+  class(mt19937) :: mt
+!! A `mt19937` object
+  integer(i64), intent(in) :: seed
+!! An integer variable with the random seed
+  integer :: i
 
-    mt(1) = seed
-    do i = 1, nn-1
-      mt(i+1) = 6364136223846793005_i64 * ieor(mt(i), ishft(mt(i), -62)) + i
-    end do
+  mt%mt(1) = seed
+  do i = 1, nn-1
+    mt%mt(i+1) = 6364136223846793005_i64 * ieor(mt%mt(i), ishft(mt%mt(i), -62)) + i
+  end do
 
-    mti = nn
+  mt%mti = nn
 
-  end subroutine init_genrand64
-
-
-  !-----------------------------------------------------------------------------
-  ! Initializes by an array with array-length
-  !   init_key is the array for initializing keys
-
-  subroutine init_by_array64(init_key)
+end subroutine init_genrand64
+!
+subroutine init_by_array64(mt,init_key)
 !! Initializes by an array with array-length
 !!   init_key is the array for initializing keys
-    implicit none
-    integer(i64), intent(in) :: init_key(:)
-    integer(i64), parameter  :: c1 = 3935559000370003845_i64
-    integer(i64), parameter  :: c2 = 2862933555777941757_i64
-    integer(i64) :: i, j, k, kk, key_length
+  implicit none
+  class(mt19937) :: mt
+!! A `mt19937` object 
+  integer(i64), intent(in) :: init_key(:)
+!! An integer array with random seeds
+  integer(i64), parameter  :: c1 = 3935559000370003845_i64
+  integer(i64), parameter  :: c2 = 2862933555777941757_i64
+  integer(i64) :: i, j, k, kk, key_length
 
-    call init_genrand64(19650218_i64)
-    key_length = size(init_key)
-    i = 1_i64; j = 0_i64
-    k = max(nn, key_length)
+  call mt%init_genrand64(19650218_i64)
+  key_length = size(init_key)
+  i = 1_i64; j = 0_i64
+  k = max(nn, key_length)
 
-    do kk = 1, k
-      mt(i+1) = ieor(mt(i+1), c1 * ieor(mt(i), ishft(mt(i), -62))) &
-                  + init_key(j+1) + j
-      i = i+1; j = j+1
-      if(i >= nn) then
-        mt(1) = mt(nn)
-        i = 1
-      end if
-      if(j >= key_length) j = 0
-    end do
-
-    do kk = 1, nn-1
-      mt(i+1) = ieor(mt(i+1), c2 * ieor(mt(i), ishft(mt(i), -62))) - i
-      i = i+1
-      if(i >= nn) then
-        mt(1) = mt(nn)
-        i = 1
-      end if
-    end do
-
-    mt(1) = ishft(1_i64, 63)  ! MSB is 1; assuring non-zero initial array
-
-  end subroutine init_by_array64
-
-
-  !-----------------------------------------------------------------------------
-  ! Generates a random number on [-2^63, 2^63-1]-interval
-
-  integer(r64) function genrand64_int64()
-!! Generates a random number on [-2^63, 2^63-1]-interval
-    implicit none
-    integer(i64) :: mag01(0:1) = (/0_i64, matrix_a/)
-    integer(i64) :: x
-    integer     :: i
-
-    if(mti >= nn) then ! generate nn words at one time
-
-      ! if init_genrand64() has not been called, a default initial seed is used
-      if(mti == nn+1) call init_genrand64(seed_def)
-
-      do i = 1, nn-mm
-        x = ior(iand(mt(i),um), iand(mt(i+1), lm))
-        mt(i) = ieor(ieor(mt(i+mm), ishft(x, -1)), mag01(iand(x, 1_i64)))
-      end do
-
-      do i = nn-mm+1, nn-1
-        x = ior(iand(mt(i), um), iand(mt(i+1), lm))
-        mt(i) = ieor(ieor(mt(i+mm-nn), ishft(x, -1)), mag01(iand(x, 1_i64)))
-      end do
-
-      x = ior(iand(mt(nn), um), iand(mt(1), lm))
-      mt(nn) = ieor(ieor(mt(mm), ishft(x, -1)), mag01(iand(x, 1_i64)))
-
-      mti = 0
-
+  do kk = 1, k
+    mt%mt(i+1) = ieor(mt%mt(i+1), c1 * ieor(mt%mt(i), ishft(mt%mt(i), -62))) &
+                + init_key(j+1) + j
+    i = i+1; j = j+1
+    if(i >= nn) then
+      mt%mt(1) = mt%mt(nn)
+      i = 1
     end if
+    if(j >= key_length) j = 0
+  end do
 
-    mti = mti + 1
-    x = mt(mti)
+  do kk = 1, nn-1
+    mt%mt(i+1) = ieor(mt%mt(i+1), c2 * ieor(mt%mt(i), ishft(mt%mt(i), -62))) - i
+    i = i+1
+    if(i >= nn) then
+      mt%mt(1) = mt%mt(nn)
+      i = 1
+    end if
+  end do
 
-    x = ieor(x, iand(ishft(x,-29), 6148914691236517205_i64))
-    x = ieor(x, iand(ishft(x, 17), 8202884508482404352_i64))
-    x = ieor(x, iand(ishft(x, 37),   -2270628950310912_i64))
-    x = ieor(x, ishft(x, -43))
+  mt%mt(1) = ishft(1_i64, 63)  ! MSB is 1; assuring non-zero initial array
 
-    genrand64_int64 = x
+end subroutine init_by_array64
+!
+integer(r64) function genrand64_int64(mt)
+!! Generates a random number on [-2^63, 2^63-1]-interval
+  implicit none
+  class(mt19937) :: mt
+!! A `mt19937` object
+  integer(i64) :: mag01(0:1) = (/0_i64, matrix_a/)
+  integer(i64) :: x
+  integer     :: i
 
-  end function genrand64_int64
+  if(mt%mti >= nn) then ! generate nn words at one time
 
+    ! if init_genrand64() has not been called, a default initial seed is used
+    if(mt%mti == nn+1) call mt%init_genrand64(seed_def)
 
-  !-----------------------------------------------------------------------------
-  ! Generates a random number on [0,1]-real-interval
+    do i = 1, nn-mm
+      x = ior(iand(mt%mt(i),um), iand(mt%mt(i+1), lm))
+      mt%mt(i) = ieor(ieor(mt%mt(i+mm), ishft(x, -1)), mag01(iand(x, 1_i64)))
+    end do
 
-  real(r64) function genrand64_real1()
+    do i = nn-mm+1, nn-1
+      x = ior(iand(mt%mt(i), um), iand(mt%mt(i+1), lm))
+      mt%mt(i) = ieor(ieor(mt%mt(i+mm-nn), ishft(x, -1)), mag01(iand(x, 1_i64)))
+    end do
+
+    x = ior(iand(mt%mt(nn), um), iand(mt%mt(1), lm))
+    mt%mt(nn) = ieor(ieor(mt%mt(mm), ishft(x, -1)), mag01(iand(x, 1_i64)))
+
+    mt%mti = 0
+
+  end if
+
+  mt%mti = mt%mti + 1
+  x = mt%mt(mt%mti)
+
+  x = ieor(x, iand(ishft(x,-29), 6148914691236517205_i64))
+  x = ieor(x, iand(ishft(x, 17), 8202884508482404352_i64))
+  x = ieor(x, iand(ishft(x, 37),   -2270628950310912_i64))
+  x = ieor(x, ishft(x, -43))
+
+  genrand64_int64 = x
+
+end function genrand64_int64
+!
+real(r64) function genrand64_real1(mt)
 !! Generates a random number on [0,1]-real-interval
-    implicit none
+  implicit none
+  class(mt19937) :: mt
+!! A `mt19937` object
+  genrand64_real1 = real(ishft(mt%genrand64_int64(), -11), kind=r64) * pi253_1
 
-    genrand64_real1 = real(ishft(genrand64_int64(), -11), kind=r64) * pi253_1
-
-  end function genrand64_real1
+end function genrand64_real1
 
 
-  !-----------------------------------------------------------------------------
-  ! Generates a random number on [0,1)-real-interval
-
-  real(r64) function genrand64_real2()
+real(r64) function genrand64_real2(mt)
 !! Generates a random number on [0,1)-real-interval  
-    implicit none
+  implicit none
+  class(mt19937) :: mt
+!! A `mt19937` object
+  genrand64_real2 = real(ishft(mt%genrand64_int64(), -11), kind=r64) * pi253
 
-    genrand64_real2 = real(ishft(genrand64_int64(), -11), kind=r64) * pi253
-
-  end function genrand64_real2
+end function genrand64_real2
 
 
-  !-----------------------------------------------------------------------------
-  ! Generates a random number on (0,1)-real-interval
-
-  real(r64) function genrand64_real3()
+real(r64) function genrand64_real3(mt)
 !! Generates a random number on (0,1)-real-interval
-    implicit none
+  implicit none
+  class(mt19937) :: mt
+!! A `mt19937` object
+  genrand64_real3 = real(ishft(mt%genrand64_int64(), -12), kind=r64)
+  genrand64_real3 = (genrand64_real3 + 0.5_r64) * pi252
 
-    genrand64_real3 = real(ishft(genrand64_int64(), -12), kind=r64)
-    genrand64_real3 = (genrand64_real3 + 0.5_r64) * pi252
-
-  end function genrand64_real3
+end function genrand64_real3
 
 
 end module mt19937_64

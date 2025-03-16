@@ -76,7 +76,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 2.1% of total for modules and submodules.">105 statements</a>
+                 title=" 2.4% of total for modules and submodules.">120 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -117,34 +117,20 @@
   
   
   
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/mt19937_64.html#type-mt19937">mt19937</a>
+        </div>
+      </div>
+    </div>
+
   
-      <div class="card mb-4">
-      <a data-bs-toggle="collapse" href="#funcs-0"
-         aria-expanded="false" aria-controls="funcs-0">
-         <h4 class="card-header bg-primary text-white">Functions</h4>
-      </a>
-      <div id="funcs-0" class="collapse">
-        <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mt19937_64.html#proc-genrand64_real1">genrand64_real1</a>
-            <a class="list-group-item" href="../module/mt19937_64.html#proc-genrand64_real2">genrand64_real2</a>
-            <a class="list-group-item" href="../module/mt19937_64.html#proc-genrand64_real3">genrand64_real3</a>
-        </div>
-      </div>
-    </div>
-
-      <div class="card mb-4">
-      <a data-bs-toggle="collapse" href="#subs-0"
-         aria-expanded="false" aria-controls="subs-0">
-         <h4 class="card-header bg-primary text-white">Subroutines</h4>
-      </a>
-      <div id="subs-0" class="collapse">
-        <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mt19937_64.html#proc-init_genrand64">init_genrand64</a>
-            <a class="list-group-item" href="../module/mt19937_64.html#proc-init_by_array64">init_by_array64</a>
-        </div>
-      </div>
-    </div>
-
+  
   
   
   
@@ -408,151 +394,70 @@ large graphs.</div>
 
 
 
-
         <section>
-          <h2>Functions</h2>
+          <h2>Derived Types</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-genrand64_real1"></span> <h3>public  function <a href='..\proc\genrand64_real1.html'>genrand64_real1</a>()  
-</h3></div>
-    <div class="card-body">
-          
-  <p>Generates a random number on [0,1]-real-interval</p>
-
-  <h4>Arguments</h4>
-    <em>None</em>
-    <h4>
-    Return Value
-    <small>real(kind=r64)</small>
-    </h4>
-    
-
+    <div class="card-header codesum">
+      <span class="anchor" id="type-mt19937"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='..\type\mt19937.html'>mt19937</a>
+        
+      </h3>
     </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-genrand64_real2"></span> <h3>public  function <a href='..\proc\genrand64_real2.html'>genrand64_real2</a>()  
-</h3></div>
     <div class="card-body">
-          
-  <p>Generates a random number on [0,1)-real-interval  </p>
+      
 
-  <h4>Arguments</h4>
-    <em>None</em>
-    <h4>
-    Return Value
-    <small>real(kind=r64)</small>
-    </h4>
-    
 
-    </div>
-  </div>
 
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-genrand64_real3"></span> <h3>public  function <a href='..\proc\genrand64_real3.html'>genrand64_real3</a>()  
-</h3></div>
-    <div class="card-body">
-          
-  <p>Generates a random number on (0,1)-real-interval</p>
 
-  <h4>Arguments</h4>
-    <em>None</em>
-    <h4>
-    Return Value
-    <small>real(kind=r64)</small>
-    </h4>
-    
-
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\mt19937.html#boundprocedure-init_genrand64'>init_genrand64</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\mt19937.html#boundprocedure-init_by_array64'>init_by_array64</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  generic, public ::
+  <strong><a href='..\type\mt19937.html#boundprocedure-initialize'>initialize</a></strong> => <a href='C:\GITProjects\KohonenF08\docs\type\mt19937.html#boundprocedure-init_genrand64'>init_genrand64</a>, <a href='C:\GITProjects\KohonenF08\docs\type\mt19937.html#boundprocedure-init_by_array64'>init_by_array64</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\mt19937.html#boundprocedure-genrand64_real1'>genrand64_real1</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\mt19937.html#boundprocedure-genrand64_real2'>genrand64_real2</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\mt19937.html#boundprocedure-genrand64_real3'>genrand64_real3</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='..\type\mt19937.html#boundprocedure-genrand64_int64'>genrand64_int64</a></strong></td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
     </div>
   </div>
 
         </section>
         <br>
 
-        <section>
-          <h2>Subroutines</h2>
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-init_genrand64"></span> <h3>public  subroutine <a href='..\proc\init_genrand64.html'>init_genrand64</a>(seed)  
-</h3></div>
-    <div class="card-body">
-          
-  <p>Initializes mt(nn) with a seed</p>
 
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-seed"></span>
-              integer(kind=i64),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>seed</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-init_by_array64"></span> <h3>public  subroutine <a href='..\proc\init_by_array64.html'>init_by_array64</a>(init_key)  
-</h3></div>
-    <div class="card-body">
-          
-  <p>Initializes by an array with array-length
-  init_key is the array for initializing keys</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-init_key"></span>
-              integer(kind=i64),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>init_key</strong>(:)</td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-    </div>
-  </div>
-
-        </section>
-        <br>
 
 
 
@@ -574,7 +479,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-16 08:06 -0500             </p>
+ on 2025-03-16 14:48 -0500             </p>
           </div>
         </div>
         <br>
