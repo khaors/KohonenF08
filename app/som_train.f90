@@ -1,19 +1,20 @@
+
+!! author: Oscar Garcia-Cabrejo
+!! date: 03/12/2025
+!! version: 0.1
+!! This file defines the program som_train
 program som_train
-!
+!! This file defines the program som_train
 use precision_utilities, only: wp;
 use constants_utilities, only: NUMCHAR;
-use som_train_variables, only: my_som,parfl,input_patterns,som_parameters,&
-    initialize_variables,release_variables;
-!use self_organized_map_utilities;
+use som_train_variables, only: train_som;
 !
 implicit none;
 !
 real(kind=wp),parameter :: version=0.3d0
 character(len=NUMCHAR),parameter :: name='SOM_TRAIN';
-character(len=NUMCHAR) :: arg
+character(len=NUMCHAR) :: arg,parfl
 integer :: number_arguments,i
-!real(kind=8),dimension(4,1) :: check
-!integer,allocatable :: sample_index(:)
 !
 write(*,*)
 write(*,'(A,A,f10.5)') trim(name),' version: ',version
@@ -47,17 +48,7 @@ if(parfl(1:1) .eq. ' ') then
 endif
 write(*,*) 'Parameter file= ',trim(parfl)
 !
-call initialize_variables(parfl);
-!
-call my_som%create(som_parameters);
-!
-call my_som%train(input_patterns);
-!
-!call my_som%predict(input_patterns)
-!
-call my_som%destroy();
-!
-call release_variables();
+call train_som(parfl);
 !
 write(*,*)
 write(*,'(A,A,f10.5,2X,A)') trim(name),' version: ',version,'Finished'
