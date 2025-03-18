@@ -15,11 +15,15 @@ use direction_cosine_distance_utilities, only: direction_cosine_distance;
 !
 implicit none;
 !
+private;
+!
 type factory_distance 
 !!  Class to represent a distance factory 
     contains
         procedure,public :: create_distance
 end type factory_distance
+!
+public :: factory_distance;
 !
 contains
 !======================================================================================== 

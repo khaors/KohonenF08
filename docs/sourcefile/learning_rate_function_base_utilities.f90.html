@@ -1,0 +1,496 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>learning_rate_function_base_utilities.f90 &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>learning_rate_function_base_utilities.f90
+      <small>Source File</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Oscar Garcia-Cabrejo</li>
+            <li class="list-inline-item" id="meta-date"><i class="fa fa-calendar-o"></i> 03/17/2025</li>
+            <li class="list-inline-item" id="meta-version"><i class="fa fa-barcode"></i> 0.1</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.4% of total for source files.">24 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/learning_rate_function_base_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+            <li class="breadcrumb-item active" aria-current="page">learning_rate_function_base_utilities.f90</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#mods-0"
+         aria-expanded="false" aria-controls="mods-0">
+         <h4 class="card-header bg-primary text-white">Modules</h4>
+      </a>
+      <div id="mods-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/learning_rate_function_base_utilities.html">learning_rate_function_base_utilities</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../sourcefile/learning_rate_function_base_utilities.f90.html#src">learning_rate_function_base_utilities.f90</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      <p>This module defines an abstract class to define learning rate functions</p>
+      <br>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">This file depends on</h3>
+          </div>
+          <div class="card-body">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: sourcefile~~learning_rate_function_base_utilities.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilelearning_rate_function_base_utilitiesf90EfferentGraph" width="358pt" height="32pt"
+ viewBox="0.00 0.00 358.04 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~EfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>sourcefile~~learning_rate_function_base_utilities.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 354.04,-27.52 354.04,4 -4,4"/>
+<!-- sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~learning_rate_function_base_utilities.f90</title>
+<polygon fill="none" stroke="black" points="350.04,-23.52 146.52,-23.52 146.52,0 350.04,0 350.04,-23.52"/>
+<text text-anchor="middle" x="248.28" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">learning_rate_function_base_utilities.f90</text>
+</g>
+<!-- sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~precision_utilities.f90</title>
+<g id="a_sourcefile~~learning_rate_function_base_utilities.f90~~EfferentGraph_node2"><a xlink:href="../sourcefile/precision_utilities.f90.html" xlink:title="precision_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="110.52,-23.52 0,-23.52 0,0 110.52,0 110.52,-23.52"/>
+<text text-anchor="middle" x="55.26" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~learning_rate_function_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~learning_rate_function_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M146.18,-11.76C138.09,-11.76 130.07,-11.76 122.32,-11.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="122.34,-8.26 112.34,-11.76 122.34,-15.26 122.34,-8.26"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#EfferentGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="EfferentGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="188pt" height="32pt"
+ viewBox="0.00 0.00 187.89 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 183.89,-27.52 183.89,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="65.52,-23.52 0,-23.52 0,0 65.52,0 65.52,-23.52"/>
+<text text-anchor="middle" x="32.76" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="179.89,-23.52 83.62,-23.52 83.62,0 179.89,0 179.89,-23.52"/>
+<text text-anchor="middle" x="131.76" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a file to a file which it depends on. A file
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Files dependent on this one</h3>
+          </div>
+          <div class="card-body">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilelearning_rate_function_base_utilitiesf90AfferentGraph" width="641pt" height="119pt"
+ viewBox="0.00 0.00 641.00 119.46" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph" class="graph" transform="scale(0.876809 0.876809) rotate(0) translate(4 132.24)">
+<title>sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-132.24 727.06,-132.24 727.06,4 -4,4"/>
+<!-- sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node1" class="node">
+<title>sourcefile~learning_rate_function_base_utilities.f90</title>
+<polygon fill="none" stroke="black" points="203.52,-86.52 0,-86.52 0,-63 203.52,-63 203.52,-86.52"/>
+<text text-anchor="middle" x="101.76" y="-70.79" font-family="Helvetica,sans-Serif" font-size="10.50">learning_rate_function_base_utilities.f90</text>
+</g>
+<!-- sourcefile~exponential_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node2" class="node">
+<title>sourcefile~exponential_learning_rate_function_utilities.f90</title>
+<g id="a_sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node2"><a xlink:href="../sourcefile/exponential_learning_rate_function_utilities.f90.html" xlink:title="exponential_learning_rate_function_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="474.54,-107.52 239.52,-107.52 239.52,-84 474.54,-84 474.54,-107.52"/>
+<text text-anchor="middle" x="357.03" y="-91.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exponential_learning_rate_function_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~exponential_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_edge1" class="edge">
+<title>sourcefile~exponential_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M239.03,-86.06C231.02,-85.39 222.95,-84.73 214.96,-84.06"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="215.49,-80.59 205.23,-83.26 214.91,-87.57 215.49,-80.59"/>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node3" class="node">
+<title>sourcefile~factory_learning_rate_function_utilities.f90</title>
+<g id="a_sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node3"><a xlink:href="../sourcefile/factory_learning_rate_function_utilities.f90.html" xlink:title="factory_learning_rate_function_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="723.06,-86.52 510.54,-86.52 510.54,-63 723.06,-63 723.06,-86.52"/>
+<text text-anchor="middle" x="616.8" y="-70.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_learning_rate_function_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_edge2" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M584.41,-86.95C556.17,-97.22 513.28,-111.12 474.54,-116.76 371.18,-131.8 342.82,-132.26 239.52,-116.76 206.49,-111.8 170.43,-100.46 143.63,-90.82"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="145.12,-87.64 134.53,-87.47 142.71,-94.21 145.12,-87.64"/>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~exponential_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_edge5" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~exponential_learning_rate_function_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M510.21,-83.36C502.27,-84.01 494.21,-84.67 486.16,-85.32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="485.97,-81.82 476.29,-86.13 486.54,-88.8 485.97,-81.82"/>
+</g>
+<!-- sourcefile~gaussian_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node4" class="node">
+<title>sourcefile~gaussian_learning_rate_function_utilities.f90</title>
+<g id="a_sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node4"><a xlink:href="../sourcefile/gaussian_learning_rate_function_utilities.f90.html" xlink:title="gaussian_learning_rate_function_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="468.54,-65.52 245.52,-65.52 245.52,-42 468.54,-42 468.54,-65.52"/>
+<text text-anchor="middle" x="357.03" y="-49.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gaussian_learning_rate_function_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~gaussian_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_edge6" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~gaussian_learning_rate_function_utilities.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M510.21,-66.16C500.31,-65.35 490.22,-64.53 480.19,-63.71"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="480.65,-60.24 470.4,-62.91 480.08,-67.22 480.65,-60.24"/>
+</g>
+<!-- sourcefile~linear_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node5" class="node">
+<title>sourcefile~linear_learning_rate_function_utilities.f90</title>
+<g id="a_sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_node5"><a xlink:href="../sourcefile/linear_learning_rate_function_utilities.f90.html" xlink:title="linear_learning_rate_function_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="460.29,-23.52 253.77,-23.52 253.77,0 460.29,0 460.29,-23.52"/>
+<text text-anchor="middle" x="357.03" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">linear_learning_rate_function_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~linear_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_edge7" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~linear_learning_rate_function_utilities.f90</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M578.93,-62.58C550.6,-53.51 510.38,-41.29 474.54,-32.76 464.7,-30.42 454.34,-28.2 444.02,-26.15"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="444.84,-22.74 434.36,-24.27 443.51,-29.61 444.84,-22.74"/>
+</g>
+<!-- sourcefile~gaussian_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_edge3" class="edge">
+<title>sourcefile~gaussian_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M245.31,-62.94C235.25,-63.77 225.06,-64.62 214.99,-65.45"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="214.87,-61.95 205.19,-66.27 215.45,-68.93 214.87,-61.95"/>
+</g>
+<!-- sourcefile~linear_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~learning_rate_function_base_utilities.f90~~AfferentGraph_edge4" class="edge">
+<title>sourcefile~linear_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M280.54,-24C266.83,-26.61 252.7,-29.56 239.52,-32.76 209.11,-40.14 175.5,-50.43 149.22,-58.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="148.27,-55.6 139.87,-62.05 150.46,-62.25 148.27,-55.6"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var pansourcefilelearning_rate_function_base_utilitiesf90AfferentGraph = svgPanZoom('#sourcefilelearning_rate_function_base_utilitiesf90AfferentGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#AfferentGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="AfferentGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="188pt" height="32pt"
+ viewBox="0.00 0.00 187.89 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 183.89,-27.52 183.89,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="65.52,-23.52 0,-23.52 0,0 65.52,0 65.52,-23.52"/>
+<text text-anchor="middle" x="32.76" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="179.89,-23.52 83.62,-23.52 83.62,0 179.89,0 179.89,-23.52"/>
+<text text-anchor="middle" x="131.76" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a file to a file which it depends on. A file
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+<br>
+      <section>
+        <h2><span class="anchor" id="src"></span>Source Code</h2>
+        <div class="hl codehilite"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="c">!! author: Oscar Garcia-Cabrejo</span>
+<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">!! date: 03/17/2025</span>
+<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">!! version: 0.1</span>
+<a id="ln-4" name="ln-4" href="#ln-4"></a><span class="c">!! This module defines an abstract class to define learning rate functions</span>
+<a id="ln-5" name="ln-5" href="#ln-5"></a><span class="k">module </span><span class="n">learning_rate_function_base_utilities</span><span class="w"></span>
+<a id="ln-6" name="ln-6" href="#ln-6"></a><span class="c">!! This module defines an abstract class to define learning rate functions</span>
+<a id="ln-7" name="ln-7" href="#ln-7"></a><span class="w">    </span><span class="k">use </span><span class="n">precision_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">wp</span><span class="p">;</span><span class="w"></span>
+<a id="ln-8" name="ln-8" href="#ln-8"></a><span class="w">    </span><span class="k">implicit none</span><span class="p">;</span><span class="w"></span>
+<a id="ln-9" name="ln-9" href="#ln-9"></a><span class="w">    </span><span class="c">!</span>
+<a id="ln-10" name="ln-10" href="#ln-10"></a><span class="w">    </span><span class="k">type</span><span class="p">,</span><span class="k">abstract</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_function_base</span><span class="w"></span>
+<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="w">    </span><span class="c">!! Abstract class used to derive classes that calculates the learning rate</span>
+<a id="ln-12" name="ln-12" href="#ln-12"></a><span class="w">        </span><span class="k">contains</span>
+<a id="ln-13" name="ln-13" href="#ln-13"></a><span class="k">            procedure</span><span class="p">(</span><span class="n">learning_rate_set_parameters</span><span class="p">),</span><span class="k">deferred</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_parameters</span><span class="w"></span>
+<a id="ln-14" name="ln-14" href="#ln-14"></a><span class="w">            </span><span class="k">procedure</span><span class="p">(</span><span class="n">learning_rate_calculate</span><span class="p">),</span><span class="k">deferred</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calculate</span><span class="w"></span>
+<a id="ln-15" name="ln-15" href="#ln-15"></a><span class="w">    </span><span class="k">end type </span><span class="n">learning_rate_function_base</span><span class="w"></span>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="c">!</span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="w">    </span><span class="k">abstract interface</span>
+<a id="ln-18" name="ln-18" href="#ln-18"></a><span class="k">        subroutine </span><span class="n">learning_rate_set_parameters</span><span class="p">(</span><span class="n">learning_rate_fn</span><span class="p">,</span><span class="n">lambda0</span><span class="p">,</span><span class="n">tau</span><span class="p">)</span><span class="w"></span>
+<a id="ln-19" name="ln-19" href="#ln-19"></a><span class="w">            </span><span class="c">!! Template for a function to define the parameters of the learning rate function</span>
+<a id="ln-20" name="ln-20" href="#ln-20"></a><span class="w">            </span><span class="k">import</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_function_base</span><span class="w"></span>
+<a id="ln-21" name="ln-21" href="#ln-21"></a><span class="w">            </span><span class="k">import</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">wp</span><span class="w"> </span>
+<a id="ln-22" name="ln-22" href="#ln-22"></a><span class="w">            </span><span class="c">!!</span>
+<a id="ln-23" name="ln-23" href="#ln-23"></a><span class="w">            </span><span class="k">class</span><span class="p">(</span><span class="n">learning_rate_function_base</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_fn</span><span class="w"></span>
+<a id="ln-24" name="ln-24" href="#ln-24"></a><span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lambda0</span><span class="p">,</span><span class="n">tau</span><span class="w"></span>
+<a id="ln-25" name="ln-25" href="#ln-25"></a><span class="w">            </span><span class="c">!</span>
+<a id="ln-26" name="ln-26" href="#ln-26"></a><span class="w">        </span><span class="k">end subroutine </span><span class="n">learning_rate_set_parameters</span><span class="w"></span>
+<a id="ln-27" name="ln-27" href="#ln-27"></a><span class="w">        </span><span class="c">!</span>
+<a id="ln-28" name="ln-28" href="#ln-28"></a><span class="w">        </span><span class="k">function </span><span class="n">learning_rate_calculate</span><span class="p">(</span><span class="n">learning_rate_fn</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="w"></span>
+<a id="ln-29" name="ln-29" href="#ln-29"></a><span class="w">            </span><span class="c">!! Template for a function that calculates the learning rate</span>
+<a id="ln-30" name="ln-30" href="#ln-30"></a><span class="w">            </span><span class="k">import</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_function_base</span><span class="w"></span>
+<a id="ln-31" name="ln-31" href="#ln-31"></a><span class="w">            </span><span class="k">import</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">wp</span><span class="w"></span>
+<a id="ln-32" name="ln-32" href="#ln-32"></a><span class="w">            </span><span class="c">!! Import section</span>
+<a id="ln-33" name="ln-33" href="#ln-33"></a><span class="w">            </span><span class="k">class</span><span class="p">(</span><span class="n">learning_rate_function_base</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_fn</span><span class="w"></span>
+<a id="ln-34" name="ln-34" href="#ln-34"></a><span class="w">            </span><span class="c">!! An `learning_rate_function_base` object</span>
+<a id="ln-35" name="ln-35" href="#ln-35"></a><span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iteration</span><span class="w"></span>
+<a id="ln-36" name="ln-36" href="#ln-36"></a><span class="w">            </span><span class="c">!! A real variable with the current iteration</span>
+<a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alpha</span><span class="w"></span>
+<a id="ln-38" name="ln-38" href="#ln-38"></a><span class="w">            </span><span class="c">!! A real variable with the learning rate</span>
+<a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">        </span><span class="k">end function </span><span class="n">learning_rate_calculate</span><span class="w"></span>
+<a id="ln-40" name="ln-40" href="#ln-40"></a><span class="w">    </span><span class="k">end interface</span><span class="w"></span>
+<a id="ln-41" name="ln-41" href="#ln-41"></a><span class="w">    </span><span class="c">!</span>
+<a id="ln-42" name="ln-42" href="#ln-42"></a><span class="k">end module </span><span class="n">learning_rate_function_base_utilities</span><span class="w"></span>
+</pre></div>
+
+      </section>
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-18 08:40 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

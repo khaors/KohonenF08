@@ -1,0 +1,492 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>factory_learning_rate_function_utilities.f90 &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>factory_learning_rate_function_utilities.f90
+      <small>Source File</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-date"><i class="fa fa-calendar-o"></i> 03/18/2025</li>
+            <li class="list-inline-item" id="meta-version"><i class="fa fa-barcode"></i> 0.1</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.9% of total for source files.">49 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/factory_learning_rate_function_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+            <li class="breadcrumb-item active" aria-current="page">factory_learning_rate_function_utilities.f90</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#mods-0"
+         aria-expanded="false" aria-controls="mods-0">
+         <h4 class="card-header bg-primary text-white">Modules</h4>
+      </a>
+      <div id="mods-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/factory_learning_rate_function_utilities.html">factory_learning_rate_function_utilities</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../sourcefile/factory_learning_rate_function_utilities.f90.html#src">factory_learning_rate_function_utilities.f90</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      <p>This module defines a factory to create learning rate functions </p>
+      <br>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">This file depends on</h3>
+          </div>
+          <div class="card-body">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilefactory_learning_rate_function_utilitiesf90EfferentGraph" width="641pt" height="145pt"
+ viewBox="0.00 0.00 641.00 144.81" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph" class="graph" transform="scale(0.730418 0.730418) rotate(0) translate(4 194.26)">
+<title>sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-194.26 873.58,-194.26 873.58,4 -4,4"/>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~factory_learning_rate_function_utilities.f90</title>
+<polygon fill="none" stroke="black" points="869.58,-103.52 657.06,-103.52 657.06,-80 869.58,-80 869.58,-103.52"/>
+<text text-anchor="middle" x="763.32" y="-87.79" font-family="Helvetica,sans-Serif" font-size="10.50">factory_learning_rate_function_utilities.f90</text>
+</g>
+<!-- sourcefile~constants_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~constants_utilities.f90</title>
+<g id="a_sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node2"><a xlink:href="../sourcefile/constants_utilities.f90.html" xlink:title="constants_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="305.04,-145.52 191.52,-145.52 191.52,-122 305.04,-122 305.04,-145.52"/>
+<text text-anchor="middle" x="248.28" y="-129.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~constants_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M740.01,-103.88C712.74,-118.19 664.8,-141.68 621.06,-154.76 570.79,-169.79 556.68,-167.8 504.55,-173.76"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M502.55,-173.76C467.35,-177.78 377.99,-161.34 315.44,-148.32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="316.47,-144.96 305.96,-146.33 315.03,-151.81 316.47,-144.96"/>
+</g>
+<!-- sourcefile~exponential_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~exponential_learning_rate_function_utilities.f90</title>
+<g id="a_sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node3"><a xlink:href="../sourcefile/exponential_learning_rate_function_utilities.f90.html" xlink:title="exponential_learning_rate_function_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="621.06,-145.52 386.04,-145.52 386.04,-122 621.06,-122 621.06,-145.52"/>
+<text text-anchor="middle" x="503.55" y="-129.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exponential_learning_rate_function_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~exponential_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~exponential_learning_rate_function_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M687.42,-103.96C657.23,-108.88 622.23,-114.59 590.97,-119.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="590.44,-116.22 581.13,-121.28 591.57,-123.13 590.44,-116.22"/>
+</g>
+<!-- sourcefile~gaussian_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node4" class="node">
+<title>sourcefile~gaussian_learning_rate_function_utilities.f90</title>
+<g id="a_sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node4"><a xlink:href="../sourcefile/gaussian_learning_rate_function_utilities.f90.html" xlink:title="gaussian_learning_rate_function_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="615.06,-103.52 392.04,-103.52 392.04,-80 615.06,-80 615.06,-103.52"/>
+<text text-anchor="middle" x="503.55" y="-87.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gaussian_learning_rate_function_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~gaussian_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge3" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~gaussian_learning_rate_function_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M656.73,-91.76C646.83,-91.76 636.74,-91.76 626.71,-91.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="626.93,-88.26 616.93,-91.76 626.93,-95.26 626.93,-88.26"/>
+</g>
+<!-- sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node5" class="node">
+<title>sourcefile~learning_rate_function_base_utilities.f90</title>
+<g id="a_sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node5"><a xlink:href="../sourcefile/learning_rate_function_base_utilities.f90.html" xlink:title="learning_rate_function_base_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="350.04,-65.52 146.52,-65.52 146.52,-42 350.04,-42 350.04,-65.52"/>
+<text text-anchor="middle" x="248.28" y="-49.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">learning_rate_function_base_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge4" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M689.91,-79.55C667.86,-76.22 643.52,-72.94 621.06,-70.76 534.2,-62.34 435.5,-58.07 361.64,-55.92"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="362.07,-52.43 351.98,-55.65 361.88,-59.43 362.07,-52.43"/>
+</g>
+<!-- sourcefile~linear_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node6" class="node">
+<title>sourcefile~linear_learning_rate_function_utilities.f90</title>
+<g id="a_sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node6"><a xlink:href="../sourcefile/linear_learning_rate_function_utilities.f90.html" xlink:title="linear_learning_rate_function_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="606.81,-23.52 400.29,-23.52 400.29,0 606.81,0 606.81,-23.52"/>
+<text text-anchor="middle" x="503.55" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">linear_learning_rate_function_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~linear_learning_rate_function_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge5" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~linear_learning_rate_function_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M734.06,-79.56C705.85,-67.71 661.03,-49.79 621.06,-37.76 607.3,-33.62 592.45,-29.81 578.11,-26.47"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="579.27,-23.14 568.74,-24.33 577.71,-29.97 579.27,-23.14"/>
+</g>
+<!-- sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node7" class="node">
+<title>sourcefile~precision_utilities.f90</title>
+<g id="a_sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_node7"><a xlink:href="../sourcefile/precision_utilities.f90.html" xlink:title="precision_utilities.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="110.52,-105.52 0,-105.52 0,-82 110.52,-82 110.52,-105.52"/>
+<text text-anchor="middle" x="55.26" y="-89.79" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge6" class="edge">
+<title>sourcefile~factory_learning_rate_function_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M502.55,-173.76C345.11,-191.75 296.75,-205.18 146.52,-154.76 120.5,-146.03 94.97,-127.59 77.74,-113.26"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="80.09,-110.66 70.22,-106.8 75.52,-115.97 80.09,-110.66"/>
+</g>
+<!-- sourcefile~constants_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge7" class="edge">
+<title>sourcefile~constants_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M191.26,-122.03C169.6,-117.49 144.65,-112.27 122.14,-107.55"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="122.95,-104.15 112.45,-105.53 121.52,-111 122.95,-104.15"/>
+</g>
+<!-- sourcefile~exponential_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge8" class="edge">
+<title>sourcefile~exponential_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M408.2,-121.56C400.53,-119.13 393.04,-116.23 386.04,-112.76 366.59,-103.12 369.12,-90.11 350.04,-79.76 342.7,-75.78 334.72,-72.38 326.58,-69.5"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="327.85,-66.23 317.26,-66.46 325.68,-72.88 327.85,-66.23"/>
+</g>
+<!-- sourcefile~exponential_learning_rate_function_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge9" class="edge">
+<title>sourcefile~exponential_learning_rate_function_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M430.88,-121.54C362.45,-110.03 267.16,-94.42 249.28,-93.76"/>
+</g>
+<!-- sourcefile~gaussian_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge10" class="edge">
+<title>sourcefile~gaussian_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M421.02,-79.53C395.83,-75.75 367.89,-71.56 342,-67.67"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="342.56,-64.22 332.15,-66.19 341.52,-71.14 342.56,-64.22"/>
+</g>
+<!-- sourcefile~gaussian_learning_rate_function_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge11" class="edge">
+<title>sourcefile~gaussian_learning_rate_function_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M391.56,-94.8C347.29,-95.45 295.86,-95.49 249.28,-93.76"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M247.28,-93.76C205.53,-92.21 158.62,-92.18 121.73,-92.56"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="122.1,-89.05 112.14,-92.67 122.18,-96.05 122.1,-89.05"/>
+</g>
+<!-- sourcefile~learning_rate_function_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge12" class="edge">
+<title>sourcefile~learning_rate_function_base_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M188.93,-65.98C167.81,-70.4 143.83,-75.42 122.11,-79.97"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="121.54,-76.51 112.47,-81.99 122.98,-83.37 121.54,-76.51"/>
+</g>
+<!-- sourcefile~linear_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge13" class="edge">
+<title>sourcefile~linear_learning_rate_function_utilities.f90&#45;&gt;sourcefile~learning_rate_function_base_utilities.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M428.95,-23.96C399.3,-28.88 364.9,-34.59 334.19,-39.68"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="333.85,-36.19 324.55,-41.28 334.99,-43.09 333.85,-36.19"/>
+</g>
+<!-- sourcefile~linear_learning_rate_function_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90 -->
+<g id="sourcefile~~factory_learning_rate_function_utilities.f90~~EfferentGraph_edge14" class="edge">
+<title>sourcefile~linear_learning_rate_function_utilities.f90&#45;&gt;sourcefile~precision_utilities.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M400.07,-3.66C327.4,-1.27 228.62,-4.95 146.52,-32.76 120.52,-41.57 94.99,-59.99 77.76,-74.3"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="75.55,-71.59 70.23,-80.75 80.1,-76.9 75.55,-71.59"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var pansourcefilefactory_learning_rate_function_utilitiesf90EfferentGraph = svgPanZoom('#sourcefilefactory_learning_rate_function_utilitiesf90EfferentGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#EfferentGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="EfferentGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="188pt" height="32pt"
+ viewBox="0.00 0.00 187.89 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 183.89,-27.52 183.89,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="65.52,-23.52 0,-23.52 0,0 65.52,0 65.52,-23.52"/>
+<text text-anchor="middle" x="32.76" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="179.89,-23.52 83.62,-23.52 83.62,0 179.89,0 179.89,-23.52"/>
+<text text-anchor="middle" x="131.76" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a file to a file which it depends on. A file
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+<br>
+      <section>
+        <h2><span class="anchor" id="src"></span>Source Code</h2>
+        <div class="hl codehilite"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="c">! author: Oscar Garcia-Cabrejo</span>
+<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">!! date: 03/18/2025</span>
+<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">!! version: 0.1</span>
+<a id="ln-4" name="ln-4" href="#ln-4"></a><span class="c">!! This module defines a factory to create learning rate functions </span>
+<a id="ln-5" name="ln-5" href="#ln-5"></a><span class="k">module </span><span class="n">factory_learning_rate_function_utilities</span><span class="w"></span>
+<a id="ln-6" name="ln-6" href="#ln-6"></a><span class="w">    </span><span class="c">!! This module defines a factory to create learning rate functions </span>
+<a id="ln-7" name="ln-7" href="#ln-7"></a><span class="w">    </span><span class="k">use </span><span class="n">error_handling</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">error_stop</span><span class="p">;</span><span class="w"></span>
+<a id="ln-8" name="ln-8" href="#ln-8"></a><span class="w">    </span><span class="k">use </span><span class="n">precision_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">wp</span><span class="p">;</span><span class="w"></span>
+<a id="ln-9" name="ln-9" href="#ln-9"></a><span class="w">    </span><span class="k">use </span><span class="n">constants_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">NUMCHAR</span><span class="p">;</span><span class="w"></span>
+<a id="ln-10" name="ln-10" href="#ln-10"></a><span class="w">    </span><span class="k">use </span><span class="n">learning_rate_function_base_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">learning_rate_function_base</span><span class="p">;</span><span class="w"></span>
+<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="w">    </span><span class="k">use </span><span class="n">linear_learning_rate_function_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">linear_learning_rate_function</span><span class="p">;</span><span class="w"></span>
+<a id="ln-12" name="ln-12" href="#ln-12"></a><span class="w">    </span><span class="k">use </span><span class="n">gaussian_learning_rate_function_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">gaussian_learning_rate_function</span><span class="p">;</span><span class="w"></span>
+<a id="ln-13" name="ln-13" href="#ln-13"></a><span class="w">    </span><span class="k">use </span><span class="n">exponential_learning_rate_function_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">exponential_learning_rate_function</span><span class="p">;</span><span class="w"></span>
+<a id="ln-14" name="ln-14" href="#ln-14"></a><span class="w">    </span><span class="c">!</span>
+<a id="ln-15" name="ln-15" href="#ln-15"></a><span class="w">    </span><span class="k">implicit none</span><span class="p">;</span><span class="w"></span>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="w">    </span><span class="c">!</span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="w">    </span><span class="k">private</span><span class="p">;</span><span class="w"></span>
+<a id="ln-18" name="ln-18" href="#ln-18"></a><span class="w">    </span><span class="c">!</span>
+<a id="ln-19" name="ln-19" href="#ln-19"></a><span class="w">    </span><span class="k">type</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">factory_learning_rate_function</span><span class="w"></span>
+<a id="ln-20" name="ln-20" href="#ln-20"></a><span class="w">    </span><span class="c">!! Class that represents a factory of learning rate functions</span>
+<a id="ln-21" name="ln-21" href="#ln-21"></a><span class="w">        </span><span class="k">contains</span>
+<a id="ln-22" name="ln-22" href="#ln-22"></a><span class="k">            procedure</span><span class="p">,</span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">create_learning_rate_fn</span><span class="w"></span>
+<a id="ln-23" name="ln-23" href="#ln-23"></a><span class="w">    </span><span class="k">end type </span><span class="n">factory_learning_rate_function</span><span class="w"></span>
+<a id="ln-24" name="ln-24" href="#ln-24"></a><span class="w">    </span><span class="c">!</span>
+<a id="ln-25" name="ln-25" href="#ln-25"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">factory_learning_rate_function</span><span class="w"></span>
+<a id="ln-26" name="ln-26" href="#ln-26"></a><span class="c">!</span>
+<a id="ln-27" name="ln-27" href="#ln-27"></a><span class="w">    </span><span class="k">contains</span>
+<a id="ln-28" name="ln-28" href="#ln-28"></a><span class="k">        subroutine </span><span class="n">create_learning_rate_fn</span><span class="p">(</span><span class="n">factory</span><span class="p">,</span><span class="n">type_</span><span class="p">,</span><span class="n">learning_rate_fn</span><span class="p">)</span><span class="w"></span>
+<a id="ln-29" name="ln-29" href="#ln-29"></a><span class="w">            </span><span class="c">!! Subroutine to create the instances of learning rate functions</span>
+<a id="ln-30" name="ln-30" href="#ln-30"></a><span class="w">            </span><span class="k">class</span><span class="p">(</span><span class="n">factory_learning_rate_function</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">factory</span><span class="w"></span>
+<a id="ln-31" name="ln-31" href="#ln-31"></a><span class="w">            </span><span class="c">!! A `factory_learning_rate_function` object</span>
+<a id="ln-32" name="ln-32" href="#ln-32"></a><span class="w">            </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">type_</span><span class="w"></span>
+<a id="ln-33" name="ln-33" href="#ln-33"></a><span class="w">            </span><span class="c">!! A character string with the type of learning rate function to be instantiated</span>
+<a id="ln-34" name="ln-34" href="#ln-34"></a><span class="w">            </span><span class="k">class</span><span class="p">(</span><span class="n">learning_rate_function_base</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_fn</span><span class="w"></span>
+<a id="ln-35" name="ln-35" href="#ln-35"></a><span class="w">            </span><span class="c">!! A `learning_rate_function_base` object</span>
+<a id="ln-36" name="ln-36" href="#ln-36"></a><span class="w">            </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ierr</span><span class="w"></span>
+<a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">            </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">NUMCHAR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">base_message</span><span class="p">,</span><span class="n">message</span><span class="p">;</span><span class="w"></span>
+<a id="ln-38" name="ln-38" href="#ln-38"></a><span class="w">            </span><span class="c">!</span>
+<a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">            </span><span class="n">base_message</span><span class="o">=</span><span class="s1">&#39;FACTORY LEARNING RATE FUNCTION ERROR&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="ln-40" name="ln-40" href="#ln-40"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">learning_rate_fn</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">learning_rate_fn</span><span class="p">);</span><span class="w"></span>
+<a id="ln-41" name="ln-41" href="#ln-41"></a><span class="w">            </span><span class="k">select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">type_</span><span class="p">));</span><span class="w"></span>
+<a id="ln-42" name="ln-42" href="#ln-42"></a><span class="w">                </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span><span class="w"></span>
+<a id="ln-43" name="ln-43" href="#ln-43"></a><span class="w">                    </span><span class="k">allocate</span><span class="p">(</span><span class="n">linear_learning_rate_function</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_fn</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">ierr</span><span class="p">);</span><span class="w"></span>
+<a id="ln-44" name="ln-44" href="#ln-44"></a><span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">ierr</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<a id="ln-45" name="ln-45" href="#ln-45"></a><span class="k">                        </span><span class="n">message</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">base_message</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39; while allocating memory for linear rate function&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="ln-46" name="ln-46" href="#ln-46"></a><span class="w">                        </span><span class="k">call </span><span class="n">error_stop</span><span class="p">(</span><span class="n">message</span><span class="p">);</span><span class="w"></span>
+<a id="ln-47" name="ln-47" href="#ln-47"></a><span class="w">                    </span><span class="k">end if</span>
+<a id="ln-48" name="ln-48" href="#ln-48"></a><span class="k">                case</span><span class="p">(</span><span class="s1">&#39;gaussian&#39;</span><span class="p">)</span><span class="w"></span>
+<a id="ln-49" name="ln-49" href="#ln-49"></a><span class="w">                    </span><span class="k">allocate</span><span class="p">(</span><span class="n">gaussian_learning_rate_function</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_fn</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">ierr</span><span class="p">);</span><span class="w"></span>
+<a id="ln-50" name="ln-50" href="#ln-50"></a><span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">ierr</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<a id="ln-51" name="ln-51" href="#ln-51"></a><span class="k">                        </span><span class="n">message</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">base_message</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39; while allocating memory for gaussian rate function&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="ln-52" name="ln-52" href="#ln-52"></a><span class="w">                        </span><span class="k">call </span><span class="n">error_stop</span><span class="p">(</span><span class="n">message</span><span class="p">);</span><span class="w"></span>
+<a id="ln-53" name="ln-53" href="#ln-53"></a><span class="w">                    </span><span class="k">end if   </span>
+<a id="ln-54" name="ln-54" href="#ln-54"></a><span class="k">                case</span><span class="p">(</span><span class="s1">&#39;exponential&#39;</span><span class="p">)</span><span class="w"></span>
+<a id="ln-55" name="ln-55" href="#ln-55"></a><span class="w">                    </span><span class="k">allocate</span><span class="p">(</span><span class="n">exponential_learning_rate_function</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">learning_rate_fn</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">ierr</span><span class="p">);</span><span class="w"></span>
+<a id="ln-56" name="ln-56" href="#ln-56"></a><span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">ierr</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<a id="ln-57" name="ln-57" href="#ln-57"></a><span class="k">                        </span><span class="n">message</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">base_message</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39; while allocating memory for exponential rate function&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="ln-58" name="ln-58" href="#ln-58"></a><span class="w">                        </span><span class="k">call </span><span class="n">error_stop</span><span class="p">(</span><span class="n">message</span><span class="p">);</span><span class="w"></span>
+<a id="ln-59" name="ln-59" href="#ln-59"></a><span class="w">                    </span><span class="k">end if   </span>
+<a id="ln-60" name="ln-60" href="#ln-60"></a><span class="k">                case </span><span class="n">default</span><span class="w"></span>
+<a id="ln-61" name="ln-61" href="#ln-61"></a><span class="w">                    </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;ERROR: the requested distance is not defined&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="ln-62" name="ln-62" href="#ln-62"></a><span class="w">                    </span><span class="k">stop</span>
+<a id="ln-63" name="ln-63" href="#ln-63"></a><span class="k">            end select</span>
+<a id="ln-64" name="ln-64" href="#ln-64"></a>
+<a id="ln-65" name="ln-65" href="#ln-65"></a><span class="k">        end subroutine </span><span class="n">create_learning_rate_fn</span><span class="w"></span>
+<a id="ln-66" name="ln-66" href="#ln-66"></a><span class="c">!</span>
+<a id="ln-67" name="ln-67" href="#ln-67"></a><span class="k">end module </span><span class="n">factory_learning_rate_function_utilities</span><span class="w"></span>
+</pre></div>
+
+      </section>
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-18 08:40 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

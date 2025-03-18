@@ -133,9 +133,11 @@ contains
         real(kind=wp) :: cor 
 !! Real value with the correlation coefficient
         integer :: ndat
+        real(kind=wp) :: cov
         !
         ndat=size(x);
-        cor=(sum((x-mean(x))*(y-mean(y)))/dble(ndat))/(std(x)*std(y));
+        cov=(sum((x-mean(x))*(y-mean(y)))/dble(ndat));
+        cor=cov/(std(x)*std(y));
     end function correlation_coefficient
 !
 end module general_utilities

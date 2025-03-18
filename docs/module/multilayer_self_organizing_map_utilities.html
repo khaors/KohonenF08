@@ -1,0 +1,800 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="An Object-Oriented library for Self-Organizing maps in Fortran2008. This library provides the classes and associated methods for most of the operations required in the definition of procedures for the definition, training and use of SOM.">
+    <meta name="author" content="Oscar Garcia-Cabrejo" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>multilayer_self_organizing_map_utilities &ndash; KohonenF08</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">KohonenF08 </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>multilayer_self_organizing_map_utilities
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for modules and submodules.">13 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/multilayer_self_organizing_map_utilities.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\sourcefile\multilayer_self_organizing_map_utilities.f90.html'>multilayer_self_organizing_map_utilities.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">multilayer_self_organizing_map_utilities</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    <em>None</em>
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p>This module defines a class that represents a multilayer self_organized_map</p>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item">error_handling</li>
+                  <li class="list-inline-item"><a href='rkiss05_generator_utilities.html'>rkiss05_generator_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_prototype_utilities.html'>kohonen_prototype_utilities</a></li>
+                  <li class="list-inline-item"><a href='distance_base_utilities.html'>distance_base_utilities</a></li>
+                  <li class="list-inline-item"><a href='factory_distance_utilities.html'>factory_distance_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_map_base_utilities.html'>kohonen_map_base_utilities</a></li>
+                  <li class="list-inline-item"><a href='precision_utilities.html'>precision_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_layer_parameters_utilities.html'>kohonen_layer_parameters_utilities</a></li>
+                  <li class="list-inline-item"><a href='constants_utilities.html'>constants_utilities</a></li>
+                  <li class="list-inline-item"><a href='random_generator_base_utilities.html'>random_generator_base_utilities</a></li>
+                  <li class="list-inline-item"><a href='kohonen_pattern_utilities.html'>kohonen_pattern_utilities</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: module~~multilayer_self_organizing_map_utilities~~UsesGraph Pages: 1 -->
+<svg id="modulemultilayer_self_organizing_map_utilitiesUsesGraph" width="641pt" height="341pt"
+ viewBox="0.00 0.00 641.00 340.98" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph" class="graph" transform="scale(0.526212 0.526212) rotate(0) translate(4 643.99)">
+<title>module~~multilayer_self_organizing_map_utilities~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-643.99 1214.14,-643.99 1214.14,4 -4,4"/>
+<!-- module~multilayer_self_organizing_map_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node1" class="node">
+<title>module~multilayer_self_organizing_map_utilities</title>
+<polygon fill="none" stroke="black" points="1210.14,-425.66 1009.62,-425.66 1009.62,-402.14 1210.14,-402.14 1210.14,-425.66"/>
+<text text-anchor="middle" x="1109.88" y="-409.92" font-family="Helvetica,sans-Serif" font-size="10.50">multilayer_self_organizing_map_utilities</text>
+</g>
+<!-- error_handling -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node2" class="node">
+<title>error_handling</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="350.31,-246.66 269.04,-246.66 269.04,-223.14 350.31,-223.14 350.31,-246.66"/>
+<text text-anchor="middle" x="309.67" y="-230.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">error_handling</text>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;error_handling -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge1" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-290.9C816.39,-269.85 792.35,-294.93 707.21,-290.9"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-290.9C651.51,-288.35 639.24,-277.96 586.08,-269.9 508,-258.06 417.05,-247.04 361.69,-240.64"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="362.27,-237.18 351.94,-239.52 361.47,-244.14 362.27,-237.18"/>
+</g>
+<!-- module~constants_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node3" class="node">
+<title>module~constants_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node3"><a xlink:href="../module/constants_utilities.html" xlink:title="constants_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="357.43,-150.66 261.91,-150.66 261.91,-127.14 357.43,-127.14 357.43,-150.66"/>
+<text text-anchor="middle" x="309.67" y="-134.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge2" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-136.9C645.98,-113.02 463.71,-124.99 369.07,-133.25"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="368.85,-129.76 359.2,-134.13 369.47,-136.73 368.85,-129.76"/>
+</g>
+<!-- module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node4" class="node">
+<title>module~distance_base_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node4"><a xlink:href="../module/distance_base_utilities.html" xlink:title="distance_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="369.06,-444.66 250.29,-444.66 250.29,-421.14 369.06,-421.14 369.06,-444.66"/>
+<text text-anchor="middle" x="309.67" y="-428.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">distance_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge3" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-290.9C832.03,-274.09 851.45,-369.77 790.35,-401.9 673.05,-463.57 628.89,-445.61 496.57,-452.9"/>
+</g>
+<!-- module~factory_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node5" class="node">
+<title>module~factory_distance_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node5"><a xlink:href="../module/factory_distance_utilities.html" xlink:title="factory_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="770.1,-392.66 642.33,-392.66 642.33,-369.14 770.1,-369.14 770.1,-392.66"/>
+<text text-anchor="middle" x="706.21" y="-376.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">factory_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~factory_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge4" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~factory_distance_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-290.9C832.19,-274.13 760.5,-330.05 726.82,-361.29"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="724.65,-358.53 719.83,-367.96 729.48,-363.59 724.65,-358.53"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node6" class="node">
+<title>module~kohonen_layer_parameters_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node6"><a xlink:href="../module/kohonen_layer_parameters_utilities.html" xlink:title="kohonen_layer_parameters_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="586.08,-108.66 405.06,-108.66 405.06,-85.14 586.08,-85.14 586.08,-108.66"/>
+<text text-anchor="middle" x="495.57" y="-92.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_layer_parameters_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~kohonen_layer_parameters_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge5" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~kohonen_layer_parameters_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-290.9C866.62,-282.77 854.64,-289.59 826.35,-271.9 805.51,-258.86 806.54,-248.4 790.35,-229.9 753.83,-188.18 758.64,-157.62 707.21,-136.9"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-136.9C671.41,-123.28 632.62,-114.21 597.73,-108.21"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="598.48,-104.79 588.04,-106.62 597.34,-111.7 598.48,-104.79"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1095.07,-401.75C1063.46,-374.9 982.33,-311.32 900.98,-290.9"/>
+</g>
+<!-- module~kohonen_map_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node7" class="node">
+<title>module~kohonen_map_base_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node7"><a xlink:href="../module/kohonen_map_base_utilities.html" xlink:title="kohonen_map_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="973.62,-262.66 826.35,-262.66 826.35,-239.14 973.62,-239.14 973.62,-262.66"/>
+<text text-anchor="middle" x="899.98" y="-246.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_map_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~kohonen_map_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge6" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~kohonen_map_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1100.09,-401.87C1080.32,-375.61 1029.7,-312.66 973.62,-276.9 968.05,-273.34 961.93,-270.2 955.68,-267.43"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="957.09,-264.22 946.51,-263.69 954.45,-270.71 957.09,-264.22"/>
+</g>
+<!-- module~kohonen_pattern_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node8" class="node">
+<title>module~kohonen_pattern_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node8"><a xlink:href="../module/kohonen_pattern_utilities.html" xlink:title="kohonen_pattern_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="771.6,-262.66 640.83,-262.66 640.83,-239.14 771.6,-239.14 771.6,-262.66"/>
+<text text-anchor="middle" x="706.21" y="-246.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_pattern_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~kohonen_pattern_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge7" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~kohonen_pattern_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-290.9C861.03,-281.37 818.46,-272.33 783.09,-265.26"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="783.85,-261.84 773.36,-263.33 782.48,-268.71 783.85,-261.84"/>
+</g>
+<!-- module~kohonen_prototype_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node9" class="node">
+<title>module~kohonen_prototype_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node9"><a xlink:href="../module/kohonen_prototype_utilities.html" xlink:title="kohonen_prototype_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="566.58,-302.66 424.56,-302.66 424.56,-279.14 566.58,-279.14 566.58,-302.66"/>
+<text text-anchor="middle" x="495.57" y="-286.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kohonen_prototype_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~kohonen_prototype_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge8" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~kohonen_prototype_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M705.21,-290.9C663.23,-288.91 616.43,-288.72 577.82,-289.11"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="578.1,-285.61 568.15,-289.23 578.19,-292.61 578.1,-285.61"/>
+</g>
+<!-- module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node10" class="node">
+<title>module~precision_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node10"><a xlink:href="../module/precision_utilities.html" xlink:title="precision_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="214.29,-414.66 121.77,-414.66 121.77,-391.14 214.29,-391.14 214.29,-414.66"/>
+<text text-anchor="middle" x="168.03" y="-398.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">precision_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge9" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-616.9C729.95,-675.35 674.67,-600.55 496.57,-616.9"/>
+</g>
+<!-- module~random_generator_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node11" class="node">
+<title>module~random_generator_base_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node11"><a xlink:href="../module/random_generator_base_utilities.html" xlink:title="random_generator_base_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="790.35,-588.66 622.08,-588.66 622.08,-565.14 790.35,-565.14 790.35,-588.66"/>
+<text text-anchor="middle" x="706.21" y="-572.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">random_generator_base_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~random_generator_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge10" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~random_generator_base_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1102.01,-425.91C1079.38,-464.02 1002.77,-581.7 900.98,-616.9"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M898.98,-616.9C886.3,-621.29 816.29,-605.04 764.51,-591.95"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="765.46,-588.58 754.9,-589.5 763.73,-595.36 765.46,-588.58"/>
+</g>
+<!-- module~rkiss05_generator_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node12" class="node">
+<title>module~rkiss05_generator_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node12"><a xlink:href="../module/rkiss05_generator_utilities.html" xlink:title="rkiss05_generator_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="967.99,-548.66 831.97,-548.66 831.97,-525.14 967.99,-525.14 967.99,-548.66"/>
+<text text-anchor="middle" x="899.98" y="-532.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rkiss05_generator_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~multilayer_self_organizing_map_utilities&#45;&gt;module~rkiss05_generator_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge11" class="edge">
+<title>module~multilayer_self_organizing_map_utilities&#45;&gt;module~rkiss05_generator_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1088.19,-426.14C1051.37,-447.92 974.35,-493.49 931.47,-518.86"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="929.72,-515.83 922.9,-523.93 933.29,-521.85 929.72,-515.83"/>
+</g>
+<!-- module~constants_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge12" class="edge">
+<title>module~constants_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff8b00" stroke-dasharray="5,2" d="M269.3,-151.05C262.27,-154.62 255.53,-159.16 250.29,-164.9 192.82,-227.78 175.75,-333.06 170.88,-379.58"/>
+<polygon fill="#ff8b00" stroke="#ff8b00" points="167.42,-379.03 169.97,-389.31 174.39,-379.68 167.42,-379.03"/>
+</g>
+<!-- module~distance_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge13" class="edge">
+<title>module~distance_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M251.88,-420.7C243.27,-418.85 234.38,-416.94 225.77,-415.09"/>
+<polygon fill="#e7ff00" stroke="#e7ff00" points="226.65,-411.7 216.14,-413.02 225.18,-418.54 226.65,-411.7"/>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;error_handling -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge14" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M660.37,-368.69C638.09,-362.76 610.73,-355.69 586.08,-349.9 506.05,-331.1 479.24,-347.33 405.06,-311.9 375.54,-297.8 347.23,-272.62 329.45,-254.91"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="332.16,-252.67 322.67,-247.97 327.16,-257.57 332.16,-252.67"/>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge15" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M691.56,-368.65C674.99,-353.73 646.27,-327.7 622.08,-304.9 605.84,-289.59 604.55,-282.42 586.08,-269.9 513.14,-220.42 484.27,-227.55 405.06,-188.9 384.02,-178.63 360.79,-166.33 342.63,-156.5"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="344.37,-153.47 333.91,-151.76 341.02,-159.61 344.37,-153.47"/>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge18" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M677.97,-393.03C642.89,-408.64 586.38,-433.8 586.08,-433.9 547.4,-446.45 537.18,-450.66 496.57,-452.9"/>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M494.57,-452.9C456.83,-454.98 414.92,-450.92 380.66,-445.92"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="381.25,-442.47 370.84,-444.43 380.2,-449.39 381.25,-442.47"/>
+</g>
+<!-- module~correlation_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node14" class="node">
+<title>module~correlation_distance_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node14"><a xlink:href="../module/correlation_distance_utilities.html" xlink:title="correlation_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="568.45,-546.66 422.68,-546.66 422.68,-523.14 568.45,-523.14 568.45,-546.66"/>
+<text text-anchor="middle" x="495.57" y="-530.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">correlation_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~correlation_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge16" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~correlation_distance_utilities</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M698.02,-393.06C681.7,-419.52 639.14,-482.43 586.08,-513.9 583.31,-515.54 580.43,-517.05 577.46,-518.45"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="576.38,-515.1 568.49,-522.17 579.07,-521.57 576.38,-515.1"/>
+</g>
+<!-- module~direction_cosine_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node15" class="node">
+<title>module~direction_cosine_distance_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node15"><a xlink:href="../module/direction_cosine_distance_utilities.html" xlink:title="direction_cosine_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="581.95,-424.66 409.18,-424.66 409.18,-401.14 581.95,-401.14 581.95,-424.66"/>
+<text text-anchor="middle" x="495.57" y="-408.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">direction_cosine_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~direction_cosine_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge17" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~direction_cosine_distance_utilities</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M642.05,-390.59C624.87,-393.22 605.91,-396.13 587.51,-398.95"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="587.01,-395.49 577.65,-400.46 588.07,-402.41 587.01,-395.49"/>
+</g>
+<!-- module~euclidean_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node16" class="node">
+<title>module~euclidean_distance_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node16"><a xlink:href="../module/euclidean_distance_utilities.html" xlink:title="euclidean_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="566.2,-382.66 424.93,-382.66 424.93,-359.14 566.2,-359.14 566.2,-382.66"/>
+<text text-anchor="middle" x="495.57" y="-366.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">euclidean_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~euclidean_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge19" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~euclidean_distance_utilities</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M642.05,-377.87C621.82,-376.9 599.12,-375.81 577.79,-374.79"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="578.11,-371.3 567.95,-374.32 577.77,-378.29 578.11,-371.3"/>
+</g>
+<!-- module~manhattan_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node17" class="node">
+<title>module~manhattan_distance_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node17"><a xlink:href="../module/manhattan_distance_utilities.html" xlink:title="manhattan_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="568.83,-588.66 422.31,-588.66 422.31,-565.14 568.83,-565.14 568.83,-588.66"/>
+<text text-anchor="middle" x="495.57" y="-572.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">manhattan_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~manhattan_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge20" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~manhattan_distance_utilities</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M698.57,-392.93C678.54,-428.8 618.12,-533.89 586.08,-555.9 583.86,-557.42 581.54,-558.84 579.15,-560.15"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="577.86,-556.89 570.33,-564.34 580.87,-563.21 577.86,-556.89"/>
+</g>
+<!-- module~max_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node18" class="node">
+<title>module~max_distance_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node18"><a xlink:href="../module/max_distance_utilities.html" xlink:title="max_distance_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="553.45,-504.66 437.68,-504.66 437.68,-481.14 553.45,-481.14 553.45,-504.66"/>
+<text text-anchor="middle" x="495.57" y="-488.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">max_distance_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~factory_distance_utilities&#45;&gt;module~max_distance_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge21" class="edge">
+<title>module~factory_distance_utilities&#45;&gt;module~max_distance_utilities</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M691.91,-392.89C670.88,-411.28 628.03,-446.43 586.08,-466.9 578.02,-470.83 569.24,-474.28 560.45,-477.27"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="559.66,-473.85 551.2,-480.23 561.79,-480.52 559.66,-473.85"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;error_handling -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge22" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M477.25,-108.94C459.1,-121.64 429.83,-142.35 405.06,-160.9 380.82,-179.05 353.66,-200.46 334.72,-215.57"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="332.69,-212.71 327.06,-221.69 337.06,-218.18 332.69,-212.71"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge23" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M441.38,-109.05C418.68,-114.23 392.13,-120.29 368.9,-125.6"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="368.24,-122.16 359.27,-127.8 369.8,-128.98 368.24,-122.16"/>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge24" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M452.94,-84.73C402.53,-70.47 322.81,-49.66 310.67,-56.9"/>
+</g>
+<!-- tomlf -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node19" class="node">
+<title>tomlf</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="336.67,-108.66 282.67,-108.66 282.67,-85.14 336.67,-85.14 336.67,-108.66"/>
+<text text-anchor="middle" x="309.67" y="-92.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tomlf</text>
+</g>
+<!-- module~kohonen_layer_parameters_utilities&#45;&gt;tomlf -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge25" class="edge">
+<title>module~kohonen_layer_parameters_utilities&#45;&gt;tomlf</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M404.78,-96.9C384.82,-96.9 364.73,-96.9 348.27,-96.9"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="348.49,-93.4 338.49,-96.9 348.49,-100.4 348.49,-93.4"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~kohonen_layer_parameters_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge26" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~kohonen_layer_parameters_utilities</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M705.21,-56.9C691.35,-51.9 613.46,-68.74 556.9,-82.09"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="556.29,-78.64 547.37,-84.36 557.91,-85.45 556.29,-78.64"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~kohonen_pattern_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge27" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~kohonen_pattern_utilities</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M825.94,-250.9C811.91,-250.9 797.18,-250.9 783.06,-250.9"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="783.41,-247.4 773.41,-250.9 783.41,-254.4 783.41,-247.4"/>
+</g>
+<!-- module~kohonen_map_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge28" class="edge">
+<title>module~kohonen_map_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M308.67,-56.9C285.23,-70.87 268.89,-55.93 250.29,-75.9 208.43,-120.84 180.57,-312.03 171.91,-379.34"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="168.44,-378.88 170.66,-389.24 175.38,-379.75 168.44,-378.88"/>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M705.21,-56.9C540.24,2.52 461.3,32.89 310.67,-56.9"/>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M891.81,-238.65C869.81,-202.45 799.16,-96.04 707.21,-56.9"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;error_handling -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge29" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M494.57,-174.9C437.43,-166.38 374.05,-196.4 338.61,-217.01"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="337.04,-213.87 330.27,-222.02 340.64,-219.88 337.04,-213.87"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge30" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M681.64,-238.73C643.82,-220.04 566.73,-185.36 496.57,-174.9"/>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M494.57,-174.9C452.14,-168.57 404.63,-159.21 368.53,-151.62"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="369.7,-148.29 359.2,-149.64 368.25,-155.14 369.7,-148.29"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~kohonen_prototype_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge31" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~kohonen_prototype_utilities</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M641.48,-263.12C619.34,-267.36 594.31,-272.16 571.35,-276.56"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="570.92,-273.08 561.76,-278.4 572.24,-279.95 570.92,-273.08"/>
+</g>
+<!-- module~kohonen_pattern_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge32" class="edge">
+<title>module~kohonen_pattern_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M494.57,-174.9C385.83,-158.68 337.04,-146.36 250.29,-213.9 196.91,-255.46 178.04,-338.98 171.83,-379.62"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="168.4,-378.88 170.49,-389.26 175.33,-379.84 168.4,-378.88"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;error_handling -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge33" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;error_handling</title>
+<path fill="none" stroke="#002eff" stroke-dasharray="5,2" d="M451.71,-278.68C436.91,-274.4 420.23,-269.51 405.06,-264.9 390.12,-260.35 373.89,-255.26 359.18,-250.57"/>
+<polygon fill="#002eff" stroke="#002eff" points="360.3,-247.25 349.71,-247.54 358.17,-253.92 360.3,-247.25"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~constants_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge34" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~constants_utilities</title>
+<path fill="none" stroke="#002eff" stroke-dasharray="5,2" d="M476.23,-278.81C457.77,-266.41 428.72,-246.25 405.06,-226.9 378.26,-204.98 349.43,-177.46 330.78,-159.08"/>
+<polygon fill="#002eff" stroke="#002eff" points="333.37,-156.73 323.8,-152.17 328.44,-161.69 333.37,-156.73"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge35" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#002eff" stroke-dasharray="5,2" d="M471.8,-303.13C452.79,-313.97 425.59,-330.97 405.06,-349.9 385.97,-367.49 388.3,-378.47 369.06,-395.9 361.37,-402.86 352.21,-409.34 343.46,-414.87"/>
+<polygon fill="#002eff" stroke="#002eff" points="341.89,-411.73 335.14,-419.9 345.51,-417.72 341.89,-411.73"/>
+</g>
+<!-- module~kohonen_prototype_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge36" class="edge">
+<title>module~kohonen_prototype_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#002eff" stroke-dasharray="5,2" d="M479.01,-303.01C448.72,-325.56 378.78,-372.51 310.67,-381.9"/>
+<path fill="none" stroke="#002eff" stroke-dasharray="5,2" d="M308.67,-381.9C281.4,-385.65 251.18,-390.16 225.85,-394.03"/>
+<polygon fill="#002eff" stroke="#002eff" points="225.44,-390.55 216.08,-395.53 226.5,-397.47 225.44,-390.55"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node13" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node13"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="85.77,-414.66 0,-414.66 0,-391.14 85.77,-391.14 85.77,-414.66"/>
+<text text-anchor="middle" x="42.88" y="-398.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~precision_utilities&#45;&gt;iso_fortran_env -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge37" class="edge">
+<title>module~precision_utilities&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#5c00ff" stroke-dasharray="5,2" d="M121.53,-402.9C113.61,-402.9 105.31,-402.9 97.21,-402.9"/>
+<polygon fill="#5c00ff" stroke="#5c00ff" points="97.45,-399.4 87.45,-402.9 97.45,-406.4 97.45,-399.4"/>
+</g>
+<!-- module~random_generator_base_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge38" class="edge">
+<title>module~random_generator_base_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#e700ff" stroke-dasharray="5,2" d="M655.85,-589.13C613.82,-598.87 551.65,-611.71 496.57,-616.9"/>
+</g>
+<!-- module~rkiss05_generator_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge39" class="edge">
+<title>module~rkiss05_generator_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff008b" stroke-dasharray="5,2" d="M494.57,-616.9C413.2,-624.55 384.64,-651.67 310.67,-616.9"/>
+<path fill="none" stroke="#ff008b" stroke-dasharray="5,2" d="M831.71,-527.51C773.16,-522.49 687.64,-522.98 622.08,-555.9 600.11,-566.93 607.22,-585.35 586.08,-597.9 551.11,-618.65 537.06,-613.09 496.57,-616.9"/>
+</g>
+<!-- module~rkiss05_generator_utilities&#45;&gt;module~random_generator_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge40" class="edge">
+<title>module~rkiss05_generator_utilities&#45;&gt;module~random_generator_base_utilities</title>
+<path fill="none" stroke="#ff008b" stroke-dasharray="5,2" d="M840.41,-549.12C820.33,-553.3 797.67,-558.03 776.81,-562.38"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="776.32,-558.91 767.25,-564.38 777.75,-565.76 776.32,-558.91"/>
+</g>
+<!-- module~correlation_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge41" class="edge">
+<title>module~correlation_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M425.23,-522.65C418.21,-520.23 411.36,-517.35 405.06,-513.9 385.49,-503.18 385.85,-493.6 369.06,-478.9 358.58,-469.72 346.56,-460.1 336.16,-452.05"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="338.42,-449.37 328.35,-446.07 334.16,-454.93 338.42,-449.37"/>
+</g>
+<!-- module~correlation_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge43" class="edge">
+<title>module~correlation_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M423.64,-522.65C389.03,-515.69 347.12,-505.76 310.67,-492.9"/>
+</g>
+<!-- module~general_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_node20" class="node">
+<title>module~general_utilities</title>
+<g id="a_module~~multilayer_self_organizing_map_utilities~~UsesGraph_node20"><a xlink:href="../module/general_utilities.html" xlink:title="general_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="352.56,-545.66 266.79,-545.66 266.79,-522.14 352.56,-522.14 352.56,-545.66"/>
+<text text-anchor="middle" x="309.67" y="-529.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">general_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~correlation_distance_utilities&#45;&gt;module~general_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge42" class="edge">
+<title>module~correlation_distance_utilities&#45;&gt;module~general_utilities</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M422.42,-534.5C403.01,-534.4 382.37,-534.29 364.18,-534.19"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="364.44,-530.69 354.42,-534.14 364.4,-537.69 364.44,-530.69"/>
+</g>
+<!-- module~direction_cosine_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge44" class="edge">
+<title>module~direction_cosine_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M408.81,-422.22C399.46,-423.24 390.03,-424.27 380.9,-425.26"/>
+<polygon fill="#48ff00" stroke="#48ff00" points="380.59,-421.77 371.03,-426.33 381.35,-428.73 380.59,-421.77"/>
+</g>
+<!-- module~direction_cosine_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge45" class="edge">
+<title>module~direction_cosine_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M443.33,-400.73C398.1,-390.64 335.61,-378.46 310.67,-381.9"/>
+</g>
+<!-- module~euclidean_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge46" class="edge">
+<title>module~euclidean_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M435.89,-383.07C425.53,-385.67 414.91,-388.63 405.06,-391.9 384.98,-398.55 363.28,-407.83 345.75,-415.87"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="344.39,-412.64 336.81,-420.04 347.35,-418.99 344.39,-412.64"/>
+</g>
+<!-- module~euclidean_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge47" class="edge">
+<title>module~euclidean_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M424.46,-372.55C390.05,-374.01 348.06,-376.75 310.67,-381.9"/>
+</g>
+<!-- module~manhattan_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge48" class="edge">
+<title>module~manhattan_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#0091ff" stroke-dasharray="5,2" d="M421.96,-566.07C415.89,-563.36 410.14,-560.02 405.06,-555.9 375.73,-532.09 392.53,-508.5 369.06,-478.9 360.83,-468.52 349.82,-459.08 339.58,-451.48"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="341.92,-448.84 331.73,-445.92 337.87,-454.56 341.92,-448.84"/>
+</g>
+<!-- module~manhattan_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge49" class="edge">
+<title>module~manhattan_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#0091ff" stroke-dasharray="5,2" d="M451.83,-589.04C401.58,-602.88 323.35,-622.86 310.67,-616.9"/>
+<path fill="none" stroke="#0091ff" stroke-dasharray="5,2" d="M308.67,-616.9C229.64,-579.74 189.58,-473.18 175.29,-425.93"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="178.7,-425.11 172.56,-416.48 171.97,-427.06 178.7,-425.11"/>
+</g>
+<!-- module~max_distance_utilities&#45;&gt;module~distance_base_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge50" class="edge">
+<title>module~max_distance_utilities&#45;&gt;module~distance_base_utilities</title>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M450.7,-480.75C436.12,-476.56 419.83,-471.7 405.06,-466.9 388.1,-461.39 369.61,-454.85 353.53,-448.98"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="354.84,-445.73 344.25,-445.57 352.43,-452.3 354.84,-445.73"/>
+</g>
+<!-- module~max_distance_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge51" class="edge">
+<title>module~max_distance_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M308.67,-492.9C263.38,-476.91 217.91,-443.63 191.67,-422.33"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="194.01,-419.72 184.08,-416.04 189.55,-425.11 194.01,-419.72"/>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M437.4,-502.51C400.24,-506.46 351.32,-507.24 310.67,-492.9"/>
+</g>
+<!-- module~general_utilities&#45;&gt;module~precision_utilities -->
+<g id="module~~multilayer_self_organizing_map_utilities~~UsesGraph_edge52" class="edge">
+<title>module~general_utilities&#45;&gt;module~precision_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M275.28,-521.74C266.66,-517.75 257.73,-512.79 250.29,-506.9 220.99,-483.67 196.03,-447.81 181.78,-424.85"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="184.79,-423.06 176.62,-416.31 178.8,-426.68 184.79,-423.06"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panmodulemultilayer_self_organizing_map_utilitiesUsesGraph = svgPanZoom('#modulemultilayer_self_organizing_map_utilitiesUsesGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="485pt" height="32pt"
+ viewBox="0.00 0.00 485.13 31.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 27.52)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-27.52 481.13,-27.52 481.13,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-23.52 0,-23.52 0,0 54,0 54,-23.52"/>
+<text text-anchor="middle" x="27" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="137.76,-23.52 72.24,-23.52 72.24,0 137.76,0 137.76,-23.52"/>
+<text text-anchor="middle" x="105" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="218.63,-23.52 155.37,-23.52 155.37,0 218.63,0 218.63,-23.52"/>
+<text text-anchor="middle" x="187" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="291,-23.52 237,-23.52 237,0 291,0 291,-23.52"/>
+<text text-anchor="middle" x="264" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="363,-23.52 309,-23.52 309,0 363,0 363,-23.52"/>
+<text text-anchor="middle" x="336" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="477.13,-23.52 380.87,-23.52 380.87,0 477.13,0 477.13,-23.52"/>
+<text text-anchor="middle" x="429" y="-7.78" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              KohonenF08
+ was developed by Oscar Garcia-Cabrejo<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-03-18 08:40 -0500             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
