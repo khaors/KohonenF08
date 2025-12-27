@@ -5,6 +5,7 @@
 !! can be imported in any module of the library. This module is in constant evolution and new 
 !! constants are being added to the library.
 module constants_utilities
+!! This module define numerical constants used elsewhere in the library
 !    
 use precision_utilities, only: wp, EP;
 !
@@ -25,9 +26,11 @@ complex(wp), parameter :: I_ = (0.0_wp, 1.0_wp)
 real(wp), parameter :: E = exp(1.0_EP)
 real(wp), parameter :: SQRT2 = sqrt(2.0_EP)
 real(wp), parameter :: UNEST=-999.999999_EP
+real(wp), parameter :: UNESTIMATED = UNEST
 real(wp), parameter :: EPSILON=1.0d-10
-real(wp),parameter :: TOLERANCE=1.0d-6
+real(wp), parameter :: TOLERANCE=1.0d-6
 real(wp), parameter :: DEG2RAD=PI/180.0_wp
+real(wp), parameter :: RAD2DEG=180.0_wp/PI
 !
 ! length of filenames
 !
