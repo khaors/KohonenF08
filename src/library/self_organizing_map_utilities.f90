@@ -1,6 +1,6 @@
 !! author: Oscar Garcia-Cabrejo
-!! date: 12/04/2024
-!! version: 0.1
+!! date: 07/15/2026
+!! version: 0.2
 !!  This module defines a class for simple self_organizing_map (one kohonen layer) 
 module self_organizing_map_utilities
 !!  This module defines a class for simple self_organizing_map (one kohonen layer)
@@ -67,6 +67,103 @@ type,extends(kohonen_map_base) :: self_organizing_map
         procedure,nopass,public :: external_predict_map
 !
 end type self_organizing_map
+!
+interface
+    ! Train
+    module subroutine train_som_data(kohonen_map,input_data)
+      class(self_organizing_map) :: kohonen_map
+      type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+    end subroutine train_som_data
+    ! Train
+    module subroutine find_best_match_unit(kohonen_map,current_prototype,ihit,&
+        jhit,khit,dist_hit)
+        class(self_organizing_map) :: kohonen_map
+        type(kohonen_prototype),intent(inout) :: current_prototype
+        integer,intent(out) :: ihit,jhit,khit
+        real(kind=wp),intent(out) :: dist_hit
+    end subroutine find_best_match_unit
+    ! Train
+    module subroutine update_weights(kohonen_map,current_values,ihit,jhit,khit,&
+        maximum_radius,iteration) 
+        class(self_organizing_map) :: kohonen_map
+        real(kind=wp),dimension(:,:),intent(inout) :: current_values
+        integer,intent(inout) :: ihit,jhit,khit,iteration
+        real(kind=wp),intent(inout) :: maximum_radius
+    end subroutine update_weights
+    ! Train
+    module subroutine calculate_distance_between_prototypes(kohonen_map)
+        class(self_organizing_map) :: kohonen_map
+    end subroutine calculate_distance_between_prototypes
+    ! Train
+    module function position2index(ix,iy,iz,nx,ny) result(index_)
+        integer,intent(in) :: ix,iy,iz,nx,ny
+        integer :: index_
+    end function position2index
+    ! Train
+    module subroutine index2position(index_,nx,ny,nz,cx,cy,cz)
+        integer,intent(in) :: index_
+        integer,intent(in) :: nx,ny,nz
+        integer,intent(inout) :: cx,cy,cz
+    end subroutine index2position
+    ! Accessor
+    module subroutine get_prototypes(kohonen_map,prototypes)
+        class(self_organizing_map) :: kohonen_map
+        real(kind=wp),dimension(:,:),intent(out) :: prototypes
+    end subroutine get_prototypes
+    ! Accessor
+    module subroutine get_count_som(kohonen_map,count_)
+        class(self_organizing_map) :: kohonen_map
+        integer,dimension(:,:,:),intent(inout) :: count_
+    end subroutine get_count_som
+    ! Accessor
+    module subroutine print_som(kohonen_map,unit_)
+        class(self_organizing_map) :: kohonen_map
+        integer,intent(inout),optional :: unit_
+    end subroutine print_som
+    ! Mutator
+    module subroutine read_som(kohonen_map,som_fl)
+        class(self_organizing_map) :: kohonen_map
+        character(len=*) :: som_fl
+    end subroutine read_som
+    !
+    module subroutine external_train_map(x,nvar,npat,nx,ny,nepoch,alpha,grid_type,&
+        distance_type,neigh_type,toroidal,prot,distortion,&
+        u_matrix,coords,number_patterns,node_index) bind(C, name="train_som")
+        use, intrinsic :: iso_c_binding, only : c_double, c_int, c_char
+        real(kind=wp),parameter :: version=0.1_wp;
+        character(len=*),parameter :: program_name="som_train";
+        integer(c_int), intent(in) :: nvar,npat
+        integer(c_int), intent(in) :: nx,ny
+        integer(c_int), intent(in) :: nepoch
+        integer(c_int), intent(in) :: toroidal
+        real(c_double),intent(out) :: prot(nx*ny,nvar)
+        real(c_double),intent(out) :: distortion(nepoch)
+        real(c_double),intent(out) :: u_matrix(2*nx-1,2*ny-1)
+        real(c_double),intent(out) :: coords(nx*ny,3)
+        integer(c_int),intent(out) :: number_patterns(nx,ny)
+        integer(c_int),intent(out) :: node_index(npat,3)
+        real(c_double),intent(in) :: x(npat,nvar)
+        real(c_double),intent(in) :: alpha
+        integer(c_int),intent(in) :: grid_type
+        integer(c_int),intent(in) :: distance_type
+        integer(c_int),intent(in) :: neigh_type
+    end subroutine external_train_map
+    !
+    module subroutine external_predict_map(prot,nx,ny,new_pat,npat,nvar,node_index) & 
+        bind(C, name="predict_som")
+        use, intrinsic :: iso_c_binding, only : c_double, c_int
+        integer(c_int),intent(in) :: nx,ny,npat,nvar
+        real(c_double),intent(in) :: prot(nx*ny,nvar),new_pat(npat,nvar)
+        integer(c_int),intent(out) :: node_index(npat,3) 
+        !
+        type(self_organizing_map) :: my_som
+        type(kohonen_layer_parameters),dimension(1) :: parameters
+        integer :: ipat,inode,i_hit,nx1,ny1,nz1,cx,cy,cz,ix,iy,iz,pos,ierr
+        real(kind=wp) :: dist,dist_hit
+        real(kind=wp),dimension(nvar,1) :: temp
+        type(kohonen_pattern),dimension(npat) :: input_data
+    end subroutine external_predict_map
+end interface
 !
 contains
 !========================================================================================
@@ -152,14 +249,8 @@ contains
 !
         kohonen_map%seed=training_parameters(1)%random_seed_(1);
         call kohonen_map%rnumber_grator%create(kohonen_map%seed);
-        ! do i=1,nvar1;
-        !     do j=1,nvar2;
-        !         input(i,j)=kohonen_map%rnumber_grator%generate();
-        !         !write(*,*) 'input= ',input(i,j);
-        !     enddo
-        ! enddo
 !   
-    write(*,*) 'SOM: Initializing grid...',kohonen_map%seed;
+        write(*,*) 'SOM: Initializing grid...',kohonen_map%seed;
         do iz=1,nz;
             do iy=1,ny;
                 do ix=1,nx;
@@ -174,9 +265,11 @@ contains
          enddo !iz
          deallocate(input);
    !
-         call calculate_distance_matrix(kohonen_map%coordinates,kohonen_map%cells_distances,&
-             training_parameters(1)%node_type,training_parameters(1)%toroidal_grid);
-    write(*,*) 'SOM: Initializing grid...OK';
+         call calculate_distance_matrix(kohonen_map%coordinates,&
+            kohonen_map%cells_distances,&
+            training_parameters(1)%node_type,&
+            training_parameters(1)%toroidal_grid);
+        write(*,*) 'SOM: Initializing grid...OK';
 !
     end subroutine create_som
 !========================================================================================
@@ -264,164 +357,6 @@ contains
 !    
     end subroutine create_random_sample
 !========================================================================================
-   subroutine train_som_data(kohonen_map,input_data)
-!========================================================================================
-!!   Training function for self_organizing_map 
-      class(self_organizing_map) :: kohonen_map
-!! A `self_organizing_map` object
-      type(kohonen_pattern),dimension(:),intent(inout) :: input_data
-!! A `kohonen_pattern` array with the input data
-      integer :: iteration,iepoch,ipattern,ix,iy,iz,jhit,ihit,khit,ineigh,jneigh
-      integer :: kneigh,idbg,number_variables,idisto !neff,
-      integer :: cx,cy,cz,i,j,k,number_nodes,debug_option,ix1,iy1,iz1,pos,pos1,max_pattern
-      integer :: ierr,nx,ny,nz,ipos
-      integer :: current_pos,ic,itemp
-      real(kind=wp) :: distortion,dist,dist_hit,maximum_radius,minimum_radius
-      real(kind=wp) :: current_radius,alpha,u_temp
-      type(kohonen_prototype) :: current_prototype
-      real(kind=wp),dimension(kohonen_map%parameters%number_variables1,&
-      kohonen_map%parameters%number_variables2) :: current_values
-      integer,allocatable :: pattern_index(:,:,:,:),positions(:)
-!
-! 
-!
-      nx=kohonen_map%parameters%number_nodes_nx;
-      ny=kohonen_map%parameters%number_nodes_ny;
-      nz=kohonen_map%parameters%number_nodes_nz;
-      allocate(positions(nx*ny*nz),stat=ierr);
-      idbg=kohonen_map%parameters%idbg;
-      idisto=kohonen_map%parameters%idisto;
-      debug_option=kohonen_map%parameters%debug_level;
-      if(debug_option > 0) then
-      open(idbg,file=trim(kohonen_map%parameters%debug_file),status='unknown');
-      endif
-      iteration = 0;
-      distortion = 0.0_wp;
-      number_variables=kohonen_map%parameters%number_variables1*kohonen_map%parameters%number_variables2;
-      maximum_radius=dble(max(kohonen_map%parameters%number_nodes_nx,kohonen_map%parameters%number_nodes_ny));
-      minimum_radius=1.0_wp;
-      write(*,*) 'SOM: Training starting...'
-      do iepoch = 1,kohonen_map%parameters%number_epochs;
-         kohonen_map%distortion(iepoch)=distortion;
-         write(6,*) ' Starting epoch -- distortion',iepoch,' -- ',distortion;
-        if(iepoch > 1) write(idisto,*) iepoch,distortion
-         distortion = 0.0_wp;
-         do ipattern = 1, kohonen_map%parameters%number_patterns;
-            iteration = iteration + 1;
-            ihit = 0;
-            jhit = 0;
-            khit = 0;
-            dist_hit = 100000.0_wp;
-            call input_data(ipattern)%get(current_prototype);
-            call current_prototype%get_prototype(current_values);
-            call kohonen_map%find_best_match_unit(current_prototype,ihit,jhit,khit,dist_hit);
-            !write(*,*) 'Test= ',ipattern,ihit,jhit,khit,dist_hit
-            if(debug_option > 0) then
-               write(idbg,*) 'Epoch,Current Pattern',iepoch,ipattern;
-               call current_prototype%print(idbg);
-            endif            
-            distortion = distortion + dist_hit;
-            if(debug_option > 0) then
-               write(idbg,*) 'Neighborhood,alpha= ',alpha;
-            endif
-            call kohonen_map%update_weights(current_values,ihit,jhit,khit,maximum_radius,iteration);
-      !   
-         enddo !ipattern
-      enddo!iepoch
-      !       write(*,*) 'SOM: Training finished'
-      !       write(*,*) 'Total number of iterations= ',iteration
-      !     print prototypes
-      ! if(kohonen_map%parameters%train_option < 3) then
-      ! do iz=1,size(kohonen_map%grid,3)
-      !    !write(kohonen_map%parameters%iprot,'(A,I4)') 'Layer ',iz
-      !    do iy=1,size(kohonen_map%grid,2);
-      !       do ix=1,size(kohonen_map%grid,1);
-      !          !write(kohonen_map%parameters%iprot,'(A6,1X,3I4)') 'node= ',ix,iy,iz            
-      !          call kohonen_map%grid(ix,iy,iz)%print(kohonen_map%parameters%iprot);
-      !       enddo
-      !    enddo
-      ! enddo!ix
-      ! endif
-      !     calculate and print distance matrix
-      call kohonen_map%calculate_distance_between_prototypes();
-      !     final best match
-      !      call kohonen_map%find_bmu_grid(input_data);
-      max_pattern=0;         
-      do ipattern = 1, kohonen_map%parameters%number_patterns
-         ihit = 0;
-         jhit = 0;
-         khit = 0;
-         dist_hit = 100000.0_wp;
-         call input_data(ipattern)%get(current_prototype);
-         !call current_prototype%get_prototype(current_values);
-         call kohonen_map%find_best_match_unit(current_prototype,ihit,jhit,khit,dist_hit);
-         kohonen_map%number_patterns(ihit,jhit,khit)=kohonen_map%number_patterns(ihit,jhit,khit)+1;
-         if(kohonen_map%number_patterns(ihit,jhit,khit) > max_pattern) then 
-               max_pattern=kohonen_map%number_patterns(ihit,jhit,khit);
-         endif
-         kohonen_map%cells_index(ipattern,1)=ihit;
-         kohonen_map%cells_index(ipattern,2)=jhit;
-         kohonen_map%cells_index(ipattern,3)=khit;
-         if(debug_option > 0) then
-            write(idbg,*) ipattern,ihit,jhit,khit;
-         endif
-         !if(kohonen_map%parameters%train_option < 3) then
-         !   write(kohonen_map%parameters%iindex,*) ipattern,ihit,jhit,khit
-         !endif
-         !         write(*,*) 'BMU= ',ipattern,ihit,jhit,khit,dist_hit
-         !
-      enddo !ipattern
-      !
-      allocate(pattern_index(size(kohonen_map%grid,1),&
-         size(kohonen_map%grid,2),size(kohonen_map%grid,3),&
-         max_pattern),stat=ierr);
-      pattern_index=-1;         
-      do ipattern=1,kohonen_map%parameters%number_patterns
-         ix=kohonen_map%cells_index(ipattern,1);
-         iy=kohonen_map%cells_index(ipattern,2);
-         iz=kohonen_map%cells_index(ipattern,3);
-         do i=1,max_pattern;
-            if(pattern_index(ix,iy,iz,i) < 0) then
-               pattern_index(ix,iy,iz,i)=ipattern;
-               exit;
-            endif
-         enddo
-      enddo!ipattern
-      if(kohonen_map%parameters%train_option < 3) then
-         do iz1=1,size(kohonen_map%grid,3);
-            do iy1=1,size(kohonen_map%grid,2);
-               do ix1=1,size(kohonen_map%grid,1);
-                  write(kohonen_map%parameters%isam,'(A,3I4)') 'Node= ',ix1,iy1,iz1
-                  if(kohonen_map%number_patterns(ix1,iy1,iz1) > 0) then
-                     write(kohonen_map%parameters%isam,'(A,10000I5)') 'Sample ID= ',&
-                     pattern_index(ix1,iy1,iz1,1:kohonen_map%number_patterns(ix1,iy1,iz1));
-                  else
-                     write(kohonen_map%parameters%isam,'(A,I4)') 'Sample ID= ',0
-                  endif
-               enddo
-            enddo
-         enddo
-         deallocate(pattern_index);
-      endif
-      !
-        if(debug_option .gt. 0) then 
-            close(idbg);
-        endif
-        close(idisto);
-    
-      !     print hit counter
-      if(kohonen_map%parameters%train_option < 3) then
-         do iz=1,size(kohonen_map%grid,3)
-            do ix=1,size(kohonen_map%grid,1);
-               write(kohonen_map%parameters%ihit,'(100I5)') (kohonen_map%number_patterns(ix,iy,iz),&
-                  iy=1,size(kohonen_map%grid,2));
-            enddo!ix
-         enddo
-      endif
-      call kohonen_map%calculate_u_matrix();
-!
-   end subroutine train_som_data
-!========================================================================================
     subroutine predict_som(kohonen_map,input_data,map_output)
 !========================================================================================
 !! Function for Prediction of a self_organizing_map 
@@ -473,87 +408,13 @@ contains
             !$OMP end parallel do
             !         
             call kohonen_map%grid(ihit,jhit,khit)%get_prototype(current_values);
-            ! if(size(current_values,2) .eq. 1) then 
-            !   write(kohonen_map%parameters%iout,*) (current_values(i,1),&
-            !         i=1,size(current_values,1));
-            ! else
-            !   do i=1,size(current_values,1)
-            !      write(kohonen_map%parameters%iout,*) (current_values(i,j),j=1,&
-            !            size(current_values,2))
-            !   enddo
-            ! endif
-            !call map_output(ipattern)%create(current_values);
             map_output(ipattern,1)=ihit;
             map_output(ipattern,2)=jhit;
             map_output(ipattern,3)=khit;
-            !size(current_values,1),size(current_values,2)
-            !write(*,*) current_values
         enddo !ipattern
 !       write(*,*) 'SOM: Prediction finished';
 !
     end subroutine predict_som
-!========================================================================================
-    subroutine print_som(kohonen_map,unit_)
-!========================================================================================
-!!   Print function for self_organizing_map 
-        class(self_organizing_map) :: kohonen_map
-!!
-        integer,intent(inout),optional :: unit_
-!!
-        integer :: ix,iy,iz,unit1
-!
-        if(.not. present(unit_)) then 
-            unit1=6;
-        else
-            unit1=unit_;
-        endif
-        write(unit1,*) 'SOM: Results';
-        write(unit1,*)
-        call kohonen_map%parameters%print(unit1);
-        ! write(unit1,*) 'After'
-        write(unit1,*)
-        write(unit1,*) 'SOM: Grid nodes';
-        write(unit1,*)
-        do iz=1,size(kohonen_map%grid,3)
-            do iy=1,size(kohonen_map%grid,2);
-                do ix=1,size(kohonen_map%grid,1);
-                    call kohonen_map%grid(ix,iy,iz)%print(unit1);
-                enddo
-            enddo!iy
-        enddo!ix
-        write(unit1,*)
-        write(unit1,*) 'SOM: Hit count';
-        write(unit1,*)
-        write(unit1,*) 'Pattern Numbers';
-        do iz=1,size(kohonen_map%number_patterns,3);
-            do ix=1,size(kohonen_map%number_patterns,1);
-                write(unit1,'(100I5)') (kohonen_map%number_patterns(ix,iy,iz),iy=1,&
-                   size(kohonen_map%number_patterns,2));
-            enddo
-        enddo
-        write(unit1,*)
-        write(*,*) 'SOM: Pattern index'
-        write(unit1,*)
-        write(unit1,*)
-        write(unit1,*) 'Pattern #, ix   ,iy';
-
-        do ix=1,size(kohonen_map%cells_index,1);
-            write(unit1,'(100I5)') ix, (kohonen_map%cells_index(ix,iy),&
-                iy=1,size(kohonen_map%cells_index,2));
-        enddo
-!
-    end subroutine print_som
-!========================================================================================
-    subroutine get_count_som(kohonen_map,count_)
-!========================================================================================
-!!   Function to get count matrix for self_organizing_map 
-        class(self_organizing_map) :: kohonen_map
-!!
-        integer,dimension(:,:,:),intent(inout) :: count_
-!!
-        count_=kohonen_map%number_patterns;
-!   
-    end subroutine get_count_som
 !========================================================================================
     subroutine query_som(kohonen_map,input_pattern,sample_index) !,output_patterns)
 !========================================================================================
@@ -630,112 +491,6 @@ contains
 !
     end subroutine query_som
 !========================================================================================
-    subroutine read_som(kohonen_map,som_fl)
-!========================================================================================
-!! Subroutine to read the prototypes to define a self_organizing_map 
-        class(self_organizing_map) :: kohonen_map
-!! A `self_organizing_map` object      
-        character(len=*) :: som_fl
-!! A character variable with the name of the file
-        logical :: testfl,toroidal_grid
-        integer :: isom,nx,ny,nz,nvar1,nvar2,ierr,ix,iy,iz,ivar,current_index
-        character(len=40) :: current_line,node_type
-        real(kind=wp),allocatable :: Prototype_value(:,:)
-!
-        isom=20;
-        inquire(file=trim(som_fl),exist=testfl);
-        if(.not. testfl) then
-            write(*,*) 'ERROR: the som file does not exist'
-            stop
-        endif
-!
-        write(*,*)
-        write(*,*) 'SOM: Reading SOM Prototypes...'
-        write(*,*)
-        open(isom,file=trim(som_fl),status='unknown',action='read',access='sequential');
-        read(isom,'(A)') current_line
-        write(*,*) trim(current_line)
-        read(isom,'(A17,1X,3I6)') current_line,nx,ny,nz
-        write(*,*) current_line,nx,ny,nz
-        read(isom,'(A21,1X,2I6)') current_line,nvar1,nvar2
-        write(*,*) current_line,nvar1,nvar2
-        read(isom,'(A25,1X,A11,1X,L4)') current_line,node_type,toroidal_grid
-        write(*,*) current_line,node_type,toroidal_grid
-        allocate(Prototype_value(nvar1*nvar2,1),stat=ierr);
-   !
-        if(allocated(kohonen_map%grid)) then
-            do iz=1,nz
-                do iy=1,ny
-                    do ix=1,nx
-                        call kohonen_map%grid(ix,iy,iz)%destroy();
-                    enddo
-                enddo
-            enddo
-            deallocate(kohonen_map%grid);
-        endif
-        if(allocated(kohonen_map%coordinates)) then
-            deallocate(kohonen_map%coordinates);
-        endif
-        allocate(kohonen_map%grid(nx,ny,nz),stat=ierr);
-        allocate(kohonen_map%coordinates(nx*ny*nz,3),stat=ierr);
-        allocate(kohonen_map%cells_distances(nx*ny*nz,nx*ny*nz),stat=ierr);
-        do iz=1,nz
-            read(isom,'(A)') current_line;
-            write(*,*) 'Reading ',trim(current_line);
-            do iy=1,ny
-                do ix=1,nx;
-                    read(isom,'(A)') current_line;
-!                   write(*,*) current_line
-                    read(isom,'(A)') current_line;
-!                   write(*,*) current_line
-                    read(isom,*) (Prototype_value(ivar,1),ivar=1,nvar1*nvar2);
-                    !write(*,*) ix,iy,(Prototype_value(ivar,1),ivar=1,nvar1*nvar2)
-                    call kohonen_map%grid(ix,iy,iz)%set_prototype(Prototype_value);
-                    current_index=position2index(ix,iy,iz,nx,ny);
-                    call calculate_coordinates(current_index,ix,iy,iz,nx,ny,nz,&
-                           kohonen_map%coordinates,node_type);
-                enddo
-            enddo
-         enddo
-         close(isom)
-         !write(*,*) 'Reading done'
-         !
-         call calculate_distance_matrix(kohonen_map%coordinates,kohonen_map%cells_distances,&
-               node_type,toroidal_grid);   
-   !
-         write(*,*)
-         write(*,*) 'SOM: Reading SOM Prototypes...finished'
-         write(*,*)
-!
-     end subroutine read_som
-!========================================================================================
-    function position2index(ix,iy,iz,nx,ny) result(index_)
-!========================================================================================
-!! Function to calculate the index inside a rectangular grid from position ix,iy,iz
-        integer,intent(in) :: ix,iy,iz,nx,ny
-!! Integer variables
-        integer ::index_
-!! Integer variable with the required index
-        index_=ix+(iy-1)*nx+(iz-1)*nx*ny;
-!
-    end function position2index
-!========================================================================================
-    subroutine index2position(index_,nx,ny,nz,cx,cy,cz)
-!========================================================================================
-!! Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index
-        integer,intent(in) :: index_
-!! Integer variable representing the index
-        integer,intent(in) :: nx,ny,nz
-!! Integer variables representing the dimensions of the kohonen map
-        integer,intent(inout) :: cx,cy,cz
-!! Integer variables representing the position of the node
-!  write(*,*) index_,nx,ny,1+int((index_-1)/(nx*ny))
-        cz=min(1+int((index_-1)/(nx*ny)),nz);
-        cy=min(1+int((index_-1-(cz-1)*nx*ny)/nx),ny);
-        cx=min(index_-(cz-1)*nx*ny-(cy-1)*nx,nx);
-!
-    end subroutine index2position
-!========================================================================================
     subroutine calculate_distance_matrix(coordinates,distance_matrix,grid_type,toroidal)
 !========================================================================================
 !! Subroutine to calculate the distance between the units inside a kohonen layer 
@@ -805,194 +560,6 @@ contains
         endif
 !
     end subroutine calculate_coordinates
-!========================================================================================
-    subroutine find_best_match_unit(kohonen_map,current_prototype,ihit,jhit,khit,dist_hit)
-!========================================================================================
-!! Subroutine to calculate the best match unit
-        class(self_organizing_map) :: kohonen_map
-!! A `self_organizing_map` object
-        type(kohonen_prototype),intent(inout) :: current_prototype
-!! A `kohonen_prototype` object
-        integer,intent(out) :: ihit,jhit,khit
-!! Integer variables for the coordinates of the BMU
-        real(kind=wp),intent(out) :: dist_hit
-!! Real variable with the distance to the BMU
-        integer :: debug_option,idbg,ix,iy,iz,number_variables
-        real(kind=wp) :: dist
-!
-        idbg=kohonen_map%parameters%idbg;
-        debug_option=kohonen_map%parameters%debug_level;
-        number_variables=kohonen_map%parameters%number_variables1*&
-                       kohonen_map%parameters%number_variables2
-        ihit = 0;
-        jhit = 0;
-        khit = 0;
-        dist_hit = 1.0e7;
-        !$OMP parallel do   
-        do iz = 1, size(kohonen_map%grid,3)  
-            do iy = 1, size(kohonen_map%grid,2)
-                do ix = 1,size(kohonen_map%grid,1)
-                    dist = 0.0_wp;
-                    dist=kohonen_map%grid(ix,iy,iz)%distance(current_prototype,&
-                        kohonen_map%distance_function);
-                    !write(*,*) 'dist= ',dist
-                    if(debug_option > 0) then
-                        call kohonen_map%grid(ix,iy,iz)%print(idbg);
-                        write(idbg,*) ix,iy,iz,dist;
-                    endif
-                    dist = dist/float(number_variables);
-                    if (dist < dist_hit) then
-                        dist_hit = dist;
-                        ihit = ix;
-                        jhit = iy;
-                        khit = iz;
-                    endif
-                enddo!ix
-            enddo!iy
-         enddo!iz
-         !$OMP end parallel do   
-!
-!        write(*,*) 'find= ',ihit,jhit,khit,dist_hit
-      return
-!
-    end subroutine find_best_match_unit
-!========================================================================================
-    subroutine update_weights(kohonen_map,current_values,ihit,jhit,khit,&
-        maximum_radius,iteration) 
-!========================================================================================
-!!    Subroutine to update the weights   
-        class(self_organizing_map) :: kohonen_map
-!! A `self_organizing_map` object
-        real(kind=wp),dimension(:,:),intent(inout) :: current_values
-!! A real array with the values of the current unit
-        integer,intent(inout) :: ihit,jhit,khit,iteration
-!! Integer variables with the coordinates of the unit (neuron) to be modified
-        real(kind=wp),intent(inout) :: maximum_radius
-!! Real variable with the maximum radius of the neighborhood 
-        real(kind=wp),dimension(size(current_values,1),size(current_values,2)) :: prototype_values
-        real(kind=wp),dimension(size(current_values,1),size(current_values,2)) :: winner_values,term1,term2
-        integer :: nx,ny,nz,debug_option,ic,current_pos,ineigh,jneigh,kneigh,idbg
-        real(kind=wp) :: time_factor,current_radius,alpha,sigma2,h_neighborhood,real_distance,term3
-        real(kind=wp) :: distance_ratio,geometric_distance2,eps,current_distance,lambda
-        !type(influence_function) :: influence_func
-        real(kind=wp),dimension(size(current_values,1),size(current_values,2)) :: v_vector
-        real(kind=wp) :: v_vector_norm,r,Psi
-        character(len=NUMCHAR) :: m_estimator
-!
-        nx=kohonen_map%parameters%number_nodes_nx;
-        ny=kohonen_map%parameters%number_nodes_ny;
-        nz=kohonen_map%parameters%number_nodes_nz;
-        debug_option=kohonen_map%parameters%debug_level;
-        idbg=kohonen_map%parameters%idbg;
-        lambda=2.0_wp*(1.0_wp/maximum_radius);
-        time_factor=1.0_wp-dble(iteration)/&
-                 dble(kohonen_map%parameters%number_epochs*kohonen_map%parameters%number_patterns);
-        !current_radius = max(maximum_radius*real(1001-iteration)/1000.0 + 0.9999999999,4.0d0);
-        current_radius = max(maximum_radius*time_factor,4.0_wp);
-        !alpha = max(kohonen_map%parameters%learning_rate*(1.0d0-real(iteration)/1000.0),0.01d0);
-        alpha = max(kohonen_map%parameters%learning_rate*time_factor,0.01_wp);
-        sigma2=current_radius**2;
-        !
-        m_estimator=trim(kohonen_map%parameters%m_estimator);  
-!
-        do ic=1,size(kohonen_map%coordinates,1)
-            current_pos=position2index(ihit,jhit,khit,nx,ny);
-            current_distance=kohonen_map%cells_distances(current_pos,ic)
-            if(current_distance < current_radius) then
-                geometric_distance2=current_distance**2;
-                call index2position(ic,nx,ny,nz,ineigh,jneigh,kneigh);
-                !write(*,*) ic,ineigh,jneigh,kneigh,ihit,jhit,khit
-                select case(trim(kohonen_map%parameters%neighborhood_type))
-                    case('gaussian')
-                        h_neighborhood=alpha*dexp(-0.5_wp*geometric_distance2/sigma2);
-                    case('bubble')
-                        h_neighborhood=alpha;
-                end select
-                if(debug_option > 0) then
-                    write(idbg,*) ihit,jhit,khit,ineigh,jneigh,kneigh
-                endif
-                select case(trim(kohonen_map%parameters%som_type))
-                    case('normal_som')                      
-                        call kohonen_map%grid(ineigh,jneigh,kneigh)%get_prototype(prototype_values);
-                        prototype_values=prototype_values+h_neighborhood*(current_values-prototype_values);
-                        !v_vector=(current_values-prototype_values);
-                        !v_vector_norm=dsqrt(sum(v_vector**2));
-                        !r=v_vector_norm/sigma;
-                        !Psi=influence_func%calculate(m_estimator,r);
-                        !prototype_values=prototype_values+sigma*h_neighborhood*Psi*v_vector/v_vector_norm;
-                        call kohonen_map%grid(ineigh,jneigh,kneigh)%set_prototype(prototype_values);
-                    case('visom')
-                        !write(*,*) trim(kohonen_map%parameters%som_type)
-                        call kohonen_map%grid(ineigh,jneigh,kneigh)%get_prototype(prototype_values);
-                        call kohonen_map%grid(ihit,jhit,khit)%get_prototype(winner_values);
-                        real_distance=sum((winner_values-prototype_values)**2);
-                        if( (ineigh == ihit) .and. (jneigh == jhit) .and. (kneigh == khit) ) then                           
-                             prototype_values=prototype_values+h_neighborhood*(current_values-prototype_values);
-                        else
-                             distance_ratio=dsqrt(real_distance)/(dsqrt(geometric_distance2)*lambda);
-                             term1=(current_values-winner_values);
-                             term2=(winner_values-prototype_values);
-                             eps=max(1.0_wp*time_factor,0.0_wp);
-                             term3=1.0_wp;!((1.0d0-eps)+eps)
-                             prototype_values=prototype_values+h_neighborhood*(term1+term2*&
-                                         (distance_ratio-1.0_wp)*term3);
-                        endif
-                        !write(*,*) iteration,dsqrt(real_distance),dsqrt(geometric_distance2)*lambda,distance_ratio
-                        call kohonen_map%grid(ineigh,jneigh,kneigh)%set_prototype(prototype_values); 
-                    case('robust_som')
-                        call kohonen_map%grid(ineigh,jneigh,kneigh)%get_prototype(prototype_values);
-                        prototype_values=prototype_values+h_neighborhood*(current_values-prototype_values);
-                        ! v_vector=(current_values-prototype_values);
-                        ! v_vector_norm=dsqrt(sum(v_vector**2));
-                        ! r=v_vector_norm/sigma;
-                        ! Psi=influence_func%calculate(m_estimator,r);
-                        ! prototype_values=prototype_values+sigma*h_neighborhood*Psi*v_vector/v_vector_norm;
-                        call kohonen_map%grid(ineigh,jneigh,kneigh)%set_prototype(prototype_values);
-                end select
-            endif
-        enddo!ic
-!
-    end subroutine update_weights
-!========================================================================================
-    subroutine calculate_distance_between_prototypes(kohonen_map)
-!========================================================================================
-!! Subroutine to calculate the distance between the prototypes
-        class(self_organizing_map) :: kohonen_map
-!! A `self_organizing_map` object
-        integer :: nx,ny,ix,iy,iz,ix1,iy1,iz1,pos,pos1
-!
-        type(kohonen_prototype) :: current_prototype,current_prototype1
-!!
-        nx=kohonen_map%parameters%number_nodes_nx;
-        ny=kohonen_map%parameters%number_nodes_ny;
-        !$OMP parallel do  
-        do iz=1,size(kohonen_map%grid,3)
-            do iy=1,size(kohonen_map%grid,2);
-                do ix=1,size(kohonen_map%grid,1);
-                    current_prototype=kohonen_map%grid(ix,iy,iz);
-                    pos=position2index(ix,iy,iz,nx,ny);
-                    do iz1=1,size(kohonen_map%grid,3);
-                        do iy1=1,size(kohonen_map%grid,2);
-                            do ix1=1,size(kohonen_map%grid,1);
-                                pos1=position2index(ix1,iy1,iz1,nx,ny)
-                                current_prototype1=kohonen_map%grid(ix1,iy1,iz1);
-                                kohonen_map%distance(pos,pos1)=current_prototype1%distance(current_prototype,&
-                                      kohonen_map%distance_function);
-                            enddo!ix1
-                        enddo!iy1  
-                    enddo!iz1
-                enddo!ix
-            enddo!iy         
-        enddo!iz
-        !$OMP end parallel do  
-!
-        if(kohonen_map%parameters%train_option < 3) then
-            do ix=1,size(kohonen_map%distance,1)
-                write(kohonen_map%parameters%idist,*) (kohonen_map%distance(ix,iy),iy=1,size(kohonen_map%distance,2));
-            enddo!ix
-        endif
-! 
-    end subroutine calculate_distance_between_prototypes
 !========================================================================================
    subroutine find_bmu_grid(kohonen_map,input_data)
 !========================================================================================
@@ -1290,37 +857,6 @@ contains
 !
     end subroutine get_u_matrix_som
 !========================================================================================
-    subroutine get_prototypes(kohonen_map,prototypes)
-!========================================================================================
-!! Subroutine to get SOM prototypes
-        class(self_organizing_map) :: kohonen_map
-!! A `self_organizing_map` object 
-        real(kind=wp),dimension(:,:),intent(out) :: prototypes
-!! A real array to return the values of the SOM prototypes
-        integer :: i,j,k,pos,nvar1,nvar2
-        integer,dimension(1) :: nvar
-        real(kind=wp),dimension(kohonen_map%parameters%number_variables1,&
-                    kohonen_map%parameters%number_variables2) :: current_prototype
-        real(kind=wp),dimension(kohonen_map%parameters%number_variables1*&
-                    kohonen_map%parameters%number_variables2) :: current_prototype1
-      !
-        nvar1=kohonen_map%parameters%number_variables1;
-        nvar2=kohonen_map%parameters%number_variables2;
-        nvar(1)=nvar1*nvar2
-        pos=0;
-        do k=1,size(kohonen_map%grid,3)
-            do j=1,size(kohonen_map%grid,2);
-                do i=1,size(kohonen_map%grid,1);
-                    pos=pos+1;
-                    call kohonen_map%grid(i,j,k)%get_prototype(current_prototype);
-                    current_prototype1(1:nvar1*nvar2)=reshape(current_prototype,nvar)
-                    prototypes(pos,:)=current_prototype1;
-                enddo
-            enddo
-        enddo
-!
-    end subroutine get_prototypes
-!========================================================================================
     function calculate_sigma(kohonen_map,input_data,seed) result(sigma)
 !========================================================================================
 !!    Function to calculate the scaling factor sigma
@@ -1390,214 +926,6 @@ contains
         !
         deallocate(sample_pos,sample_index,p_vector,sigma_table,current_sigma);   
 !
-    end function calculate_sigma 
-!========================================================================================
-    subroutine external_train_map(x,nvar,npat,nx,ny,nepoch,alpha,grid_type,&
-       distance_type,neigh_type,toroidal,prot,distortion,&
-       u_matrix,coords,number_patterns,node_index) bind(C, name="train_som")
-!========================================================================================
-!!    Subroutine to connect the self_organizing_map module to R o C
-        use, intrinsic :: iso_c_binding, only : c_double, c_int, c_char
-!! Import section
-        real(kind=wp),parameter :: version=0.1_wp;
-!! Parameter version
-        character(len=*),parameter :: program_name="som_train";
-!! Parameter name of the function
-        integer(c_int), intent(in) :: nvar,npat
-!! Integer variables to indicate the number of variables and patterns
-        integer(c_int), intent(in) :: nx,ny
-!! Integer variables to indicate the number of nodes of the SOM
-        integer(c_int), intent(in) :: nepoch
-!! Integer variables to indicate the number of epochs for training
-        integer(c_int), intent(in) :: toroidal
-!! Integer variable to indicate if a toroidal grid is used
-        real(c_double),intent(out) :: prot(nx*ny,nvar)
-!! Real array for the prototypes
-        real(c_double),intent(out) :: distortion(nepoch)
-!! Real array for the distortion measure (error during training)
-        real(c_double),intent(out) :: u_matrix(2*nx-1,2*ny-1)
-!! Real array for the u_matrix 
-        real(c_double),intent(out) :: coords(nx*ny,3)
-!! Real array for the grid coordinates of the SOM
-        integer(c_int),intent(out) :: number_patterns(nx,ny)
-!! Integer array with the number of hits for each neuron
-        integer(c_int),intent(out) :: node_index(npat,3)
-!! Integer array with the index node for all the neurons of the SOM       
-        real(c_double),intent(in) :: x(npat,nvar)
-!! Real array with the input patterns
-        real(c_double),intent(in) :: alpha
-!! Real value with the initial learning rate
-        integer(c_int),intent(in) :: grid_type
-!! Integer variable to indicate the type of grid  
-        integer(c_int),intent(in) :: distance_type
-!! Integer variable to indicate the distance type
-        integer(c_int),intent(in) :: neigh_type
-!! Integer variable to indicate the neighborhood type
-        type(self_organizing_map) :: my_som
-        type(kohonen_layer_parameters),dimension(1) :: parameters
-        real(kind=wp),dimension(nvar,1) :: var
-        integer :: i,j,k,ierr,pos,ihit,jhit,khit,nx1,ny1
-        type(kohonen_pattern),allocatable :: input_patterns(:)
-        real(kind=wp),dimension(nx*ny,nvar) :: prototypes
-        real(kind=wp),dimension(nvar,1) :: temp
-!
-        parameters(1)%train_option=3;
-        parameters(1)%number_nodes_nx=nx;
-        parameters(1)%number_nodes_ny=ny;
-        parameters(1)%number_nodes_nz=1;
-        parameters(1)%number_variables1=nvar;
-        parameters(1)%number_variables2=1;
-        parameters(1)%number_variables=nvar;
-        parameters(1)%number_patterns=npat;
-        parameters(1)%number_epochs=nepoch;
-        parameters(1)%learning_rate=alpha;
-        parameters(1)%random_seed_=12345;
-        if(grid_type == 0) then
-             parameters(1)%node_type="rectangular"; !"hexagonal" !rectangular, hexagonal
-         elseif(grid_type == 1) then
-             parameters(1)%node_type="hexagonal";
-         endif
-         parameters(1)%debug_level=0;
-         parameters(1)%debug_file="NOFILE";
-         parameters(1)%pattern_file="NOFILE";
-         parameters(1)%output_file="NOFILE";
-         parameters(1)%distance_type="euclidean"; !"euclidean" !euclidean, manhattan, correlation, correlation2
-         if(neigh_type == 0) then
-             parameters(1)%neighborhood_type="bubble";
-         elseif(neigh_type == 1) then
-             parameters(1)%neighborhood_type="gaussian"; !gaussian,bubble
-         endif
-         parameters(1)%som_type="normal_som"!,visom
-         if(toroidal == 1) then
-             parameters(1)%toroidal_grid=.TRUE.;
-         else
-             parameters(1)%toroidal_grid=.FALSE.;
-         endif
-         !
-         ! ADDED TO AVOID PRINTING UNIT INFO (THE CAUSE IS UNKNONW)
-         ! write(*,*) ''
-         ! write(*,'(A,A,f10.5)') trim(program_name),' version: ',version
-         ! write(*,*) ''
-         allocate(input_patterns(npat),stat=ierr);
-         do i=1,npat
-             var(1:nvar,1) = x(i,1:nvar)
-             !write(*,*) i,var
-             call input_patterns(i)%create(var);
-             !    call input_patterns(i)%print();
-         enddo
-        ! Create SOM
-        call my_som%create(parameters);
-        ! Train SOM
-        call my_som%train(input_patterns);
-        ! Extract results
-        pos=0
-        k=1
-        nx1=nx;ny1=ny;
-        do j=1,ny
-            do i=1,nx
-                pos=position2index(i,j,k,nx1,ny1);
-                !write(*,*) i,j,pos,i+(j-1)*nx
-                call my_som%grid(i,j,k)%get_prototype(temp);
-                !position2index()
-                prototypes(pos,1:nvar)=temp(1:nvar,1);
-            enddo
-        enddo
-        !
-        ! Get the results in the arrays
-        !
-        distortion=my_som%distortion
-        u_matrix(1:2*nx-1,1:2*ny-1)=my_som%u_matrix(:,:,1);
-        !do i=1,size(my_som%coordinates,1);
-        !write(*,*) my_som%coordinates(i,1:3);
-        !   coords(i,1:3)=my_som%coordinates(i,1:3);
-        !enddo
-        coords=my_som%coordinates;
-        !coords(1:nx*nx,1)=my_som%coordinates(:,1);
-        !coords(1:nx*nx,2)=my_som%coordinates(:,2);
-        !coords(1:nx*nx,3)=my_som%coordinates(:,3);
-        number_patterns=my_som%number_patterns(:,:,1);
-        node_index=my_som%cells_index
-        prot=prototypes;
-        ! 
-        call my_som%destroy();
-        !
-        do i=1,npat
-            call input_patterns(i)%destroy();
-        enddo
-        deallocate(input_patterns);
-        !
-        !
-        ! write(*,*)
-        ! write(*,'(A,A,f10.5,2X,A)') trim(program_name),' version: ',version,'Finished'
-        ! write(*,*)
-        !
-    end subroutine external_train_map
-!========================================================================================
-    subroutine external_predict_map(prot,nx,ny,new_pat,npat,nvar,node_index) & 
-        bind(C, name="predict_som")
-!========================================================================================
-!!    Subroutine to connect this module to R
-
-        use, intrinsic :: iso_c_binding, only : c_double, c_int
-        integer(c_int),intent(in) :: nx,ny,npat,nvar
-        real(c_double),intent(in) :: prot(nx*ny,nvar),new_pat(npat,nvar)
-        integer(c_int),intent(out) :: node_index(npat,3) 
-!!
-        type(self_organizing_map) :: my_som
-        type(kohonen_layer_parameters),dimension(1) :: parameters
-        integer :: ipat,inode,i_hit,nx1,ny1,nz1,cx,cy,cz,ix,iy,iz,pos,ierr
-        real(kind=wp) :: dist,dist_hit
-        real(kind=wp),dimension(nvar,1) :: temp
-        type(kohonen_pattern),dimension(npat) :: input_data
-!
-        parameters(1)%train_option=3;
-        parameters(1)%number_nodes_nx=nx;
-        parameters(1)%number_nodes_ny=ny;
-        parameters(1)%number_nodes_nz=1;
-        parameters(1)%number_variables1=nvar;
-        parameters(1)%number_variables2=1;
-        parameters(1)%number_variables=nvar;
-        parameters(1)%number_patterns=npat;
-        parameters(1)%number_epochs=1;
-        parameters(1)%learning_rate=0.0d0;
-        parameters(1)%random_seed_=12345;
-        parameters(1)%node_type="hexagonal"
-        parameters(1)%debug_level=0;
-        parameters(1)%debug_file="NOFILE"
-        parameters(1)%pattern_file="NOFILE"
-        parameters(1)%output_file="NOFILE"
-        parameters(1)%distance_type="euclidean" !"euclidean" !euclidean, manhattan, correlation, correlation2
-        parameters(1)%neighborhood_type="gaussian" !gaussian,bubble
-        parameters(1)%som_type="normal_som"!,visom
-        parameters(1)%toroidal_grid=.TRUE.
-!
-! call parameters(1)%print();
-!
-        call my_som%create(parameters);
-!
-        pos=0;
-        iz=1; 
-        do iy=1,ny
-            do ix=1,nx
-                pos=pos+1;
-                temp(1:nvar,1)=prot(pos,1:nvar)
-                call my_som%grid(ix,iy,iz)%set_prototype(temp)
-            enddo
-        enddo
-        !
-        do ipat=1,npat
-            temp(1:nvar,1)=new_pat(ipat,1:nvar);
-            call input_data(ipat)%create(temp);
-        enddo
-        !
-        call my_som%predict(input_data,node_index);
-        !
-        call my_som%destroy();
-        !
-        do ipat=1,size(input_data);
-            call input_data(ipat)%destroy();
-        enddo
-!
-    end subroutine external_predict_map
+    end function calculate_sigma
 ! 
 end module self_organizing_map_utilities
